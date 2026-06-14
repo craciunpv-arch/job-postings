@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+---
+<div class="main">
+  <article class="job-detail">
+    <h1 class="job-title">{{ title }}</h1>
+    <p class="job-salary">{{ salary }}</p>
+
+    <div class="job-meta">
+      <span class="job-meta-item">{{ city }}</span>
+      <span class="job-meta-sep">•</span>
+      <span class="job-meta-item">{{ workingType }}</span>
+    </div>
+
+    <section class="job-section">
+      <h2>About the Client</h2>
+      <div class="post-body">
+        {{ clientDescription | markdown | safe }}
+      </div>
+    </section>
+
+    <section class="job-section">
+      <h2>The Role</h2>
+      <div class="post-body">
+        <h3>Main Responsibilities</h3>
+        <ul>
+          {% for item in responsibilities %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Must-haves</h3>
+        <ul>
+          {% for item in mustHaves %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3>Nice-to-haves</h3>
+        <ul>
+          {% for item in niceToHaves %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section class="job-section">
+      <h2>Other Benefits</h2>
+      <div class="job-benefits">
+        {% for item in benefits %}
+        <span class="job-benefit-pill">{{ item }}</span>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="job-section">
+      <h2>Selection Process</h2>
+      <ol class="job-process">
+        {% for item in selectionProcess %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section class="job-section">
+      <h2>Good to Know</h2>
+      <div class="post-body">
+        <ul>
+          {% for item in goodToKnow %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <div class="contact-cta">
+      <p class="contact-cta-text">{{ site.contactNote }}</p>
+      <a class="contact-cta-link" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect with {{ site.name }} on LinkedIn →</a>
+    </div>
+  </article>
+</div>
