@@ -3,3 +3,4 @@ _site/
 .vercel/
 .DS_Store
 .claude/
+.vercel
