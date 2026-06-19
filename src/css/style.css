@@ -376,7 +376,7 @@ body {
 .btn-secondary-dark:hover { opacity: 0.8; }
 
 /* JOBS SECTION */
-.jobs-section { margin-bottom: 48px; }
+.jobs-section { margin-bottom: 8px; }
 
 .jobs-heading {
   font-size: 17px;
@@ -484,7 +484,7 @@ body {
 footer {
   background: #161b22;
   border-top: 1px solid #30363d;
-  padding: 36px 24px 32px;
+  padding: 20px 24px;
 }
 
 .footer-inner {
@@ -514,12 +514,12 @@ footer {
 
 .footer-brand {
   max-width: 840px;
-  margin: 24px auto 0;
-  padding-top: 24px;
+  margin: 14px auto 0;
+  padding-top: 14px;
   border-top: 1px solid #30363d;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .footer-brand-label {
@@ -529,7 +529,7 @@ footer {
 }
 
 .footer-brand-logo {
-  height: 72px;
+  height: 20px;
   width: auto;
   opacity: 0.85;
   transition: opacity 0.15s ease;
