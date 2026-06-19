@@ -17,7 +17,7 @@
   --max-w: 1040px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   background: linear-gradient(160deg, #0d1117 0%, #0c1829 100%) fixed;
