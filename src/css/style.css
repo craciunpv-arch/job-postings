@@ -1,14 +1,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink: #0d0f17;
-  --ink-mid: #585c66;
-  --ink-soft: #9499a3;
-  --bg: #ffffff;
-  --bg-subtle: #f6f7f9;
-  --border: #e7e9ec;
-  --accent: #4f46e5;
-  --accent-soft: #eef0ff;
+  --ink: #e6edf3;
+  --ink-mid: #8b949e;
+  --ink-soft: #6e7681;
+  --bg: #0d1117;
+  --bg-subtle: #161b22;
+  --border: #30363d;
+  --accent: #818cf8;
+  --accent-soft: rgba(129,140,248,0.12);
   --sans: 'Inter', system-ui, -apple-system, sans-serif;
   --radius: 8px;
   --radius-sm: 6px;
@@ -246,7 +246,8 @@ body {
 /* CONTACT CTA */
 .contact-cta {
   margin: 40px 0 32px;
-  background: var(--ink);
+  background: #21262d;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
   text-align: center;
@@ -406,7 +407,7 @@ body {
 
 .job-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 2px 12px rgba(79, 70, 229, 0.08);
+  box-shadow: 0 2px 16px rgba(129, 140, 248, 0.15);
 }
 
 .job-card-header {
@@ -425,8 +426,8 @@ body {
 .job-card-new {
   font-size: 11px;
   font-weight: 700;
-  color: #10b981;
-  background: #ecfdf5;
+  color: #3fb950;
+  background: rgba(63,185,80,0.1);
   padding: 2px 8px;
   border-radius: var(--radius-pill);
   text-transform: uppercase;
