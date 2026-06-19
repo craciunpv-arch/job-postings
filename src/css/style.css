@@ -307,10 +307,10 @@ body {
 }
 
 .hero-photo img {
-  width: 190%;
+  width: 140%;
   height: auto;
   display: block;
-  margin-left: -45%;
+  margin-left: -20%;
 }
 
 .btn {
