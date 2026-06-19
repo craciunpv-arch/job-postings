@@ -10,7 +10,7 @@ description: Personalized job opportunities, shared directly with candidates.
     <a class="contact-cta-link" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
   </section>
 
-  {% set openJobs = collections.jobs | selectattr("data.status", "equalto", "Open") %}
+  {% set openJobs = collections.jobs | selectattr("status", "equalto", "Open") %}
   {% if openJobs.length %}
   <section class="job-list">
     {% for job in openJobs | reverse %}
