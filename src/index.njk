@@ -3,16 +3,16 @@ layout: layouts/base.njk
 title: Vlad Crăciun — Job Opportunities
 description: Personalized job opportunities, shared directly with candidates.
 ---
-<div class="main">
 
-  <section class="hero">
+<section class="hero">
+  <div class="hero-inner">
     <div class="hero-content">
       <h1 class="hero-name">{{ site.name }}</h1>
       {% if site.bio %}<p class="hero-subtitle">{{ site.bio }}</p>{% endif %}
       <p class="hero-tagline">{{ site.tagline }}</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
-        <a class="btn btn-secondary" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a class="btn btn-secondary-dark" href="mailto:{{ site.email }}">{{ site.email }}</a>
       </div>
     </div>
     {% if site.photo %}
@@ -20,8 +20,10 @@ description: Personalized job opportunities, shared directly with candidates.
       <img src="{{ site.photo }}" alt="{{ site.name }}" style="width: {{ site.heroPhotoZoom or 140 }}%; margin-left: {{ site.heroPhotoOffsetX or -20 }}%; margin-top: {{ site.heroPhotoOffsetY or -8 }}%;" />
     </div>
     {% endif %}
-  </section>
+  </div>
+</section>
 
+<div class="main">
   {% set openJobs = collections.jobs | selectattr("status", "equalto", "Open") %}
   {% if openJobs.length %}
   <section class="jobs-section">
@@ -54,5 +56,4 @@ description: Personalized job opportunities, shared directly with candidates.
     </div>
   </section>
   {% endif %}
-
 </div>

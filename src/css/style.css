@@ -28,7 +28,8 @@ body {
 
 /* HEADER */
 .site-header {
-  border-bottom: 1px solid var(--border);
+  background: #0d1117;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 0 24px;
 }
 
@@ -43,12 +44,12 @@ body {
 .site-name {
   font-size: 16px;
   font-weight: 700;
-  color: var(--ink);
+  color: #f0f6fc;
   text-decoration: none;
   letter-spacing: -0.01em;
 }
 
-.site-name:hover { color: var(--accent); }
+.site-name:hover { color: rgba(240,246,252,0.7); }
 
 /* MAIN LAYOUT */
 .main {
@@ -279,37 +280,44 @@ body {
 
 /* HERO */
 .hero {
+  background: #0d1117;
+  padding: 0 24px;
+}
+
+.hero-inner {
+  max-width: 840px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 48px 0 40px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 40px;
+  padding: 56px 0 52px;
 }
+
+.hero-content { flex: 1; }
 
 .hero-name {
   font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 10px;
+  color: #f0f6fc;
+  margin-bottom: 8px;
 }
 
 .hero-subtitle {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--ink-soft);
-  margin-bottom: 12px;
+  color: rgba(240,246,252,0.45);
+  margin-bottom: 16px;
   letter-spacing: 0.01em;
 }
 
 .hero-tagline {
   font-size: 15px;
-  color: var(--ink-mid);
+  color: rgba(240,246,252,0.7);
   line-height: 1.7;
   max-width: 500px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .hero-actions {
@@ -322,7 +330,7 @@ body {
   width: 148px;
   height: 148px;
   border-radius: 50%;
-  border: 2px solid var(--border);
+  border: 2px solid rgba(255,255,255,0.12);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -351,6 +359,21 @@ body {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
 }
+
+.btn-secondary-dark {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.15s ease;
+  color: rgba(240,246,252,0.8);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-secondary-dark:hover { opacity: 0.8; }
 
 /* JOBS SECTION */
 .jobs-section { margin-bottom: 48px; }
@@ -499,14 +522,14 @@ footer {
 }
 
 .footer-brand-label {
-  font-size: 12px;
-  color: var(--ink-soft);
+  font-size: 13px;
+  color: var(--ink-mid);
 }
 
 .footer-brand-logo {
-  height: 28px;
+  height: 44px;
   width: auto;
-  opacity: 0.65;
+  opacity: 0.8;
   transition: opacity 0.15s ease;
 }
 
@@ -516,7 +539,7 @@ footer {
 @media (max-width: 600px) {
   .job-title { font-size: 26px; }
   .job-section h2 { font-size: 20px; }
-  .hero { flex-direction: column-reverse; padding: 32px 0 28px; margin-bottom: 28px; }
+  .hero-inner { flex-direction: column-reverse; padding: 36px 0 32px; gap: 24px; }
   .hero-name { font-size: 22px; }
   .job-card-footer { flex-direction: column; align-items: flex-start; }
 }
