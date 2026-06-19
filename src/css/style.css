@@ -457,7 +457,8 @@ body {
 }
 
 .job-card-title {
-  font-size: 16px;
+  font-family: var(--mono);
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink);
 }
