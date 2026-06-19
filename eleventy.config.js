@@ -15,6 +15,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("markdown", (content) => markdownIt.render(content || ""));
 
+  eleventyConfig.addFilter("selectattr", (arr, key, value) =>
+    (arr || []).filter((item) => item.data[key] === value)
+  );
+
+  eleventyConfig.addCollection("jobs", (api) => api.getFilteredByGlob("src/jobs/*.md"));
+
   return {
     dir: {
       input: "src",

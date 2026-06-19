@@ -9,4 +9,19 @@ description: Personalized job opportunities, shared directly with candidates.
     <p class="intro-text">{{ site.contactNote }}</p>
     <a class="contact-cta-link" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
   </section>
+
+  {% set openJobs = collections.jobs | selectattr("data.status", "equalto", "Open") %}
+  {% if openJobs.length %}
+  <section class="job-list">
+    {% for job in openJobs | reverse %}
+    <a class="job-card" href="{{ job.url }}">
+      <div class="job-card-main">
+        <span class="job-card-title">{{ job.data.title }}</span>
+        <span class="job-card-meta">{{ job.data.city }} · {{ job.data.workingType }}</span>
+      </div>
+      <span class="job-card-salary">{{ job.data.salary }}</span>
+    </a>
+    {% endfor %}
+  </section>
+  {% endif %}
 </div>
