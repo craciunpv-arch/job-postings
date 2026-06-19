@@ -5,6 +5,11 @@ city: Iași
 workingType: Hybrid
 status: Open
 date: 2026-06-19T12:41:00.000+03:00
+clientTeaser: Series A fintech in Iași — founded by a team that built multi-billion-dollar banking businesses
+techStack:
+  - Java
+  - React
+  - Fintech
 clientDescription: >-
   Our client is a newly established company in Iași, founded by a top-tier team
   that previously 

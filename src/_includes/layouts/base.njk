@@ -29,6 +29,15 @@
 
   <footer>
     <div class="footer-inner">
+      <div class="footer-about">
+        {% if site.photo %}
+        <img class="footer-photo" src="{{ site.photo }}" alt="{{ site.name }}" />
+        {% endif %}
+        <div>
+          <span class="footer-about-name">{{ site.name }}</span>
+          <p class="footer-about-bio">{{ site.bio }}</p>
+        </div>
+      </div>
       <div class="footer-links">
         <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>

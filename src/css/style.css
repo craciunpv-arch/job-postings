@@ -264,40 +264,89 @@ body {
   margin-top: 10px;
 }
 
-/* HOME / INTRO */
-.intro {
-  padding: 48px 0;
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
 }
 
-.intro-title {
-  font-size: 32px;
+.hero-name {
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.hero-tagline {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 22px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-photo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.15s ease;
+}
+
+.btn:hover { opacity: 0.85; }
+
+.btn-primary { color: #fff; background: var(--accent); }
+
+.btn-secondary {
+  color: var(--ink);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+/* JOBS SECTION */
+.jobs-section { margin-bottom: 48px; }
+
+.jobs-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
   margin-bottom: 16px;
 }
 
-.intro-text {
-  font-size: 16px;
-  color: var(--ink-mid);
-  line-height: 1.7;
-  max-width: 520px;
-  margin-bottom: 24px;
-}
+.jobs-count { color: var(--ink-soft); font-weight: 500; }
 
-/* JOB LIST */
 .job-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding-bottom: 48px;
 }
 
 .job-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  display: block;
   padding: 20px 24px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -311,10 +360,11 @@ body {
   box-shadow: 0 2px 12px rgba(79, 70, 229, 0.08);
 }
 
-.job-card-main {
+.job-card-header {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
 }
 
 .job-card-title {
@@ -323,9 +373,52 @@ body {
   color: var(--ink);
 }
 
-.job-card-meta {
-  font-size: 13px;
-  color: var(--ink-soft);
+.job-card-new {
+  font-size: 11px;
+  font-weight: 700;
+  color: #10b981;
+  background: #ecfdf5;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.job-card-teaser {
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.job-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.job-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.job-card-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.job-card-tag--tech {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: transparent;
 }
 
 .job-card-salary {
@@ -338,10 +431,6 @@ body {
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
-  .job-card { flex-direction: column; align-items: flex-start; }
-}
-
 /* FOOTER */
 footer {
   border-top: 1px solid var(--border);
@@ -351,11 +440,37 @@ footer {
 .footer-inner {
   max-width: 840px;
   margin: 0 auto;
+}
+
+.footer-about {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-photo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.footer-about-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.footer-about-bio {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0;
 }
 
 .footer-links {
@@ -374,6 +489,8 @@ footer {
 /* MOBILE */
 @media (max-width: 600px) {
   .job-title { font-size: 26px; }
-  .intro-title { font-size: 26px; }
   .job-section h2 { font-size: 20px; }
+  .hero { flex-direction: column-reverse; padding: 32px 0 28px; margin-bottom: 28px; }
+  .hero-name { font-size: 22px; }
+  .job-card-footer { flex-direction: column; align-items: flex-start; }
 }

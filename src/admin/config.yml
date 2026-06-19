@@ -28,6 +28,8 @@ collections:
         options: ["Open", "Closed"]
         default: "Open"
       - { label: "Publish Date", name: date, widget: datetime }
+      - { label: "Client Teaser", name: clientTeaser, widget: string, required: false, hint: "One line shown on the listing, e.g. 'Series A fintech in Iași'" }
+      - { label: "Tech Stack", name: techStack, widget: list, required: false, hint: "Tags shown on the listing, e.g. Java, React, PostgreSQL" }
       - { label: "Client Description", name: clientDescription, widget: markdown }
       - { label: "Main Responsibilities", name: responsibilities, widget: markdown }
       - { label: "Must-haves", name: mustHaves, widget: markdown }
@@ -45,4 +47,8 @@ collections:
         fields:
           - { label: Name, name: name, widget: string }
           - { label: "LinkedIn URL", name: linkedin, widget: string }
+          - { label: "Email", name: email, widget: string }
+          - { label: "Tagline", name: tagline, widget: text }
+          - { label: "Short Bio", name: bio, widget: text }
+          - { label: "Photo", name: photo, widget: image, required: false }
           - { label: "Contact Note", name: contactNote, widget: text }

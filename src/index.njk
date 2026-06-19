@@ -4,25 +4,54 @@ title: Vlad Crăciun — Job Opportunities
 description: Personalized job opportunities, shared directly with candidates.
 ---
 <div class="main">
-  <section class="intro">
-    <h1 class="intro-title">{{ site.name }}</h1>
-    <p class="intro-text">{{ site.contactNote }}</p>
-    <a class="contact-cta-link" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
-    <a class="contact-cta-link contact-cta-link--secondary" href="mailto:{{ site.email }}">Email {{ site.email }} →</a>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-name">{{ site.name }}</h1>
+      <p class="hero-tagline">{{ site.tagline }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        <a class="btn btn-secondary" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </div>
+    {% if site.photo %}
+    <div class="hero-photo">
+      <img src="{{ site.photo }}" alt="{{ site.name }}" />
+    </div>
+    {% endif %}
   </section>
 
   {% set openJobs = collections.jobs | selectattr("status", "equalto", "Open") %}
   {% if openJobs.length %}
-  <section class="job-list">
-    {% for job in openJobs | reverse %}
-    <a class="job-card" href="{{ job.url }}">
-      <div class="job-card-main">
-        <span class="job-card-title">{{ job.data.title }}</span>
-        <span class="job-card-meta">{{ job.data.city }} · {{ job.data.workingType }}</span>
-      </div>
-      <span class="job-card-salary">{{ job.data.salary }}</span>
-    </a>
-    {% endfor %}
+  <section class="jobs-section">
+    <h2 class="jobs-heading">Open Positions <span class="jobs-count">({{ openJobs | length }})</span></h2>
+    <div class="job-list">
+      {% for job in openJobs | reverse %}
+      {% set daysSince = job.date | daysAgo %}
+      <a class="job-card" href="{{ job.url }}">
+        <div class="job-card-header">
+          <span class="job-card-title">{{ job.data.title }}</span>
+          {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
+        </div>
+        {% if job.data.clientTeaser %}
+        <p class="job-card-teaser">{{ job.data.clientTeaser }}</p>
+        {% endif %}
+        <div class="job-card-footer">
+          <div class="job-card-tags">
+            <span class="job-card-tag">{{ job.data.city }}</span>
+            <span class="job-card-tag">{{ job.data.workingType }}</span>
+            {% if job.data.techStack %}
+              {% for tech in job.data.techStack %}
+              <span class="job-card-tag job-card-tag--tech">{{ tech }}</span>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <span class="job-card-salary">{{ job.data.salary }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </section>
   {% endif %}
+
 </div>
