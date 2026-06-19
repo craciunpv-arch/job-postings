@@ -373,7 +373,7 @@ body {
 
 .btn:hover { opacity: 0.85; }
 
-.btn-primary { color: #fff; background: var(--accent); }
+.btn-primary { color: #fff; background: #2563eb; }
 
 .btn-secondary {
   color: var(--ink);
