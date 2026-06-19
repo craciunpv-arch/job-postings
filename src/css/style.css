@@ -160,7 +160,7 @@ body {
 /* SHARED PROSE STYLES */
 .post-body {
   font-size: 15px;
-  color: var(--ink-mid);
+  color: var(--ink);
   line-height: 1.85;
 }
 
@@ -324,36 +324,53 @@ body {
 .hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 56px 0 52px;
+  padding: 48px 0 44px;
 }
 
 .hero-content { flex: 1; }
 
+.hero-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.hero-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hero-avatar img {
+  height: auto;
+  display: block;
+}
+
 .hero-name {
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: #f0f6fc;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
 
 .hero-subtitle {
   font-size: 13px;
-  font-weight: 500;
-  color: rgba(240,246,252,0.65);
-  margin-bottom: 16px;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  color: rgba(240,246,252,0.55);
+  letter-spacing: 0;
+  margin: 0;
 }
 
 .hero-tagline {
-  font-size: 15px;
-  color: rgba(240,246,252,0.85);
-  line-height: 1.7;
-  max-width: 500px;
+  font-size: 16px;
+  color: rgba(240,246,252,0.88);
+  line-height: 1.75;
+  max-width: 620px;
   margin-bottom: 24px;
 }
 
@@ -361,20 +378,6 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-}
-
-.hero-photo {
-  width: 148px;
-  height: 148px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.12);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.hero-photo img {
-  height: auto;
-  display: block;
 }
 
 .btn {
