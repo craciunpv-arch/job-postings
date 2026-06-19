@@ -40,12 +40,7 @@ description: Personalized job opportunities, shared directly with candidates.
             <button class="filter-btn" data-filter="{{ city | lower | replace(' ', '-') }}" data-label="{{ city }}">{{ city }}</button>
           {% endfor %}
           <button class="filter-btn" data-filter="{{ job.data.workingType | lower | replace(' ', '-') }}" data-label="{{ job.data.workingType }}">{{ job.data.workingType }}</button>
-          {% if job.data.techStack %}
-            {% for tech in job.data.techStack %}
-              <button class="filter-btn" data-filter="{{ tech | lower | replace(' ', '-') }}" data-label="{{ tech }}">{{ tech }}</button>
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
       </div>
     </div>
     <div class="job-list{% if openJobs.length == 1 %} job-list--single{% endif %}" id="jobList">
@@ -76,9 +71,6 @@ description: Personalized job opportunities, shared directly with candidates.
                 <span class="job-card-tag job-card-tag--tech">{{ tech }}</span>
                 {% endif %}
               {% endfor %}
-              {% if job.data.techStack.length > 3 %}
-              <span class="job-card-tag job-card-tag--more">+{{ job.data.techStack.length - 3 }}</span>
-              {% endif %}
             {% endif %}
           </div>
           <span class="job-card-salary">{{ job.data.salary }}</span>

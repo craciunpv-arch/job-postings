@@ -160,6 +160,7 @@ body {
   padding: 28px;
   margin-bottom: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  scroll-margin-top: 80px;
 }
 
 .job-section h2 {
@@ -701,16 +702,16 @@ footer {
 .share-btn {
   font-size: 13px;
   font-weight: 600;
-  color: var(--ink-soft);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
+  color: #fff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
   border-radius: var(--radius-sm);
   padding: 7px 14px;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
-.share-btn:hover { color: var(--ink); border-color: #2563eb; }
+.share-btn:hover { opacity: 0.85; }
 
 /* TOC */
 .job-toc {
