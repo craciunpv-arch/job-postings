@@ -482,7 +482,7 @@ body {
 
 /* FOOTER */
 footer {
-  background: #0d1117;
+  background: #161b22;
   border-top: 1px solid #30363d;
   padding: 36px 24px 32px;
 }
@@ -524,12 +524,8 @@ footer {
 
 .footer-brand-label {
   font-size: 13px;
-  color: rgba(240,246,252,0.5);
-}
-
-.footer-brand-label strong {
-  color: rgba(240,246,252,0.85);
   font-weight: 700;
+  color: rgba(240,246,252,0.85);
 }
 
 .footer-brand-logo {
