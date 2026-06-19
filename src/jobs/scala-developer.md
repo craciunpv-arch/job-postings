@@ -74,8 +74,6 @@ mustHaves: >-
      architectures such as 
 
     **Kafka**
-
-    .
   * Strong communication skills, with the ability to engage in both technical and business-oriented discussions, always keeping the customer perspective in mind.
 niceToHaves: "* Previous pair programming experience."
 benefits: |-
