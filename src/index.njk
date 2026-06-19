@@ -16,7 +16,7 @@ description: Personalized job opportunities, shared directly with candidates.
     </div>
     {% if site.photo %}
     <div class="hero-photo">
-      <img src="{{ site.photo }}" alt="{{ site.name }}" />
+      <img src="{{ site.photo }}" alt="{{ site.name }}" style="width: {{ site.heroPhotoZoom or 140 }}%; margin-left: {{ site.heroPhotoOffsetX or -20 }}%; margin-top: {{ site.heroPhotoOffsetY or -8 }}%;" />
     </div>
     {% endif %}
   </section>

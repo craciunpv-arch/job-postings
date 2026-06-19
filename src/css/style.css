@@ -307,11 +307,8 @@ body {
 }
 
 .hero-photo img {
-  width: 140%;
   height: auto;
   display: block;
-  margin-left: -20%;
-  margin-top: -8%;
 }
 
 .btn {
@@ -468,10 +465,8 @@ footer {
 }
 
 .footer-photo-wrap img {
-  width: 190%;
   height: auto;
   display: block;
-  margin-left: -45%;
 }
 
 .footer-about-name {

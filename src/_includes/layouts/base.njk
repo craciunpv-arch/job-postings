@@ -32,7 +32,7 @@
       <div class="footer-about">
         {% if site.photo %}
         <div class="footer-photo-wrap">
-          <img src="{{ site.photo }}" alt="{{ site.name }}" />
+          <img src="{{ site.photo }}" alt="{{ site.name }}" style="width: {{ site.footerPhotoZoom or 190 }}%; margin-left: {{ site.footerPhotoOffsetX or -45 }}%;" />
         </div>
         {% endif %}
         <div>

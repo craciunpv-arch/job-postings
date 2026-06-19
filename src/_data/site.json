@@ -6,5 +6,10 @@
   "tagline": "I work with high-growth tech companies across Romania to find the engineers they can't hire on their own. Every role here is hand-picked.",
   "bio": "Passionate Tech Recruiter supporting engineers in finding meaningful work.",
   "contactNote": "Interested in one of these roles? Reach out and let's talk.",
-  "photo": "/images/uploads/edurom-49.jpg"
+  "photo": "/images/uploads/edurom-49.jpg",
+  "heroPhotoZoom": 140,
+  "heroPhotoOffsetX": -20,
+  "heroPhotoOffsetY": -8,
+  "footerPhotoZoom": 190,
+  "footerPhotoOffsetX": -45
 }
