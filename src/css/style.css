@@ -488,6 +488,30 @@ footer {
 
 .footer-linkedin:hover { color: #0a66c2; }
 
+.footer-brand {
+  max-width: 840px;
+  margin: 16px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.footer-brand-logo {
+  height: 28px;
+  width: auto;
+  opacity: 0.65;
+  transition: opacity 0.15s ease;
+}
+
+.footer-brand-logo:hover { opacity: 1; }
+
 /* MOBILE */
 @media (max-width: 600px) {
   .job-title { font-size: 26px; }
