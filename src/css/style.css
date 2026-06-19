@@ -298,11 +298,11 @@ body {
 }
 
 .hero-photo img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 120px;
+  height: 160px;
+  border-radius: 12px;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   border: 2px solid var(--border);
   flex-shrink: 0;
 }
@@ -453,11 +453,11 @@ footer {
 }
 
 .footer-photo {
-  width: 72px;
+  width: 56px;
   height: 72px;
-  border-radius: 50%;
+  border-radius: 8px;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   flex-shrink: 0;
 }
 
