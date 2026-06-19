@@ -475,7 +475,7 @@ body {
 
 .job-card-teaser {
   font-size: 14px;
-  color: var(--ink-mid);
+  color: #93c5fd;
   line-height: 1.55;
   margin-bottom: 14px;
 }
