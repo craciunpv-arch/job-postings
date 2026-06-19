@@ -131,7 +131,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   color: var(--ink-mid);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .job-meta-sep {
@@ -139,46 +139,54 @@ body {
 }
 
 .job-section {
-  margin-bottom: 36px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 12px;
 }
 
 .job-section h2 {
-  font-size: 22px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 /* SHARED PROSE STYLES */
 .post-body {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--ink-mid);
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
-.post-body p { margin-bottom: 20px; }
+.post-body p { margin-bottom: 16px; }
 
 .post-body h3 {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 24px 0 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 20px 0 8px;
 }
 
 .post-body h3:first-child { margin-top: 0; }
 
 .post-body ul,
 .post-body ol {
-  margin: 0 0 20px;
-  padding-left: 24px;
+  margin: 0 0 16px;
+  padding-left: 20px;
 }
 
-.post-body li { margin-bottom: 8px; }
+.post-body li { margin-bottom: 10px; }
 
 .post-body a {
-  color: var(--accent);
+  color: #60a5fa;
   text-decoration: underline;
 }
 
