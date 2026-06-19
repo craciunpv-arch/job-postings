@@ -29,12 +29,12 @@ collections:
         default: "Open"
       - { label: "Publish Date", name: date, widget: datetime }
       - { label: "Client Description", name: clientDescription, widget: markdown }
-      - { label: "Main Responsibilities", name: responsibilities, widget: list }
-      - { label: "Must-haves", name: mustHaves, widget: list }
-      - { label: "Nice-to-haves", name: niceToHaves, widget: list }
-      - { label: "Other Benefits", name: benefits, widget: list }
-      - { label: "Selection Process", name: selectionProcess, widget: list }
-      - { label: "Good to Know", name: goodToKnow, widget: list }
+      - { label: "Main Responsibilities", name: responsibilities, widget: markdown }
+      - { label: "Must-haves", name: mustHaves, widget: markdown }
+      - { label: "Nice-to-haves", name: niceToHaves, widget: markdown }
+      - { label: "Other Benefits", name: benefits, widget: markdown }
+      - { label: "Selection Process", name: selectionProcess, widget: markdown }
+      - { label: "Good to Know", name: goodToKnow, widget: markdown }
 
   - name: settings
     label: "Site Settings"

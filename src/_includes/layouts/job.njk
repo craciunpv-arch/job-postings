@@ -23,54 +23,34 @@ layout: layouts/base.njk
       <h2>The Role</h2>
       <div class="post-body">
         <h3>Main Responsibilities</h3>
-        <ul>
-          {% for item in responsibilities %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
+        {{ responsibilities | markdown | safe }}
 
         <h3>Must-haves</h3>
-        <ul>
-          {% for item in mustHaves %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
+        {{ mustHaves | markdown | safe }}
 
         <h3>Nice-to-haves</h3>
-        <ul>
-          {% for item in niceToHaves %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
+        {{ niceToHaves | markdown | safe }}
       </div>
     </section>
 
     <section class="job-section">
       <h2>Other Benefits</h2>
-      <div class="job-benefits">
-        {% for item in benefits %}
-        <span class="job-benefit-pill">{{ item }}</span>
-        {% endfor %}
+      <div class="post-body">
+        {{ benefits | markdown | safe }}
       </div>
     </section>
 
     <section class="job-section">
       <h2>Selection Process</h2>
-      <ol class="job-process">
-        {% for item in selectionProcess %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ol>
+      <div class="post-body">
+        {{ selectionProcess | markdown | safe }}
+      </div>
     </section>
 
     <section class="job-section">
       <h2>Good to Know</h2>
       <div class="post-body">
-        <ul>
-          {% for item in goodToKnow %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
+        {{ goodToKnow | markdown | safe }}
       </div>
     </section>
 
