@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("markdown", (content) => markdownIt.render(content || ""));
 
-  eleventyConfig.addFilter("selectattr", (arr, key, value) =>
+  eleventyConfig.addFilter("selectattr", (arr, key, test, value) =>
     (arr || []).filter((item) => item.data[key] === value)
   );
 
