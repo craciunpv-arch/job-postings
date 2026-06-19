@@ -45,8 +45,8 @@ description: Personalized job opportunities, shared directly with candidates.
         {% endif %}
         <div class="job-card-footer">
           <div class="job-card-tags">
-            <span class="job-card-tag">{{ job.data.city }}</span>
-            <span class="job-card-tag">{{ job.data.workingType }}</span>
+            <span class="job-card-tag job-card-tag--meta">{{ job.data.city }}</span>
+            <span class="job-card-tag job-card-tag--meta">{{ job.data.workingType }}</span>
             {% if job.data.techStack %}
               {% for tech in job.data.techStack %}
               <span class="job-card-tag job-card-tag--tech">{{ tech }}</span>
