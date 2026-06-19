@@ -297,14 +297,20 @@ body {
   flex-wrap: wrap;
 }
 
-.hero-photo img {
-  width: 120px;
-  height: 160px;
-  border-radius: 12px;
-  object-fit: cover;
-  object-position: center top;
+.hero-photo {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
   border: 2px solid var(--border);
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.hero-photo img {
+  width: 190%;
+  height: auto;
+  display: block;
+  margin-left: -45%;
 }
 
 .btn {
@@ -452,13 +458,19 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-.footer-photo {
-  width: 56px;
-  height: 72px;
-  border-radius: 8px;
-  object-fit: cover;
-  object-position: center top;
+.footer-photo-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.footer-photo-wrap img {
+  width: 190%;
+  height: auto;
+  display: block;
+  margin-left: -45%;
 }
 
 .footer-about-name {

@@ -21,7 +21,7 @@
 
   <header class="site-header">
     <div class="site-header-inner">
-      <span class="site-name">{{ site.name }}</span>
+      <span class="site-name">{{ site.siteTitle or site.name }}</span>
     </div>
   </header>
 
@@ -31,7 +31,9 @@
     <div class="footer-inner">
       <div class="footer-about">
         {% if site.photo %}
-        <img class="footer-photo" src="{{ site.photo }}" alt="{{ site.name }}" />
+        <div class="footer-photo-wrap">
+          <img src="{{ site.photo }}" alt="{{ site.name }}" />
+        </div>
         {% endif %}
         <div>
           <span class="footer-about-name">{{ site.name }}</span>
