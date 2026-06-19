@@ -2,8 +2,8 @@
 
 :root {
   --ink: #e6edf3;
-  --ink-mid: #8b949e;
-  --ink-soft: #6e7681;
+  --ink-mid: #b1bac4;
+  --ink-soft: #8b949e;
   --bg: #0d1117;
   --bg-subtle: #161b22;
   --border: #30363d;
@@ -328,14 +328,14 @@ body {
 .hero-subtitle {
   font-size: 13px;
   font-weight: 500;
-  color: rgba(240,246,252,0.45);
+  color: rgba(240,246,252,0.65);
   margin-bottom: 16px;
   letter-spacing: 0.01em;
 }
 
 .hero-tagline {
   font-size: 15px;
-  color: rgba(240,246,252,0.7);
+  color: rgba(240,246,252,0.85);
   line-height: 1.7;
   max-width: 500px;
   margin-bottom: 24px;
@@ -520,7 +520,7 @@ footer {
 
 .footer-cta {
   font-size: 14px;
-  color: rgba(240,246,252,0.65);
+  color: rgba(240,246,252,0.8);
   margin: 0;
   line-height: 1.7;
 }
