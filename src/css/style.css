@@ -258,6 +258,12 @@ body {
 
 .contact-cta-link:hover { opacity: 0.88; }
 
+.contact-cta-link--secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  margin-top: 10px;
+}
+
 /* HOME / INTRO */
 .intro {
   padding: 48px 0;
