@@ -319,13 +319,12 @@ body {
 /* HERO */
 .hero {
   background: #0d1117;
-  padding: 0 24px;
 }
 
 .hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 48px 0 44px;
+  padding: 48px 24px 44px;
 }
 
 .hero-content { flex: 1; }
