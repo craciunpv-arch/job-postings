@@ -122,6 +122,7 @@ body {
   padding: 6px 16px;
   border-radius: var(--radius-sm);
   margin-bottom: 16px;
+  text-decoration: none;
 }
 
 .job-meta {
