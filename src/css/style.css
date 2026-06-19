@@ -456,19 +456,6 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-.footer-photo-wrap {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.footer-photo-wrap img {
-  height: auto;
-  display: block;
-}
-
 .footer-about-name {
   display: block;
   font-size: 14px;

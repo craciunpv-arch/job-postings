@@ -55,5 +55,3 @@ collections:
           - { label: "Hero Photo Zoom (%)", name: heroPhotoZoom, widget: number, default: 140, hint: "How zoomed-in the hero photo is. Higher = more zoomed in." }
           - { label: "Hero Photo Offset X (%)", name: heroPhotoOffsetX, widget: number, default: -20, hint: "Shift photo left/right. More negative = shift left." }
           - { label: "Hero Photo Offset Y (%)", name: heroPhotoOffsetY, widget: number, default: -8, hint: "Shift photo up/down. More negative = shift up." }
-          - { label: "Footer Photo Zoom (%)", name: footerPhotoZoom, widget: number, default: 190, hint: "How zoomed-in the footer photo is." }
-          - { label: "Footer Photo Offset X (%)", name: footerPhotoOffsetX, widget: number, default: -45, hint: "Shift footer photo left/right. More negative = shift left." }
