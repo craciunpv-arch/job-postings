@@ -17,64 +17,43 @@ clientDescription: >-
   customer-centric solutions designed for user convenience.
 
 
-  The company develops cloud-based state-of-the art software applications in different areas such as IoT, energy management & trading, RPA & Machine Learning.
+  The company develops cloud-based state-of-the art software applications in
+  different areas such as IoT, energy management & trading, RPA & Machine
+  Learning.
 responsibilities: >-
-  * Take full ownership of the development lifecycle for 
+  * Take full ownership of the development lifecycle for **Scala backend
+  services**, including design, implementation, deployment, and maintenance
+  within an **Azure environment;**
 
-    **Scala backend services,**
+  * Troubleshoot and resolve technical issues promptly to ensure smooth and
+  efficient system operations;
 
-     including design, implementation, deployment, and maintenance within an 
+  * Collaborate effectively within a multidisciplinary, international team,
+  working closely with developers and product teams in an agile framework;
 
-    **Azure environment;**
-  * Troubleshoot and resolve technical issues promptly to ensure smooth and efficient system operations;
+  * Contribute strategic insights on risk, scope, and prioritisation to support
+  planning and decision-making for new features, while proactively identifying
+  and proposing solutions;
 
-  * Collaborate effectively within a multidisciplinary, international team, working closely with developers and product teams in an agile framework;
-
-  * Contribute strategic insights on risk, scope, and prioritisation to support planning and decision-making for new features, while proactively identifying and proposing solutions;
-
-  * Recommend and 
-
-    **implement architectural**
-
-     and 
-
-    **process improvements**
-
-     to strengthen team productivity, system reliability, and overall product success.
+  * Recommend and implement **architectural and process improvements** to
+  strengthen team productivity, system reliability, and overall product success.
 mustHaves: >-
-  * Proven experience in building service-oriented architectures using 
+  * Proven experience in building service-oriented architectures using **Scala;**
 
-    **Scala**
+  * Solid grasp of **reactive system principles**, with the ability to design
+  applications that are **highly available, responsive, resilient, and
+  scalable;**
 
-    ;
-  * Solid grasp of 
+  * Practical experience working with **microservices** in distributed
+  environments, including **deployment using Kubernetes and Azure;**
 
-    **reactive system principles**
+  * Familiarity with frameworks like **Akka HTTP, Akka Streams, and Akka
+  Actor**, along with hands-on experience in **event-driven** architectures such
+  as **Kafka;**
 
-    , with the ability to design applications that are 
-
-    **highly available, responsive, resilient, and scalable**
-
-    ;
-  * Practical experience working with 
-
-    **microservices**
-
-     in distributed environments, including 
-
-    **deployment using Kubernetes and Azure;**
-  * Familiarity with frameworks like 
-
-    **Akka HTTP, Akka Streams, and Akka Actor**
-
-    , along with hands-on experience in 
-
-    **event-driven**
-
-     architectures such as 
-
-    **Kafka**
-  * Strong communication skills, with the ability to engage in both technical and business-oriented discussions, always keeping the customer perspective in mind.
+  * Strong communication skills, with the ability to engage in both technical
+  and business-oriented discussions, always keeping the customer perspective in
+  mind.
 niceToHaves: "* Previous pair programming experience."
 benefits: |-
   * Annual performance bonus
@@ -82,10 +61,10 @@ benefits: |-
   * Learning budget
   * Medical Insurance
   * Many other perks
-selectionProcess: "* 2 Interviews, 1 hour each, based on Scala, Cloud,
-  Kubernetes experience and stakeholder management"
-goodToKnow: The client values engineers who think like consultants. They expect
-  you to be adaptable, proactive, and comfortable wearing multiple hats. You may
-  be expected to engage directly with business stakeholders to gather
-  requirements and understand the bigger picture.
+selectionProcess: "* 2 Interviews, 1 hour each, based on Scala, Cloud, Kubernetes experience and stakeholder management"
+goodToKnow: >-
+  The client values engineers who think like consultants. They expect you to be
+  adaptable, proactive, and comfortable wearing multiple hats. You may be
+  expected to engage directly with business stakeholders to gather requirements
+  and understand the bigger picture.
 ---
