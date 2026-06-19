@@ -1,13 +1,13 @@
 {
-  "name": "Vlad Crăciun",
-  "siteTitle": "Hand Picked Jobs",
-  "linkedin": "https://www.linkedin.com/in/vlad-craciun/",
-  "email": "vlad@edurom.ro",
-  "tagline": "I work with high-growth tech companies across Romania to find the engineers they can't hire on their own. Every role here is hand-picked.",
   "bio": "Passionate tech recruiter supporting engineers in finding meaningful work.",
+  "heroPhotoZoom": 140,
+  "name": "Vlad Crăciun",
+  "heroPhotoOffsetX": -20,
+  "heroPhotoOffsetY": -8,
+  "tagline": "I don't fill roles. I have conversations, build trust over time, and make introductions when the match is genuinely right, for both sides.",
+  "siteTitle": "Hand Picked Jobs",
   "contactNote": "Interested in one of these roles? Reach out and let's talk.",
   "photo": "/images/uploads/edurom-49.jpg",
-  "heroPhotoZoom": 140,
-  "heroPhotoOffsetX": -20,
-  "heroPhotoOffsetY": -8
+  "email": "vlad@edurom.ro",
+  "linkedin": "https://www.linkedin.com/in/vlad-craciun/"
 }
