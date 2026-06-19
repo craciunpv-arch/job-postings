@@ -58,9 +58,7 @@ body {
   color: #f0f6fc;
   text-decoration: none;
   letter-spacing: -0.02em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .site-name::before {
@@ -573,8 +571,7 @@ footer {
 
 .footer-linkedin {
   color: rgba(240,246,252,0.4);
-  flex-shrink: 0;
-  display: flex;
+  display: inline;
   transition: color 0.15s ease;
 }
 
@@ -765,5 +762,5 @@ footer {
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
   .footer-cta { font-size: 13px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
-  .site-name { font-size: 16px; }
+  .site-name { font-size: 13px; letter-spacing: 0; }
 }
