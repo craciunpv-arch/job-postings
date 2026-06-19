@@ -10,9 +10,11 @@
   --accent: #818cf8;
   --accent-soft: rgba(129,140,248,0.12);
   --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
   --radius: 8px;
   --radius-sm: 6px;
   --radius-pill: 999px;
+  --max-w: 1040px;
 }
 
 html { scroll-behavior: smooth; }
@@ -37,27 +39,41 @@ body {
 }
 
 .site-header-inner {
-  max-width: 840px;
+  max-width: var(--max-w);
   margin: 0 auto;
-  height: 60px;
+  height: 64px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .site-name {
-  font-size: 16px;
+  font-family: var(--mono);
+  font-size: 17px;
   font-weight: 700;
   color: #f0f6fc;
   text-decoration: none;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
-.site-name:hover { color: rgba(240,246,252,0.7); }
+.site-name::before {
+  content: '{ ';
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.site-name::after {
+  content: ' }';
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.site-name:hover { color: rgba(240,246,252,0.8); }
 
 /* MAIN LAYOUT */
 .main {
   flex: 1;
-  max-width: 840px;
+  max-width: var(--max-w);
   margin: 0 auto;
   padding: 32px 24px 8px;
 }
@@ -290,7 +306,7 @@ body {
 }
 
 .hero-inner {
-  max-width: 840px;
+  max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -462,25 +478,26 @@ body {
 .job-card-tag {
   font-size: 12px;
   font-weight: 500;
-  color: var(--ink-mid);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
+  color: #93c5fd;
+  background: rgba(37,99,235,0.08);
+  border: 1px solid rgba(37,99,235,0.22);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
 }
 
 .job-card-tag--tech {
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-color: transparent;
+  color: #fff;
+  background: rgba(37,99,235,0.2);
+  border-color: rgba(37,99,235,0.35);
 }
 
 .job-card-salary {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--accent);
-  background: var(--accent-soft);
-  padding: 6px 14px;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
   white-space: nowrap;
 }
@@ -493,7 +510,7 @@ footer {
 }
 
 .footer-inner {
-  max-width: 840px;
+  max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -518,7 +535,7 @@ footer {
 .footer-linkedin:hover { color: #fff; }
 
 .footer-brand {
-  max-width: 840px;
+  max-width: var(--max-w);
   margin: 14px auto 0;
   padding-top: 14px;
   border-top: 1px solid #30363d;
