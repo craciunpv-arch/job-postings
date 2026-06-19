@@ -2,7 +2,7 @@ backend:
   name: github
   repo: craciunpv-arch/job-postings
   branch: main
-  base_url: https://job-postings-nu.vercel.app
+  base_url: https://job-postings-hand-picked.vercel.app
   auth_endpoint: api/auth
 
 media_folder: "src/images/uploads"
