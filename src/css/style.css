@@ -28,8 +28,8 @@ body {
 
 /* HEADER */
 .site-header {
-  background: #0d1117;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
   padding: 0 24px;
 }
 
@@ -482,8 +482,9 @@ body {
 
 /* FOOTER */
 footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 24px;
+  background: #0d1117;
+  border-top: 1px solid #30363d;
+  padding: 36px 24px 32px;
 }
 
 .footer-inner {
@@ -497,39 +498,44 @@ footer {
 
 .footer-cta {
   font-size: 14px;
-  color: var(--ink-mid);
+  color: rgba(240,246,252,0.65);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .footer-linkedin {
-  color: var(--ink-soft);
+  color: rgba(240,246,252,0.4);
   flex-shrink: 0;
   display: flex;
   transition: color 0.15s ease;
 }
 
-.footer-linkedin:hover { color: #0a66c2; }
+.footer-linkedin:hover { color: #fff; }
 
 .footer-brand {
   max-width: 840px;
-  margin: 16px auto 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+  margin: 24px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #30363d;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-brand-label {
   font-size: 13px;
-  color: var(--ink-mid);
+  color: rgba(240,246,252,0.5);
+}
+
+.footer-brand-label strong {
+  color: rgba(240,246,252,0.85);
+  font-weight: 700;
 }
 
 .footer-brand-logo {
   height: 44px;
   width: auto;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity 0.15s ease;
 }
 
