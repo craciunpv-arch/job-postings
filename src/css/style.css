@@ -47,22 +47,9 @@ body {
   height: 64px;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: center;
   width: 100%;
 }
-
-.header-brand { display: flex; align-items: center; }
-
-.header-spacer { display: none; }
-
-.header-brand-logo {
-  height: 22px;
-  width: auto;
-  opacity: 0.8;
-  transition: opacity 0.15s ease;
-}
-
-.header-brand-logo:hover { opacity: 1; }
 
 .site-name {
   font-family: 'Outfit', var(--sans);
@@ -559,7 +546,15 @@ footer {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  min-width: 0;
 }
 
 .footer-cta {
@@ -767,8 +762,8 @@ footer {
   .hero-name { font-size: 18px; }
   .job-list { grid-template-columns: 1fr; }
   .job-card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .footer-inner { height: auto; flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 0; }
-  .mobile-cta { display: block; }
-  .main { padding-bottom: 80px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-cta { font-size: 13px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
+  .site-name { font-size: 16px; }
 }

@@ -55,7 +55,6 @@ description: Personalized job opportunities, shared directly with candidates.
           <span class="job-card-title">{{ job.data.title }}</span>
           <div class="job-card-meta-right">
             {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
-            <span class="job-card-date">{{ daysSince }}d ago</span>
           </div>
         </div>
         {% if job.data.clientTeaser %}
