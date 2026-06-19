@@ -27,8 +27,6 @@ clientDescription: >-
 
   payment methods, so businesses no longer have to handle these processes themselves.
 responsibilities: >-
-  * **Responsibilities:**
-
   * Design, develop, and maintain backend services using Java (80% of the time);
 
   * Participate in front-end development tasks using React (20% of the time);
@@ -43,9 +41,6 @@ responsibilities: >-
 
   * Work in a fast-paced environment and grow your skills (tech and soft) super fast, every week.
 mustHaves: >-
-  **Skills and requirements:**
-
-
   * 5+ years of experience in software development, with a strong focus on Java;
 
   * Solid understanding of computer science fundamentals, including data structures, algorithms, and software design principles;
