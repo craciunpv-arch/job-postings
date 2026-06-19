@@ -12,7 +12,9 @@ layout: layouts/base.njk
     <p class="job-salary">{{ salary }}</p>
 
     <div class="job-meta">
-      <span class="job-card-tag job-card-tag--meta">{{ city }}</span>
+      {% for c in city.split(", ") %}
+      <span class="job-card-tag job-card-tag--meta">{{ c }}</span>
+      {% endfor %}
       <span class="job-card-tag job-card-tag--meta">{{ workingType }}</span>
     </div>
 
