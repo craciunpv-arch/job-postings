@@ -81,15 +81,22 @@ body {
 /* BACK LINK */
 .back-link {
   display: inline-block;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
   text-decoration: none;
-  margin-bottom: 24px;
-  transition: color 0.15s ease;
+  margin-bottom: 28px;
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.back-link:hover { color: var(--ink); }
+.back-link:hover {
+  border-color: #2563eb;
+  background: rgba(37,99,235,0.08);
+}
 
 /* JOB DETAIL */
 .job-detail {
