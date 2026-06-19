@@ -31,14 +31,37 @@ description: Personalized job opportunities, shared directly with candidates.
   {% set openJobs = collections.jobs | selectattr("status", "equalto", "Open") %}
   {% if openJobs.length %}
   <section class="jobs-section">
-    <h2 class="jobs-heading">Open Positions <span class="jobs-count">({{ openJobs | length }})</span></h2>
-    <div class="job-list">
+    <div class="jobs-heading-row">
+      <h2 class="jobs-heading">Open Positions <span class="jobs-count">({{ openJobs | length }})</span></h2>
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {% for job in openJobs %}
+          {% for city in job.data.city.split(", ") %}
+            <button class="filter-btn" data-filter="{{ city | lower | replace(' ', '-') }}" data-label="{{ city }}">{{ city }}</button>
+          {% endfor %}
+          <button class="filter-btn" data-filter="{{ job.data.workingType | lower | replace(' ', '-') }}" data-label="{{ job.data.workingType }}">{{ job.data.workingType }}</button>
+          {% if job.data.techStack %}
+            {% for tech in job.data.techStack %}
+              <button class="filter-btn" data-filter="{{ tech | lower | replace(' ', '-') }}" data-label="{{ tech }}">{{ tech }}</button>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="job-list{% if openJobs.length == 1 %} job-list--single{% endif %}" id="jobList">
       {% for job in openJobs | reverse %}
       {% set daysSince = job.date | daysAgo %}
-      <a class="job-card" href="{{ job.url }}">
+      {% set filterTags = [] %}
+      {% for city in job.data.city.split(", ") %}{% set filterTags = filterTags.concat([city | lower | replace(' ', '-')]) %}{% endfor %}
+      {% set filterTags = filterTags.concat([job.data.workingType | lower | replace(' ', '-')]) %}
+      {% if job.data.techStack %}{% for tech in job.data.techStack %}{% set filterTags = filterTags.concat([tech | lower | replace(' ', '-')]) %}{% endfor %}{% endif %}
+      <a class="job-card" href="{{ job.url }}" data-tags="{{ filterTags | join(' ') }}">
         <div class="job-card-header">
           <span class="job-card-title">{{ job.data.title }}</span>
-          {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
+          <div class="job-card-meta-right">
+            {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
+            <span class="job-card-date">{{ daysSince }}d ago</span>
+          </div>
         </div>
         {% if job.data.clientTeaser %}
         <p class="job-card-teaser">{{ job.data.clientTeaser }}</p>
@@ -49,8 +72,13 @@ description: Personalized job opportunities, shared directly with candidates.
             <span class="job-card-tag job-card-tag--meta">{{ job.data.workingType }}</span>
             {% if job.data.techStack %}
               {% for tech in job.data.techStack %}
-              <span class="job-card-tag job-card-tag--tech">{{ tech }}</span>
+                {% if loop.index <= 3 %}
+                <span class="job-card-tag job-card-tag--tech">{{ tech }}</span>
+                {% endif %}
               {% endfor %}
+              {% if job.data.techStack.length > 3 %}
+              <span class="job-card-tag job-card-tag--more">+{{ job.data.techStack.length - 3 }}</span>
+              {% endif %}
             {% endif %}
           </div>
           <span class="job-card-salary">{{ job.data.salary }}</span>
@@ -59,5 +87,40 @@ description: Personalized job opportunities, shared directly with candidates.
       {% endfor %}
     </div>
   </section>
+  {% else %}
+  <div class="empty-state">
+    <p class="empty-state-title">No open roles right now.</p>
+    <p class="empty-state-text">Stay connected — I share new opportunities regularly.</p>
+    <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Follow on LinkedIn →</a>
+  </div>
   {% endif %}
 </div>
+
+<script>
+  (function() {
+    var bar = document.getElementById('filterBar');
+    if (!bar) return;
+
+    // deduplicate filter buttons
+    var seen = {};
+    bar.querySelectorAll('.filter-btn[data-filter]').forEach(function(btn) {
+      var key = btn.dataset.filter;
+      if (key === 'all') return;
+      if (seen[key]) { btn.remove(); }
+      else { seen[key] = true; }
+    });
+
+    bar.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      document.querySelectorAll('.job-card').forEach(function(card) {
+        if (filter === 'all') { card.style.display = ''; return; }
+        var tags = (card.dataset.tags || '').split(' ');
+        card.style.display = tags.includes(filter) ? '' : 'none';
+      });
+    });
+  })();
+</script>

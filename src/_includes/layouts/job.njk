@@ -2,7 +2,11 @@
 layout: layouts/base.njk
 ---
 <div class="main">
-  <a class="back-link" href="/">← All positions</a>
+  <div class="job-detail-topbar">
+    <a class="back-link" href="/">← All positions</a>
+    <button class="share-btn" id="shareBtn">Share this role ↗</button>
+  </div>
+
   <article class="job-detail">
     <h1 class="job-title">{{ title }}</h1>
     <p class="job-salary">{{ salary }}</p>
@@ -12,14 +16,22 @@ layout: layouts/base.njk
       <span class="job-card-tag job-card-tag--meta">{{ workingType }}</span>
     </div>
 
-    <section class="job-section">
+    <nav class="job-toc">
+      <a href="#about" class="job-toc-link">About</a>
+      <a href="#role" class="job-toc-link">Role</a>
+      <a href="#benefits" class="job-toc-link">Benefits</a>
+      <a href="#process" class="job-toc-link">Process</a>
+      <a href="#know" class="job-toc-link">Good to Know</a>
+    </nav>
+
+    <section class="job-section" id="about">
       <h2>About the Client</h2>
       <div class="post-body">
         {{ clientDescription | markdown | safe }}
       </div>
     </section>
 
-    <section class="job-section">
+    <section class="job-section" id="role">
       <h2>The Role</h2>
       <div class="post-body">
         <h3>Main Responsibilities</h3>
@@ -33,21 +45,21 @@ layout: layouts/base.njk
       </div>
     </section>
 
-    <section class="job-section">
+    <section class="job-section" id="benefits">
       <h2>Other Benefits</h2>
       <div class="post-body">
         {{ benefits | markdown | safe }}
       </div>
     </section>
 
-    <section class="job-section">
+    <section class="job-section" id="process">
       <h2>Selection Process</h2>
       <div class="post-body">
         {{ selectionProcess | markdown | safe }}
       </div>
     </section>
 
-    <section class="job-section">
+    <section class="job-section" id="know">
       <h2>Good to Know</h2>
       <div class="post-body">
         {{ goodToKnow | markdown | safe }}
@@ -61,3 +73,21 @@ layout: layouts/base.njk
     </div>
   </article>
 </div>
+
+<div class="mobile-cta">
+  <a href="{{ site.linkedin }}" target="_blank" rel="noopener" class="mobile-cta-btn">Express interest →</a>
+</div>
+
+<script>
+  document.getElementById('shareBtn').addEventListener('click', function() {
+    var btn = this;
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = 'Link copied ✓';
+        setTimeout(function() { btn.textContent = 'Share this role ↗'; }, 2000);
+      });
+    }
+  });
+</script>

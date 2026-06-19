@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}" />
+  <meta name="description" content="{{ clientTeaser or description or site.tagline }}" />
   <meta name="theme-color" content="#0d1117" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ clientTeaser or description or site.tagline }}" />
+  <meta property="og:image" content="{{ site.siteUrl }}{{ site.photo }}" />
+  <meta property="og:url" content="{{ site.siteUrl }}{{ page.url }}" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ clientTeaser or description or site.tagline }}" />
   <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
