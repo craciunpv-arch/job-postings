@@ -445,43 +445,27 @@ footer {
 .footer-inner {
   max-width: 840px;
   margin: 0 auto;
-}
-
-.footer-about {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.footer-about-name {
-  display: block;
+.footer-cta {
   font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-
-.footer-about-bio {
-  font-size: 13px;
-  color: var(--ink-soft);
+  color: var(--ink-mid);
   margin: 0;
+  line-height: 1.6;
 }
 
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-links a {
-  font-size: 13px;
+.footer-linkedin {
   color: var(--ink-soft);
-  text-decoration: none;
+  flex-shrink: 0;
+  display: flex;
+  transition: color 0.15s ease;
 }
 
-.footer-links a:hover { color: var(--ink); }
+.footer-linkedin:hover { color: #0a66c2; }
 
 /* MOBILE */
 @media (max-width: 600px) {
