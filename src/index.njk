@@ -8,6 +8,7 @@ description: Personalized job opportunities, shared directly with candidates.
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-name">{{ site.name }}</h1>
+      {% if site.bio %}<p class="hero-subtitle">{{ site.bio }}</p>{% endif %}
       <p class="hero-tagline">{{ site.tagline }}</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
