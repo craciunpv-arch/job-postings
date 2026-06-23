@@ -13,11 +13,11 @@ techStack:
   - Kubernetes
 clientDescription: >-
   Our client holds a prominent position in the European utilities sector,
-  dedicated to seamlessly connecting people with energy and providing
-  customer-centric solutions designed for user convenience.
+  dedicated to seamlessly connecting people and businesses with energy and
+  providing customer-centric solutions designed for sustainability.
 
 
-  The company develops cloud-based state-of-the art software applications in different areas such as IoT, energy management & trading, RPA & Machine Learning.
+  The company develops cloud-based, state-of-the-art software applications in various areas - IoT/ IIoT, energy management & trading, predictive maintenance.
 responsibilities: >-
   * Take full ownership of the development lifecycle for Scala backend services,
   including design, implementation, deployment, and maintenance within an Azure
