@@ -71,8 +71,11 @@ layout: layouts/base.njk
     {% set recruiterData = collections.team | findBySlug(recruiter) %}
     <div class="contact-cta">
       {% if recruiterData %}
+      {% set zoom = recruiterData.data.photoZoom | default(100, true) %}
+      {% set posX = recruiterData.data.photoPositionX | default(50, true) %}
+      {% set posY = recruiterData.data.photoPositionY | default(50, true) %}
       <div class="contact-cta-avatar">
-        <img src="{{ recruiterData.data.photo }}" alt="{{ recruiterData.data.name }}" style="object-position: {{ recruiterData.data.photoPositionX or 50 }}% {{ recruiterData.data.photoPositionY or 50 }}%; transform: scale({{ (recruiterData.data.photoZoom or 100) / 100 }});" />
+        <img src="{{ recruiterData.data.photo }}" alt="{{ recruiterData.data.name }}" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
       </div>
       <p class="contact-cta-name">{{ recruiterData.data.name }}</p>
       {% endif %}
