@@ -1,0 +1,59 @@
+---
+title: Cloud Engineer (AWS)
+salary: 16-18k Ron Net
+city: Iași, București
+workingType: Hybrid
+status: Open
+date: 2026-06-23T10:33:00.000+03:00
+techStack: []
+clientDescription: >-
+  Our client holds a prominent position in the European utilities sector,
+  dedicated to seamlessly connecting people with energy and providing
+  customer-centric solutions designed for user convenience.
+
+
+  The company develops cloud-based, state-of-the-art software applications in various areas, including IoT, energy management & trading, RPA & Machine Learning.
+responsibilities: >-
+  * In this position, you will collaborate with technical and business
+  stakeholders to transform requirements into robust cloud-based solutions. You
+  will be involved in designing and implementing modern architectures that
+  prioritize scalability, reliability, security, and maintainability.
+
+  * A significant part of your work will focus on designing, developing, and maintaining applications and services within AWS. You will work extensively with serverless and event-driven technologies, including components such as AWS Lambda, API Gateway, EventBridge, SNS, Systems Manager, and other core AWS services. You will contribute to building reusable and resilient solutions while ensuring high standards of code quality and operational excellence.
+
+  * You will also play a key role in developing and maintaining CI/CD pipelines using GitLab, enabling automated deployments and integrating quality assurance, testing, and security controls throughout the software delivery lifecycle. This is a hands-on engineering role where daily development activities in Python and Shell/PowerShell scripting are expected.
+
+  * Another important aspect of the position involves designing and maintaining secure APIs and system integrations. You will work with RESTful services, implement modern authentication and authorization approaches, support event-driven architectures, and ensure solutions remain well-documented, scalable, and aligned with enterprise standards.
+mustHaves: >-
+  * The ideal candidate should have strong hands-on experience with AWS cloud
+  development, particularly working with services such as AWS Lambda, API
+  Gateway, EventBridge, SNS, and AWS Systems Manager. They should have a solid
+  software engineering background and be actively involved in coding, with
+  strong proficiency in Python as well as Shell or PowerShell scripting.
+
+  * Candidates must have experience building and maintaining CI/CD pipelines, preferably using GitLab, and should be familiar with integrating automated testing, deployment, and security controls into the software delivery process. Strong experience designing, developing, and maintaining RESTful APIs is essential, including securing APIs and integrating them with internal and external systems.
+
+  * A proven track record working with cloud-native, serverless, and event-driven architectures is required, along with experience in automation, configuration management, and infrastructure governance. The role is best suited to professionals coming from Software Engineering, Cloud Engineering, DevOps Engineering, Platform Engineering, or similar technical backgrounds.
+
+  * The successful candidate should be comfortable working in an international agile environment, possess excellent English communication skills, and be willing to travel to Germany approximately once per month for team meetings and workshops. A high level of ownership, accountability, and initiative is expected, with the ability to independently drive tasks and contribute ideas for continuous improvement.
+niceToHaves: |-
+  * Experience with security-focused platforms and compliance initiatives
+  * Experience supporting infrastructure management through AWS Systems Manager
+  * Exposure to the energy, utilities, or critical infrastructure sector
+benefits: |-
+  * 25 annual vacation days
+  * annual performance bonus
+  * healthcare subscription
+  * private medical insurance
+  * many other perks
+selectionProcess: |-
+  1 Technical Interview - 1 hour
+
+  1 Culture Fit Interview - 1 hour
+goodToKnow: >-
+  The client values engineers who think like consultants. They expect you to be
+  adaptable, proactive, and comfortable wearing multiple hats. 
+
+
+  You may be asked to engage directly with business stakeholders to gather requirements and understand the bigger picture.
+---
