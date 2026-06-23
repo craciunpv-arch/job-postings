@@ -491,12 +491,12 @@ body {
 }
 
 .job-card-salary {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--salary);
   background: var(--salary-soft);
   border: 1px solid var(--salary-border);
-  padding: 5px 14px;
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
   white-space: nowrap;
 }
