@@ -4,7 +4,7 @@ salary: 18.000-20.000 Ron Net
 city: Iași, București
 workingType: Hybrid
 status: Open
-recruiter: map-photozoom-100-photopositionx-50-photopositiony-50-name-victor-cosman-photo-images-uploads-1721450750312-jpeg-linkedin-https-www-linkedin-com-in-victor-co-c8-99man-8ba051170-email-victor-cosman-edurom-ro
+recruiter: victor-cosman
 date: 2026-06-19T15:22:00.000+03:00
 clientTeaser: Tech Hub with 300+ engineers in Romania
 techStack:

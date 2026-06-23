@@ -54,6 +54,7 @@ collections:
     folder: src/team
     create: true
     slug: "{{slug}}"
+    identifier_field: name
     fields:
       - { label: "Full Name", name: name, widget: string }
       - { label: "Photo", name: photo, widget: image }

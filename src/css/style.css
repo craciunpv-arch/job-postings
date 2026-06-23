@@ -7,9 +7,17 @@
   --bg: #fbf9f6;
   --bg-subtle: #ffffff;
   --border: #e3d6c4;
-  --accent: #a8552a;
-  --accent-soft: rgba(168,85,42,0.13);
-  --salary: #74394f;
+  --accent: #3266ff;
+  --accent-dark: #2f56c2;
+  --accent-soft: rgba(50,102,255,0.12);
+  --salary: #bf5122;
+  --tag-city: #417284;
+  --tag-city-soft: rgba(87,192,232,0.16);
+  --tag-city-border: rgba(87,192,232,0.32);
+  --tag-tech: #6632cc;
+  --badge-new: #117d68;
+  --badge-new-soft: rgba(0,184,152,0.14);
+  --teaser: #b21785;
   --header-bg: #2b2420;
   --header-border: #443a30;
   --sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -146,7 +154,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
@@ -181,7 +189,7 @@ body {
 .post-body li { margin-bottom: 10px; }
 
 .post-body a {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration: underline;
 }
 
@@ -233,7 +241,7 @@ body {
 .job-benefit-pill {
   font-size: 13px;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-dark);
   background: var(--accent-soft);
   padding: 6px 14px;
   border-radius: var(--radius-pill);
@@ -266,7 +274,7 @@ body {
   height: 26px;
   border-radius: 50%;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-dark);
   font-size: 13px;
   font-weight: 700;
   display: flex;
@@ -404,7 +412,7 @@ body {
 
 .job-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(168,85,42,0.2), 0 8px 20px rgba(168,85,42,0.12), 0 2px 6px rgba(43,36,32,0.06);
+  box-shadow: 0 0 0 1px rgba(50,102,255,0.2), 0 8px 20px rgba(50,102,255,0.12), 0 2px 6px rgba(43,36,32,0.06);
   transform: translateY(-2px);
 }
 
@@ -417,7 +425,7 @@ body {
 
 .job-card-teaser {
   font-size: 13px;
-  color: var(--accent);
+  color: var(--teaser);
   line-height: 1.4;
   margin-bottom: 10px;
 }
@@ -431,8 +439,8 @@ body {
 .job-card-new {
   font-size: 11px;
   font-weight: 700;
-  color: #4d7c3a;
-  background: rgba(77,124,58,0.12);
+  color: var(--badge-new);
+  background: var(--badge-new-soft);
   padding: 2px 8px;
   border-radius: var(--radius-pill);
   text-transform: uppercase;
@@ -458,7 +466,7 @@ body {
 .job-card-tag {
   font-size: 12px;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--accent-dark);
   background: var(--accent-soft);
   border: 1px solid var(--accent-soft);
   padding: 3px 10px;
@@ -466,15 +474,15 @@ body {
 }
 
 .job-card-tag--meta {
-  color: #8a5a1f;
-  background: rgba(184,134,11,0.12);
-  border-color: rgba(184,134,11,0.3);
+  color: var(--tag-city);
+  background: var(--tag-city-soft);
+  border-color: var(--tag-city-border);
 }
 
 .job-card-tag--tech {
   color: #fff;
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--tag-tech);
+  border-color: var(--tag-tech);
 }
 
 .job-card-salary {
