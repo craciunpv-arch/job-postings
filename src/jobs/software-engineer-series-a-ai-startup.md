@@ -4,6 +4,7 @@ salary: 15.000-25.000 Ron Net
 city: Iași
 workingType: Hybrid
 status: Open
+recruiter: vlad-craciun
 date: 2026-06-19T12:41:00.000+03:00
 clientTeaser: Series A fintech founded by a team that built multi-billion-dollar
   banking businesses

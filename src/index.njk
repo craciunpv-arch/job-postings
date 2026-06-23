@@ -1,29 +1,12 @@
 ---
 layout: layouts/base.njk
-title: Vlad Crăciun — Job Opportunities
-description: Personalized job opportunities, shared directly with candidates.
+title: Hand Picked Jobs Dashboard | Edurom Recruitment
+description: Hand-picked job opportunities from the Edurom recruiting team, shared directly with candidates.
 ---
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-author">
-        {% if site.photo %}
-        <div class="hero-avatar">
-          <img src="{{ site.photo }}" alt="{{ site.name }}" style="width: {{ site.heroPhotoZoom or 140 }}%; margin-left: {{ site.heroPhotoOffsetX or -20 }}%; margin-top: {{ site.heroPhotoOffsetY or -8 }}%;" />
-        </div>
-        {% endif %}
-        <div>
-          <h1 class="hero-name">{{ site.name }}</h1>
-          {% if site.bio %}<p class="hero-subtitle">{{ site.bio }}</p>{% endif %}
-        </div>
-      </div>
-      <p class="hero-tagline">{{ site.tagline }}</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
-        <a class="btn btn-secondary-dark" href="mailto:{{ site.email }}">{{ site.email }}</a>
-      </div>
-    </div>
+    <p class="hero-tagline">{{ site.tagline }}</p>
   </div>
 </section>
 
@@ -76,6 +59,13 @@ description: Personalized job opportunities, shared directly with candidates.
           </div>
           <span class="job-card-salary">{{ job.data.salary }}</span>
         </div>
+        {% set recruiter = collections.team | findBySlug(job.data.recruiter) %}
+        {% if recruiter %}
+        <div class="job-card-recruiter">
+          <img src="{{ recruiter.data.photo }}" alt="" class="job-card-recruiter-avatar" />
+          <span class="job-card-recruiter-name">{{ recruiter.data.name }}</span>
+        </div>
+        {% endif %}
       </a>
       {% endfor %}
     </div>
@@ -83,8 +73,8 @@ description: Personalized job opportunities, shared directly with candidates.
   {% else %}
   <div class="empty-state">
     <p class="empty-state-title">No open roles right now.</p>
-    <p class="empty-state-text">Stay connected — I share new opportunities regularly.</p>
-    <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Follow on LinkedIn →</a>
+    <p class="empty-state-text">Stay connected — we share new opportunities regularly.</p>
+    <a class="btn btn-primary" href="{{ site.linkedin }}" target="_blank" rel="noopener">Follow our team on LinkedIn →</a>
   </div>
   {% endif %}
 </div>

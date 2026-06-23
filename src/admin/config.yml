@@ -27,6 +27,15 @@ collections:
         widget: select
         options: ["Open", "Closed"]
         default: "Open"
+      - label: "Posted By"
+        name: recruiter
+        widget: relation
+        collection: team
+        search_fields: ["name"]
+        display_fields: ["name"]
+        value_field: "{{slug}}"
+        required: false
+        hint: "Teammate who's the point of contact for this role. Leave blank to use the default contact in Site Settings."
       - { label: "Publish Date", name: date, widget: datetime }
       - { label: "Client Teaser", name: clientTeaser, widget: string, required: false, hint: "One line shown on the listing, e.g. 'Series A fintech in Iași'" }
       - { label: "Tech Stack", name: techStack, widget: list, required: false, hint: "Tags shown on the listing, e.g. Java, React, PostgreSQL" }
@@ -38,20 +47,26 @@ collections:
       - { label: "Selection Process", name: selectionProcess, widget: markdown }
       - { label: "Good to Know", name: goodToKnow, widget: markdown }
 
+  - name: team
+    label: "Team Members"
+    folder: src/team
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Full Name", name: name, widget: string }
+      - { label: "Photo", name: photo, widget: image }
+      - { label: "LinkedIn URL", name: linkedin, widget: string }
+      - { label: "Email", name: email, widget: string }
+
   - name: settings
     label: "Site Settings"
     files:
       - file: src/_data/site.json
         name: site
-        label: "Author & Site Info"
+        label: "General Settings"
         fields:
-          - { label: Name, name: name, widget: string }
-          - { label: "LinkedIn URL", name: linkedin, widget: string }
-          - { label: "Email", name: email, widget: string }
-          - { label: "Tagline", name: tagline, widget: text }
-          - { label: "Short Bio", name: bio, widget: text }
-          - { label: "Photo", name: photo, widget: image, required: false }
+          - { label: "Homepage Tagline", name: tagline, widget: text, hint: "Short, team-neutral line shown above the job list." }
+          - { label: "Default Contact LinkedIn URL", name: linkedin, widget: string, hint: "Used on the homepage and on any job that has no 'Posted By' teammate set." }
+          - { label: "Default Contact Email", name: email, widget: string }
+          - { label: "Social Preview Image", name: ogImage, widget: image, required: false, hint: "Shown when a job link is shared on LinkedIn/Twitter/etc." }
           - { label: "Contact Note", name: contactNote, widget: text }
-          - { label: "Hero Photo Zoom (%)", name: heroPhotoZoom, widget: number, default: 140, hint: "How zoomed-in the hero photo is. Higher = more zoomed in." }
-          - { label: "Hero Photo Offset X (%)", name: heroPhotoOffsetX, widget: number, default: -20, hint: "Shift photo left/right. More negative = shift left." }
-          - { label: "Hero Photo Offset Y (%)", name: heroPhotoOffsetY, widget: number, default: -8, hint: "Shift photo up/down. More negative = shift up." }

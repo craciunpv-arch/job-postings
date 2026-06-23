@@ -23,7 +23,12 @@ module.exports = function (eleventyConfig) {
     Math.floor((Date.now() - new Date(date).getTime()) / 86400000)
   );
 
+  eleventyConfig.addFilter("findBySlug", (arr, slug) =>
+    (arr || []).find((item) => item.fileSlug === slug)
+  );
+
   eleventyConfig.addCollection("jobs", (api) => api.getFilteredByGlob("src/jobs/*.md"));
+  eleventyConfig.addCollection("team", (api) => api.getFilteredByGlob("src/team/*.md"));
 
   return {
     dir: {

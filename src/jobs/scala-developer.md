@@ -4,6 +4,7 @@ salary: 18.000-20.000 Ron Net
 city: Iași, București
 workingType: Hybrid
 status: Open
+recruiter: vlad-craciun
 date: 2026-06-19T15:22:00.000+03:00
 clientTeaser: Tech Hub with 300+ engineers in Romania
 techStack:

@@ -68,10 +68,15 @@ layout: layouts/base.njk
       </div>
     </section>
 
+    {% set recruiterData = collections.team | findBySlug(recruiter) %}
     <div class="contact-cta">
+      {% if recruiterData %}
+      <img src="{{ recruiterData.data.photo }}" alt="{{ recruiterData.data.name }}" class="contact-cta-avatar" />
+      <p class="contact-cta-name">{{ recruiterData.data.name }}</p>
+      {% endif %}
       <p class="contact-cta-text">Interested in this role? Reach out and let's talk.</p>
-      <a class="contact-cta-link" href="{{ site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
-      <a class="contact-cta-link contact-cta-link--secondary" href="mailto:{{ site.email }}">Email {{ site.email }} →</a>
+      <a class="contact-cta-link" href="{{ recruiterData.data.linkedin if recruiterData else site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+      <a class="contact-cta-link contact-cta-link--secondary" href="mailto:{{ recruiterData.data.email if recruiterData else site.email }}">Email {{ recruiterData.data.email if recruiterData else site.email }} →</a>
     </div>
   </article>
 </div>
