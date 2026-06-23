@@ -60,12 +60,12 @@ niceToHaves: "* 1 year of experience developing production-grade AI Agents"
 benefits: |-
   * Medical Insurance
   * Access to Hackathons
-  * Meal tickets of maximum value - 45 Ron
+  * Meal tickets
   * Medical Insurance
 selectionProcess: >-
-  * 1 Informational Interview with the Head of Development
+  * 1 informational interview with the Head of Development
 
-  * 1 Technical Interview focused on programming fundamentals, testing, system design, and AgenticAI
+  * 1 technical interview focused on programming fundamentals, testing, system design, and AgenticAI
 goodToKnow: >-
   * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
