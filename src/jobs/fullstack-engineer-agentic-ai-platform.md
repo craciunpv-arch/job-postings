@@ -49,9 +49,9 @@ mustHaves: >-
 
   * Proven experience in software development, ideally within SaaS or enterprise-scale environments
 
-  * Strong proficiency in full stack development, with hands-on experience in Python,
+  * Strong proficiency in full-stack development, with hands-on experience in Python, React, HTML, and TypeScript
 
-  * React, HTML, and TypeScript• Experience working with Agile methodologies, version control systems such as Git, and CI/CD pipelines
+  * Experience working with Agile methodologies, version control systems such as Git, and CI/CD pipelines
 
   * Solid foundation in software engineering principles, object-oriented programming, and secure coding practices
 
