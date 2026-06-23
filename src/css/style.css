@@ -4,7 +4,7 @@
   --ink: #2b2420;
   --ink-mid: #5c5048;
   --ink-soft: #837567;
-  --bg: #fdf8f0;
+  --bg: #fbf9f6;
   --bg-subtle: #ffffff;
   --border: #e3d6c4;
   --accent: #a8552a;
@@ -22,7 +22,7 @@
 html { scroll-behavior: auto; }
 
 body {
-  background: linear-gradient(160deg, #fdf8f0 0%, #f7ecdd 100%) fixed;
+  background: linear-gradient(160deg, #fdfbf9 0%, #f5f0e8 100%) fixed;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
