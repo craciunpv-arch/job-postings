@@ -51,13 +51,11 @@ benefits: |-
   * private medical insurance
   * many other perks
 selectionProcess: |-
-  1 Technical Interview - 1 hour
-
-  1 Culture Fit Interview - 1 hour
+  * 1 Technical Interview  - 1 hour
+  * 1 Culture Fit Interview - 1 hour
 goodToKnow: >-
-  The client values engineers who think like consultants. They expect you to be
-  adaptable, proactive, and comfortable wearing multiple hats. 
+  * The client values engineers who think like consultants. They expect you to
+  be adaptable, proactive, and comfortable wearing multiple hats. 
 
-
-  You may be asked to engage directly with business stakeholders to gather requirements and understand the bigger picture.
+  * You may be asked to engage directly with business stakeholders to gather requirements and understand the bigger picture.
 ---
