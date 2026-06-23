@@ -75,20 +75,20 @@ body {
 
 /* HEADER */
 .site-header {
-  padding: 48px 24px 8px;
+  padding: 64px 24px 8px;
 }
 
 .site-header-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 14px;
   width: 100%;
 }
 
 .site-logo {
-  justify-self: start;
   display: inline-flex;
 }
 
@@ -730,9 +730,7 @@ footer {
   .job-list { grid-template-columns: 1fr; }
   .job-card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
-  .site-header { padding: 32px 24px 4px; }
-  .site-header-inner { grid-template-columns: 1fr; justify-items: center; gap: 10px; }
-  .site-logo { justify-self: center; }
+  .site-header { padding: 40px 24px 4px; }
   .site-logo img { height: 26px; }
   .site-name { font-size: 22px; letter-spacing: -0.01em; text-align: center; }
 }
