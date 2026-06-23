@@ -10,7 +10,7 @@
   --accent: #3266ff;
   --accent-dark: #2f56c2;
   --accent-soft: rgba(50,102,255,0.12);
-  --salary: #bf5122;
+  --salary: #ff6423;
   --tag-city: #417284;
   --tag-city-soft: rgba(87,192,232,0.16);
   --tag-city-border: rgba(87,192,232,0.32);
@@ -124,7 +124,7 @@ body {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: var(--ink);
   background: var(--salary);
   padding: 6px 16px;
   border-radius: var(--radius-sm);
@@ -488,7 +488,7 @@ body {
 .job-card-salary {
   font-size: 13px;
   font-weight: 700;
-  color: #fff;
+  color: var(--ink);
   background: var(--salary);
   border: none;
   padding: 5px 14px;
