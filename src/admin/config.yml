@@ -5,6 +5,8 @@ backend:
   base_url: https://job-postings-hand-picked.vercel.app
   auth_endpoint: api/auth
 
+publish_mode: editorial_workflow
+
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
