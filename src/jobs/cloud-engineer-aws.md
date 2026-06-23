@@ -5,7 +5,11 @@ city: Iași, București
 workingType: Hybrid
 status: Open
 date: 2026-06-23T10:33:00.000+03:00
-techStack: []
+clientTeaser: Tech Hub with 300+ engineers in Romania
+techStack:
+  - AWS Lambda
+  - API Gateway
+  - EventBridge
 clientDescription: >-
   Our client holds a prominent position in the European utilities sector,
   dedicated to seamlessly connecting people with energy and providing
