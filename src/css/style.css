@@ -10,11 +10,15 @@
   --accent: #3266ff;
   --accent-dark: #2f56c2;
   --accent-soft: rgba(50,102,255,0.12);
-  --salary: #ff6423;
+  --salary: #bf5122;
+  --salary-soft: rgba(255,100,35,0.14);
+  --salary-border: rgba(255,100,35,0.32);
   --tag-city: #417284;
   --tag-city-soft: rgba(87,192,232,0.16);
   --tag-city-border: rgba(87,192,232,0.32);
   --tag-tech: #6632cc;
+  --tag-tech-soft: rgba(102,50,204,0.12);
+  --tag-tech-border: rgba(102,50,204,0.3);
   --badge-new: #117d68;
   --badge-new-soft: rgba(0,184,152,0.14);
   --teaser: #b21785;
@@ -124,8 +128,9 @@ body {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  color: var(--ink);
-  background: var(--salary);
+  color: var(--salary);
+  background: var(--salary-soft);
+  border: 1px solid var(--salary-border);
   padding: 6px 16px;
   border-radius: var(--radius-sm);
   margin-bottom: 16px;
@@ -480,17 +485,17 @@ body {
 }
 
 .job-card-tag--tech {
-  color: #fff;
-  background: var(--tag-tech);
-  border-color: var(--tag-tech);
+  color: var(--tag-tech);
+  background: var(--tag-tech-soft);
+  border-color: var(--tag-tech-border);
 }
 
 .job-card-salary {
   font-size: 13px;
   font-weight: 700;
-  color: var(--ink);
-  background: var(--salary);
-  border: none;
+  color: var(--salary);
+  background: var(--salary-soft);
+  border: 1px solid var(--salary-border);
   padding: 5px 14px;
   border-radius: var(--radius-pill);
   white-space: nowrap;
