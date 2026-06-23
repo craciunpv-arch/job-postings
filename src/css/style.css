@@ -34,18 +34,12 @@ body {
 
 /* HEADER */
 .site-header {
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--header-border);
-  padding: 0 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 48px 24px 8px;
 }
 
 .site-header-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,15 +48,14 @@ body {
 
 .site-name {
   font-family: 'Outfit', var(--sans);
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 700;
-  color: #fdf8f0;
+  color: var(--header-bg);
   text-decoration: none;
   letter-spacing: -0.02em;
-  white-space: nowrap;
 }
 
-.site-name:hover { color: rgba(253,248,240,0.8); }
+.site-name:hover { opacity: 0.8; }
 
 /* MAIN LAYOUT */
 .main {
@@ -729,5 +722,6 @@ footer {
   .footer-brand { align-self: center; }
   .footer-cta { font-size: 13px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
-  .site-name { font-size: 15px; letter-spacing: 0; }
+  .site-header { padding: 32px 24px 4px; }
+  .site-name { font-size: 24px; letter-spacing: -0.01em; }
 }
