@@ -55,6 +55,9 @@ collections:
     fields:
       - { label: "Full Name", name: name, widget: string }
       - { label: "Photo", name: photo, widget: image }
+      - { label: "Photo Zoom (%)", name: photoZoom, widget: number, default: 100, hint: "Use the preview on the right to check. Increase to zoom in closer on their face (100% = no zoom)." }
+      - { label: "Photo Position X (%)", name: photoPositionX, widget: number, default: 50, hint: "0 = far left of the photo, 100 = far right, 50 = centered. Adjust until their face is centered horizontally in the preview." }
+      - { label: "Photo Position Y (%)", name: photoPositionY, widget: number, default: 50, hint: "0 = top of the photo, 100 = bottom, 50 = centered. Adjust until their face is centered vertically in the preview." }
       - { label: "LinkedIn URL", name: linkedin, widget: string }
       - { label: "Email", name: email, widget: string }
 

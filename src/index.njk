@@ -62,7 +62,9 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
         {% set recruiter = collections.team | findBySlug(job.data.recruiter) %}
         {% if recruiter %}
         <div class="job-card-recruiter">
-          <img src="{{ recruiter.data.photo }}" alt="" class="job-card-recruiter-avatar" />
+          <div class="job-card-recruiter-avatar">
+            <img src="{{ recruiter.data.photo }}" alt="" style="object-position: {{ recruiter.data.photoPositionX or 50 }}% {{ recruiter.data.photoPositionY or 50 }}%; transform: scale({{ (recruiter.data.photoZoom or 100) / 100 }});" />
+          </div>
           <span class="job-card-recruiter-name">{{ recruiter.data.name }}</span>
         </div>
         {% endif %}
