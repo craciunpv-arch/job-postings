@@ -49,8 +49,10 @@ benefits: |-
   * Many other perks
 selectionProcess: "* 2 Interviews, 1 hour each, based on Scala, Cloud,
   Kubernetes experience and stakeholder management"
-goodToKnow: The client values engineers who think like consultants. They expect
-  you to be adaptable, proactive, and comfortable wearing multiple hats. You may
-  be expected to engage directly with business stakeholders to gather
-  requirements and understand the bigger picture.
+goodToKnow: >-
+  The client values engineers who think like consultants. They expect you to be
+  adaptable, proactive, and comfortable wearing multiple hats. 
+
+
+  You may be asked to engage directly with business stakeholders to gather requirements and understand the bigger picture.
 ---
