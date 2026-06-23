@@ -44,11 +44,10 @@ niceToHaves: "* Previous pair programming experience."
 benefits: |-
   * Annual performance bonus
   * 25 days of holiday
-  * Learning budget
   * Medical Insurance
   * Many other perks
 selectionProcess: "* 2 Interviews, 1 hour each, based on Scala, Cloud,
-  Kubernetes experience and stakeholder management"
+  Kubernetes and stakeholder management experience."
 goodToKnow: >-
   The client values engineers who think like consultants. They expect you to be
   adaptable, proactive, and comfortable wearing multiple hats. 
