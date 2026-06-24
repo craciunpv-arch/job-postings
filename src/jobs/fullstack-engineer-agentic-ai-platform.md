@@ -1,7 +1,7 @@
 ---
 title: FullStack Engineer (Agentic AI Platform)
 salary: 18.000-20.000 Ron Net
-city: Iași, București, Cluj, Timișoara
+city: România
 workingType: Remote
 status: Open
 recruiter: vlad-craciun
