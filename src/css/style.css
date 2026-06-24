@@ -383,18 +383,17 @@ body {
 .hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 56px 24px 16px;
+  padding: 48px 24px 12px;
 }
 
 .hero-tagline {
-  font-family: 'Sora', var(--sans);
-  font-size: clamp(22px, 3vw, 30px);
-  font-weight: 700;
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.6vw, 19px);
+  font-weight: 500;
   color: var(--ink);
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  max-width: 620px;
-  padding-left: 20px;
+  line-height: 1.6;
+  max-width: 560px;
+  padding-left: 16px;
   border-left: 3px solid var(--accent);
 }
 
@@ -731,8 +730,7 @@ footer {
 /* MOBILE */
 @media (max-width: 600px) {
   .job-title { font-size: 22px; }
-  .hero-inner { padding: 40px 24px 8px; }
-  .hero-tagline { padding-left: 16px; }
+  .hero-inner { padding: 32px 24px 8px; }
   .job-list { grid-template-columns: 1fr; }
   .job-card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
