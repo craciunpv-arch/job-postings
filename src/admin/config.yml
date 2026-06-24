@@ -77,3 +77,32 @@ collections:
           - { label: "Default Contact Email", name: email, widget: string }
           - { label: "Social Preview Image", name: ogImage, widget: image, required: false, hint: "Shown when a job link is shared on LinkedIn/Twitter/etc." }
           - { label: "Contact Note", name: contactNote, widget: text }
+
+      - file: src/_data/cms-field-labels.json
+        name: cmsFieldLabels
+        label: "CMS Field Labels"
+        hint: "Renames the field labels shown when editing Job Postings and Team Members. Refresh the CMS after saving to see the new labels."
+        fields:
+          - { label: "Job: Role Title", name: "jobs.title", widget: string }
+          - { label: "Job: Monthly Net Salary", name: "jobs.salary", widget: string }
+          - { label: "Job: City", name: "jobs.city", widget: string }
+          - { label: "Job: Working Type", name: "jobs.workingType", widget: string }
+          - { label: "Job: Status", name: "jobs.status", widget: string }
+          - { label: "Job: Posted By", name: "jobs.recruiter", widget: string }
+          - { label: "Job: Publish Date", name: "jobs.date", widget: string }
+          - { label: "Job: Client Teaser", name: "jobs.clientTeaser", widget: string }
+          - { label: "Job: Tech Stack", name: "jobs.techStack", widget: string }
+          - { label: "Job: Client Description", name: "jobs.clientDescription", widget: string }
+          - { label: "Job: Main Responsibilities", name: "jobs.responsibilities", widget: string }
+          - { label: "Job: Must-haves", name: "jobs.mustHaves", widget: string }
+          - { label: "Job: Nice-to-haves", name: "jobs.niceToHaves", widget: string }
+          - { label: "Job: Other Benefits", name: "jobs.benefits", widget: string }
+          - { label: "Job: Selection Process", name: "jobs.selectionProcess", widget: string }
+          - { label: "Job: Good to Know", name: "jobs.goodToKnow", widget: string }
+          - { label: "Team: Full Name", name: "team.name", widget: string }
+          - { label: "Team: Photo", name: "team.photo", widget: string }
+          - { label: "Team: Photo Zoom (%)", name: "team.photoZoom", widget: string }
+          - { label: "Team: Photo Position X (%)", name: "team.photoPositionX", widget: string }
+          - { label: "Team: Photo Position Y (%)", name: "team.photoPositionY", widget: string }
+          - { label: "Team: LinkedIn URL", name: "team.linkedin", widget: string }
+          - { label: "Team: Email", name: "team.email", widget: string }
