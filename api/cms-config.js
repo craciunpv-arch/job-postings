@@ -22,5 +22,6 @@ module.exports = (req, res) => {
   }
 
   res.setHeader("Content-Type", "text/yaml");
+  res.setHeader("Cache-Control", "no-store, max-age=0");
   res.status(200).send(yaml.dump(config));
 };
