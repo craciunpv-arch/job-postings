@@ -6,12 +6,11 @@ workingType: Hybrid
 status: Open
 recruiter: vlad-craciun
 date: 2026-06-19T12:41:00.000+03:00
-clientTeaser: Series A fintech founded by a team that built multi-billion-dollar
-  banking businesses
+clientTeaser: Stock options for early team members
 techStack:
   - Java
-  - React
-  - Fintech
+  - AWS
+  - LLMs
 clientDescription: >-
   Our client is a newly established company in Iași, founded by a top-tier team
   that previously built multi-billion-dollar businesses in the banking and
