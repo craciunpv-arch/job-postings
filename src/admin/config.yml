@@ -71,6 +71,7 @@ collections:
         name: site
         label: "General Settings"
         fields:
+          - { label: "Site Title", name: siteTitle, widget: string, hint: "Shown in the header next to the Edurom logo." }
           - { label: "Homepage Tagline", name: tagline, widget: text, hint: "Short, team-neutral line shown above the job list." }
           - { label: "Default Contact LinkedIn URL", name: linkedin, widget: string, hint: "Used on the homepage and on any job that has no 'Posted By' teammate set." }
           - { label: "Default Contact Email", name: email, widget: string }
