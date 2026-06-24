@@ -6,7 +6,7 @@ workingType: Hybrid
 status: Open
 recruiter: vlad-craciun
 date: 2026-06-23T10:33:00.000+03:00
-clientTeaser: Tech Hub with 300+ engineers in Romania
+clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
 techStack:
   - Lambda
   - API Gateway
