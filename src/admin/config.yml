@@ -78,7 +78,7 @@ collections:
           - { label: "Social Preview Image", name: ogImage, widget: image, required: false, hint: "Shown when a job link is shared on LinkedIn/Twitter/etc." }
           - { label: "Contact Note", name: contactNote, widget: text }
 
-      - file: src/_data/cms-field-labels.json
+      - file: src/_data/cmsFieldLabels.json
         name: cmsFieldLabels
         label: "CMS Field Labels"
         hint: "Renames the field labels shown when editing Job Postings and Team Members. Refresh the CMS after saving to see the new labels."

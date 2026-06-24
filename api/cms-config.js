@@ -10,7 +10,7 @@ module.exports = (req, res) => {
   let labels = {};
   try {
     labels = JSON.parse(
-      fs.readFileSync(path.join(process.cwd(), "src/_data/cms-field-labels.json"), "utf8")
+      fs.readFileSync(path.join(process.cwd(), "src/_data/cmsFieldLabels.json"), "utf8")
     );
   } catch (e) {}
 
