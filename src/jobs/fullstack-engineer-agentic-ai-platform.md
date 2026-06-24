@@ -11,13 +11,14 @@ techStack:
   - Python
   - Typescript
   - LLMs
-clientDescription: A global SaaS technology provider specializing in governance,
-  compliance, entity management, and operational software for financial services
-  organizations. The company develops cloud-based platforms that help businesses
-  automate workflows, manage regulatory obligations, streamline corporate
-  administration, and improve data governance across multiple jurisdictions. It
-  serves international clients in highly regulated industries and focuses on
-  digital transformation, operational efficiency, and compliance automation.
+clientDescription: The client is a global SaaS technology provider specialising
+  in governance, compliance, entity management, and operational software for
+  financial services organisations. They develop cloud-based solutions that help
+  businesses automate workflows, manage regulatory obligations, streamline
+  corporate administration, and improve data governance across multiple
+  jurisdictions. It serves international clients in highly regulated industries
+  with a focus on digital transformation, operational efficiency, and compliance
+  automation.
 responsibilities: >-
   * Develop clean, efficient, and well-tested code that meets requirements and
   follows established patterns
@@ -28,19 +29,11 @@ responsibilities: >-
 
   * Work closely with Product Owners, Scrum Masters, and other developers to refine backlog items, estimate effort, and plan sprints
 
-  * Actively participate in Agile ceremonies, including daily stand-ups, sprint planning, reviews, and retrospectives
-
-  * Communicate clearly with team members and stakeholders, fostering a transparent and collaborative work environment
-
   * Write unit tests and contribute to integration and automated test suites
-
-  * Participate in peer code reviews and apply feedback to continuously improve code quality
 
   * Adhere to established development and security standards while identifying opportunities for improvement
 
   * Stay up to date with emerging technologies, tools, and best practices relevant to your expertise
-
-  * Learn from senior team members and mentors while taking ownership of your professional growth
 
   * Take initiative in troubleshooting issues, suggesting enhancements, and contributing to team knowledge sharing
 mustHaves: >-
