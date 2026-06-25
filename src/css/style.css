@@ -16,9 +16,18 @@
   --tag-city: #417284;
   --tag-city-soft: rgba(87,192,232,0.16);
   --tag-city-border: rgba(87,192,232,0.32);
-  --tag-tech: #6632cc;
-  --tag-tech-soft: rgba(102,50,204,0.12);
-  --tag-tech-border: rgba(102,50,204,0.3);
+  --tag-blue-1: #2e7da8;
+  --tag-blue-1-soft: rgba(46,125,168,0.14);
+  --tag-blue-1-border: rgba(46,125,168,0.3);
+  --tag-blue-2: #2f56c2;
+  --tag-blue-2-soft: rgba(47,86,194,0.13);
+  --tag-blue-2-border: rgba(47,86,194,0.3);
+  --tag-blue-3: #3d6da5;
+  --tag-blue-3-soft: rgba(61,109,165,0.14);
+  --tag-blue-3-border: rgba(61,109,165,0.3);
+  --tag-blue-4: #45577a;
+  --tag-blue-4-soft: rgba(69,87,122,0.14);
+  --tag-blue-4-border: rgba(69,87,122,0.3);
   --badge-new: #117d68;
   --badge-new-soft: rgba(0,184,152,0.14);
   --teaser: #b21785;
@@ -518,11 +527,10 @@ body {
   border-color: var(--tag-city-border);
 }
 
-.job-card-tag--tech {
-  color: var(--tag-tech);
-  background: var(--tag-tech-soft);
-  border-color: var(--tag-tech-border);
-}
+.job-card-tag--blue-1 { color: var(--tag-blue-1); background: var(--tag-blue-1-soft); border-color: var(--tag-blue-1-border); }
+.job-card-tag--blue-2 { color: var(--tag-blue-2); background: var(--tag-blue-2-soft); border-color: var(--tag-blue-2-border); }
+.job-card-tag--blue-3 { color: var(--tag-blue-3); background: var(--tag-blue-3-soft); border-color: var(--tag-blue-3-border); }
+.job-card-tag--blue-4 { color: var(--tag-blue-4); background: var(--tag-blue-4-soft); border-color: var(--tag-blue-4-border); }
 
 .job-card-salary {
   font-size: 12px;

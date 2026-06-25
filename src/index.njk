@@ -50,9 +50,10 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
             {% endfor %}
             <span class="job-card-tag job-card-tag--meta">{{ job.data.workingType }}</span>
             {% if job.data.techStack %}
+              {% set blueTagClasses = ["job-card-tag--blue-1", "job-card-tag--blue-2", "job-card-tag--blue-3", "job-card-tag--blue-4"] %}
               {% for tech in job.data.techStack %}
                 {% if loop.index <= 3 %}
-                <span class="job-card-tag job-card-tag--tech">{{ tech }}</span>
+                <span class="job-card-tag {{ blueTagClasses[loop.index0 % blueTagClasses.length] }}">{{ tech }}</span>
                 {% endif %}
               {% endfor %}
             {% endif %}
