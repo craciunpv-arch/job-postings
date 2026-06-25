@@ -24,6 +24,8 @@
   --teaser: #b21785;
   --header-bg: #2b2420;
   --header-border: #443a30;
+  --brand-light: #bcbbba;
+  --brand-dark: #3d3834;
   --sans: 'Inter', system-ui, -apple-system, sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
@@ -61,9 +63,9 @@ body {
   opacity: 0.16;
 }
 
-.blob1 { width: 420px; height: 420px; top: -120px; left: -120px; background: var(--accent); animation: float1 24s ease-in-out infinite; }
-.blob2 { width: 380px; height: 380px; top: 160px; right: -140px; background: var(--tag-tech); animation: float2 28s ease-in-out infinite; }
-.blob3 { width: 340px; height: 340px; bottom: -160px; left: 28%; background: var(--salary); animation: float3 32s ease-in-out infinite; }
+.blob1 { width: 420px; height: 420px; top: -120px; left: -120px; background: var(--brand-dark); animation: float1 24s ease-in-out infinite; }
+.blob2 { width: 380px; height: 380px; top: 160px; right: -140px; background: var(--brand-light); opacity: 0.32; animation: float2 28s ease-in-out infinite; }
+.blob3 { width: 340px; height: 340px; bottom: -160px; left: 28%; background: var(--brand-dark); animation: float3 32s ease-in-out infinite; }
 
 @keyframes float1 { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(70px, 90px); } }
 @keyframes float2 { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(-80px, 60px); } }
