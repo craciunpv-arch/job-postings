@@ -10,9 +10,6 @@
   --accent: #3266ff;
   --accent-dark: #2f56c2;
   --accent-soft: rgba(50,102,255,0.12);
-  --salary: #bf5122;
-  --salary-soft: rgba(255,100,35,0.14);
-  --salary-border: rgba(255,100,35,0.32);
   --tag-city: #417284;
   --tag-city-soft: rgba(87,192,232,0.16);
   --tag-city-border: rgba(87,192,232,0.32);
@@ -30,7 +27,6 @@
   --tag-blue-4-border: rgba(69,87,122,0.3);
   --badge-new: #117d68;
   --badge-new-soft: rgba(0,184,152,0.14);
-  --teaser: #b21785;
   --header-bg: #2b2420;
   --header-border: #443a30;
   --brand-light: #bcbbba;
@@ -167,9 +163,9 @@ body {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  color: var(--salary);
-  background: var(--salary-soft);
-  border: 1px solid var(--salary-border);
+  color: var(--tag-blue-2);
+  background: var(--tag-blue-2-soft);
+  border: 1px solid var(--tag-blue-2-border);
   padding: 6px 16px;
   border-radius: var(--radius-sm);
   margin-bottom: 16px;
@@ -473,10 +469,15 @@ body {
 
 .job-card-teaser {
   font-size: 13px;
-  color: var(--teaser);
+  color: var(--tag-blue-1);
   line-height: 1.4;
   margin-bottom: 10px;
 }
+
+.job-card-teaser.job-card-teaser--blue-1 { color: var(--tag-blue-1); }
+.job-card-teaser.job-card-teaser--blue-2 { color: var(--tag-blue-2); }
+.job-card-teaser.job-card-teaser--blue-3 { color: var(--tag-blue-3); }
+.job-card-teaser.job-card-teaser--blue-4 { color: var(--tag-blue-4); }
 
 .job-card-title {
   font-size: 15px;
@@ -535,13 +536,18 @@ body {
 .job-card-salary {
   font-size: 12px;
   font-weight: 700;
-  color: var(--salary);
-  background: var(--salary-soft);
-  border: 1px solid var(--salary-border);
+  color: var(--tag-blue-1);
+  background: var(--tag-blue-1-soft);
+  border: 1px solid var(--tag-blue-1-border);
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   white-space: nowrap;
 }
+
+.job-card-salary.job-card-salary--blue-1 { color: var(--tag-blue-1); background: var(--tag-blue-1-soft); border-color: var(--tag-blue-1-border); }
+.job-card-salary.job-card-salary--blue-2 { color: var(--tag-blue-2); background: var(--tag-blue-2-soft); border-color: var(--tag-blue-2-border); }
+.job-card-salary.job-card-salary--blue-3 { color: var(--tag-blue-3); background: var(--tag-blue-3-soft); border-color: var(--tag-blue-3-border); }
+.job-card-salary.job-card-salary--blue-4 { color: var(--tag-blue-4); background: var(--tag-blue-4-soft); border-color: var(--tag-blue-4-border); }
 
 .job-card-recruiter {
   display: flex;
