@@ -100,7 +100,7 @@ body {
 }
 
 .site-logo img {
-  height: 36px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -751,6 +751,6 @@ footer {
   .job-card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
   .site-header { padding: 40px 24px 4px; }
-  .site-logo img { height: 26px; }
+  .site-logo img { height: 36px; }
   .site-name { font-size: 22px; letter-spacing: -0.01em; text-align: center; }
 }
