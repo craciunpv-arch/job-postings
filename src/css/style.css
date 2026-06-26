@@ -217,7 +217,7 @@ body {
   padding-left: 20px;
 }
 
-.post-body li { margin-bottom: 10px; }
+.post-body li { margin-bottom: 4px; }
 
 .post-body a {
   color: var(--accent-dark);
