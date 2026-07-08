@@ -181,7 +181,7 @@ body {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  color: var(--tag-blue-2);
+  color: var(--ink);
   background: var(--tag-blue-2-soft);
   border: 1px solid var(--tag-blue-2-border);
   padding: 6px 16px;
@@ -548,12 +548,12 @@ body {
   border-color: var(--tag-city-border);
 }
 
-.job-card-tag--blue-2 { color: var(--tag-blue-2); background: var(--tag-blue-2-soft); border-color: var(--tag-blue-2-border); }
+.job-card-tag--blue-2 { color: var(--ink); background: var(--tag-blue-2-soft); border-color: var(--tag-blue-2-border); }
 
 .job-card-salary {
   font-size: 12px;
   font-weight: 700;
-  color: var(--tag-blue-2);
+  color: var(--ink);
   background: var(--tag-blue-2-soft);
   border: 1px solid var(--tag-blue-2-border);
   padding: 4px 12px;
