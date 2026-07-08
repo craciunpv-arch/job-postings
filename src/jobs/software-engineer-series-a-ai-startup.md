@@ -1,7 +1,7 @@
 ---
 title: Software Engineer (Series A Startup)
 salary: 15.000-25.000 Ron Net
-city: Iași
+city: Iasi
 workingType: Hybrid
 status: Open
 recruiter: vlad-craciun
