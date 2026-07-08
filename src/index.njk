@@ -68,7 +68,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
           <div class="job-card-recruiter-avatar">
             <img src="{{ recruiter.data.photo }}" alt="" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
           </div>
-          <span class="job-card-recruiter-name">{{ recruiter.data.name }}</span>
+          <span class="job-card-recruiter-name">{{ recruiter.data.name }}{% if recruiter.data.role %} · {{ recruiter.data.role }}{% endif %}</span>
         </div>
         {% endif %}
       </a>

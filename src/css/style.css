@@ -13,9 +13,9 @@
   --tag-city: #417284;
   --tag-city-soft: rgba(87,192,232,0.16);
   --tag-city-border: rgba(87,192,232,0.32);
-  --tag-blue-2: #2f56c2;
-  --tag-blue-2-soft: rgba(47,86,194,0.13);
-  --tag-blue-2-border: rgba(47,86,194,0.3);
+  --tag-blue-2: #57c0e8;
+  --tag-blue-2-soft: rgba(87,192,232,0.16);
+  --tag-blue-2-border: rgba(87,192,232,0.32);
   --badge-new: #10789e;
   --badge-new-soft: rgba(84,197,238,0.18);
   --header-bg: #2b2420;
@@ -32,7 +32,7 @@
 html { scroll-behavior: auto; }
 
 body {
-  background: linear-gradient(160deg, #fefefd 0%, #f8f5f0 100%) fixed;
+  background: #ffffff;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -41,34 +41,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* BACKGROUND BLOBS */
-.bg-blobs {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.16;
-}
-
-.blob1 { width: 420px; height: 420px; top: -120px; left: -120px; background: var(--brand-dark); opacity: 0.08; animation: float1 24s ease-in-out infinite; }
-.blob2 { width: 380px; height: 380px; top: 160px; right: -140px; background: var(--brand-light); opacity: 0.22; animation: float2 28s ease-in-out infinite; }
-.blob3 { width: 340px; height: 340px; bottom: -160px; left: 28%; background: var(--brand-dark); opacity: 0.08; animation: float3 32s ease-in-out infinite; }
-
-@keyframes float1 { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(70px, 90px); } }
-@keyframes float2 { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(-80px, 60px); } }
-@keyframes float3 { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(50px, -70px); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .blob { animation: none; }
 }
 
 /* HEADER */
@@ -91,7 +63,7 @@ body {
 }
 
 .site-logo img {
-  height: 72px;
+  height: 120px;
   width: auto;
   display: block;
 }
@@ -141,13 +113,20 @@ body {
   padding: 8px 0 32px;
 }
 
+.job-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
 .job-title {
   font-size: 26px;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-bottom: 16px;
 }
 
 .job-salary {
@@ -185,7 +164,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-dark);
+  color: var(--tag-blue-2);
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
@@ -343,6 +322,12 @@ body {
   font-size: 15px;
   font-weight: 700;
   color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.contact-cta-role {
+  font-size: 13px;
+  color: var(--ink-soft);
   margin-bottom: 14px;
 }
 
@@ -729,6 +714,6 @@ footer {
   .job-card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
   .site-header { padding: 40px 24px 4px; }
-  .site-logo img { height: 48px; }
+  .site-logo img { height: 80px; }
   .site-name { font-size: 22px; letter-spacing: -0.01em; text-align: center; }
 }

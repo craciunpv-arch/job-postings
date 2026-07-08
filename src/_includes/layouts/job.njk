@@ -8,7 +8,11 @@ layout: layouts/base.njk
   </div>
 
   <article class="job-detail">
-    <h1 class="job-title">{{ title }}</h1>
+    <div class="job-title-row">
+      <h1 class="job-title">{{ title }}</h1>
+      {% set daysSince = page.date | daysAgo %}
+      {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
+    </div>
     <p class="job-salary">{{ salary }}</p>
 
     <div class="job-meta">
@@ -78,6 +82,7 @@ layout: layouts/base.njk
         <img src="{{ recruiterData.data.photo }}" alt="{{ recruiterData.data.name }}" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
       </div>
       <p class="contact-cta-name">{{ recruiterData.data.name }}</p>
+      {% if recruiterData.data.role %}<p class="contact-cta-role">{{ recruiterData.data.role }}</p>{% endif %}
       {% endif %}
       <p class="contact-cta-text">Interested in this role? Reach out and let's talk.</p>
       <a class="contact-cta-link" href="{{ recruiterData.data.linkedin if recruiterData else site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>

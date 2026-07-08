@@ -2,8 +2,10 @@ backend:
   name: github
   repo: craciunpv-arch/job-postings
   branch: main
-  base_url: https://hand-picked-jobs.edurom.ro
+  base_url: http://hand-picked-jobs.edurom.ro
   auth_endpoint: api/auth
+
+local_backend: true
 
 publish_mode: editorial_workflow
 
@@ -57,6 +59,7 @@ collections:
     identifier_field: name
     fields:
       - { label: "Full Name", name: name, widget: string }
+      - { label: "Role / Title", name: role, widget: string, required: false, hint: "e.g. Talent Sourcer, Tech Recruiter" }
       - { label: "Photo", name: photo, widget: image }
       - { label: "Photo Zoom (%)", name: photoZoom, widget: number, default: 100, hint: "Use the preview on the right to check. Increase to zoom in closer on their face (100% = no zoom)." }
       - { label: "Photo Position X (%)", name: photoPositionX, widget: number, default: 50, hint: "0 = far left of the photo, 100 = far right, 50 = centered. Adjust until their face is centered horizontally in the preview." }
@@ -100,6 +103,7 @@ collections:
           - { label: "Job: Selection Process", name: "jobs.selectionProcess", widget: string }
           - { label: "Job: Good to Know", name: "jobs.goodToKnow", widget: string }
           - { label: "Team: Full Name", name: "team.name", widget: string }
+          - { label: "Team: Role / Title", name: "team.role", widget: string }
           - { label: "Team: Photo", name: "team.photo", widget: string }
           - { label: "Team: Photo Zoom (%)", name: "team.photoZoom", widget: string }
           - { label: "Team: Photo Position X (%)", name: "team.photoPositionX", widget: string }

@@ -3,13 +3,16 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "dev:admin": "vercel dev",
+    "cms": "decap-server"
   },
   "dependencies": {
     "js-yaml": "^4.2.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "decap-server": "^3.9.1",
     "markdown-it": "^14.1.0"
   }
 }
