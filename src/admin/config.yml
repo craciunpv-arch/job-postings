@@ -2,7 +2,7 @@ backend:
   name: github
   repo: craciunpv-arch/job-postings
   branch: main
-  base_url: http://hand-picked-jobs.edurom.ro
+  base_url: https://job-postings-craciunpv-archs-projects.vercel.app
   auth_endpoint: api/auth
 
 local_backend: true
