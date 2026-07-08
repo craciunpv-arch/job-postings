@@ -565,6 +565,14 @@ footer {
   color: var(--ink-soft);
 }
 
+.footer-subtext {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
 /* FILTER BAR */
 .jobs-heading-row {
   display: flex;

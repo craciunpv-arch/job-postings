@@ -84,6 +84,7 @@ collections:
           - { label: "Footer Font Size (px)", name: footerFontSize, widget: number, default: 13 }
           - { label: "Footer Bold", name: footerBold, widget: boolean, default: false }
           - { label: "Footer Italic", name: footerItalic, widget: boolean, default: false }
+          - { label: "Footer Sub-text", name: footerSubtext, widget: text, required: false, hint: "A short company description shown below the footer text, in smaller italic type." }
 
       - file: src/_data/cmsFieldLabels.json
         name: cmsFieldLabels
