@@ -1,7 +1,7 @@
 ---
 title: Scala Developer
 salary: 18.000-20.000 Ron Net
-city: Iași, București
+city: Iasi, Bucharest
 workingType: Hybrid
 status: Open
 recruiter: victor-cosman
