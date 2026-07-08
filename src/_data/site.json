@@ -5,5 +5,9 @@
   "contactNote": "Interested in one of these roles? Reach out and let's talk.",
   "ogImage": "/images/uploads/edurom-logo-recruitment.png",
   "email": "vlad@edurom.ro",
-  "linkedin": "https://www.linkedin.com/in/vlad-craciun/"
+  "linkedin": "https://www.linkedin.com/in/vlad-craciun/",
+  "footerText": "© An Edurom Recruitment Project",
+  "footerFontSize": 13,
+  "footerBold": false,
+  "footerItalic": false
 }

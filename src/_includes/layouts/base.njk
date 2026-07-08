@@ -40,7 +40,7 @@
   {{ content | safe }}
 
   <footer>
-    <p class="footer-copyright">© An Edurom Recruitment Project</p>
+    <p class="footer-copyright" style="font-size: {{ site.footerFontSize | default(13, true) }}px;{% if site.footerBold %} font-weight: 700;{% endif %}{% if site.footerItalic %} font-style: italic;{% endif %}">{{ site.footerText | default("© An Edurom Recruitment Project", true) }}</p>
   </footer>
 </body>
 </html>

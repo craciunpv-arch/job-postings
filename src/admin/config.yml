@@ -80,6 +80,10 @@ collections:
           - { label: "Default Contact Email", name: email, widget: string }
           - { label: "Social Preview Image", name: ogImage, widget: image, required: false, hint: "Shown when a job link is shared on LinkedIn/Twitter/etc." }
           - { label: "Contact Note", name: contactNote, widget: text }
+          - { label: "Footer Text", name: footerText, widget: string, hint: "Shown at the bottom of every page, e.g. '© An Edurom Recruitment Project'." }
+          - { label: "Footer Font Size (px)", name: footerFontSize, widget: number, default: 13 }
+          - { label: "Footer Bold", name: footerBold, widget: boolean, default: false }
+          - { label: "Footer Italic", name: footerItalic, widget: boolean, default: false }
 
       - file: src/_data/cmsFieldLabels.json
         name: cmsFieldLabels
