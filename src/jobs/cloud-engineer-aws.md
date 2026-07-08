@@ -1,7 +1,7 @@
 ---
 title: Cloud Engineer (AWS)
 salary: 16.000-18.000 Ron Net
-city: Iași, București
+city: Iasi, Bucharest
 workingType: Hybrid
 status: Open
 recruiter: vlad-craciun
