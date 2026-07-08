@@ -1,5 +1,53 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+@font-face {
+  font-family: 'Gill Sans MT Pro';
+  src: url('/fonts/GillSansMTPro-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Pro';
+  src: url('/fonts/GillSansMTPro-BookItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Pro';
+  src: url('/fonts/GillSansMTPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Pro';
+  src: url('/fonts/GillSansMTPro-Medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Pro';
+  src: url('/fonts/GillSansMTPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Pro';
+  src: url('/fonts/GillSansMTPro-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --ink: #2b2420;
   --ink-mid: #5c5048;
@@ -22,7 +70,7 @@
   --header-border: #443a30;
   --brand-light: #bcbbba;
   --brand-dark: #3d3834;
-  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --sans: 'Gill Sans MT Pro', 'Gill Sans MT', 'Gill Sans', system-ui, -apple-system, sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
   --radius-pill: 999px;
@@ -69,7 +117,7 @@ body {
 }
 
 .site-name {
-  font-family: 'Sora', var(--sans);
+  font-family: var(--sans);
   font-size: 34px;
   font-weight: 700;
   color: var(--header-bg);
@@ -571,6 +619,7 @@ footer {
   color: var(--ink-soft);
   opacity: 0.8;
   margin-top: 6px;
+  white-space: pre-line;
 }
 
 /* FILTER BAR */
