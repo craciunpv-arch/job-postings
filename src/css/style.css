@@ -621,6 +621,59 @@ footer {
   white-space: pre-line;
 }
 
+/* EXPLORE FURTHER FOOTER */
+.explore-footer {
+  background: var(--header-bg);
+  border-top: 1px solid var(--header-border);
+  padding: 48px 24px;
+}
+
+.explore-footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.explore-footer-heading {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+
+.explore-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.explore-footer-col h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.explore-footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.explore-footer-col a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.explore-footer-col a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* FILTER BAR */
 .jobs-heading-row {
   display: flex;
@@ -783,4 +836,5 @@ footer {
   .site-header { padding: 40px 24px 4px; }
   .site-logo img { height: 80px; }
   .site-name { font-size: 22px; letter-spacing: -0.01em; text-align: center; }
+  .explore-footer-columns { grid-template-columns: 1fr; gap: 28px; }
 }
