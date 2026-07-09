@@ -93,7 +93,7 @@ body {
 
 /* HEADER */
 .site-header {
-  padding: 40px 24px;
+  padding: 22px 24px;
   background: var(--header-bg);
 }
 
@@ -101,9 +101,11 @@ body {
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 14px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
   width: 100%;
 }
 
@@ -112,14 +114,14 @@ body {
 }
 
 .site-logo img {
-  height: 120px;
+  height: 76px;
   width: auto;
   display: block;
 }
 
 .site-name {
   font-family: var(--sans);
-  font-size: 34px;
+  font-size: 26px;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
@@ -616,7 +618,7 @@ footer {
 .footer-subtext {
   font-size: 12px;
   font-style: italic;
-  color: var(--ink-soft);
+  color: var(--ink);
   margin-top: 6px;
   white-space: pre-line;
 }
@@ -835,8 +837,8 @@ footer {
   .hero-inner { padding: 32px 24px 8px; }
   .job-list { grid-template-columns: 1fr; }
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
-  .site-header { padding: 40px 24px 4px; }
-  .site-logo img { height: 80px; }
-  .site-name { font-size: 22px; letter-spacing: -0.01em; text-align: center; }
+  .site-header { padding: 16px 20px; }
+  .site-logo img { height: 52px; }
+  .site-name { font-size: 18px; letter-spacing: -0.01em; }
   .explore-footer-columns { grid-template-columns: 1fr; gap: 28px; }
 }
