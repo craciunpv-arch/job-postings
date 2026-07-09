@@ -66,8 +66,8 @@
   --tag-blue-2-border: rgba(87,192,232,0.32);
   --badge-new: #10789e;
   --badge-new-soft: rgba(84,197,238,0.18);
-  --header-bg: #2b2420;
-  --header-border: #443a30;
+  --header-bg: #000000;
+  --header-border: rgba(255,255,255,0.15);
   --brand-light: #bcbbba;
   --brand-dark: #3d3834;
   --sans: 'Gill Sans MT Pro', 'Gill Sans MT', 'Gill Sans', system-ui, -apple-system, sans-serif;
@@ -606,17 +606,17 @@ body {
 footer {
   padding: 32px 24px;
   text-align: center;
+  background: var(--header-bg);
 }
 
 .footer-copyright {
-  color: var(--ink-soft);
+  color: #fff;
 }
 
 .footer-subtext {
   font-size: 12px;
   font-style: italic;
-  color: var(--ink-soft);
-  opacity: 0.8;
+  color: rgba(255,255,255,0.6);
   margin-top: 6px;
   white-space: pre-line;
 }
@@ -631,6 +631,7 @@ footer {
 .explore-footer-inner {
   max-width: var(--max-w);
   margin: 0 auto;
+  text-align: center;
 }
 
 .explore-footer-heading {
@@ -659,6 +660,7 @@ footer {
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
 }
 
