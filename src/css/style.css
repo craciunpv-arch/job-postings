@@ -93,7 +93,8 @@ body {
 
 /* HEADER */
 .site-header {
-  padding: 64px 24px 8px;
+  padding: 40px 24px;
+  background: var(--header-bg);
 }
 
 .site-header-inner {
@@ -120,7 +121,7 @@ body {
   font-family: var(--sans);
   font-size: 34px;
   font-weight: 700;
-  color: var(--header-bg);
+  color: #fff;
   text-decoration: none;
   letter-spacing: -0.02em;
 }
@@ -606,17 +607,16 @@ body {
 footer {
   padding: 32px 24px;
   text-align: center;
-  background: var(--header-bg);
 }
 
 .footer-copyright {
-  color: #fff;
+  color: var(--ink);
 }
 
 .footer-subtext {
   font-size: 12px;
   font-style: italic;
-  color: rgba(255,255,255,0.6);
+  color: var(--ink-soft);
   margin-top: 6px;
   white-space: pre-line;
 }
