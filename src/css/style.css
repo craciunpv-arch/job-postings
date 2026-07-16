@@ -552,7 +552,7 @@ body {
   border-color: var(--tag-city-border);
 }
 
-.job-card-tag--blue-2 { color: var(--ink); background: var(--tag-blue-2-soft); border-color: var(--tag-blue-2-border); }
+.job-card-tag--blue-2 { color: var(--accent-dark); background: var(--accent-soft); border-color: var(--accent-soft); }
 
 .job-card-salary {
   font-size: 13px;
