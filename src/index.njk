@@ -28,7 +28,6 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
     </div>
     <div class="job-list{% if openJobs.length == 1 %} job-list--single{% endif %}" id="jobList">
       {% for job in openJobs | reverse %}
-      {% set daysSince = job.date | daysAgo %}
       {% set filterTags = [] %}
       {% for city in job.data.city.split(", ") %}{% set filterTags = filterTags.concat([city | lower | replace(' ', '-')]) %}{% endfor %}
       {% set filterTags = filterTags.concat([job.data.workingType | lower | replace(' ', '-')]) %}
@@ -37,7 +36,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
         <div class="job-card-header">
           <span class="job-card-title">{{ job.data.title }}</span>
           <div class="job-card-meta-right">
-            {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
+            <span class="job-card-new">New</span>
           </div>
         </div>
         {% if job.data.clientTeaser %}

@@ -20,10 +20,6 @@ module.exports = function (eleventyConfig) {
     (arr || []).filter((item) => item.data[key] === value)
   );
 
-  eleventyConfig.addFilter("daysAgo", (date) =>
-    Math.floor((Date.now() - new Date(date).getTime()) / 86400000)
-  );
-
   eleventyConfig.addFilter("findBySlug", (arr, slug) =>
     (arr || []).find((item) => item.fileSlug === slug)
   );

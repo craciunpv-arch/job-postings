@@ -10,8 +10,7 @@ layout: layouts/base.njk
   <article class="job-detail">
     <div class="job-title-row">
       <h1 class="job-title">{{ title }}</h1>
-      {% set daysSince = page.date | daysAgo %}
-      {% if daysSince <= 7 %}<span class="job-card-new">New</span>{% endif %}
+      <span class="job-card-new">New</span>
     </div>
     <p class="job-salary">{{ salary }}</p>
 
