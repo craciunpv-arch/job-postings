@@ -130,7 +130,11 @@ body {
   letter-spacing: -0.02em;
 }
 
-.site-name-accent { color: var(--tag-blue-2); }
+.site-name-accent {
+  color: var(--tag-blue-2);
+  display: inline-block;
+  transform: rotate(-4deg);
+}
 
 .site-name:hover { opacity: 0.8; }
 
