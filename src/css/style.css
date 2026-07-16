@@ -123,12 +123,14 @@ body {
 
 .site-name {
   font-family: var(--sans);
-  font-size: 26px;
+  font-size: 34px;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
   letter-spacing: -0.02em;
 }
+
+.site-name-accent { color: var(--accent); }
 
 .site-name:hover { opacity: 0.8; }
 
@@ -841,6 +843,6 @@ footer {
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
   .site-header { padding: 16px 20px; }
   .site-logo img { height: 64px; }
-  .site-name { font-size: 18px; letter-spacing: -0.01em; }
+  .site-name { font-size: 22px; letter-spacing: -0.01em; }
   .explore-footer-columns { grid-template-columns: 1fr; gap: 28px; }
 }

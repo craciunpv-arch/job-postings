@@ -30,7 +30,8 @@
       <a href="https://www.edurom.ro/hand-picked-jobs/" target="_blank" rel="noopener" class="site-logo">
         <img src="/images/uploads/edurom-logo-recruitment-white.png" alt="Edurom" />
       </a>
-      <span class="site-name">{{ site.siteTitle }}</span>
+      {% set titleWords = site.siteTitle.split(" ") %}
+      <span class="site-name">{{ titleWords.slice(0, -1).join(" ") }} <span class="site-name-accent">{{ titleWords[titleWords.length - 1] }}</span></span>
     </div>
   </header>
 
