@@ -93,6 +93,9 @@ body {
 
 /* HEADER */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: 22px 24px;
   background: var(--header-bg);
 }
@@ -695,6 +698,12 @@ footer {
 
 /* FILTER BAR */
 .jobs-heading-row {
+  position: sticky;
+  top: 144px;
+  z-index: 90;
+  background: var(--bg);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -778,11 +787,16 @@ footer {
 
 /* JOB DETAIL TOPBAR */
 .job-detail-topbar {
+  position: sticky;
+  top: 144px;
+  z-index: 90;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 720px;
-  margin: 0 auto 28px;
+  padding: 16px 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 /* MORE JOBS CTA */
@@ -936,7 +950,8 @@ footer {
   .job-title { font-size: 22px; }
   .hero-inner { padding: 32px 24px 8px; }
   .job-list { grid-template-columns: 1fr; }
-  .jobs-heading-row { flex-direction: column; align-items: flex-start; }
+  .jobs-heading-row { flex-direction: column; align-items: flex-start; top: 96px; }
+  .job-detail-topbar { top: 96px; }
   .site-header { padding: 16px 20px; }
   .site-logo img { height: 64px; }
   .site-name { font-size: 22px; letter-spacing: -0.01em; }
