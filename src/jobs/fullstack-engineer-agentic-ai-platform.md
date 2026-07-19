@@ -1,6 +1,6 @@
 ---
 title: FullStack Engineer (Agentic AI Platform)
-salary: 18.000-20.000 Ron Net
+salary: 18.000-20.000 RON Net
 city: Romania
 workingType: Remote
 status: Open
