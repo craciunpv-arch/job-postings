@@ -829,7 +829,7 @@ footer {
 .share-float,
 .share-btn {
   position: fixed;
-  right: max(24px, calc((100% - var(--max-w)) / 2 + 24px));
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 95;
