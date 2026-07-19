@@ -701,7 +701,7 @@ footer {
   position: sticky;
   top: 144px;
   z-index: 90;
-  background: var(--bg);
+  background: var(--bg-subtle);
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -790,7 +790,7 @@ footer {
   position: sticky;
   top: 144px;
   z-index: 90;
-  background: var(--bg);
+  background: var(--bg-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
