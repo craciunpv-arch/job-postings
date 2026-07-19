@@ -220,8 +220,12 @@ body {
 }
 
 .job-section {
-  padding: 24px;
+  padding: 20px 24px;
   scroll-margin-top: 64px;
+}
+
+.post-body > *:last-child {
+  margin-bottom: 0;
 }
 
 .job-section h2 {
