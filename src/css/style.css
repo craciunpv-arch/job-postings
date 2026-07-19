@@ -774,6 +774,43 @@ footer {
   margin-bottom: 28px;
 }
 
+/* MORE JOBS CTA */
+.more-jobs-cta {
+  margin-top: 32px;
+  padding: 32px 28px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+}
+
+.more-jobs-cta-text {
+  font-size: 15px;
+  color: var(--ink-mid);
+  margin-bottom: 16px;
+}
+
+.more-jobs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(50,102,255,0.35), 0 2px 6px rgba(38,40,42,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.more-jobs-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(50,102,255,0.45), 0 2px 8px rgba(38,40,42,0.1);
+}
+
 /* FLOATING SHARE CTA */
 .share-float {
   position: absolute;
