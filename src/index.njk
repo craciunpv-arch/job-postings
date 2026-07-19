@@ -8,6 +8,12 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
   <div class="hero-inner">
     <p class="hero-tagline">{{ site.tagline }}</p>
   </div>
+  {% if collections.jobs | selectattr("status", "equalto", "Open") | length %}
+  <button class="share-float" id="shareDashboardBtn">
+    <span class="share-float-label">Share these jobs</span>
+    <span class="share-float-icon">↗</span>
+  </button>
+  {% endif %}
 </section>
 
 <div class="main">
@@ -77,10 +83,6 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
       {% endfor %}
     </div>
   </section>
-  <button class="share-float" id="shareDashboardBtn">
-    <span class="share-float-label">Share these jobs</span>
-    <span class="share-float-icon">↗</span>
-  </button>
   {% else %}
   <div class="empty-state">
     <p class="empty-state-title">No open roles right now.</p>
