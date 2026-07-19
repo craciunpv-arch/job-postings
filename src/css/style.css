@@ -773,6 +773,42 @@ footer {
   margin-bottom: 28px;
 }
 
+/* FLOATING SHARE CTA */
+.share-float {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(50,102,255,0.35), 0 2px 6px rgba(38,40,42,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.share-float:hover {
+  transform: translateY(-50%) translateX(-3px);
+  box-shadow: 0 6px 20px rgba(50,102,255,0.45), 0 2px 8px rgba(38,40,42,0.1);
+}
+
+@media (max-width: 640px) {
+  .share-float {
+    right: 16px;
+    padding: 12px;
+  }
+  .share-float-label { display: none; }
+}
+
 /* SHARE BUTTON */
 .share-btn {
   font-size: 13px;
