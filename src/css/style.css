@@ -220,18 +220,8 @@ body {
 }
 
 .job-section {
-  position: relative;
   padding: 24px;
   scroll-margin-top: 64px;
-}
-
-.job-section + .job-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 24px;
-  right: 24px;
-  border-top: 1px solid var(--border);
 }
 
 .job-section h2 {
