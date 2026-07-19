@@ -934,6 +934,13 @@ footer {
   border-radius: var(--radius-sm);
 }
 
+/* FOCUS STATE */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
   .job-title { font-size: 22px; }
