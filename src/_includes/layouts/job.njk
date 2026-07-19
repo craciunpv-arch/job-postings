@@ -29,47 +29,49 @@ layout: layouts/base.njk
       <a href="#know" class="job-toc-link">Good to Know</a>
     </nav>
 
-    <section class="job-section" id="about">
-      <h2>About the Client</h2>
-      <div class="post-body">
-        {{ clientDescription | markdown | safe }}
-      </div>
-    </section>
+    <div class="job-sections-group">
+      <section class="job-section" id="about">
+        <h2>About the Client</h2>
+        <div class="post-body">
+          {{ clientDescription | markdown | safe }}
+        </div>
+      </section>
 
-    <section class="job-section" id="role">
-      <h2>The Role</h2>
-      <div class="post-body">
-        <h3>{{ cmsFieldLabels["jobs.responsibilities"] | default("Main Responsibilities") }}</h3>
-        {{ responsibilities | markdown | safe }}
+      <section class="job-section" id="role">
+        <h2>The Role</h2>
+        <div class="post-body">
+          <h3>{{ cmsFieldLabels["jobs.responsibilities"] | default("Main Responsibilities") }}</h3>
+          {{ responsibilities | markdown | safe }}
 
-        <h3>{{ cmsFieldLabels["jobs.mustHaves"] | default("Must-haves") }}</h3>
-        {{ mustHaves | markdown | safe }}
+          <h3>{{ cmsFieldLabels["jobs.mustHaves"] | default("Must-haves") }}</h3>
+          {{ mustHaves | markdown | safe }}
 
-        <h3>{{ cmsFieldLabels["jobs.niceToHaves"] | default("Nice-to-haves") }}</h3>
-        {{ niceToHaves | markdown | safe }}
-      </div>
-    </section>
+          <h3>{{ cmsFieldLabels["jobs.niceToHaves"] | default("Nice-to-haves") }}</h3>
+          {{ niceToHaves | markdown | safe }}
+        </div>
+      </section>
 
-    <section class="job-section" id="benefits">
-      <h2>{{ cmsFieldLabels["jobs.benefits"] | default("Other Benefits") }}</h2>
-      <div class="post-body">
-        {{ benefits | markdown | safe }}
-      </div>
-    </section>
+      <section class="job-section" id="benefits">
+        <h2>{{ cmsFieldLabels["jobs.benefits"] | default("Other Benefits") }}</h2>
+        <div class="post-body">
+          {{ benefits | markdown | safe }}
+        </div>
+      </section>
 
-    <section class="job-section" id="process">
-      <h2>{{ cmsFieldLabels["jobs.selectionProcess"] | default("Selection Process") }}</h2>
-      <div class="post-body">
-        {{ selectionProcess | markdown | safe }}
-      </div>
-    </section>
+      <section class="job-section" id="process">
+        <h2>{{ cmsFieldLabels["jobs.selectionProcess"] | default("Selection Process") }}</h2>
+        <div class="post-body">
+          {{ selectionProcess | markdown | safe }}
+        </div>
+      </section>
 
-    <section class="job-section" id="know">
-      <h2>{{ cmsFieldLabels["jobs.goodToKnow"] | default("Good to Know") }}</h2>
-      <div class="post-body">
-        {{ goodToKnow | markdown | safe }}
-      </div>
-    </section>
+      <section class="job-section" id="know">
+        <h2>{{ cmsFieldLabels["jobs.goodToKnow"] | default("Good to Know") }}</h2>
+        <div class="post-body">
+          {{ goodToKnow | markdown | safe }}
+        </div>
+      </section>
+    </div>
 
     {% set recruiterData = collections.team | findBySlug(recruiter) %}
     <div class="contact-cta">

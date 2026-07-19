@@ -210,14 +210,22 @@ body {
   margin-bottom: 24px;
 }
 
-.job-section {
+.job-sections-group {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
-  margin-bottom: 12px;
   box-shadow: 0 1px 3px rgba(38,40,42,0.06), 0 1px 2px rgba(38,40,42,0.04);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.job-section {
+  padding: 24px;
   scroll-margin-top: 64px;
+}
+
+.job-section + .job-section {
+  border-top: 1px solid var(--border);
 }
 
 .job-section h2 {
