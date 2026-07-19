@@ -1,6 +1,6 @@
 ---
 title: Scala Developer
-salary: 18.000-20.000 Ron Net
+salary: 18.000-20.000 RON Net
 city: Iasi, Bucharest
 workingType: Hybrid
 status: Open
