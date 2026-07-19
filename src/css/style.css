@@ -94,7 +94,8 @@ body {
 /* BACKGROUND DECORATION */
 .bg-decor {
   position: absolute;
-  top: 240px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 460px;
   height: 297px;
   background: url('/images/uploads/edurom-icon-mark.png') no-repeat center / contain;
