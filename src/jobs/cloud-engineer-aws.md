@@ -73,8 +73,9 @@ selectionProcess: |-
   * 1 Technical Interview  - 1 hour
   * 1 Culture Fit Interview - 1 hour
 goodToKnow: >-
-  * The client values engineers who think like consultants. They expect you to
-  be adaptable, proactive, and comfortable wearing multiple hats. 
+  * * The company is building two AI enablement teams to accelerate its SaaS
+  transformation journey and is looking for professionals with proven expertise
+  in this space.
 
-  * You may be asked to engage directly with business stakeholders to gather requirements and understand the bigger picture.
+    * If you have hands-on experience with Agentic AI, I encourage you to showcase it in detail, whether through a short demo, a real-world use case, or a clear walkthrough of the challenges you faced, the approach you took, and the outcomes you achieved.
 ---
