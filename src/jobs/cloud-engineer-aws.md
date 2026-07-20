@@ -69,13 +69,14 @@ benefits: |-
   * healthcare subscription
   * private medical insurance
   * many other perks
-selectionProcess: |-
-  * 1 Technical Interview  - 1 hour
-  * 1 Culture Fit Interview - 1 hour
+selectionProcess: >-
+  * * One informational interview with the Head of Development
+
+    * One technical interview focused on designing pipelines for LLM training/ RAG datasets, building infra and observability for LLM systems
 goodToKnow: >-
-  * * The company is building two AI enablement teams to accelerate its SaaS
+  * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
   in this space.
 
-    * If you have hands-on experience with Agentic AI, I encourage you to showcase it in detail, whether through a short demo, a real-world use case, or a clear walkthrough of the challenges you faced, the approach you took, and the outcomes you achieved.
+  * We encourage you to showcase your experience in detail, whether through a short demo, a real-world use case, or a clear walkthrough of the challenges you faced, the approach you took, and the outcomes you achieved in your projects.
 ---
