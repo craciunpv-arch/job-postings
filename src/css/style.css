@@ -53,6 +53,7 @@
   --ink-mid: #565b5e;
   --ink-soft: #83888b;
   --bg: #fdfcfb;
+  --glow: #f2f4f6;
   --bg-subtle: #ffffff;
   --border: #dcdfe1;
   --accent: #3266ff;
@@ -80,7 +81,7 @@
 html { scroll-behavior: auto; }
 
 body {
-  background: #ffffff;
+  background: radial-gradient(900px 550px at 50% 620px, var(--glow) 0%, #ffffff 100%);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
