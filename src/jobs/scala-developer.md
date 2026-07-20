@@ -1,17 +1,16 @@
 ---
-title: Scala Developer
-salary: 18.000-20.000 RON Net
-city: Iasi, Bucharest
+title: Data Platform Engineer
+salary: 19.000-21.000 RON Net
+city: Iasi, Bucharest, Cluj, Timisoara
 workingType: Hybrid
 status: Open
 recruiter: victor-cosman
 date: 2026-06-19T15:22:00.000+03:00
 clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
 techStack:
-  - Scala
-  - Akka
+  - Databricks
+  - Snowflake
   - Azure
-  - Kubernetes
 clientDescription: >-
   Our client holds a prominent position in the European utilities sector,
   dedicated to seamlessly connecting people and businesses with energy and
@@ -20,35 +19,38 @@ clientDescription: >-
 
   The company develops cloud-based, state-of-the-art software applications in various areas - IoT/ IIoT, energy management & trading, predictive maintenance.
 responsibilities: >-
-  * Take full ownership of the development lifecycle for Scala backend services,
-  including design, implementation, deployment, and maintenance within an Azure
-  environment;
+  * Design, build, and optimize scalable data platforms on Databricks and
+  Snowflake, supporting batch and real-time use cases.
 
-  * Troubleshoot and resolve technical issues promptly to ensure smooth and efficient system operations;
+  * Develop and maintain robust ETL/ELT pipelines across the full data lifecycle (ingestion, transformation, storage, consumption).
 
-  * Collaborate effectively within a multidisciplinary, international team, working closely with developers and product teams in an agile framework;
+  * Define data architecture patterns aligned with enterprise standards; ensure data quality, reliability, and governance throughout.
 
-  * Contribute strategic insights on risk, scope, and prioritisation to support planning and decision-making for new features, while proactively identifying and proposing solutions;
+  * Collaborate with data analysts, data scientists, and product teams to deliver high-impact solutions.
 
-  * Recommend and implement architectural and process improvements to strengthen team productivity, system reliability, and overall product success.
+  * Drive adoption of automation, monitoring, and CI/CD best practices; contribute to DevOps maturity of the platform ecosystem.
 mustHaves: >-
-  * Proven experience in building service-oriented architectures using Scala;
+  * Hands-on expertise with Databricks (Spark, Unity Catalog, workflows,
+  optimization) and Snowflake (warehousing architecture, performance tuning,
+  data sharing).
 
-  * Solid grasp of reactive system principles, with the ability to design applications that are highly available, responsive, resilient, and scalable;
+  * Proven ability to design scalable, maintainable data solutions on cloud-native platforms.
+    Solid grasp of ETL/ELT architectures, batch/streaming frameworks, and data governance/quality principles.
+  * Strong cloud experience (preferably Azure) with exposure to enterprise-scale systems and complex integrations.
 
-  * Practical experience working with microservices in distributed environments, including deployment using Kubernetes and Azure;
+  * Hands-on with Infrastructure as Code (Terraform), CI/CD (GitLab or similar), and API integrations/scripting in Python.
 
-  * Familiarity with frameworks like Akka HTTP, Akka Streams, and Akka Actor, along with hands-on experience in event-driven architectures such as Kafka;
-
-  * Strong communication skills, with the ability to engage in both technical and business-oriented discussions, always keeping the customer perspective in mind.
-niceToHaves: "* Previous pair programming experience."
+  * Track record of building reproducible, automated data environments.
+niceToHaves: "* Experience with Infra as Code using Terraform or similar platforms."
 benefits: |-
   * Annual performance bonus
   * 25 days of holiday
   * Medical Insurance
   * Many other perks
-selectionProcess: "* 2 Interviews, 1 hour each, based on Scala, Cloud,
-  Kubernetes and stakeholder management experience."
+selectionProcess: >-
+  * One informational interview with a local hiring manager 
+
+  * One technical interview with a technical stakeholder based on your experience delivering data pipelines & systems using Databrick, Snowflake, Python, Pyspark.
 goodToKnow: >-
   * The client values engineers who think like consultants. They expect you to
   be adaptable, proactive, and comfortable wearing multiple hats. 
