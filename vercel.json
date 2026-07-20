@@ -1,3 +1,9 @@
 {
-  "framework": "eleventy"
+  "framework": "eleventy",
+  "redirects": [
+    { "source": "/scala-developer", "destination": "/data-platform-engineer", "permanent": true },
+    { "source": "/cloud-engineer-aws", "destination": "/llmops-engineer", "permanent": true },
+    { "source": "/fullstack-engineer-agentic-ai-platform", "destination": "/data-engineer", "permanent": true },
+    { "source": "/software-engineer-series-a-ai-startup", "destination": "/java-software-engineer", "permanent": true }
+  ]
 }
