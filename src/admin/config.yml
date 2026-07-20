@@ -18,8 +18,26 @@ collections:
     folder: src/jobs
     create: true
     slug: "{{slug}}"
+    description: >-
+      ⚠️ To post a new role, always click "New Job Postings" above — never edit an existing
+      entry (open or closed) to turn it into a different role. That breaks its URL and its
+      analytics history. When a role gets filled, open that same entry and set Status to
+      Closed instead of reusing it for the next one.
+    view_filters:
+      - label: "Open"
+        field: status
+        pattern: "Open"
+      - label: "Closed"
+        field: status
+        pattern: "Closed"
+    view_groups:
+      - label: "Status"
+        field: status
     fields:
-      - { label: "Role Title", name: title, widget: string }
+      - label: "Role Title"
+        name: title
+        widget: string
+        hint: "Editing an existing entry? Make sure you're updating THIS same role, not repurposing it for a different one — click \"New Job Postings\" for that instead."
       - { label: "Monthly Net Salary", name: salary, widget: string }
       - { label: City, name: city, widget: string }
       - label: "Working Type"
