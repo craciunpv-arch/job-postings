@@ -1,8 +1,8 @@
 ---
-title: Cloud Engineer (AWS)
-salary: 16.000-18.000 RON Net
-city: Iasi, Bucharest
-workingType: Hybrid
+title: LLMOps Engineer
+salary: 19-23k RON Net
+city: Romania
+workingType: Remote
 status: Open
 recruiter: victor-cosman
 date: 2026-06-23T10:33:00.000+03:00
