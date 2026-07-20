@@ -64,11 +64,9 @@ mustHaves: >-
   * Bachelor's in CS/Software/Data Engineering or equivalent experience; strong problem-solving and cross-team communication skills.
 niceToHaves: "* Front-end/service dev skills (React, TypeScript, C#)."
 benefits: |-
-  * * Medical Insurance
-
-    * Meal tickets
-
-    * Access to Hackathons
+  * Medical Insurance
+  * Meal tickets
+  * Access to Hackathons
 selectionProcess: >-
   * One informational interview with the Head of Development
 
