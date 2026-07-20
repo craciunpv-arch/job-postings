@@ -70,9 +70,9 @@ benefits: |-
 
     * Access to Hackathons
 selectionProcess: >-
-  * * One informational interview with the Head of Development
+  * One informational interview with the Head of Development
 
-    * One technical interview focused on designing pipelines for LLM training/ RAG datasets, building infra and observability for LLM systems
+  * One technical interview focused on designing pipelines for LLM training/ RAG datasets, building infra and observability for LLM systems
 goodToKnow: >-
   * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
