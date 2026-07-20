@@ -1,5 +1,5 @@
 ---
-title: Software Engineer (Series A Startup)
+title: Java Software Engineer
 salary: 15.000-25.000 RON Net
 city: Iasi
 workingType: Hybrid
