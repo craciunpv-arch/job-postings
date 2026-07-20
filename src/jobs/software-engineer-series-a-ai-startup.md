@@ -19,31 +19,31 @@ clientDescription: >-
 
   Their innovative platform provides small to medium businesses with the tools they need to receive payments faster, affordably, and more easily. Developed from the ground up for professional service firms, the platform intelligently manages payment request workflows and payment methods, so businesses no longer have to handle these processes themselves.
 responsibilities: >-
-  * Design, develop, and maintain backend services using Java (80% of the time);
+  * Design, develop, and maintain backend services using Java (80% of the time).
 
-  * Participate in front-end development tasks using React (20% of the time);
+  * Participate in front-end development tasks using React (20% of the time).
 
-  * Collaborate with cross-functional teams to define, design, and ship new features;
+  * Collaborate with cross-functional teams to define, design, and ship new features.
 
-  * Ensure the performance, quality, and responsiveness of the platform by writing clean, maintainable, and efficient code;
+  * Ensure the performance, quality, and responsiveness of the platform by writing clean, maintainable, and efficient code.
 
-  * Participate in code reviews, testing, and debugging to ensure high-quality software delivery;
+  * Participate in code reviews, testing, and debugging to ensure high-quality software delivery.
 
-  * Ensure great customer experience by taking the on-call shift rotation;
+  * Ensure great customer experience by taking the on-call shift rotation.
 
   * Work in a fast-paced environment and grow your skills (tech and soft) super fast, every week.
 mustHaves: >-
-  * 5+ years of experience in software development, with a strong focus on Java;
+  * 5+ years of experience in software development, with a strong focus on Java.
 
-  * Solid understanding of computer science fundamentals, including data structures, algorithms, and software design principles;
+  * Solid understanding of computer science fundamentals, including data structures, algorithms, and software design principles.
 
-  * Proficiency in backend development with experience in building scalable and robust applications;
+  * Proficiency in backend development with experience in building scalable and robust applications.
 
-  * Ability to take full ownership from ideation to development, testing, release, and operations;
+  * Ability to take full ownership from ideation to development, testing, release, and operations.
 
-  * Experience with test automation;
+  * Experience with test automation.
 
-  * Experience with front-end development using React is a plus;
+  * Experience with front-end development using React is a plus.
 
   * Committed to long-term growth and learning.
 niceToHaves: "* AI Agents delivered in production environments."
@@ -53,20 +53,20 @@ benefits: |-
   * Top medical insurance subscription
   * 4 team events per year, one each quarter
 selectionProcess: >-
-  * Informational call with the Site Manager or the CTO - 30 minutes
+  * Informational call with the Site Manager or the CTO - 30 minutes.
 
-  * Problem-solving interview; think of an easy-level Hacker Rank or LeetCode kind of problem - 1 hour
+  * Problem-solving interview; think of an easy-level Hacker Rank or LeetCode kind of problem - 1 hour.
 
-  * system design interview - 1 hour
+  * system design interview - 1 hour.
 
-  * Culture fit interview - 30 minutes
+  * Culture fit interview - 30 minutes.
 
-  * Informal discussion over a coffee with the team in their office
+  * Informal discussion over a coffee with the team in their office.
 goodToKnow: >-
   **Interview Format**
 
 
-  The process is hands-on and practical. Interviewers care more about how you think and approach a problem than whether you arrive at the perfect answer — so walk them through your reasoning as you go.
+  The process is hands-on and practical. Interviewers care more about how you think and approach a problem than whether you arrive at the perfect answer, so walk them through your reasoning as you go.
 
 
   **Topics Covered**
@@ -78,5 +78,5 @@ goodToKnow: >-
   **What Interviewers Are Looking For**
 
 
-  Depth over breadth. They want to see that you genuinely understand the technologies you've worked with — not just how to use them, but *why*: the trade-offs involved, the alternatives you considered, and when one tool makes more sense than another.
+  Depth over breadth. They want to see that you genuinely understand the technologies you've worked with, not just how to use them, but *why*: the trade-offs involved, the alternatives you considered, and when one tool makes more sense than another.
 ---
