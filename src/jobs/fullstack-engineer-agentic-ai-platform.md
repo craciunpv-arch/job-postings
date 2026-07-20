@@ -1,6 +1,6 @@
 ---
-title: FullStack Engineer (Agentic AI Platform)
-salary: 18.000-20.000 RON Net
+title: Data Engineer
+salary: 19.000-21.000 RON Net
 city: Romania
 workingType: Remote
 status: Open
@@ -20,45 +20,45 @@ clientDescription: The client is a global SaaS technology provider specialising
   with a focus on digital transformation, operational efficiency, and compliance
   automation.
 responsibilities: >-
-  * Develop clean, efficient, and well-tested code that meets requirements and
-  follows established patterns
+  * Architect and own end-to-end ETL/ELT pipelines on Databricks or Snowflake,
+  from raw ingestion through bronze/silver/gold lakehouse layers.
 
-  * Implement application features and enhancements as part of a collaborative development team
+  * Build and optimize data pipelines in Python, SQL, and PySpark.
 
-  * Contribute to design discussions and propose improvements to functionality, performance, and maintainability
+  * Automate data validation, monitoring, and quality checks.
 
-  * Work closely with Product Owners, Scrum Masters, and other developers to refine backlog items, estimate effort, and plan sprints
+  * Design semantic models for BI, analytics, and AI/ML use cases (including RAG/LLM data prep).
 
-  * Write unit tests and contribute to integration and automated test suites
+  * Ensure solutions are scalable, cost-efficient, and aligned with enterprise architecture.
 
-  * Adhere to established development and security standards while identifying opportunities for improvement
+  * Partner with architects, Product Owners, and engineering teams to translate requirements into production-grade solutions.
 
-  * Stay up to date with emerging technologies, tools, and best practices relevant to your expertise
+  * Embed governance (schema enforcement, lineage, cataloguing) and CI/CD practices.
 
-  * Take initiative in troubleshooting issues, suggesting enhancements, and contributing to team knowledge sharing
+  * Drive continuous improvement in reliability and engineering standards.
 mustHaves: >-
-  * Bachelor’s degree in Computer Science, Software Engineering, or a related
-  discipline, or equivalent hands-on experience
+  * 4+ years in data engineering in cloud/enterprise environments.
 
-  * Proven experience in software development, ideally within SaaS or enterprise-scale environments
+  * Hands-on production experience with Databricks, Snowflake, or Microsoft Fabric.
 
-  * Strong proficiency in full-stack development, with hands-on experience in Python, React, HTML, and TypeScript
+  * Strong Python and SQL; fluent in PySpark/Spark SQL.
 
-  * Experience working with Agile methodologies, version control systems such as Git, and CI/CD pipelines
+  * Deep knowledge of medallion architecture, Delta Lake, and ETL/ELT design end-to-end.
 
-  * Solid foundation in software engineering principles, object-oriented programming, and secure coding practices
+  * Experience with CI/CD (ideally Azure DevOps), data governance/lineage/cataloguing, and BI/semantic layers (e.g., Power BI).
 
-  * Curiosity and motivation to learn advanced design patterns, architectural concepts, and domain-specific challenges
-niceToHaves: "* 1 year of experience developing production-grade AI Agents"
+  * Bonus: AI data prep exposure — embeddings, RAG datasets, unstructured data pipelines.
+
+  * Bachelor's in CS/Data Engineering/related field or equivalent experience; strong analytical and stakeholder communication skills.
+niceToHaves: "* Experience developing AI Agents to improve your workflows"
 benefits: |-
   * Medical Insurance
-  * Access to Hackathons
   * Meal tickets
-  * Medical Insurance
+  * Access to Hackathons
 selectionProcess: >-
-  * 1 informational interview with the Head of Development
+  * One informational interview with the Head of Development
 
-  * 1 technical interview focused on programming fundamentals, testing, system design, and AgenticAI
+  * One technical interview focused on designing data pipelines, Python programming skills and Data/ Snowflake platforms
 goodToKnow: >-
   * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
