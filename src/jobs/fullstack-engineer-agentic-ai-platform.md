@@ -60,9 +60,9 @@ selectionProcess: >-
 
   * One technical interview focused on designing data pipelines, Python programming skills and Data/ Snowflake platforms.
 goodToKnow: >-
-  * * The company is building two AI enablement teams to accelerate its SaaS
+  * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
   in this space.
 
-    * We encourage you to showcase your experience in detail, whether through a short demo, a real-world use case, or a clear walkthrough of the challenges you faced, the approach you took, and the outcomes you achieved in your projects.
+  * We encourage you to showcase your experience in detail, whether through a short demo, a real-world use case, or a clear walkthrough of the challenges you faced, the approach you took, and the outcomes you achieved in your projects.
 ---
