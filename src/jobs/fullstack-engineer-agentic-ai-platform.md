@@ -50,15 +50,15 @@ mustHaves: >-
   * Bonus: AI data prep exposure — embeddings, RAG datasets, unstructured data pipelines.
 
   * Bachelor's in CS/Data Engineering/related field or equivalent experience; strong analytical and stakeholder communication skills.
-niceToHaves: "* Experience developing AI Agents to improve your workflows"
+niceToHaves: "* Experience developing AI Agents to improve your workflows."
 benefits: |-
   * Medical Insurance
   * Meal tickets
   * Access to Hackathons
 selectionProcess: >-
-  * One informational interview with the Head of Development
+  * One informational interview with the Head of Development.
 
-  * One technical interview focused on designing data pipelines, Python programming skills and Data/ Snowflake platforms
+  * One technical interview focused on designing data pipelines, Python programming skills and Data/ Snowflake platforms.
 goodToKnow: >-
   * * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
