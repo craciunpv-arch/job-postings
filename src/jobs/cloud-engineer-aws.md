@@ -20,22 +20,22 @@ clientDescription: The client is a global SaaS technology provider specialising
   with a focus on digital transformation, operational efficiency, and compliance
   automation.
 responsibilities: >-
-  * * Design and maintain ingestion, chunking, embedding, and indexing pipelines
+  * Design and maintain ingestion, chunking, embedding, and indexing pipelines
   for LLM training and RAG datasets using LangChain or equivalent frameworks.
 
-    * Manage lifecycle of prompt templates, embedding models, LLM chains, and evaluators; support benchmarking of foundation models and retrieval strategies.
+  * Manage lifecycle of prompt templates, embedding models, LLM chains, and evaluators; support benchmarking of foundation models and retrieval strategies.
 
-    * Build and operate AI infrastructure (Azure AI Foundry, Azure OpenAI, Azure App Services) including secure hosting for RAG apps, vector databases, and agent runtimes.
+  * Build and operate AI infrastructure (Azure AI Foundry, Azure OpenAI, Azure App Services) including secure hosting for RAG apps, vector databases, and agent runtimes.
 
-    * Define CI/CD pipelines for LLM artefacts (datasets, prompts, model configs, eval suites) via Azure DevOps, in collaboration with DevOps engineers.
+  * Define CI/CD pipelines for LLM artefacts (datasets, prompts, model configs, eval suites) via Azure DevOps, in collaboration with DevOps engineers.
 
-    * Establish observability for LLM systems (telemetry, latency, cost, hallucination rates, retrieval quality) using LangSmith or equivalent; integrate automated evaluation and quality gates into CI/CD.
+  * Establish observability for LLM systems (telemetry, latency, cost, hallucination rates, retrieval quality) using LangSmith or equivalent; integrate automated evaluation and quality gates into CI/CD.
 
-    * Apply responsible AI, privacy, access control, and logging standards; support red-team testing for prompt injection and model risks.
+  * Apply responsible AI, privacy, access control, and logging standards; support red-team testing for prompt injection and model risks.
 
-    * Partner with AI developers, Portfolio Architects, and Product Owners to integrate LLM/RAG components into product features and shape technical roadmap.
+  * Partner with AI developers, Portfolio Architects, and Product Owners to integrate LLM/RAG components into product features and shape technical roadmap.
 
-    * Stay current on LLMOps, RAG optimization, and vector search trends; help establish early LLMOps best practices as the org scales.
+  * Stay current on LLMOps, RAG optimization, and vector search trends; help establish early LLMOps best practices as the org scales.
 mustHaves: >-
   * 4+ years in software/data/ML engineering or DevOps, preferably cloud-based.
 
@@ -64,15 +64,13 @@ mustHaves: >-
   * Bachelor's in CS/Software/Data Engineering or equivalent experience; strong problem-solving and cross-team communication skills.
 niceToHaves: "* Front-end/service dev skills (React, TypeScript, C#)."
 benefits: |-
-  * * Medical Insurance
-
-    * Meal tickets
-
-    * Access to Hackathons
+  * Medical Insurance
+  * Meal tickets
+  * Access to Hackathons
 selectionProcess: >-
-  * One informational interview with the Head of Development
+  * One informational interview with the Head of Development.
 
-  * One technical interview focused on designing pipelines for LLM training/ RAG datasets, building infra and observability for LLM systems
+  * One technical interview focused on designing pipelines for LLM training/ RAG datasets, building infra and observability for LLM systems.
 goodToKnow: >-
   * The company is building two AI enablement teams to accelerate its SaaS
   transformation journey and is looking for professionals with proven expertise
