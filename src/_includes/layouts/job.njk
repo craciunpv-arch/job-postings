@@ -10,7 +10,11 @@ layout: layouts/base.njk
   <article class="job-detail">
     <div class="job-title-row">
       <h1 class="job-title">{{ title }}</h1>
+      {% if status == "Closed" %}
+      <span class="job-card-closed">Filled</span>
+      {% else %}
       <span class="job-card-new">New</span>
+      {% endif %}
     </div>
     <p class="job-salary">{{ salary }}</p>
 
@@ -77,7 +81,11 @@ layout: layouts/base.njk
       <p class="contact-cta-name">{{ recruiterData.data.name }}</p>
       {% if recruiterData.data.role %}<p class="contact-cta-role">{{ recruiterData.data.role }}</p>{% endif %}
       {% endif %}
+      {% if status == "Closed" %}
+      <p class="contact-cta-text">This role has been filled. Interested in similar opportunities? Reach out and let's talk.</p>
+      {% else %}
       <p class="contact-cta-text">Interested in this role? Reach out and let's talk.</p>
+      {% endif %}
       <a class="contact-cta-link" href="{{ recruiterData.data.linkedin if recruiterData else site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
       <a class="contact-cta-link contact-cta-link--secondary" href="mailto:{{ recruiterData.data.email if recruiterData else site.email }}">Email {{ recruiterData.data.email if recruiterData else site.email }} →</a>
     </div>
