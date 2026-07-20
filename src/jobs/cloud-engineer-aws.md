@@ -11,13 +11,14 @@ techStack:
   - Lambda
   - API Gateway
   - EventBridge
-clientDescription: >-
-  Our client holds a prominent position in the European utilities sector,
-  dedicated to seamlessly connecting people and businesses with energy and
-  providing customer-centric solutions designed for sustainability.
-
-
-  The company develops cloud-based, state-of-the-art software applications in various areas - IoT/ IIoT, energy management & trading, predictive maintenance.
+clientDescription: The client is a global SaaS technology provider specialising
+  in governance, compliance, entity management, and operational software for
+  financial services organisations. They develop cloud-based solutions that help
+  businesses automate workflows, manage regulatory obligations, streamline
+  corporate administration, and improve data governance across multiple
+  jurisdictions. It serves international clients in highly regulated industries
+  with a focus on digital transformation, operational efficiency, and compliance
+  automation.
 responsibilities: >-
   * * Design and maintain ingestion, chunking, embedding, and indexing pipelines
   for LLM training and RAG datasets using LangChain or equivalent frameworks.
