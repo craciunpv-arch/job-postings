@@ -1,6 +1,6 @@
 ---
 title: Data Engineer
-salary: 19.000-21.000 RON Net
+salary: 16.000-21.000 RON Net
 city: Romania
 workingType: Remote
 status: Open
