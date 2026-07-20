@@ -8,9 +8,9 @@ recruiter: victor-cosman
 date: 2026-06-23T10:33:00.000+03:00
 clientTeaser: SaaS company with 15+ AI Agents on the roadmap for 2026
 techStack:
-  - Lambda
-  - API Gateway
-  - EventBridge
+  - LLMs
+  - CI/CD
+  - Azure
 clientDescription: The client is a global SaaS technology provider specialising
   in governance, compliance, entity management, and operational software for
   financial services organisations. They develop cloud-based solutions that help
