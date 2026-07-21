@@ -3,6 +3,9 @@ title: Data Engineer
 salaryMin: 16000
 salaryMax: 21000
 salaryCurrency: RON Net
+seniority:
+  - Mid
+  - Senior
 city: Romania
 workingType: Remote
 status: Open
