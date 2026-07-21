@@ -42,7 +42,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
         <div class="job-card-header">
           <span class="job-card-title">{{ job.data.title }}</span>
           {% if job.data.seniority and job.data.seniority.length %}
-          <span class="job-card-seniority">{{ job.data.seniority | join(" / ") }}</span>
+          <div class="job-card-seniority-row"><span class="job-card-seniority">{{ job.data.seniority | join(" / ") }}</span></div>
           {% endif %}
           <div class="job-card-meta-right">
             <span class="job-card-new">New</span>

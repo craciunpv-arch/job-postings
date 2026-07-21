@@ -11,7 +11,7 @@ layout: layouts/base.njk
     <div class="job-title-row">
       <h1 class="job-title">{{ title }}</h1>
       {% if seniority and seniority.length %}
-      <span class="job-card-seniority">{{ seniority | join(" / ") }}</span>
+      <div class="job-card-seniority-row"><span class="job-card-seniority">{{ seniority | join(" / ") }}</span></div>
       {% endif %}
       {% if status == "Closed" %}
       <span class="job-card-closed">Filled</span>

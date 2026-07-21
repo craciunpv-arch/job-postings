@@ -195,14 +195,10 @@ body {
 }
 
 .job-salary {
-  display: inline-block;
-  font-size: 14px;
+  display: block;
+  font-size: 15px;
   font-weight: 700;
   color: var(--ink);
-  background: var(--tag-blue-2-soft);
-  border: 1px solid var(--tag-blue-2-border);
-  padding: 6px 16px;
-  border-radius: var(--radius-sm);
   margin-bottom: 16px;
   text-decoration: none;
 }
@@ -553,6 +549,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   flex-shrink: 0;
+}
+
+.job-card-seniority-row {
+  display: contents;
 }
 
 .job-card-seniority {
@@ -955,6 +955,10 @@ button:focus-visible {
   .site-name { font-size: 22px; letter-spacing: -0.01em; }
   .explore-footer-columns { grid-template-columns: 1fr; gap: 28px; }
   .job-card-header { flex-wrap: wrap; }
-  .job-card-title { flex-basis: 100%; }
-  .job-title { flex-basis: 100%; }
+  .job-card-meta-right { order: 2; }
+  .job-card-seniority-row { display: block; order: 3; flex-basis: 100%; }
+  .job-title-row { flex-wrap: wrap; }
+  .job-title-row .job-card-new,
+  .job-title-row .job-card-closed { order: 2; }
+  .job-title-row .job-card-seniority-row { display: block; order: 3; flex-basis: 100%; }
 }
