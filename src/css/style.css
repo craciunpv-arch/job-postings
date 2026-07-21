@@ -954,4 +954,7 @@ button:focus-visible {
   .site-logo img { height: 64px; }
   .site-name { font-size: 22px; letter-spacing: -0.01em; }
   .explore-footer-columns { grid-template-columns: 1fr; gap: 28px; }
+  .job-card-header { flex-wrap: wrap; }
+  .job-card-title { flex-basis: 100%; }
+  .job-title { flex-basis: 100%; }
 }

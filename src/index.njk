@@ -41,10 +41,10 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
       <a class="job-card" href="{{ job.url }}" data-tags="{{ filterTags | join(' ') }}">
         <div class="job-card-header">
           <span class="job-card-title">{{ job.data.title }}</span>
+          {% if job.data.seniority and job.data.seniority.length %}
+          <span class="job-card-seniority">{{ job.data.seniority | join(" / ") }}</span>
+          {% endif %}
           <div class="job-card-meta-right">
-            {% if job.data.seniority and job.data.seniority.length %}
-            <span class="job-card-seniority">{{ job.data.seniority | join(" / ") }}</span>
-            {% endif %}
             <span class="job-card-new">New</span>
           </div>
         </div>
