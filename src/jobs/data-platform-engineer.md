@@ -3,6 +3,9 @@ title: Data Platform Engineer
 salaryMin: 17000
 salaryMax: 21000
 salaryCurrency: RON Net
+seniority:
+  - Mid
+  - Senior
 city: Iasi, Bucharest, Cluj, Timisoara
 workingType: Hybrid
 status: Open
