@@ -38,7 +38,16 @@ collections:
         name: title
         widget: string
         hint: "Editing an existing entry? Make sure you're updating THIS same role, not repurposing it for a different one — click \"New Job Postings\" for that instead."
-      - { label: "Monthly Net Salary", name: salary, widget: string }
+      - { label: "Salary — Min", name: salaryMin, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 16000 for 16.000." }
+      - { label: "Salary — Max", name: salaryMax, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 21000 for 21.000." }
+      - { label: "Currency", name: salaryCurrency, widget: string, default: "RON Net", hint: "Only change this for roles paid in a different currency." }
+      - label: Seniority
+        name: seniority
+        widget: select
+        options: ["Mid", "Senior", "Expert"]
+        multiple: true
+        required: false
+        hint: "Select more than one if the role spans multiple levels, e.g. Mid and Senior."
       - { label: City, name: city, widget: string }
       - label: "Working Type"
         name: workingType
@@ -110,7 +119,10 @@ collections:
         hint: "Renames the field labels shown when editing Job Postings and Team Members. Refresh the CMS after saving to see the new labels."
         fields:
           - { label: "Job: Role Title", name: "jobs.title", widget: string }
-          - { label: "Job: Monthly Net Salary", name: "jobs.salary", widget: string }
+          - { label: "Job: Salary — Min", name: "jobs.salaryMin", widget: string }
+          - { label: "Job: Salary — Max", name: "jobs.salaryMax", widget: string }
+          - { label: "Job: Currency", name: "jobs.salaryCurrency", widget: string }
+          - { label: "Job: Seniority", name: "jobs.seniority", widget: string }
           - { label: "Job: City", name: "jobs.city", widget: string }
           - { label: "Job: Working Type", name: "jobs.workingType", widget: string }
           - { label: "Job: Status", name: "jobs.status", widget: string }

@@ -1,6 +1,8 @@
 ---
 title: Java Software Engineer
-salary: 15.000-25.000 RON Net
+salaryMin: 15000
+salaryMax: 25000
+salaryCurrency: RON Net
 city: Iasi
 workingType: Hybrid
 status: Open

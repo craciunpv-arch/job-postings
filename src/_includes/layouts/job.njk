@@ -10,13 +10,16 @@ layout: layouts/base.njk
   <article class="job-detail">
     <div class="job-title-row">
       <h1 class="job-title">{{ title }}</h1>
+      {% if seniority and seniority.length %}
+      <span class="job-card-seniority">{{ seniority | join(" / ") }}</span>
+      {% endif %}
       {% if status == "Closed" %}
       <span class="job-card-closed">Filled</span>
       {% else %}
       <span class="job-card-new">New</span>
       {% endif %}
     </div>
-    <p class="job-salary">{{ salary }}</p>
+    <p class="job-salary">{{ salaryMin | salaryRange(salaryMax, salaryCurrency) }}</p>
 
     <div class="job-meta">
       {% for c in city.split(", ") %}

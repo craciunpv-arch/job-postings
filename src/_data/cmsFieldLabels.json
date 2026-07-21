@@ -1,7 +1,10 @@
 {
   "jobs.title": "Role Title",
   "team.photo": "Photo",
-  "jobs.salary": "Monthly Salary",
+  "jobs.salaryMin": "Salary — Min",
+  "jobs.salaryMax": "Salary — Max",
+  "jobs.salaryCurrency": "Currency",
+  "jobs.seniority": "Seniority",
   "jobs.city": "City",
   "jobs.responsibilities": "Responsibilities",
   "jobs.date": "Publish Date",

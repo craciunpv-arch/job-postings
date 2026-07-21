@@ -16,6 +16,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("markdown", (content) => markdownIt.render(content || ""));
 
+  eleventyConfig.addFilter("salaryRange", (min, max, currency) => {
+    if (!min || !max) return "";
+    const fmt = (n) => new Intl.NumberFormat("ro-RO").format(n);
+    return `From ${fmt(min)} to ${fmt(max)} ${currency || "RON Net"}`;
+  });
+
   eleventyConfig.addFilter("selectattr", (arr, key, test, value) =>
     (arr || []).filter((item) => item.data[key] === value)
   );

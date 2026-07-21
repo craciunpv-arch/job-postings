@@ -555,6 +555,18 @@ body {
   flex-shrink: 0;
 }
 
+.job-card-seniority {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
 .job-card-footer {
   display: flex;
   flex-direction: column;

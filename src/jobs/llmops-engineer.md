@@ -1,6 +1,8 @@
 ---
 title: LLMOps Engineer
-salary: 19-23k RON Net
+salaryMin: 19000
+salaryMax: 23000
+salaryCurrency: RON Net
 city: Romania
 workingType: Remote
 status: Open
