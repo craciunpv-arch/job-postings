@@ -1,5 +1,5 @@
 ---
-title: Java Software Engineer
+title: Software Engineer
 salaryMin: 15000
 salaryMax: 25000
 salaryCurrency: RON Net
