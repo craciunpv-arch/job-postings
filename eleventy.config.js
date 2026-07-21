@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("salaryRange", (min, max, currency) => {
     if (!min || !max) return "";
     const fmt = (n) => new Intl.NumberFormat("ro-RO").format(n);
-    return `From ${fmt(min)} to ${fmt(max)} ${currency || "RON Net"}`;
+    return `${fmt(min)} – ${fmt(max)} ${currency || "RON Net"}`;
   });
 
   eleventyConfig.addFilter("selectattr", (arr, key, test, value) =>
