@@ -3,6 +3,9 @@ title: Java Software Engineer
 salaryMin: 15000
 salaryMax: 25000
 salaryCurrency: RON Net
+seniority:
+  - Mid
+  - Senior
 city: Iasi
 workingType: Hybrid
 status: Open
