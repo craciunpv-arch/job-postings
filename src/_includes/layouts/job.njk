@@ -8,24 +8,26 @@ layout: layouts/base.njk
   </div>
 
   <article class="job-detail">
-    <div class="job-title-row">
-      <h1 class="job-title">{{ title }}</h1>
-      {% if seniority and seniority.length %}
-      <div class="job-card-seniority-row"><span class="job-card-seniority">{{ seniority | join(" / ") }}</span></div>
-      {% endif %}
-      {% if status == "Closed" %}
-      <span class="job-card-closed">Filled</span>
-      {% else %}
-      <span class="job-card-new">New</span>
-      {% endif %}
-    </div>
-    <p class="job-salary">{{ salaryMin | salaryRange(salaryMax, salaryCurrency) }}</p>
+    <div class="job-hero-card">
+      <div class="job-title-row">
+        <h1 class="job-title">{{ title }}</h1>
+        {% if seniority and seniority.length %}
+        <div class="job-card-seniority-row"><span class="job-card-seniority">{{ seniority | join(" / ") }}</span></div>
+        {% endif %}
+        {% if status == "Closed" %}
+        <span class="job-card-closed">Filled</span>
+        {% else %}
+        <span class="job-card-new">New</span>
+        {% endif %}
+      </div>
+      <p class="job-salary">{{ salaryMin | salaryRange(salaryMax, salaryCurrency) }}</p>
 
-    <div class="job-meta">
-      {% for c in city.split(", ") %}
-      <span class="job-card-tag job-card-tag--meta">{{ c }}</span>
-      {% endfor %}
-      <span class="job-card-tag job-card-tag--meta">{{ workingType }}</span>
+      <div class="job-meta">
+        {% for c in city.split(", ") %}
+        <span class="job-card-tag job-card-tag--meta">{{ c }}</span>
+        {% endfor %}
+        <span class="job-card-tag job-card-tag--meta">{{ workingType }}</span>
+      </div>
     </div>
 
     <div class="job-sections-group">
@@ -40,57 +42,65 @@ layout: layouts/base.njk
         <h2>The Role</h2>
         <div class="post-body">
           <h3>{{ cmsFieldLabels["jobs.responsibilities"] | default("Main Responsibilities") }}</h3>
-          {{ responsibilities | markdown | safe }}
+          <div class="job-bullets">{{ responsibilities | markdown | safe }}</div>
 
           <h3>{{ cmsFieldLabels["jobs.mustHaves"] | default("Must-haves") }}</h3>
-          {{ mustHaves | markdown | safe }}
+          <div class="job-bullets job-bullets--blue">{{ mustHaves | markdown | safe }}</div>
 
           <h3>{{ cmsFieldLabels["jobs.niceToHaves"] | default("Nice-to-haves") }}</h3>
-          {{ niceToHaves | markdown | safe }}
+          <div class="job-bullets job-bullets--indigo">{{ niceToHaves | markdown | safe }}</div>
         </div>
       </section>
 
       <section class="job-section" id="benefits">
         <h2>{{ cmsFieldLabels["jobs.benefits"] | default("Other Benefits") }}</h2>
         <div class="post-body">
-          {{ benefits | markdown | safe }}
+          <div class="job-bullets job-bullets--green">{{ benefits | markdown | safe }}</div>
         </div>
       </section>
 
       <section class="job-section" id="process">
         <h2>{{ cmsFieldLabels["jobs.selectionProcess"] | default("Selection Process") }}</h2>
         <div class="post-body">
-          {{ selectionProcess | markdown | safe }}
+          <div class="job-bullets">{{ selectionProcess | markdown | safe }}</div>
         </div>
       </section>
 
       <section class="job-section" id="know">
         <h2>{{ cmsFieldLabels["jobs.goodToKnow"] | default("Good to Know") }}</h2>
         <div class="post-body">
-          {{ goodToKnow | markdown | safe }}
+          <div class="job-bullets job-bullets--rust">{{ goodToKnow | markdown | safe }}</div>
         </div>
       </section>
     </div>
 
     {% set recruiterData = collections.team | findBySlug(recruiter) %}
     <div class="contact-cta">
-      {% if recruiterData %}
-      {% set zoom = recruiterData.data.photoZoom | default(100, true) %}
-      {% set posX = recruiterData.data.photoPositionX | default(50, true) %}
-      {% set posY = recruiterData.data.photoPositionY | default(50, true) %}
-      <div class="contact-cta-avatar">
-        <img src="{{ recruiterData.data.photo }}" alt="{{ recruiterData.data.name }}" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
+      <div class="contact-cta-left">
+        {% if recruiterData %}
+        {% set zoom = recruiterData.data.photoZoom | default(100, true) %}
+        {% set posX = recruiterData.data.photoPositionX | default(50, true) %}
+        {% set posY = recruiterData.data.photoPositionY | default(50, true) %}
+        <div class="contact-cta-avatar">
+          <img src="{{ recruiterData.data.photo }}" alt="{{ recruiterData.data.name }}" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
+        </div>
+        {% endif %}
+        <div class="contact-cta-info">
+          {% if recruiterData %}
+          <p class="contact-cta-name">{{ recruiterData.data.name }}</p>
+          {% if recruiterData.data.role %}<p class="contact-cta-role">{{ recruiterData.data.role }}</p>{% endif %}
+          {% endif %}
+          {% if status == "Closed" %}
+          <p class="contact-cta-text">This role has been filled. Interested in similar opportunities? Reach out and let's talk.</p>
+          {% else %}
+          <p class="contact-cta-text">Interested in this role? Reach out and let's talk.</p>
+          {% endif %}
+        </div>
       </div>
-      <p class="contact-cta-name">{{ recruiterData.data.name }}</p>
-      {% if recruiterData.data.role %}<p class="contact-cta-role">{{ recruiterData.data.role }}</p>{% endif %}
-      {% endif %}
-      {% if status == "Closed" %}
-      <p class="contact-cta-text">This role has been filled. Interested in similar opportunities? Reach out and let's talk.</p>
-      {% else %}
-      <p class="contact-cta-text">Interested in this role? Reach out and let's talk.</p>
-      {% endif %}
-      <a class="contact-cta-link" href="{{ recruiterData.data.linkedin if recruiterData else site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
-      <a class="contact-cta-link contact-cta-link--secondary" href="mailto:{{ recruiterData.data.email if recruiterData else site.email }}">Email {{ recruiterData.data.email if recruiterData else site.email }} →</a>
+      <div class="contact-cta-actions">
+        <a class="contact-cta-link" href="{{ recruiterData.data.linkedin if recruiterData else site.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        <a class="contact-cta-link contact-cta-link--secondary" href="mailto:{{ recruiterData.data.email if recruiterData else site.email }}">Email {{ recruiterData.data.email if recruiterData else site.email }} →</a>
+      </div>
     </div>
   </article>
 </div>
