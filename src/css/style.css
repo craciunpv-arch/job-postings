@@ -175,8 +175,8 @@ body {
 }
 
 .back-link:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
+  border-color: var(--tag-blue-2);
+  background: var(--tag-blue-2-soft);
 }
 
 /* JOB DETAIL */
