@@ -310,11 +310,9 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-dark);
 }
 
-.job-bullets--blue li::before { background: var(--tag-blue-2); }
-.job-bullets--indigo li::before { background: var(--accent-indigo); }
 .job-bullets--green li::before { background: var(--badge-new); }
 .job-bullets--rust li::before { background: var(--accent-rust); }
 

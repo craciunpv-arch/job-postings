@@ -45,10 +45,10 @@ layout: layouts/base.njk
           <div class="job-bullets">{{ responsibilities | markdown | safe }}</div>
 
           <h3>{{ cmsFieldLabels["jobs.mustHaves"] | default("Must-haves") }}</h3>
-          <div class="job-bullets job-bullets--blue">{{ mustHaves | markdown | safe }}</div>
+          <div class="job-bullets">{{ mustHaves | markdown | safe }}</div>
 
           <h3>{{ cmsFieldLabels["jobs.niceToHaves"] | default("Nice-to-haves") }}</h3>
-          <div class="job-bullets job-bullets--indigo">{{ niceToHaves | markdown | safe }}</div>
+          <div class="job-bullets">{{ niceToHaves | markdown | safe }}</div>
         </div>
       </section>
 
