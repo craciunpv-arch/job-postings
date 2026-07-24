@@ -278,7 +278,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-dark);
+  color: var(--tag-blue-2);
   margin: 20px 0 8px;
 }
 
@@ -310,7 +310,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent-dark);
+  background: var(--tag-blue-2);
 }
 
 .job-bullets--green li::before { background: var(--badge-new); }
