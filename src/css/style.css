@@ -968,17 +968,17 @@ footer {
   font-size: 13px;
   font-weight: 600;
   color: #fff;
-  background: var(--accent);
+  background: var(--tag-blue-2);
   padding: 12px 18px;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(50,102,255,0.35), 0 2px 6px rgba(38,40,42,0.08);
+  box-shadow: 0 4px 16px rgba(87,192,232,0.35), 0 2px 6px rgba(38,40,42,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .more-jobs-cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(50,102,255,0.45), 0 2px 8px rgba(38,40,42,0.1);
+  box-shadow: 0 6px 20px rgba(87,192,232,0.45), 0 2px 8px rgba(38,40,42,0.1);
 }
 
 /* FLOATING SHARE CTA */
