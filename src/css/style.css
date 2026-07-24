@@ -527,8 +527,6 @@ body {
   color: var(--ink);
   line-height: 1.6;
   max-width: 560px;
-  padding-left: 16px;
-  border-left: 3px solid var(--accent);
   white-space: pre-line;
 }
 
