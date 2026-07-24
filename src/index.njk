@@ -73,13 +73,16 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
         {% set posX = recruiter.data.photoPositionX | default(50, true) %}
         {% set posY = recruiter.data.photoPositionY | default(50, true) %}
         <div class="job-card-recruiter">
-          <div class="job-card-recruiter-avatar">
-            <img src="{{ recruiter.data.photo }}" alt="" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
+          <div class="job-card-recruiter-left">
+            <div class="job-card-recruiter-avatar">
+              <img src="{{ recruiter.data.photo }}" alt="" style="width: {{ zoom }}%; height: {{ zoom }}%; margin-left: {{ -1 * (zoom - 100) * (posX / 100) }}%; margin-top: {{ -1 * (zoom - 100) * (posY / 100) }}%;" />
+            </div>
+            <div class="job-card-recruiter-info">
+              <span class="job-card-recruiter-name">{{ recruiter.data.name }}</span>
+              {% if recruiter.data.role %}<span class="job-card-recruiter-role">{{ recruiter.data.role }}</span>{% endif %}
+            </div>
           </div>
-          <div class="job-card-recruiter-info">
-            <span class="job-card-recruiter-name">{{ recruiter.data.name }}</span>
-            {% if recruiter.data.role %}<span class="job-card-recruiter-role">{{ recruiter.data.role }}</span>{% endif %}
-          </div>
+          <span class="job-card-view-role">View role <span aria-hidden="true">→</span></span>
         </div>
         {% endif %}
       </a>
