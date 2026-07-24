@@ -98,7 +98,10 @@ body {
   top: 0;
   z-index: 100;
   padding: 22px 24px;
-  background: var(--header-bg);
+  background:
+    radial-gradient(360px 260px at 4% 0%, rgba(87,192,232,0.20) 0%, transparent 70%),
+    radial-gradient(360px 260px at 97% 0%, rgba(87,192,232,0.16) 0%, transparent 70%),
+    linear-gradient(160deg, #241d17 0%, #15111a 100%);
 }
 
 .site-header-inner {
