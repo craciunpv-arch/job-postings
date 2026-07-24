@@ -63,6 +63,7 @@
   --tag-city-soft: rgba(87,192,232,0.16);
   --tag-city-border: rgba(87,192,232,0.32);
   --tag-blue-2: #57c0e8;
+  --tag-blue-2-dark: #2f92bd;
   --tag-blue-2-soft: rgba(87,192,232,0.16);
   --tag-blue-2-border: rgba(87,192,232,0.32);
   --badge-new: #117d68;
@@ -70,9 +71,6 @@
   --accent-indigo: #6b4ee6;
   --accent-indigo-dark: #523bbf;
   --accent-indigo-soft: rgba(107,78,230,0.14);
-  --accent-rust: #c4562f;
-  --accent-rust-dark: #9d4222;
-  --accent-rust-soft: rgba(196,86,47,0.14);
   --header-bg: #000000;
   --header-border: rgba(255,255,255,0.15);
   --brand-light: #bcbbba;
@@ -313,8 +311,7 @@ body {
   background: var(--tag-blue-2);
 }
 
-.job-bullets--green li::before { background: var(--badge-new); }
-.job-bullets--rust li::before { background: var(--accent-rust); }
+.job-bullets--ink li::before { background: var(--ink); }
 
 .post-body a {
   color: var(--accent-dark);
@@ -705,7 +702,7 @@ body {
   background: var(--accent-soft);
 }
 
-.job-card-tag--blue-2 { color: var(--tag-blue-2); background: var(--tag-blue-2-soft); }
+.job-card-tag--blue-2 { color: var(--tag-blue-2-dark); background: var(--tag-blue-2-soft); }
 
 .job-card-salary {
   font-family: var(--sans);

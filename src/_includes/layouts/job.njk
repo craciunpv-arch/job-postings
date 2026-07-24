@@ -55,21 +55,21 @@ layout: layouts/base.njk
       <section class="job-section" id="benefits">
         <h2>{{ cmsFieldLabels["jobs.benefits"] | default("Other Benefits") }}</h2>
         <div class="post-body">
-          <div class="job-bullets job-bullets--green">{{ benefits | markdown | safe }}</div>
+          <div class="job-bullets job-bullets--ink">{{ benefits | markdown | safe }}</div>
         </div>
       </section>
 
       <section class="job-section" id="process">
         <h2>{{ cmsFieldLabels["jobs.selectionProcess"] | default("Selection Process") }}</h2>
         <div class="post-body">
-          <div class="job-bullets">{{ selectionProcess | markdown | safe }}</div>
+          <div class="job-bullets job-bullets--ink">{{ selectionProcess | markdown | safe }}</div>
         </div>
       </section>
 
       <section class="job-section" id="know">
         <h2>{{ cmsFieldLabels["jobs.goodToKnow"] | default("Good to Know") }}</h2>
         <div class="post-body">
-          <div class="job-bullets job-bullets--rust">{{ goodToKnow | markdown | safe }}</div>
+          <div class="job-bullets job-bullets--ink">{{ goodToKnow | markdown | safe }}</div>
         </div>
       </section>
     </div>
