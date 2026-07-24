@@ -195,19 +195,18 @@ body {
 
 .job-title {
   font-family: var(--sans);
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.035em;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
 .job-salary {
   display: block;
   font-family: var(--sans);
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: -0.035em;
   color: var(--ink);
   margin-bottom: 16px;
   text-decoration: none;
@@ -223,7 +222,7 @@ body {
 .job-sections-group {
   background: linear-gradient(165deg, #ffffff 0%, #fbfcfd 55%, #f4f6f8 100%);
   border: 1px solid rgba(0,4,2,0.07);
-  border-radius: 20px;
+  border-radius: var(--radius);
   box-shadow: 0 1px 2px rgba(0,4,2,0.04), 0 20px 44px -12px rgba(0,4,2,0.10);
   margin-bottom: 12px;
   overflow: hidden;
@@ -376,7 +375,7 @@ body {
   margin: 40px 0 32px;
   background: var(--header-bg);
   border: 1px solid var(--header-border);
-  border-radius: 20px;
+  border-radius: var(--radius);
   padding: 32px;
   text-align: center;
 }
@@ -502,9 +501,9 @@ body {
 
 .job-card {
   display: block;
-  padding: 36px 40px;
+  padding: 22px 26px;
   border: 1px solid rgba(0,4,2,0.07);
-  border-radius: 20px;
+  border-radius: var(--radius);
   text-decoration: none;
   background: linear-gradient(165deg, #ffffff 0%, #fbfcfd 55%, #f4f6f8 100%);
   box-shadow: 0 1px 2px rgba(0,4,2,0.04), 0 20px 44px -12px rgba(0,4,2,0.10);
@@ -513,55 +512,50 @@ body {
 
 .job-card:hover {
   box-shadow: 0 1px 2px rgba(0,4,2,0.05), 0 28px 56px -14px rgba(0,4,2,0.14);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .job-card-header {
   display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 0;
-}
-
-.job-card-header + .job-card-footer {
-  margin-top: 20px;
+  margin-bottom: 6px;
 }
 
 .job-card-teaser {
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--ink-mid);
-  line-height: 1.5;
-  margin: 10px 0 20px;
+  line-height: 1.4;
+  margin: 0 0 12px;
 }
 
 .job-card-title {
   font-family: var(--sans);
-  font-size: 30px;
+  font-size: 19px;
   font-weight: 700;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   color: var(--ink);
 }
 
 .job-card-new {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--badge-new);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   flex-shrink: 0;
 }
 
 .job-card-new::before {
   content: '';
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--badge-new);
   display: inline-block;
@@ -570,20 +564,20 @@ body {
 .job-card-closed {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--ink-soft);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   flex-shrink: 0;
 }
 
 .job-card-closed::before {
   content: '';
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--ink-soft);
   display: inline-block;
@@ -595,11 +589,11 @@ body {
 
 .job-card-seniority {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--accent-indigo-dark);
   background: var(--accent-indigo-soft);
-  padding: 6px 14px;
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -610,24 +604,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 10px;
 }
 
 .job-card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
 }
 
 .job-card-tag {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--accent-dark);
   background: var(--accent-soft);
   border: none;
-  padding: 7px 15px;
+  padding: 4px 11px;
   border-radius: var(--radius-pill);
 }
 
@@ -640,9 +634,8 @@ body {
 
 .job-card-salary {
   font-family: var(--sans);
-  font-size: 22px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: -0.035em;
   color: var(--ink);
   white-space: nowrap;
 }
@@ -651,22 +644,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  margin-top: 24px;
-  padding-top: 20px;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid var(--border);
 }
 
 .job-card-recruiter-left {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   min-width: 0;
 }
 
 .job-card-recruiter-avatar {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -682,31 +675,31 @@ body {
 .job-card-recruiter-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .job-card-recruiter-name {
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 13px;
   color: var(--ink);
   font-weight: 600;
 }
 
 .job-card-recruiter-role {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--ink-soft);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .job-card-view-role {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--accent-dark);
   flex-shrink: 0;
@@ -831,7 +824,6 @@ footer {
   align-items: center;
   gap: 8px;
   margin-left: auto;
-  padding-top: 8px;
 }
 
 .job-card-date {
