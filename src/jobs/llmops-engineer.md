@@ -8,7 +8,7 @@ seniority:
 city: Romania
 workingType: Remote
 status: Open
-recruiter: victor-cosman
+recruiter: vlad-craciun
 date: 2026-06-23T10:33:00.000+03:00
 clientTeaser: SaaS company with 15+ AI Agents on the roadmap for 2026
 techStack:
