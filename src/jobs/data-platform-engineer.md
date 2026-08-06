@@ -8,7 +8,7 @@ seniority:
   - Senior
 city: Iasi, Bucharest, Cluj, Timisoara
 workingType: Hybrid
-status: Open
+status: Closed
 recruiter: victor-cosman
 date: 2026-06-19T15:22:00.000+03:00
 clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
