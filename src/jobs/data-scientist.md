@@ -69,7 +69,7 @@ benefits: |-
 selectionProcess: >-
   * One informational interview with a local hiring manager 
 
-  * One technical interview with a technical stakeholder based on your experience with machine learning frameworks, public cloud platforms and Databricks
+  * One technical interview with a team lead based on your experience with time-series projects, machine learning frameworks and public cloud platforms
 goodToKnow: >-
   * The client values engineers who think like consultants. They expect you to
   be adaptable, proactive, and comfortable wearing multiple hats. 
