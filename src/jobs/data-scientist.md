@@ -1,7 +1,7 @@
 ---
 title: Data Scientist
 salaryMin: 20000
-salaryMax: 23000
+salaryMax: 22000
 salaryCurrency: RON Net
 seniority:
   - Mid
