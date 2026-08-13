@@ -1,14 +1,14 @@
 ---
 title: Data Platform Engineer
-salaryMin: 17000
-salaryMax: 21000
+salaryMin: 15000
+salaryMax: 22000
 salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
 city: Iasi, Bucharest, Cluj, Timisoara
 workingType: Hybrid
-status: Closed
+status: Open
 recruiter: victor-cosman
 date: 2026-06-19T15:22:00.000+03:00
 clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
