@@ -1,5 +1,5 @@
 ---
-title: Fullstack Engineer
+title: Fullstack Developer
 salaryMin: 15000
 salaryMax: 20000
 salaryCurrency: RON Net
