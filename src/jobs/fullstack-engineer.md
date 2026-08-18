@@ -63,9 +63,7 @@ mustHaves: >-
   * Solid foundation in software engineering principles, object-oriented programming, and secure coding practices
 
   * Curiosity and motivation to learn advanced design patterns, architectural concepts, and domain-specific challenges
-niceToHaves: |-
-  * Experience with cloud platforms such as Azure or AWS
-  * Exposure to SaaS or enterprise-scale product development
+niceToHaves: "* Front-end dev skills (React, TypeScript)"
 benefits: |-
   * Medical Insurance
   * Meal tickets
