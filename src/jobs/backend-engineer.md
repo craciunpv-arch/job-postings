@@ -23,7 +23,7 @@ clientDescription: >-
   forecasting, and operational intelligence.
 
 
-  The company develops cloud-native solutions for large-scale data processing, streaming, analytics, and decision support, handling over one billion data updates per day from 1,400+ data sources.
+  The company develops cloud-native solutions for large-scale data processing, streaming, analytics, and decision support, handling over one billion data updates per day from over 1000+ data sources daily.
 responsibilities: >-
   * Lead the architecture, development, and delivery of core AI platform
   services, including server-side components, natural language interfaces, and
