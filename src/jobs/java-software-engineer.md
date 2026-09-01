@@ -8,7 +8,7 @@ seniority:
   - Senior
 city: Iasi
 workingType: Hybrid
-status: Open
+status: Closed
 recruiter: vlad-craciun
 date: 2026-06-19T12:41:00.000+03:00
 clientTeaser: Stock options for early team members
