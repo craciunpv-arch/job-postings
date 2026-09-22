@@ -8,7 +8,7 @@ seniority:
   - Senior
 city: Romania
 workingType: Remote
-status: Open
+status: Closed
 recruiter: victor-cosman
 date: 2026-06-23T11:08:00.000+03:00
 clientTeaser: SaaS company with 15+ AI Agents on the roadmap for 2026
