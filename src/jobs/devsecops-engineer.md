@@ -1,7 +1,7 @@
 ---
 title: DevSecOps Engineer
-salaryMin: 18000
-salaryMax: 19000
+salaryMin: 17000
+salaryMax: 18000
 salaryCurrency: RON Net
 seniority:
   - Mid
