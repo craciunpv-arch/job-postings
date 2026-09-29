@@ -64,7 +64,23 @@ mustHaves: >-
 
   * Fluent English language proficiency.
 niceToHaves: "* German language skills"
-benefits: "-"
+benefits: >-
+  * 25 days of annual leave, with an additional vacation day awarded after five
+  years of tenure
+
+  * Monthly meal vouchers
+
+  * Comprehensive private health insurance coverage
+
+  * Flexible working hours that support a healthy work-life balance
+
+  * An inclusive and collaborative workplace, complemented by regular team events, team-building activities, and social initiatives
+
+  * Access to a broad range of modern tools and technologies, enabling continuous learning and professional growth
+
+  * Diverse career opportunities within one of the world's leading and most established retail organizations
+
+  * Structured onboarding program, along with ongoing guidance and mentorship
 selectionProcess: |-
   * One informational interview with a hiring manager 
   * One technical interview
