@@ -7,7 +7,7 @@ seniority:
   - Senior
 city: Bucharest
 workingType: Hybrid
-status: Open
+status: Closed
 recruiter: victor-cosman
 date: 2026-08-25T12:10:00.000+03:00
 clientTeaser: Tech company processing over one billion data updates daily
