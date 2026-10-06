@@ -1,7 +1,111 @@
 {
-  "months": {},
-  "reportedAllTime": null,
-  "topPages": [],
-  "topReferrers": [],
-  "updatedAt": null
+  "months": {
+    "2026-09": {
+      "visitors": 1800,
+      "pageviews": 2871
+    },
+    "2026-10": {
+      "visitors": 211,
+      "pageviews": 344
+    }
+  },
+  "reportedAllTime": {
+    "visitors": 7596,
+    "pageviews": 12899
+  },
+  "topPages": [
+    {
+      "label": "/",
+      "visitors": 115,
+      "pageviews": 152
+    },
+    {
+      "label": "/applied-ai-engineer",
+      "visitors": 35,
+      "pageviews": 39
+    },
+    {
+      "label": "/cloud-security-sre",
+      "visitors": 20,
+      "pageviews": 23
+    },
+    {
+      "label": "/backend-engineer",
+      "visitors": 18,
+      "pageviews": 37
+    },
+    {
+      "label": "/cloud-security-platform-engineer",
+      "visitors": 17,
+      "pageviews": 17
+    },
+    {
+      "label": "/data-scientist-1",
+      "visitors": 16,
+      "pageviews": 20
+    },
+    {
+      "label": "/data-platform-engineer",
+      "visitors": 14,
+      "pageviews": 16
+    },
+    {
+      "label": "/fullstack-engineer",
+      "visitors": 14,
+      "pageviews": 19
+    },
+    {
+      "label": "/mlops-team-lead",
+      "visitors": 13,
+      "pageviews": 15
+    },
+    {
+      "label": "/devsecops-engineer",
+      "visitors": 5,
+      "pageviews": 5
+    }
+  ],
+  "topReferrers": [
+    {
+      "label": "linkedin.com",
+      "visitors": 141,
+      "pageviews": 173
+    },
+    {
+      "label": "Direct",
+      "visitors": 80,
+      "pageviews": 149
+    },
+    {
+      "label": "com.linkedin.android",
+      "visitors": 11,
+      "pageviews": 11
+    },
+    {
+      "label": "google.com",
+      "visitors": 2,
+      "pageviews": 4
+    },
+    {
+      "label": "l.facebook.com",
+      "visitors": 2,
+      "pageviews": 2
+    },
+    {
+      "label": "com.google.android.gm",
+      "visitors": 1,
+      "pageviews": 1
+    },
+    {
+      "label": "facebook.com",
+      "visitors": 1,
+      "pageviews": 1
+    },
+    {
+      "label": "lnkd.in",
+      "visitors": 1,
+      "pageviews": 1
+    }
+  ],
+  "updatedAt": "2026-10-06T09:40:52.533Z"
 }
