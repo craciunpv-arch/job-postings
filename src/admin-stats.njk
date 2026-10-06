@@ -8,8 +8,14 @@ eleventyExcludeFromCollections: true
 {%- macro liveTag(key) -%}
 {% if key in live %}<span class="live">Live on homepage</span>{% else %}<span class="live live--off">Admin only</span>{% endif %}
 {%- endmacro -%}
-{%- macro dots(g) -%}
-<span class="dots">{% if g.count %}{% for i in range(0, g.open) %}<i></i>{% endfor %}{% for i in range(g.open, g.count) %}<i class="c"></i>{% endfor %}{% else %}<i class="none"></i>{% endif %}</span>
+{%- macro share(g) -%}
+<div class="grp{% if not g.count %} grp--zero{% endif %}">
+  <div class="grp-head"><span>{{ g.label }}</span><b>{{ (g.count / stats.total * 100) | round }}%</b></div>
+  <div class="sharebar" role="img" aria-label="{{ g.count }} of {{ stats.total }} roles, {{ g.open }} open">
+    <span style="width: {{ g.open / stats.total * 100 }}%"></span><span class="c" style="width: {{ (g.count - g.open) / stats.total * 100 }}%"></span>
+  </div>
+  <small>{{ g.count }} {{ "role" if g.count == 1 else "roles" }}{% if g.count %} · {{ g.open }} open{% endif %}</small>
+</div>
 {%- endmacro -%}
 {%- macro axis() -%}
 <div class="row axis"><span></span><div class="track">{% for t in stats.scale.ticks %}<span class="tick" style="left: {{ t.pct }}%">{{ t.value | num }}</span>{% endfor %}</div><span></span></div>
@@ -79,12 +85,15 @@ eleventyExcludeFromCollections: true
 
     .mix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 28px; }
     .mix h3 { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
-    .grp { display: flex; flex-direction: column; gap: 5px; padding: 6px 0; font-size: 14px; }
+    .grp { display: flex; flex-direction: column; gap: 5px; padding: 7px 0; font-size: 14px; }
     .grp--zero { color: var(--ink-soft); }
-    .dots { display: flex; flex-wrap: wrap; gap: 4px; }
-    .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
-    .dots i.c { background: #aab0b5; }
-    .dots i.none { background: none; border: 1.5px solid var(--border); }
+    .grp-head { display: flex; justify-content: space-between; gap: 12px; }
+    .grp-head b { font-variant-numeric: tabular-nums; }
+    .grp small { font-size: 12px; color: var(--ink-soft); }
+    .sharebar { display: flex; height: 10px; border-radius: 4px; overflow: hidden; background: var(--glow); }
+    .sharebar span { background: var(--accent); }
+    .sharebar span.c { background: #aab0b5; }
+    .sharebar span + span.c { border-left: 2px solid #fff; }
 
     .tablewrap { overflow-x: auto; }
     table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 13px; font-variant-numeric: tabular-nums; }
@@ -236,12 +245,12 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>What kind of roles these are</h2>
-        <p class="sub">One dot is one role. Blue dots are open now.</p>
+        <p class="sub">Share of all {{ stats.total }} roles. The blue part of each bar is open now, the grey part is closed.</p>
       </div>
       <div class="mix">
-        <div><h3>Role type</h3>{% for g in stats.roleTypes %}<div class="grp"><span>{{ g.count }} {{ g.label }}</span>{{ dots(g) }}</div>{% endfor %}</div>
-        <div><h3>Seniority</h3>{% for g in stats.seniority %}<div class="grp"><span>{{ g.count }} {{ g.label }}</span>{{ dots(g) }}</div>{% endfor %}</div>
-        <div><h3>Working model</h3>{% for g in stats.working %}<div class="grp{% if not g.count %} grp--zero{% endif %}"><span>{{ g.count or "No" }} {{ g.label }}</span>{{ dots(g) }}</div>{% endfor %}</div>
+        <div><h3>Role type</h3>{% for g in stats.roleTypes %}{{ share(g) }}{% endfor %}</div>
+        <div><h3>Seniority</h3>{% for g in stats.seniority %}{{ share(g) }}{% endfor %}</div>
+        <div><h3>Working model</h3>{% for g in stats.working %}{{ share(g) }}{% endfor %}</div>
       </div>
     </section>
 
