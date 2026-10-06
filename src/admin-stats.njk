@@ -146,7 +146,7 @@ eleventyExcludeFromCollections: true
         <div><b>{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} <small>{{ w.label | lower }}</small>{% endif %}{% endfor %}</b><span class="lbl">working model</span>{{ liveTag("working") }}</div>
         <div><b>{{ stats.aiCount }} <small>of {{ stats.total }}</small></b><span class="lbl">work with AI or ML</span>{{ liveTag("ai") }}</div>
       </div>
-      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if site.midSalaryTo and site.seniorSalaryFrom %} On the homepage the salary section shows "Mid typically up to {{ site.midSalaryTo | num }}" and "Senior typically from {{ site.seniorSalaryFrom | num }}" in place of the midpoint; both figures are set in Site Settings.{% endif %}</p>
+      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if stats.current %} The homepage shows the range for open roles only, currently {{ stats.current.min | num }} – {{ stats.current.max | num }}.{% endif %}{% if site.midSalaryTo and site.seniorSalaryFrom %} It also shows "Mid typically up to {{ site.midSalaryTo | num }}" and "Senior typically from {{ site.seniorSalaryFrom | num }}" in place of the midpoint; both figures are set in Site Settings.{% endif %}</p>
     </section>
 
     <section class="panel">

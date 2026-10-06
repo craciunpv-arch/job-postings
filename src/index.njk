@@ -118,24 +118,24 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
       </div>
     </div>
     {% endif %}
-    {% if "salary" in site.homepageStats %}
+    {% if "salary" in site.homepageStats and stats.current %}
     <div class="stats-card-section">
       <div class="stats-card-row">
         <span class="stats-card-label">Net salary</span>
-        <span class="stats-card-meta">RON / month</span>
+        <span class="stats-card-meta">RON / month · open now</span>
       </div>
-      <div class="stats-card-big">{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</div>
+      <div class="stats-card-big">{{ stats.current.min | num }} – {{ stats.current.max | num }}</div>
       {% if site.midSalaryTo and site.seniorSalaryFrom %}
       <div class="stats-card-rows stats-card-levels">
         <div class="stats-card-row"><span>Mid typically up to</span><b>{{ site.midSalaryTo | num }}</b></div>
         <div class="stats-card-row"><span>Senior typically from</span><b>{{ site.seniorSalaryFrom | num }}</b></div>
       </div>
       {% else %}
-      <div class="stats-card-track" role="img" aria-label="Salary range {{ stats.salaryMin | num }} to {{ stats.salaryMax | num }} RON, midpoint {{ stats.medianMid | num }}">
-        <div class="stats-card-fill" style="left: {{ stats.salaryBar.left }}%; width: {{ stats.salaryBar.width }}%"></div>
-        <div class="stats-card-mark" style="left: {{ stats.salaryBar.mid }}%"></div>
+      <div class="stats-card-track" role="img" aria-label="Salary range {{ stats.current.min | num }} to {{ stats.current.max | num }} RON, midpoint {{ stats.current.mid | num }}">
+        <div class="stats-card-fill" style="left: {{ stats.current.bar.left }}%; width: {{ stats.current.bar.width }}%"></div>
+        <div class="stats-card-mark" style="left: {{ stats.current.bar.mid }}%"></div>
       </div>
-      <div class="stats-card-help">Typical midpoint <strong>{{ stats.medianMid | num }}</strong></div>
+      <div class="stats-card-help">Typical midpoint <strong>{{ stats.current.mid | num }}</strong></div>
       {% endif %}
     </div>
     {% endif %}
