@@ -93,6 +93,7 @@ eleventyExcludeFromCollections: true
     td.n { white-space: nowrap; }
     td.t b { display: block; }
     td.t a { font-size: 12px; color: var(--accent-dark); word-break: break-all; }
+    .copy { font: inherit; font-size: 11px; color: var(--ink); background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 0 7px; margin-top: 3px; cursor: pointer; white-space: nowrap; }
     .st { display: inline-flex; align-items: center; gap: 6px; }
     .st i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
     .st--closed i { background: #aab0b5; }
@@ -196,7 +197,7 @@ eleventyExcludeFromCollections: true
           <tbody>
             {% for r in stats.rolesByDate %}
             <tr>
-              <td class="t"><b>{{ r.title }}</b><a href="{{ r.url }}" target="_blank" rel="noopener">{{ site.siteUrl | replace("https://", "") }}{{ r.url }}</a></td>
+              <td class="t"><b>{{ r.title }}</b><a href="{{ r.url }}" target="_blank" rel="noopener">{{ site.siteUrl | replace("https://", "") }}{{ r.url }}</a> <button class="copy" type="button" data-url="{{ site.siteUrl }}{{ r.url }}">Copy</button></td>
               <td class="n"><span class="st{% if not r.open %} st--closed{% endif %}"><i></i>{{ "Open" if r.open else "Closed" }}</span></td>
               <td class="r">{{ r.min | num if r.min else "–" }}</td>
               <td class="r">{{ r.max | num if r.max else "–" }}</td>
@@ -216,5 +217,15 @@ eleventyExcludeFromCollections: true
     </section>
     {% endif %}
   </div>
+  <script>
+    document.querySelectorAll('.copy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.dataset.url).then(function () {
+          btn.textContent = 'Copied ✓';
+          setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+        });
+      });
+    });
+  </script>
 </body>
 </html>

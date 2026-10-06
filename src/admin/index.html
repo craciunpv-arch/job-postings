@@ -59,6 +59,43 @@
     });
 
     CMS.registerPreviewTemplate('team', TeamPreview);
+
+    // Show each job's public URL, with a copy button, under its title in the Job Postings list.
+    function addJobLinks() {
+      document.querySelectorAll('a[href*="/collections/jobs/entries/"]').forEach(function (card) {
+        var slug = card.getAttribute('href').split('/entries/')[1].split('?')[0];
+        var next = card.nextElementSibling;
+        if (!slug || (next && next.className === 'job-public-link')) return;
+        var url = location.origin + '/' + slug + '/';
+
+        var row = document.createElement('div');
+        row.className = 'job-public-link';
+        row.style.cssText = 'display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 20px 12px;margin-top:-6px;font-size:13px;';
+
+        var link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = url.replace(/^https?:\/\//, '') + ' ↗';
+        link.style.cssText = 'color:#3266ff;text-decoration:underline;';
+
+        var copy = document.createElement('button');
+        copy.type = 'button';
+        copy.textContent = 'Copy';
+        copy.style.cssText = 'font:inherit;font-size:12px;color:#26282a;background:#fff;border:1px solid #dcdfe1;border-radius:6px;padding:1px 9px;cursor:pointer;';
+        copy.addEventListener('click', function () {
+          navigator.clipboard.writeText(url).then(function () {
+            copy.textContent = 'Copied ✓';
+            setTimeout(function () { copy.textContent = 'Copy'; }, 2000);
+          });
+        });
+
+        row.appendChild(link);
+        row.appendChild(copy);
+        card.insertAdjacentElement('afterend', row);
+      });
+    }
+    new MutationObserver(addJobLinks).observe(document.body, { childList: true, subtree: true });
   </script>
 </body>
 </html>

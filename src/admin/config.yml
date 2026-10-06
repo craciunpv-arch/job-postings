@@ -18,7 +18,6 @@ collections:
     folder: src/jobs
     create: true
     slug: "{{slug}}"
-    summary: "{{title}} — hand-picked-jobs.edurom.ro/{{slug}}/"
     description: >-
       ⚠️ To post a new role, always click "New Job Postings" above — never edit an existing
       entry (open or closed) to turn it into a different role. That breaks its URL and its
