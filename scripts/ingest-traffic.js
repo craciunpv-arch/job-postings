@@ -30,6 +30,7 @@ const attempt = (label, promise) =>
 
 const totals = (row) => ({ visitors: row.visitors || 0, pageviews: row.pageviews || 0 });
 const highest = (a, b) => ({
+  ...a,
   visitors: Math.max(a?.visitors || 0, b.visitors),
   pageviews: Math.max(a?.pageviews || 0, b.pageviews),
 });
@@ -50,7 +51,7 @@ async function main() {
   const until = now.toISOString();
   const monthKey = until.slice(0, 7);
   const monthStart = `${monthKey}-01T00:00:00.000Z`;
-  const windowStart = new Date(now - 31 * 24 * 60 * 60 * 1000).toISOString();
+  const windowStart = new Date(now - 30 * 24 * 60 * 60 * 1000).toISOString();
 
   // Ask for everything since launch first; fall back to the one-month window the plan guarantees.
   const byMonth =
@@ -67,7 +68,8 @@ async function main() {
   const reported = await attempt("all-time count", query("count", {}));
   if (reported) traffic.reportedAllTime = highest(traffic.reportedAllTime, totals(reported));
 
-  const range = { since: monthStart, until };
+  // Rankings cover the last 30 days so they never start from zero on the 1st.
+  const range = { since: windowStart, until };
   const pages = await attempt("top pages", query("aggregate", { ...range, by: "requestPath", limit: 10 }));
   const referrers = await attempt("referrers", query("aggregate", { ...range, by: "referrerHostname", limit: 8 }));
   if (pages) traffic.topPages = topRows(pages, "requestPath");

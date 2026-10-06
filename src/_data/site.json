@@ -15,6 +15,9 @@
     "roles",
     "salary",
     "working",
-    "ai"
-  ]
+    "ai",
+    "topRoles"
+  ],
+  "midSalaryTo": 17000,
+  "seniorSalaryFrom": 18000
 }

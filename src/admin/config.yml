@@ -118,6 +118,8 @@ collections:
           - { label: "Footer Bold", name: footerBold, widget: boolean, default: false }
           - { label: "Footer Italic", name: footerItalic, widget: boolean, default: false }
           - { label: "Footer Sub-text", name: footerSubtext, widget: text, required: false, hint: "A short company description shown below the footer text, in smaller italic type." }
+          - { label: "Mid salary typically up to", name: midSalaryTo, widget: number, value_type: int, required: false, hint: "Shown on the homepage stats card, e.g. 17000. Leave this or the next field empty to show the typical midpoint instead." }
+          - { label: "Senior salary typically from", name: seniorSalaryFrom, widget: number, value_type: int, required: false, hint: "Shown on the homepage stats card, e.g. 18000." }
           - label: "Homepage Stats"
             name: homepageStats
             widget: select
@@ -130,7 +132,7 @@ collections:
               - { label: "Work with AI or ML", value: "ai" }
               - { label: "Salary by seniority", value: "seniority" }
               - { label: "Salary by role type", value: "roleType" }
-              - { label: "Visitors, all time and this month", value: "traffic" }
+              - { label: "Most viewed roles, last 30 days", value: "topRoles" }
             hint: "Stats shown to candidates next to the job cards. Untick all to hide the panel. The full stats are at /admin/stats/."
 
       - file: src/_data/cmsFieldLabels.json

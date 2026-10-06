@@ -1140,13 +1140,13 @@ button:focus-visible {
 }
 
 .stats-card-row--center { align-items: center; }
-.stats-card-row--wide { gap: 16px; }
 .stats-card-open-row { margin-top: 6px; }
 
 .stats-card-hero-row {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  padding-top: 4px;
 }
 
 .stats-card-hero {
@@ -1243,6 +1243,8 @@ button:focus-visible {
 
 .stats-card-split div:nth-child(3) { background: #f0efec; }
 
+.stats-card-split--share div:nth-child(2) { background: #f0efec; border: 0; }
+
 .stats-card-legend { gap: 12px; font-size: 15px; }
 .stats-card-legend b { font-size: 20px; font-weight: 700; }
 .stats-card-legend em { font-style: normal; color: var(--stats-mid); }
@@ -1257,21 +1259,6 @@ button:focus-visible {
 
 .stats-card-count .stats-card-big { color: var(--stats-ink); }
 
-.stats-card-dots {
-  display: grid;
-  grid-template-columns: repeat(9, 10px);
-  gap: 4px;
-}
-
-.stats-card-dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #ecebe8;
-}
-
-.stats-card-dots span.on { background: var(--stats-blue); }
-
 .stats-card-rows {
   display: flex;
   flex-direction: column;
@@ -1282,7 +1269,36 @@ button:focus-visible {
 
 .stats-card-rows b { font-weight: 700; white-space: nowrap; }
 
-@media (min-width: 1141px) and (min-height: 800px) {
+.stats-card-levels { font-size: 15px; color: var(--stats-mid); }
+.stats-card-levels b { font-size: 17px; color: var(--stats-ink); }
+
+.stats-card-ranking {
+  list-style: none;
+  counter-reset: rank;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.stats-card-ranking li {
+  counter-increment: rank;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.stats-card-ranking li::before {
+  content: counter(rank);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--stats-soft);
+}
+
+.stats-card-ranking a { color: var(--stats-ink); font-weight: 500; text-decoration: none; }
+.stats-card-ranking a:hover { color: #2f92bd; }
+
+@media (min-width: 1141px) and (min-height: 900px) {
   .stats-card { position: sticky; top: 168px; }
 }
 

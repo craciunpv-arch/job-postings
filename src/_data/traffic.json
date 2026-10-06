@@ -1,8 +1,24 @@
 {
   "months": {
+    "2026-06": {
+      "visitors": 2090,
+      "pageviews": 3630,
+      "estimated": true
+    },
+    "2026-07": {
+      "visitors": 2090,
+      "pageviews": 3630,
+      "estimated": true
+    },
+    "2026-08": {
+      "visitors": 1405,
+      "pageviews": 2424,
+      "estimated": true
+    },
     "2026-09": {
       "visitors": 1800,
-      "pageviews": 2871
+      "pageviews": 2871,
+      "note": "from 5 Sep"
     },
     "2026-10": {
       "visitors": 211,

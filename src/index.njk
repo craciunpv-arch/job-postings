@@ -18,7 +18,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 
 <div class="main">
   {% set openJobs = collections.jobs | selectattr("status", "equalto", "Open") %}
-  {% set stats = collections.jobs | jobStats %}
+  {% set stats = collections.jobs | jobStats(site) %}
   {% set showStats = stats.total and site.homepageStats and site.homepageStats.length %}
   <div class="jobs-layout{% if showStats %} jobs-layout--stats{% endif %}">
   {% if openJobs.length %}
@@ -101,7 +101,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
   {% endif %}
 
   {% if showStats %}
-  {% set visits = traffic | trafficStats %}
+  {% set visits = traffic | trafficStats(collections.jobs) %}
   <aside class="stats-card" aria-label="Roles in numbers">
     {% if "roles" in site.homepageStats %}
     <div class="stats-card-section stats-card-section--tight">
@@ -123,11 +123,18 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
         <span class="stats-card-meta">RON / month</span>
       </div>
       <div class="stats-card-big">{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</div>
+      {% if site.midSalaryTo and site.seniorSalaryFrom %}
+      <div class="stats-card-rows stats-card-levels">
+        <div class="stats-card-row"><span>Mid typically up to</span><b>{{ site.midSalaryTo | num }}</b></div>
+        <div class="stats-card-row"><span>Senior typically from</span><b>{{ site.seniorSalaryFrom | num }}</b></div>
+      </div>
+      {% else %}
       <div class="stats-card-track" role="img" aria-label="Salary range {{ stats.salaryMin | num }} to {{ stats.salaryMax | num }} RON, midpoint {{ stats.medianMid | num }}">
         <div class="stats-card-fill" style="left: {{ stats.salaryBar.left }}%; width: {{ stats.salaryBar.width }}%"></div>
         <div class="stats-card-mark" style="left: {{ stats.salaryBar.mid }}%"></div>
       </div>
       <div class="stats-card-help">Typical midpoint <strong>{{ stats.medianMid | num }}</strong></div>
+      {% endif %}
     </div>
     {% endif %}
     {% if "working" in site.homepageStats %}
@@ -144,18 +151,24 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
     {% if "ai" in site.homepageStats %}
     <div class="stats-card-section">
       <span class="stats-card-label">AI &amp; ML</span>
-      <div class="stats-card-row stats-card-row--center stats-card-row--wide">
-        <div class="stats-card-count"><span class="stats-card-big">{{ stats.aiCount }}</span><span>of {{ stats.total }} roles</span></div>
-        <div class="stats-card-dots" aria-hidden="true">{% for i in range(0, stats.total) %}<span{% if i < stats.aiCount %} class="on"{% endif %}></span>{% endfor %}</div>
+      <div class="stats-card-count"><span class="stats-card-big">{{ stats.aiShare }}%</span><span>{{ stats.aiCount }} of {{ stats.total }} roles</span></div>
+      <div class="stats-card-split stats-card-split--share" role="img" aria-label="{{ stats.aiShare }}% of roles">
+        <div style="flex: {{ stats.aiCount }} 1 0"></div><div style="flex: {{ stats.total - stats.aiCount }} 1 0"></div>
       </div>
       <div class="stats-card-help">work hands-on with LLMs or ML</div>
     </div>
     {% endif %}
-    {% if "traffic" in site.homepageStats and visits.ready and visits.allTime.visitors %}
+    {% if "topRoles" in site.homepageStats and visits.topRoles.length %}
     <div class="stats-card-section">
-      <span class="stats-card-label">Visitors</span>
-      <div class="stats-card-count"><span class="stats-card-big">{{ visits.allTime.visitors | num }}</span><span>so far</span></div>
-      <div class="stats-card-help"><strong>{{ visits.month.visitors | num }}</strong> this month</div>
+      <div class="stats-card-row">
+        <span class="stats-card-label">Most viewed</span>
+        <span class="stats-card-meta">last 30 days</span>
+      </div>
+      <ol class="stats-card-ranking">
+        {% for role in visits.topRoles %}{% if loop.index <= 3 %}
+        <li><a href="{{ role.url }}">{{ role.title }}</a></li>
+        {% endif %}{% endfor %}
+      </ol>
     </div>
     {% endif %}
     {% if "seniority" in site.homepageStats %}

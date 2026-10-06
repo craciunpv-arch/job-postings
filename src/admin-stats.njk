@@ -2,9 +2,9 @@
 permalink: /admin/stats/index.html
 eleventyExcludeFromCollections: true
 ---
-{%- set stats = collections.jobs | jobStats -%}
+{%- set stats = collections.jobs | jobStats(site) -%}
 {%- set live = site.homepageStats or [] -%}
-{%- set visits = traffic | trafficStats -%}
+{%- set visits = traffic | trafficStats(collections.jobs) -%}
 {%- macro liveTag(key) -%}
 {% if key in live %}<span class="live">Live on homepage</span>{% else %}<span class="live live--off">Admin only</span>{% endif %}
 {%- endmacro -%}
@@ -106,6 +106,7 @@ eleventyExcludeFromCollections: true
     table.mini a { color: var(--accent-dark); word-break: break-all; }
     .barcol { width: 50%; }
     .minibar { display: block; height: 10px; min-width: 2px; margin-top: 4px; border-radius: 4px; background: var(--accent); }
+    .minibar--estimated { background: repeating-linear-gradient(135deg, rgba(50,102,255,0.6) 0 4px, rgba(50,102,255,0.25) 4px 8px); }
 
     @media (max-width: 720px) {
       .traffic-lists { grid-template-columns: 1fr; }
@@ -145,14 +146,14 @@ eleventyExcludeFromCollections: true
         <div><b>{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} <small>{{ w.label | lower }}</small>{% endif %}{% endfor %}</b><span class="lbl">working model</span>{{ liveTag("working") }}</div>
         <div><b>{{ stats.aiCount }} <small>of {{ stats.total }}</small></b><span class="lbl">work with AI or ML</span>{{ liveTag("ai") }}</div>
       </div>
-      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.</p>
+      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if site.midSalaryTo and site.seniorSalaryFrom %} On the homepage the salary section shows "Mid typically up to {{ site.midSalaryTo | num }}" and "Senior typically from {{ site.seniorSalaryFrom | num }}" in place of the midpoint; both figures are set in Site Settings.{% endif %}</p>
     </section>
 
     <section class="panel">
       <div>
-        <h2>Site traffic {{ liveTag("traffic") }}</h2>
+        <h2>Site traffic</h2>
         {% if visits.ready %}
-        <p class="sub">From Vercel Web Analytics, production site only, saved daily. Vercel's free plan keeps one month of data, so each month is stored here. All time is the sum of the stored months, or Vercel's own lifetime count when that is higher. Last updated {{ visits.updatedAt | postDate }}.</p>
+        <p class="sub">From Vercel Web Analytics, production site only, saved daily. Vercel's free plan keeps one month of data, so each month is stored here. All time is the sum of the stored months, or Vercel's own lifetime count when that is higher. Last updated {{ visits.updatedAt | postDate }}. Visitor numbers are shown here only; the homepage shows just the three most viewed open roles.</p>
         {% else %}
         <p class="sub">Not connected yet. Once the VERCEL_ANALYTICS_TOKEN secret is added to the GitHub repository, visitor numbers are saved here every day.</p>
         {% endif %}
@@ -166,11 +167,12 @@ eleventyExcludeFromCollections: true
       </div>
       <div>
         <h3 class="eyebrow">Month by month</h3>
+        {% if visits.hasEstimates %}<p class="sub" style="margin: -4px 0 10px">Vercel could not break down anything older than 31 days, so the months marked estimated are a manual split of the measured total for that period: June and July equal, August lowest. Edit them in src/_data/traffic.json.</p>{% endif %}
         <table class="mini">
           <thead><tr><th>Month</th><th class="barcol">Visitors</th><th class="r"></th><th class="r">Page views</th></tr></thead>
           <tbody>
             {% for m in visits.months %}
-            <tr><td class="n">{{ m.label }}{% if m.current %} (so far){% endif %}</td><td class="barcol"><span class="minibar" style="width: {{ m.pct }}%"></span></td><td class="r">{{ m.visitors | num }}</td><td class="r">{{ m.pageviews | num }}</td></tr>
+            <tr><td class="n">{{ m.label }}{% if m.current %} (so far){% endif %}{% if m.note %} ({{ m.note }}){% endif %}{% if m.estimated %} (estimated){% endif %}</td><td class="barcol"><span class="minibar{% if m.estimated %} minibar--estimated{% endif %}" style="width: {{ m.pct }}%"></span></td><td class="r">{% if m.estimated %}~{% endif %}{{ m.visitors | num }}</td><td class="r">{% if m.estimated %}~{% endif %}{{ m.pageviews | num }}</td></tr>
             {% endfor %}
           </tbody>
         </table>
@@ -178,14 +180,14 @@ eleventyExcludeFromCollections: true
       {% if visits.topPages.length or visits.topReferrers.length %}
       <div class="traffic-lists">
         <div>
-          <h3 class="eyebrow">Most viewed pages, {{ visits.monthLabel }}</h3>
+          <h3 class="eyebrow">Most viewed pages, last 30 days {{ liveTag("topRoles") }}</h3>
           <table class="mini">
             <thead><tr><th>Page</th><th class="r">Visitors</th><th class="r">Page views</th></tr></thead>
             <tbody>{% for row in visits.topPages %}<tr><td><a href="{{ row.label }}" target="_blank" rel="noopener">{{ row.label }}</a></td><td class="r">{{ row.visitors | num }}</td><td class="r">{{ row.pageviews | num }}</td></tr>{% endfor %}</tbody>
           </table>
         </div>
         <div>
-          <h3 class="eyebrow">Where visitors came from, {{ visits.monthLabel }}</h3>
+          <h3 class="eyebrow">Where visitors came from, last 30 days</h3>
           <table class="mini">
             <thead><tr><th>Source</th><th class="r">Visitors</th><th class="r">Page views</th></tr></thead>
             <tbody>{% for row in visits.topReferrers %}<tr><td>{{ row.label }}</td><td class="r">{{ row.visitors | num }}</td><td class="r">{{ row.pageviews | num }}</td></tr>{% endfor %}</tbody>
