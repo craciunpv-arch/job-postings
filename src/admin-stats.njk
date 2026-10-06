@@ -1,0 +1,220 @@
+---
+permalink: /admin/stats/index.html
+eleventyExcludeFromCollections: true
+---
+{%- set stats = collections.jobs | jobStats -%}
+{%- set live = site.homepageStats or [] -%}
+{%- macro liveTag(key) -%}
+{% if key in live %}<span class="live">Live on homepage</span>{% else %}<span class="live live--off">Admin only</span>{% endif %}
+{%- endmacro -%}
+{%- macro dots(g) -%}
+<span class="dots">{% if g.count %}{% for i in range(0, g.open) %}<i></i>{% endfor %}{% for i in range(g.open, g.count) %}<i class="c"></i>{% endfor %}{% else %}<i class="none"></i>{% endif %}</span>
+{%- endmacro -%}
+{%- macro axis() -%}
+<div class="row axis"><span></span><div class="track">{% for t in stats.scale.ticks %}<span class="tick" style="left: {{ t.pct }}%">{{ t.value | num }}</span>{% endfor %}</div><span></span></div>
+{%- endmacro -%}
+{%- macro groupChart(groups) -%}
+<div class="chart" style="--divs: {{ stats.scale.divisions }}">
+  {% for g in groups %}{% if g.avgMin %}
+  <div class="row">
+    <span class="name">{{ g.label }}<small>{{ g.count }} {{ "role" if g.count == 1 else "roles" }} · typical midpoint {{ g.medianMid | num }}</small></span>
+    <div class="track"><span class="bar{% if g.count < 2 %} bar--thin{% endif %}" style="left: {{ g.bar.left }}%; width: {{ g.bar.width }}%"></span></div>
+    <span class="val">{{ g.avgMin | num }} – {{ g.avgMax | num }}</span>
+  </div>
+  {% endif %}{% endfor %}
+  {{ axis() }}
+</div>
+{%- endmacro -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Stats | {{ site.siteTitle }}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    body { background: #eef0f2; display: block; font-size: 16px; line-height: 1.5; }
+    .admin-bar { background: #0d0f17; color: #fff; padding: 10px 16px; font-family: system-ui, sans-serif; font-size: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .admin-bar a { color: #fff; text-decoration: underline; }
+    .admin-bar span { display: flex; gap: 20px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 16px 56px; display: flex; flex-direction: column; gap: 20px; }
+    .intro h1 { font-size: 26px; letter-spacing: -0.01em; line-height: 1.25; }
+    .intro p { color: var(--ink-mid); max-width: 72ch; margin-top: 6px; font-size: 15px; }
+    .intro a { color: var(--accent-dark); }
+    .panel { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+    .panel h2 { font-size: 18px; letter-spacing: -0.02em; line-height: 1.3; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .sub { font-size: 13px; color: var(--ink-soft); margin-top: 2px; max-width: 80ch; }
+    .live { font-size: 11px; font-weight: 500; letter-spacing: 0; padding: 2px 9px; border-radius: 999px; background: var(--badge-new-soft); color: var(--badge-new); }
+    .live--off { background: var(--glow); color: var(--ink-soft); }
+
+    .strip { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .strip > div { padding: 2px 16px; border-left: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
+    .strip > div:first-child { border-left: 0; padding-left: 0; }
+    .strip b { font-size: 24px; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .strip b small { font-size: 13px; font-weight: 400; color: var(--ink-soft); }
+    .strip .lbl { font-size: 13px; color: var(--ink-mid); line-height: 1.3; }
+
+    .legend { display: flex; gap: 16px; font-size: 12px; color: var(--ink-mid); }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 14px; height: 8px; border-radius: 3px; background: var(--accent); }
+    .legend i.c { background: #aab0b5; }
+
+    .chart { font-variant-numeric: tabular-nums; }
+    .row { display: grid; grid-template-columns: 250px 1fr 128px; align-items: center; column-gap: 14px; }
+    .row .name { font-size: 14px; font-weight: 700; line-height: 1.2; }
+    .row .name small { display: block; font-weight: 400; font-size: 12px; color: var(--ink-soft); }
+    .row .val { font-size: 13px; color: var(--ink-mid); text-align: right; white-space: nowrap; }
+    .track { position: relative; height: 38px; border-right: 1px solid var(--border); background-image: repeating-linear-gradient(to right, var(--border) 0 1px, transparent 1px calc(100% / var(--divs))); }
+    .bar { position: absolute; top: 50%; height: 12px; margin-top: -6px; border-radius: 4px; background: var(--accent); }
+    .bar--closed { background: #aab0b5; }
+    .bar--thin { background: none; border: 1.5px solid var(--ink-soft); }
+    .median { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1.5px dashed var(--ink-mid); }
+    .axis .track { height: 22px; background: none; border: 0; }
+    .axis .tick { position: absolute; top: 4px; transform: translateX(-50%); font-size: 11px; color: var(--ink-soft); }
+    .axis--top .track { height: 20px; }
+    .axis .mlabel { position: absolute; bottom: 2px; transform: translateX(-50%); font-size: 11px; color: var(--ink-mid); white-space: nowrap; background: #fff; padding: 0 4px; }
+
+    .mix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 28px; }
+    .mix h3 { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+    .grp { display: flex; flex-direction: column; gap: 5px; padding: 6px 0; font-size: 14px; }
+    .grp--zero { color: var(--ink-soft); }
+    .dots { display: flex; flex-wrap: wrap; gap: 4px; }
+    .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+    .dots i.c { background: #aab0b5; }
+    .dots i.none { background: none; border: 1.5px solid var(--border); }
+
+    .tablewrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 13px; font-variant-numeric: tabular-nums; }
+    th { text-align: left; font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); padding: 0 12px 8px 0; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 8px 12px 8px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+    td.r, th.r { text-align: right; }
+    td.n { white-space: nowrap; }
+    td.t b { display: block; }
+    td.t a { font-size: 12px; color: var(--accent-dark); word-break: break-all; }
+    .st { display: inline-flex; align-items: center; gap: 6px; }
+    .st i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .st--closed i { background: #aab0b5; }
+    tfoot td { border-bottom: 0; font-weight: 700; padding-top: 10px; }
+
+    @media (max-width: 720px) {
+      .strip { grid-template-columns: 1fr 1fr; row-gap: 16px; }
+      .strip > div:nth-child(odd) { border-left: 0; padding-left: 0; }
+      .mix { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr auto; padding-top: 8px; }
+      .row .track { grid-column: 1 / -1; height: 26px; margin: 0 14px; }
+      .panel { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-bar">
+    <a href="/admin/">← Content Manager</a>
+    <span>
+      <a href="/" target="_blank" rel="noopener">View Site →</a>
+      <a href="https://vercel.com/craciunpv-archs-projects/job-postings/analytics" target="_blank" rel="noopener">View Analytics →</a>
+    </span>
+  </div>
+
+  <div class="wrap">
+    <header class="intro">
+      <h1>Job posting stats</h1>
+      {% if stats.total %}
+      <p>Calculated from all {{ stats.total }} roles in the CMS since {{ stats.since }}, open and closed. Salaries are RON Net. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
+      {% else %}
+      <p>No roles have been published yet.</p>
+      {% endif %}
+    </header>
+
+    {% if stats.total %}
+    <section class="panel">
+      <div class="strip">
+        <div><b>{{ stats.total }} <small>· {{ stats.open }} open</small></b><span class="lbl">roles posted since {{ stats.since }}</span>{{ liveTag("roles") }}</div>
+        <div><b>{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</b><span class="lbl">salary range, typical midpoint {{ stats.medianMid | num }}</span>{{ liveTag("salary") }}</div>
+        <div><b>{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} <small>{{ w.label | lower }}</small>{% endif %}{% endfor %}</b><span class="lbl">working model</span>{{ liveTag("working") }}</div>
+        <div><b>{{ stats.aiCount }} <small>of {{ stats.total }}</small></b><span class="lbl">work with AI or ML</span>{{ liveTag("ai") }}</div>
+      </div>
+      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.</p>
+    </section>
+
+    <section class="panel">
+      <div>
+        <h2>What our roles pay</h2>
+        <p class="sub">Salary range for every role. The dashed line is the typical midpoint.</p>
+      </div>
+      <p class="legend"><span><i></i>Open now</span><span><i class="c"></i>Closed</span></p>
+      <div class="chart" style="--divs: {{ stats.scale.divisions }}">
+        <div class="row axis axis--top"><span></span><div class="track"><span class="mlabel" style="left: {{ stats.scale.medianPct }}%">typical midpoint {{ stats.medianMid | num }}</span></div><span></span></div>
+        {% for r in stats.roles %}
+        <div class="row">
+          <span class="name">{{ r.title }}<small>{{ "Open" if r.open else "Closed" }} · {{ r.seniority }} · {{ r.workingType }}</small></span>
+          <div class="track"><span class="median" style="left: {{ stats.scale.medianPct }}%"></span><span class="bar{% if not r.open %} bar--closed{% endif %}" style="left: {{ r.bar.left }}%; width: {{ r.bar.width }}%" title="{{ r.title }}: {{ r.min | num }} – {{ r.max | num }}"></span></div>
+          <span class="val">{{ r.min | num }} – {{ r.max | num }}</span>
+        </div>
+        {% endfor %}
+        {{ axis() }}
+      </div>
+    </section>
+
+    <section class="panel">
+      <div>
+        <h2>Salary by seniority {{ liveTag("seniority") }}</h2>
+        <p class="sub">Average min and max per seniority level set in the CMS. A role open to several levels has one range covering all of them.</p>
+      </div>
+      {{ groupChart(stats.seniority) }}
+    </section>
+
+    <section class="panel">
+      <div>
+        <h2>Salary by role type {{ liveTag("roleType") }}</h2>
+        <p class="sub">Average min and max per Role Type set in the CMS. A type with a single role is drawn as an outline and is left out of the homepage.{% if stats.untypedCount %} {{ stats.untypedCount }} {{ "role has" if stats.untypedCount == 1 else "roles have" }} no Role Type yet.{% endif %}</p>
+      </div>
+      {{ groupChart(stats.roleTypes) }}
+    </section>
+
+    <section class="panel">
+      <div>
+        <h2>What kind of roles these are</h2>
+        <p class="sub">One dot is one role. Blue dots are open now.</p>
+      </div>
+      <div class="mix">
+        <div><h3>Role type</h3>{% for g in stats.roleTypes %}<div class="grp"><span>{{ g.count }} {{ g.label }}</span>{{ dots(g) }}</div>{% endfor %}</div>
+        <div><h3>Seniority</h3>{% for g in stats.seniority %}<div class="grp"><span>{{ g.count }} {{ g.label }}</span>{{ dots(g) }}</div>{% endfor %}</div>
+        <div><h3>Working model</h3>{% for g in stats.working %}<div class="grp{% if not g.count %} grp--zero{% endif %}"><span>{{ g.count or "No" }} {{ g.label }}</span>{{ dots(g) }}</div>{% endfor %}</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div>
+        <h2>All {{ stats.total }} job postings</h2>
+        <p class="sub">Newest first, with each role's public link.</p>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Role and URL</th><th>Status</th><th class="r">Min</th><th class="r">Max</th><th class="r">Midpoint</th><th>Seniority</th><th>Working</th><th>City</th><th>Role type</th><th>Tech stack</th><th>Posted</th></tr></thead>
+          <tbody>
+            {% for r in stats.rolesByDate %}
+            <tr>
+              <td class="t"><b>{{ r.title }}</b><a href="{{ r.url }}" target="_blank" rel="noopener">{{ site.siteUrl | replace("https://", "") }}{{ r.url }}</a></td>
+              <td class="n"><span class="st{% if not r.open %} st--closed{% endif %}"><i></i>{{ "Open" if r.open else "Closed" }}</span></td>
+              <td class="r">{{ r.min | num if r.min else "–" }}</td>
+              <td class="r">{{ r.max | num if r.max else "–" }}</td>
+              <td class="r">{{ r.mid | num if r.mid else "–" }}</td>
+              <td class="n">{{ r.seniority }}</td>
+              <td>{{ r.workingType }}</td>
+              <td>{{ r.city }}</td>
+              <td>{{ r.roleType }}</td>
+              <td>{{ r.techStack | join(", ") }}</td>
+              <td class="n">{{ r.date | postDate }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot><tr><td>{{ stats.total }} roles</td><td>{{ stats.open }} open</td><td class="r">{{ stats.salaryMin | num }}</td><td class="r">{{ stats.salaryMax | num }}</td><td class="r">{{ stats.medianMid | num }}</td><td colspan="6">lowest min, highest max, median midpoint</td></tr></tfoot>
+        </table>
+      </div>
+    </section>
+    {% endif %}
+  </div>
+</body>
+</html>

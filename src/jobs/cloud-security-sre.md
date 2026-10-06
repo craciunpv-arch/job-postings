@@ -8,6 +8,7 @@ seniority:
   - Senior
 city: Romania
 workingType: Remote
+roleType: "Cloud, DevOps & security"
 status: Open
 recruiter: victor-cosman
 date: 2026-09-29T11:18:00.000+03:00

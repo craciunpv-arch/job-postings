@@ -24,5 +24,6 @@
   "jobs.selectionProcess": "Selection Process",
   "jobs.niceToHaves": "Nice-to-haves",
   "jobs.goodToKnow": "Good to Know",
-  "team.name": "Full Name"
+  "team.name": "Full Name",
+  "jobs.roleType": "Role Type"
 }

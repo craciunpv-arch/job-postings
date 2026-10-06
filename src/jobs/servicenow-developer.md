@@ -8,6 +8,7 @@ seniority:
   - Senior
 city: Cluj, Romania
 workingType: Hybrid
+roleType: "Enterprise platforms"
 status: Closed
 recruiter: victor-cosman
 date: 2026-07-22T10:40:00.000+03:00

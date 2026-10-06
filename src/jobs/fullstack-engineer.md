@@ -8,6 +8,7 @@ seniority:
   - Senior
 city: Romania
 workingType: Remote
+roleType: "Software engineering"
 status: Open
 recruiter: victor-cosman
 date: 2026-08-18T14:36:00.000+03:00

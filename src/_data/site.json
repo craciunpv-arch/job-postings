@@ -10,5 +10,11 @@
   "contactNote": "Interested in one of these roles? Reach out and let's talk.",
   "footerSubtext": "EDUROM Recruitment is a specialised Tech Recruitment Agency, successfully matching Romanian IT professionals with clients across Europe and the USA since 2008. \nPart of the Edurom Group, which assists organisations in achieving outstanding results through Human Resources and Management Consulting services.",
   "email": "vlad@edurom.ro",
-  "linkedin": "https://www.linkedin.com/in/vlad-craciun/"
+  "linkedin": "https://www.linkedin.com/in/vlad-craciun/",
+  "homepageStats": [
+    "roles",
+    "salary",
+    "working",
+    "ai"
+  ]
 }

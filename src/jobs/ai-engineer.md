@@ -8,6 +8,7 @@ seniority:
   - Senior
 city: Iasi, Bucharest, Cluj, Timisoara
 workingType: Hybrid
+roleType: "Data & AI"
 status: Closed
 recruiter: victor-cosman
 date: 2026-08-06T10:12:00.000+03:00

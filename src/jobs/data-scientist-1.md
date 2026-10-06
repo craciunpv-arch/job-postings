@@ -8,6 +8,7 @@ seniority:
   - Senior
 city: Bucharest
 workingType: Hybrid
+roleType: "Data & AI"
 status: Open
 recruiter: victor-cosman
 date: 2026-08-25T12:26:00.000+03:00

@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it")({ html: true });
+const jobStats = require("./lib/job-stats");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
@@ -21,6 +22,10 @@ module.exports = function (eleventyConfig) {
     const fmt = (n) => new Intl.NumberFormat("ro-RO").format(n);
     return `${fmt(min)} – ${fmt(max)} ${currency || "RON Net"}`;
   });
+
+  eleventyConfig.addFilter("num", (n) => new Intl.NumberFormat("ro-RO").format(n));
+
+  eleventyConfig.addFilter("jobStats", jobStats);
 
   eleventyConfig.addFilter("selectattr", (arr, key, test, value) =>
     (arr || []).filter((item) => item.data[key] === value)

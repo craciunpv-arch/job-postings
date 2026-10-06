@@ -7,6 +7,7 @@ seniority:
   - Senior
 city: Romania
 workingType: Remote
+roleType: "Data & AI"
 status: Open
 recruiter: victor-cosman
 date: 2026-09-29T10:45:00.000+03:00
