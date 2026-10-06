@@ -98,11 +98,8 @@ collections:
         search_fields: ["teaser"]
         display_fields: ["teaser"]
         value_field: "{{slug}}"
-        required: false
-        hint: "Pick the client by its teaser; the role then shows that client's teaser and description. For a new client, add it under Clients first."
-      - { label: "Client Teaser (only if different)", name: clientTeaser, widget: string, required: false, hint: "Leave blank to use the selected client's teaser. Fill in only if this one role needs a different line." }
+        hint: "Pick the client by its teaser. The role shows that client's teaser and description; to change either, edit the client under Clients. For a new client, add it under Clients first."
       - { label: "Tech Stack", name: techStack, widget: list, required: false, hint: "Tags shown on the listing, e.g. Java, React, PostgreSQL" }
-      - { label: "Client Description (only if different)", name: clientDescription, widget: markdown, required: false, hint: "Leave blank to use the selected client's description. Fill in only if this one role needs different text." }
       - { label: "Main Responsibilities", name: responsibilities, widget: markdown }
       - { label: "Must-haves", name: mustHaves, widget: markdown }
       - { label: "Nice-to-haves", name: niceToHaves, widget: markdown }
@@ -194,9 +191,7 @@ collections:
           - { label: "Job: Posted By", name: "jobs.recruiter", widget: string }
           - { label: "Job: Publish Date", name: "jobs.date", widget: string }
           - { label: "Job: Client", name: "jobs.client", widget: string }
-          - { label: "Job: Client Teaser", name: "jobs.clientTeaser", widget: string }
           - { label: "Job: Tech Stack", name: "jobs.techStack", widget: string }
-          - { label: "Job: Client Description", name: "jobs.clientDescription", widget: string }
           - { label: "Job: Main Responsibilities", name: "jobs.responsibilities", widget: string }
           - { label: "Job: Must-haves", name: "jobs.mustHaves", widget: string }
           - { label: "Job: Nice-to-haves", name: "jobs.niceToHaves", widget: string }

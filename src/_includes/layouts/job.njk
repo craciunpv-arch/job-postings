@@ -35,7 +35,7 @@ layout: layouts/base.njk
         <h2>About the Client</h2>
         <div class="post-body">
           {% set jobClient = collections.clients | findBySlug(client) %}
-          {{ (clientDescription or (jobClient.data.description if jobClient)) | markdown | safe }}
+          {{ (jobClient.data.description if jobClient) | markdown | safe }}
         </div>
       </section>
 

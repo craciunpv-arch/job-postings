@@ -1,0 +1,9 @@
+---
+permalink: /admin/clients.json
+eleventyExcludeFromCollections: true
+---
+[
+{%- for client in collections.clients %}
+  { "slug": {{ client.fileSlug | dump | safe }}, "teaser": {{ client.data.teaser | dump | safe }}, "description": {{ client.data.description | dump | safe }} }{% if not loop.last %},{% endif %}
+{%- endfor %}
+]

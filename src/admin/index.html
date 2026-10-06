@@ -115,7 +115,57 @@
         card.insertAdjacentElement('afterend', row);
       });
     }
-    new MutationObserver(addJobLinks).observe(document.body, { childList: true, subtree: true });
+    // In the job editor, show the selected client's teaser and description under the Client dropdown.
+    var clientList = [];
+    fetch('/admin/clients.json').then(function (r) { return r.json(); }).then(function (data) {
+      clientList = data;
+      showClientInfo();
+    }).catch(function () {});
+
+    function showClientInfo() {
+      var label = document.querySelector('label[for^="client-field"]');
+      if (!label) return;
+      var field = label.closest('[class*="ControlContainer"]') || label.parentElement.parentElement;
+      var selected = field.querySelector('[class*="singleValue"]');
+      var teaser = selected ? selected.textContent.trim() : '';
+      var box = field.querySelector('.client-info');
+      if (box && box.dataset.teaser === teaser) return;
+      if (!box) {
+        box = document.createElement('div');
+        box.className = 'client-info';
+        box.style.cssText = 'margin-top:10px;padding:12px 14px;border:1px solid #dcdfe1;border-radius:6px;background:#f7f8f9;font-size:13px;line-height:1.5;color:#26282a;';
+        field.appendChild(box);
+      }
+      box.dataset.teaser = teaser;
+      box.textContent = '';
+      box.hidden = !teaser;
+      if (!teaser) return;
+      var client = clientList.filter(function (c) { return c.teaser === teaser; })[0];
+      var line = function (title, text) {
+        var heading = document.createElement('div');
+        heading.textContent = title;
+        heading.style.cssText = 'font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#83888b;margin-top:8px;';
+        var body = document.createElement('div');
+        body.textContent = text;
+        body.style.cssText = 'white-space:pre-wrap;';
+        box.appendChild(heading);
+        box.appendChild(body);
+      };
+      line('Teaser shown on this role', teaser);
+      box.firstChild.style.marginTop = '0';
+      if (client) {
+        line('Description shown on this role', client.description);
+        var edit = document.createElement('a');
+        edit.href = '#/collections/clients/entries/' + client.slug;
+        edit.textContent = 'Edit this client →';
+        edit.style.cssText = 'display:inline-block;margin-top:10px;color:#3266ff;text-decoration:underline;';
+        box.appendChild(edit);
+      } else {
+        line('Description', 'This client was added or renamed recently. Its description appears here once the site has rebuilt, about a minute after publishing.');
+      }
+    }
+
+    new MutationObserver(function () { addJobLinks(); showClientInfo(); }).observe(document.body, { childList: true, subtree: true });
   </script>
 </body>
 </html>

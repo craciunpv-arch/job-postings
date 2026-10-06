@@ -52,9 +52,8 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
           </div>
         </div>
         {% set client = collections.clients | findBySlug(job.data.client) %}
-        {% set teaser = job.data.clientTeaser or (client.data.teaser if client) %}
-        {% if teaser %}
-        <p class="job-card-teaser">{{ teaser }}</p>
+        {% if client %}
+        <p class="job-card-teaser">{{ client.data.teaser }}</p>
         {% endif %}
         <div class="job-card-footer">
           <div class="job-card-tags">

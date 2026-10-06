@@ -5,6 +5,6 @@ eleventyExcludeFromCollections: true
 {
 {%- for job in collections.jobs %}
 {%- set client = collections.clients | findBySlug(job.data.client) %}
-  {{ job.fileSlug | dump | safe }}: { "teaser": {{ (job.data.clientTeaser or (client.data.teaser if client) or "") | dump | safe }}, "unlisted": {{ "true" if job.data.unlisted else "false" }} }{% if not loop.last %},{% endif %}
+  {{ job.fileSlug | dump | safe }}: { "teaser": {{ (client.data.teaser if client else "") | dump | safe }}, "unlisted": {{ "true" if job.data.unlisted else "false" }} }{% if not loop.last %},{% endif %}
 {%- endfor %}
 }

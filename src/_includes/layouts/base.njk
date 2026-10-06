@@ -1,5 +1,5 @@
 {%- set jobClient = collections.clients | findBySlug(client) -%}
-{%- set metaDescription = clientTeaser or (jobClient.data.teaser if jobClient) or description or site.tagline -%}
+{%- set metaDescription = (jobClient.data.teaser if jobClient) or description or site.tagline -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
