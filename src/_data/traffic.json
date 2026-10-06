@@ -21,107 +21,107 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 211,
-      "pageviews": 344
+      "visitors": 218,
+      "pageviews": 358
     }
   },
   "reportedAllTime": {
-    "visitors": 7596,
-    "pageviews": 12899
+    "visitors": 7603,
+    "pageviews": 12913
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 115,
-      "pageviews": 152
+      "visitors": 909,
+      "pageviews": 1198
     },
     {
       "label": "/applied-ai-engineer",
-      "visitors": 35,
-      "pageviews": 39
-    },
-    {
-      "label": "/cloud-security-sre",
-      "visitors": 20,
-      "pageviews": 23
+      "visitors": 708,
+      "pageviews": 813
     },
     {
       "label": "/backend-engineer",
-      "visitors": 18,
-      "pageviews": 37
-    },
-    {
-      "label": "/cloud-security-platform-engineer",
-      "visitors": 17,
-      "pageviews": 17
-    },
-    {
-      "label": "/data-scientist-1",
-      "visitors": 16,
-      "pageviews": 20
-    },
-    {
-      "label": "/data-platform-engineer",
-      "visitors": 14,
-      "pageviews": 16
+      "visitors": 152,
+      "pageviews": 245
     },
     {
       "label": "/fullstack-engineer",
-      "visitors": 14,
-      "pageviews": 19
+      "visitors": 139,
+      "pageviews": 166
     },
     {
-      "label": "/mlops-team-lead",
-      "visitors": 13,
-      "pageviews": 15
+      "label": "/data-scientist-1",
+      "visitors": 70,
+      "pageviews": 84
+    },
+    {
+      "label": "/data-platform-engineer",
+      "visitors": 61,
+      "pageviews": 73
+    },
+    {
+      "label": "/cloud-security-platform-engineer",
+      "visitors": 52,
+      "pageviews": 61
+    },
+    {
+      "label": "/cloud-security-sre",
+      "visitors": 52,
+      "pageviews": 58
+    },
+    {
+      "label": "/senior-devops-consultant",
+      "visitors": 44,
+      "pageviews": 49
     },
     {
       "label": "/devsecops-engineer",
-      "visitors": 5,
-      "pageviews": 5
+      "visitors": 33,
+      "pageviews": 40
     }
   ],
   "topReferrers": [
     {
       "label": "linkedin.com",
-      "visitors": 141,
-      "pageviews": 173
+      "visitors": 1148,
+      "pageviews": 1366
     },
     {
       "label": "Direct",
-      "visitors": 80,
-      "pageviews": 149
+      "visitors": 651,
+      "pageviews": 1201
     },
     {
       "label": "com.linkedin.android",
-      "visitors": 11,
-      "pageviews": 11
-    },
-    {
-      "label": "google.com",
-      "visitors": 2,
-      "pageviews": 4
-    },
-    {
-      "label": "l.facebook.com",
-      "visitors": 2,
-      "pageviews": 2
-    },
-    {
-      "label": "com.google.android.gm",
-      "visitors": 1,
-      "pageviews": 1
-    },
-    {
-      "label": "facebook.com",
-      "visitors": 1,
-      "pageviews": 1
+      "visitors": 230,
+      "pageviews": 259
     },
     {
       "label": "lnkd.in",
-      "visitors": 1,
-      "pageviews": 1
+      "visitors": 30,
+      "pageviews": 45
+    },
+    {
+      "label": "google.com",
+      "visitors": 18,
+      "pageviews": 24
+    },
+    {
+      "label": "mail.google.com",
+      "visitors": 6,
+      "pageviews": 6
+    },
+    {
+      "label": "reddit.com",
+      "visitors": 6,
+      "pageviews": 6
+    },
+    {
+      "label": "com.google.android.gm",
+      "visitors": 5,
+      "pageviews": 6
     }
   ],
-  "updatedAt": "2026-10-06T09:40:52.533Z"
+  "updatedAt": "2026-10-06T11:54:54.586Z"
 }
