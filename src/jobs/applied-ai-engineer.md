@@ -4,6 +4,7 @@ salaryMin: 16000
 salaryMax: 19000
 salaryCurrency: RON Net
 seniority:
+  - Mid
   - Senior
 city: Bucharest
 workingType: Hybrid
