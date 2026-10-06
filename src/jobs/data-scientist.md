@@ -4,7 +4,6 @@ salaryMin: 20000
 salaryMax: 22000
 salaryCurrency: RON Net
 seniority:
-  - Mid
   - Senior
 city: Iasi, Bucharest, Cluj, Timisoara
 workingType: Hybrid
