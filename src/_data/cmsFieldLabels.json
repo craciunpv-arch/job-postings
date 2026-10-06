@@ -15,15 +15,17 @@
   "team.linkedin": "LinkedIn URL",
   "team.photoPositionY": "Photo Position Y (%)",
   "jobs.workingType": "Working Type",
-  "jobs.clientTeaser": "Client Teaser",
+  "jobs.clientTeaser": "Client Teaser (only if different)",
   "jobs.recruiter": "Posted By",
   "jobs.benefits": "Benefits",
   "team.photoZoom": "Photo Zoom (%)",
-  "jobs.clientDescription": "Client Description",
+  "jobs.clientDescription": "Client Description (only if different)",
   "jobs.techStack": "Tech Stack",
   "jobs.selectionProcess": "Selection Process",
   "jobs.niceToHaves": "Nice-to-haves",
   "jobs.goodToKnow": "Good to Know",
   "team.name": "Full Name",
-  "jobs.roleType": "Role Type"
+  "jobs.roleType": "Role Type",
+  "jobs.client": "Client",
+  "jobs.unlisted": "Hide from homepage (share by link only)"
 }

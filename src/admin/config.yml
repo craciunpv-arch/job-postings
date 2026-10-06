@@ -30,9 +30,14 @@ collections:
       - label: "Closed"
         field: status
         pattern: "Closed"
+      - label: "Hidden from homepage"
+        field: unlisted
+        pattern: true
     view_groups:
       - label: "Status"
         field: status
+      - label: "Client"
+        field: client
     fields:
       - label: "Role Title"
         name: title
@@ -48,7 +53,13 @@ collections:
         multiple: true
         required: false
         hint: "Select more than one if the role spans multiple levels, e.g. Mid and Senior."
-      - { label: City, name: city, widget: string }
+      - label: City
+        name: city
+        widget: select
+        multiple: true
+        min: 1
+        options: ["Bucharest", "Cluj", "Iasi", "Timisoara", "Romania"]
+        hint: "Pick every city the role is open in. Use Romania for remote roles open anywhere in the country."
       - label: "Working Type"
         name: workingType
         widget: select
@@ -64,6 +75,12 @@ collections:
         widget: select
         options: ["Open", "Closed"]
         default: "Open"
+      - label: "Hide from homepage (share by link only)"
+        name: unlisted
+        widget: boolean
+        default: false
+        required: false
+        hint: "Switch on to publish this role at its own link without listing it on the homepage. It still shows as New, so you can share the link one to one. Switch off to list it."
       - label: "Posted By"
         name: recruiter
         widget: relation
@@ -74,15 +91,39 @@ collections:
         required: false
         hint: "Teammate who's the point of contact for this role. Leave blank to use the default contact in Site Settings."
       - { label: "Publish Date", name: date, widget: datetime }
-      - { label: "Client Teaser", name: clientTeaser, widget: string, required: false, hint: "One line shown on the listing, e.g. 'Series A fintech in Iași'" }
+      - label: "Client"
+        name: client
+        widget: relation
+        collection: clients
+        search_fields: ["teaser"]
+        display_fields: ["teaser"]
+        value_field: "{{slug}}"
+        required: false
+        hint: "Pick the client by its teaser; the role then shows that client's teaser and description. For a new client, add it under Clients first."
+      - { label: "Client Teaser (only if different)", name: clientTeaser, widget: string, required: false, hint: "Leave blank to use the selected client's teaser. Fill in only if this one role needs a different line." }
       - { label: "Tech Stack", name: techStack, widget: list, required: false, hint: "Tags shown on the listing, e.g. Java, React, PostgreSQL" }
-      - { label: "Client Description", name: clientDescription, widget: markdown }
+      - { label: "Client Description (only if different)", name: clientDescription, widget: markdown, required: false, hint: "Leave blank to use the selected client's description. Fill in only if this one role needs different text." }
       - { label: "Main Responsibilities", name: responsibilities, widget: markdown }
       - { label: "Must-haves", name: mustHaves, widget: markdown }
       - { label: "Nice-to-haves", name: niceToHaves, widget: markdown }
       - { label: "Other Benefits", name: benefits, widget: markdown }
       - { label: "Selection Process", name: selectionProcess, widget: markdown }
       - { label: "Good to Know", name: goodToKnow, widget: markdown }
+
+  - name: clients
+    label: "Clients"
+    label_singular: "Client"
+    folder: src/clients
+    create: true
+    slug: "{{slug}}"
+    identifier_field: teaser
+    description: >-
+      Each client's teaser and description, shared by every job posting linked to it. Edit an
+      entry here to update all of that client's roles at once. This site's files are public:
+      never type the client's name, here or in a job posting.
+    fields:
+      - { label: "Client Teaser", name: teaser, widget: string, hint: "One line shown on the job cards, e.g. 'Series A fintech in Iași'. It is also how you pick this client when posting a role." }
+      - { label: "Client Description", name: description, widget: markdown, hint: "Shown under 'About the Client' on every role linked to this client." }
 
   - name: team
     label: "Team Members"
@@ -149,8 +190,10 @@ collections:
           - { label: "Job: Working Type", name: "jobs.workingType", widget: string }
           - { label: "Job: Role Type", name: "jobs.roleType", widget: string }
           - { label: "Job: Status", name: "jobs.status", widget: string }
+          - { label: "Job: Hide from homepage", name: "jobs.unlisted", widget: string }
           - { label: "Job: Posted By", name: "jobs.recruiter", widget: string }
           - { label: "Job: Publish Date", name: "jobs.date", widget: string }
+          - { label: "Job: Client", name: "jobs.client", widget: string }
           - { label: "Job: Client Teaser", name: "jobs.clientTeaser", widget: string }
           - { label: "Job: Tech Stack", name: "jobs.techStack", widget: string }
           - { label: "Job: Client Description", name: "jobs.clientDescription", widget: string }

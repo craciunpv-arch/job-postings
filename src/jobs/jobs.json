@@ -4,6 +4,6 @@
   "permalink": "/{{ page.fileSlug }}/",
   "eleventyComputed": {
     "title": "{{ title }}",
-    "description": "{{ title }} — {{ city }}, {{ workingType }} — {{ salary }}"
+    "description": "{{ title }} — {{ city | join: ', ' }}, {{ workingType }} — {{ salary }}"
   }
 }

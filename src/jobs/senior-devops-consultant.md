@@ -6,24 +6,19 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Bucharest, Iași
+city:
+  - Bucharest
+  - Iasi
 workingType: Hybrid
 roleType: "Cloud, DevOps & security"
 status: Closed
 recruiter: victor-cosman
 date: 2026-09-07T15:54:00.000+03:00
-clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
+client: tech-hub-300-engineers
 techStack:
   - CI/CD
   - Docker
   - Kubernetes
-clientDescription: >-
-  Our client holds a prominent position in the European utilities sector,
-  dedicated to seamlessly connecting people and businesses with energy and
-  providing customer-centric solutions designed for sustainability.
-
-
-  The company develops cloud-based, state-of-the-art software applications in various areas - IoT/ IIoT, energy management & trading, predictive maintenance.
 responsibilities: >-
   * Define and maintain standardized release and deployment processes, ensuring
   alignment with security, audit, and enterprise architecture standards.

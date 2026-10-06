@@ -6,26 +6,19 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Romania
+city:
+  - Romania
 workingType: Remote
 roleType: "Software engineering"
 status: Open
 recruiter: victor-cosman
 date: 2026-08-18T14:36:00.000+03:00
-clientTeaser: SaaS company with 15+ AI Agents on the roadmap for 2026
+client: saas-ai-agents
 techStack:
   - Python
   - LLMs
   - TypeScript
   - Azure
-clientDescription: The client is a global SaaS technology provider specialising
-  in governance, compliance, entity management, and operational software for
-  financial services organisations. They develop cloud-based solutions that help
-  businesses automate workflows, manage regulatory obligations, streamline
-  corporate administration, and improve data governance across multiple
-  jurisdictions. It serves international clients in highly regulated industries
-  with a focus on digital transformation, operational efficiency, and compliance
-  automation.
 responsibilities: >-
   * Develop clean, efficient, and well-tested code that meets requirements and
   follows established patterns

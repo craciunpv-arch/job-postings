@@ -6,24 +6,17 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Bucharest
+city:
+  - Bucharest
 workingType: Hybrid
 roleType: "Data & AI"
 status: Open
 recruiter: victor-cosman
 date: 2026-08-25T12:26:00.000+03:00
-clientTeaser: Tech company processing over one billion data updates daily
+client: one-billion-data-updates
 techStack:
   - Python
   - ML
-clientDescription: >-
-  Our client is an innovative software company focused on transforming complex,
-  high-volume data into clear, actionable insights. Its platform empowers
-  organizations to make informed decisions through real-time analytics,
-  forecasting, and operational intelligence.
-
-
-  The company develops cloud-native solutions for large-scale data processing, streaming, analytics, and decision support, handling over one billion data updates per day from over 1000+ data sources daily.
 responsibilities: >-
   * Develop and enhance Python-based libraries, data pipelines, and workflows
   for data extraction, feature creation, and supervised learning applications. 

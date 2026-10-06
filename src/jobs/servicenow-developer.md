@@ -6,24 +6,19 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Cluj, Romania
+city:
+  - Cluj
+  - Romania
 workingType: Hybrid
 roleType: "Enterprise platforms"
 status: Closed
 recruiter: victor-cosman
 date: 2026-07-22T10:40:00.000+03:00
-clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
+client: tech-hub-300-engineers
 techStack:
   - SPM Module
   - JavaScript
   - APIs
-clientDescription: >-
-  Our client holds a prominent position in the European utilities sector,
-  dedicated to seamlessly connecting people and businesses with energy and
-  providing customer-centric solutions designed for sustainability.
-
-
-  The company develops cloud-based, state-of-the-art software applications in various areas - IoT/ IIoT, energy management & trading, predictive maintenance.
 responsibilities: >-
   * Design, develop, and implement custom backend solutions and extensions
   within ServiceNow, with a focus on core platform capabilities and SPM modules.

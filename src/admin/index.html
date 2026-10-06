@@ -60,7 +60,14 @@
 
     CMS.registerPreviewTemplate('team', TeamPreview);
 
-    // Show each job's public URL, with a copy button, under its title in the Job Postings list.
+    // Show each job's public URL, with a copy button, and its client teaser under its title in the Job Postings list.
+    var jobInfo = {};
+    fetch('/admin/jobs.json').then(function (r) { return r.json(); }).then(function (data) {
+      jobInfo = data;
+      document.querySelectorAll('.job-public-link').forEach(function (row) { row.remove(); });
+      addJobLinks();
+    }).catch(function () {});
+
     function addJobLinks() {
       document.querySelectorAll('a[href*="/collections/jobs/entries/"]').forEach(function (card) {
         var slug = card.getAttribute('href').split('/entries/')[1].split('?')[0];
@@ -92,6 +99,19 @@
 
         row.appendChild(link);
         row.appendChild(copy);
+        var info = jobInfo[slug] || {};
+        if (info.unlisted) {
+          var hidden = document.createElement('span');
+          hidden.textContent = 'Hidden from homepage';
+          hidden.style.cssText = 'font-size:12px;color:#523bbf;background:rgba(107,78,230,0.14);border-radius:999px;padding:1px 9px;';
+          row.appendChild(hidden);
+        }
+        if (info.teaser) {
+          var teaser = document.createElement('span');
+          teaser.textContent = info.teaser;
+          teaser.style.cssText = 'flex-basis:100%;color:#565b5e;';
+          row.appendChild(teaser);
+        }
         card.insertAdjacentElement('afterend', row);
       });
     }

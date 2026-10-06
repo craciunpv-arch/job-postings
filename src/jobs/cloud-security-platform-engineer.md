@@ -6,27 +6,20 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Romania
+city:
+  - Romania
 workingType: Remote
 roleType: "Cloud, DevOps & security"
 status: Open
 recruiter: victor-cosman
 date: 2026-09-29T11:06:00.000+03:00
-clientTeaser: Tech company delivering cloud, cybersecurity and data platforms
-  designed to strengthen digital sovereignty across Europe
+client: digital-sovereignty-cloud
 techStack:
   - Kubernetes
   - Go
   - Python
   - CI/CD
   - Terraform
-clientDescription: >-
-  Our client is a leading European technology organization providing cloud,
-  cybersecurity, data and AI solutions to support large-scale business
-  operations and digital transformation initiatives across multiple industries. 
-
-
-  The company develops and manages secure, enterprise-grade digital platforms, helping organizations modernize their technology landscape while driving innovation, efficiency, and long-term growth.
 responsibilities: >-
   * Design, evolve, and operate security infrastructure across high-performance
   OpenStack and Kubernetes platforms. 

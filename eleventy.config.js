@@ -34,12 +34,21 @@ module.exports = function (eleventyConfig) {
     (arr || []).filter((item) => item.data[key] === value)
   );
 
+  // City used to be free text ("Iasi, Cluj"); it is now a list picked in the CMS.
+  eleventyConfig.addFilter("cities", (city) =>
+    Array.isArray(city) ? city : String(city || "").split(", ").filter(Boolean)
+  );
+
+  // Unlisted roles are live at their own link but left out of everything on the homepage.
+  eleventyConfig.addFilter("listed", (arr) => (arr || []).filter((item) => !item.data.unlisted));
+
   eleventyConfig.addFilter("findBySlug", (arr, slug) =>
     (arr || []).find((item) => item.fileSlug === slug)
   );
 
   eleventyConfig.addCollection("jobs", (api) => api.getFilteredByGlob("src/jobs/*.md"));
   eleventyConfig.addCollection("team", (api) => api.getFilteredByGlob("src/team/*.md"));
+  eleventyConfig.addCollection("clients", (api) => api.getFilteredByGlob("src/clients/*.md"));
 
   return {
     dir: {

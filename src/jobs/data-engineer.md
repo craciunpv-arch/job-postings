@@ -6,25 +6,18 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Romania
+city:
+  - Romania
 workingType: Remote
 roleType: "Data & AI"
 status: Closed
 recruiter: victor-cosman
 date: 2026-06-23T11:08:00.000+03:00
-clientTeaser: SaaS company with 15+ AI Agents on the roadmap for 2026
+client: saas-ai-agents
 techStack:
   - Databricks
   - Snowflake
   - Azure
-clientDescription: The client is a global SaaS technology provider specialising
-  in governance, compliance, entity management, and operational software for
-  financial services organisations. They develop cloud-based solutions that help
-  businesses automate workflows, manage regulatory obligations, streamline
-  corporate administration, and improve data governance across multiple
-  jurisdictions. It serves international clients in highly regulated industries
-  with a focus on digital transformation, operational efficiency, and compliance
-  automation.
 responsibilities: >-
   * Architect and own end-to-end ETL/ELT pipelines on Databricks or Snowflake,
   from raw ingestion through bronze/silver/gold lakehouse layers.

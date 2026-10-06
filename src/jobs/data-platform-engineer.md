@@ -6,24 +6,21 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Iasi, Bucharest, Cluj, Timisoara
+city:
+  - Iasi
+  - Bucharest
+  - Cluj
+  - Timisoara
 workingType: Hybrid
 roleType: "Data & AI"
 status: Closed
 recruiter: victor-cosman
 date: 2026-06-19T15:22:00.000+03:00
-clientTeaser: Tech Hub with 300+ engineers in Romania and a 95% retention rate
+client: tech-hub-300-engineers
 techStack:
   - Databricks
   - Snowflake
   - Azure
-clientDescription: >-
-  Our client holds a prominent position in the European utilities sector,
-  dedicated to seamlessly connecting people and businesses with energy and
-  providing customer-centric solutions designed for sustainability.
-
-
-  The company develops cloud-based, state-of-the-art software applications in various areas - IoT/ IIoT, energy management & trading, predictive maintenance.
 responsibilities: >-
   * Design, build, and optimize scalable data platforms on Databricks and
   Snowflake, supporting batch and real-time use cases.

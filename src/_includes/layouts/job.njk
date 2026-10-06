@@ -23,7 +23,7 @@ layout: layouts/base.njk
       <p class="job-salary">{{ salaryMin | salaryRange(salaryMax, salaryCurrency) }}</p>
 
       <div class="job-meta">
-        {% for c in city.split(", ") %}
+        {% for c in city | cities %}
         <span class="job-card-tag job-card-tag--meta">{{ c }}</span>
         {% endfor %}
         <span class="job-card-tag job-card-tag--meta">{{ workingType }}</span>
@@ -34,7 +34,8 @@ layout: layouts/base.njk
       <section class="job-section" id="about">
         <h2>About the Client</h2>
         <div class="post-body">
-          {{ clientDescription | markdown | safe }}
+          {% set jobClient = collections.clients | findBySlug(client) %}
+          {{ (clientDescription or (jobClient.data.description if jobClient)) | markdown | safe }}
         </div>
       </section>
 

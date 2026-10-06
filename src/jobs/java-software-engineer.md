@@ -6,24 +6,18 @@ salaryCurrency: RON Net
 seniority:
   - Mid
   - Senior
-city: Iasi
+city:
+  - Iasi
 workingType: Hybrid
 roleType: "Software engineering"
 status: Closed
 recruiter: vlad-craciun
 date: 2026-06-19T12:41:00.000+03:00
-clientTeaser: Stock options for early team members
+client: stock-options-startup
 techStack:
   - Java
   - AWS
   - LLMs
-clientDescription: >-
-  Our client is a newly established company in Iași, founded by a top-tier team
-  that previously built multi-billion-dollar businesses in the banking and
-  payments sector, supported by the leading tech investors in Europe.
-
-
-  Their innovative platform provides small to medium businesses with the tools they need to receive payments faster, affordably, and more easily. Developed from the ground up for professional service firms, the platform intelligently manages payment request workflows and payment methods, so businesses no longer have to handle these processes themselves.
 responsibilities: >-
   * Design, develop, and maintain backend services using Java (80% of the time).
 
