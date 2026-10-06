@@ -4,6 +4,7 @@ salaryMin: 15000
 salaryMax: 18000
 salaryCurrency: RON Net
 seniority:
+  - Mid
   - Senior
 city: Romania
 workingType: Remote
