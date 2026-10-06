@@ -130,6 +130,7 @@ collections:
               - { label: "Work with AI or ML", value: "ai" }
               - { label: "Salary by seniority", value: "seniority" }
               - { label: "Salary by role type", value: "roleType" }
+              - { label: "Visitors, all time and this month", value: "traffic" }
             hint: "Stats shown to candidates next to the job cards. Untick all to hide the panel. The full stats are at /admin/stats/."
 
       - file: src/_data/cmsFieldLabels.json

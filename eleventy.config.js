@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it")({ html: true });
 const jobStats = require("./lib/job-stats");
+const trafficStats = require("./lib/traffic-stats");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
@@ -26,6 +27,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("num", (n) => new Intl.NumberFormat("ro-RO").format(n));
 
   eleventyConfig.addFilter("jobStats", jobStats);
+
+  eleventyConfig.addFilter("trafficStats", trafficStats);
 
   eleventyConfig.addFilter("selectattr", (arr, key, test, value) =>
     (arr || []).filter((item) => item.data[key] === value)

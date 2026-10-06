@@ -1075,103 +1075,234 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* HOMEPAGE STATS PANEL */
+/* HOMEPAGE STATS CARD */
 .jobs-layout--stats {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
+  grid-template-columns: minmax(0, 1fr) 340px;
   gap: 28px;
   align-items: start;
 }
 
-.stats-panel {
-  position: sticky;
-  top: 168px;
+.stats-card {
+  --stats-ink: #2b2420;
+  --stats-mid: #5c5048;
+  --stats-soft: #837567;
+  --stats-blue: #57c0e8;
+  --stats-green: #1f8a5b;
+  width: 100%;
+  max-width: 340px;
   margin-top: 43px;
-  padding: 22px 24px;
-  border: 1px solid rgba(0,4,2,0.07);
-  border-radius: var(--radius);
-  background: linear-gradient(165deg, #ffffff 0%, #fbfcfd 55%, #f4f6f8 100%);
-  box-shadow: 0 1px 2px rgba(0,4,2,0.04), 0 20px 44px -12px rgba(0,4,2,0.10);
+  background: #ffffff;
+  border: 1px solid #ecebe8;
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -12px rgba(0,0,0,0.10);
+  overflow: hidden;
+  color: var(--stats-ink);
+  line-height: 1.25;
 }
 
-.stats-panel-title {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-}
-
-.stats-panel-sub {
-  font-size: 12px;
-  color: var(--ink-soft);
-  margin-top: 2px;
-}
-
-.stats-list { margin-top: 6px; }
-
-.stat {
+.stats-card-section {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 14px 0;
-  border-top: 1px solid var(--border);
-}
-
-.stat:first-child { border-top: 0; }
-.stat:last-child { padding-bottom: 0; }
-
-.stat-value {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-of {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  letter-spacing: 0;
-}
-
-.stat-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink-mid);
-  line-height: 1.4;
-}
-
-.stat-note {
-  font-size: 12px;
-  color: var(--badge-new);
-  line-height: 1.4;
-  margin-top: 2px;
-}
-
-.stat--rows { gap: 4px; }
-
-.stat-row {
-  display: flex;
-  justify-content: space-between;
   gap: 12px;
+  padding: 20px 24px;
+}
+
+.stats-card-section:first-child { padding-top: 24px; }
+.stats-card-section:last-child { padding-bottom: 24px; }
+.stats-card-section--tight { gap: 6px; }
+
+.stats-card-section + .stats-card-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: #efeeeb;
+}
+
+.stats-card-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stats-mid);
+}
+
+.stats-card-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.stats-card-row--center { align-items: center; }
+.stats-card-row--wide { gap: 16px; }
+.stats-card-open-row { margin-top: 6px; }
+
+.stats-card-hero-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stats-card-hero {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.stats-card-hero-label {
+  font-size: 17px;
+  color: var(--stats-mid);
+}
+
+.stats-card-big {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stats-card-meta {
   font-size: 13px;
+  color: var(--stats-soft);
+}
+
+.stats-card-help {
+  font-size: 14px;
+  color: var(--stats-mid);
+}
+
+.stats-card-help strong {
+  font-weight: 700;
+  color: var(--stats-ink);
+}
+
+.stats-card-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  background: rgba(31,138,91,0.14);
+  color: #166b46;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stats-card-pill i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--stats-green);
+}
+
+.stats-card-track {
+  position: relative;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: #f0efec;
+}
+
+.stats-card-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 999px;
+  background: var(--stats-blue);
+}
+
+.stats-card-mark {
+  position: absolute;
+  top: -5px;
+  width: 3px;
+  height: 18px;
+  margin-left: -1.5px;
+  border-radius: 2px;
+  background: var(--stats-ink);
+}
+
+.stats-card-split {
+  display: flex;
+  gap: 4px;
+  height: 28px;
+}
+
+.stats-card-split div { border-radius: 6px; background: var(--stats-blue); }
+
+.stats-card-split div:nth-child(2) {
+  background: rgba(87,192,232,0.16);
+  border: 1px solid rgba(87,192,232,0.35);
+}
+
+.stats-card-split div:nth-child(3) { background: #f0efec; }
+
+.stats-card-legend { gap: 12px; font-size: 15px; }
+.stats-card-legend b { font-size: 20px; font-weight: 700; }
+.stats-card-legend em { font-style: normal; color: var(--stats-mid); }
+
+.stats-card-count {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--stats-soft);
+}
+
+.stats-card-count .stats-card-big { color: var(--stats-ink); }
+
+.stats-card-dots {
+  display: grid;
+  grid-template-columns: repeat(9, 10px);
+  gap: 4px;
+}
+
+.stats-card-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ecebe8;
+}
+
+.stats-card-dots span.on { background: var(--stats-blue); }
+
+.stats-card-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
   font-variant-numeric: tabular-nums;
 }
 
-.stat-row span:last-child { font-weight: 700; white-space: nowrap; }
+.stats-card-rows b { font-weight: 700; white-space: nowrap; }
 
-@media (max-width: 1080px) {
-  .jobs-layout--stats { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .stats-panel { position: static; margin-top: 0; order: -1; padding: 18px 20px; }
-  .stats-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }
-  .stat:nth-child(2) { border-top: 0; }
-  .stat:last-child { padding-bottom: 14px; }
-  .stat--rows { grid-column: 1 / -1; }
-  .stat-value { font-size: 19px; }
+@media (min-width: 1141px) and (min-height: 800px) {
+  .stats-card { position: sticky; top: 168px; }
+}
+
+@media (max-width: 1140px) {
+  .jobs-layout--stats { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .stats-card {
+    max-width: none;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .stats-card-section:first-child,
+  .stats-card-section:last-child { padding: 20px 24px; }
+  .stats-card-section:nth-child(2)::before { display: none; }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
+  .stats-card { grid-template-columns: 1fr; }
+  .stats-card-section:nth-child(2)::before { display: block; }
   .job-title { font-size: 22px; }
   .hero-inner { padding: 32px 24px 8px; }
   .job-list { grid-template-columns: 1fr; }

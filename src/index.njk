@@ -101,53 +101,83 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
   {% endif %}
 
   {% if showStats %}
-  <aside class="stats-panel" aria-labelledby="statsPanelTitle">
-    <h2 class="stats-panel-title" id="statsPanelTitle">Our roles in numbers</h2>
-    <p class="stats-panel-sub">All roles posted since {{ stats.since }}</p>
-    <div class="stats-list">
-      {% if "roles" in site.homepageStats %}
-      <div class="stat">
-        <span class="stat-value">{{ stats.total }}</span>
-        <span class="stat-label">roles posted</span>
-        <span class="stat-note">{{ stats.open }} open now</span>
+  {% set visits = traffic | trafficStats %}
+  <aside class="stats-card" aria-label="Roles in numbers">
+    {% if "roles" in site.homepageStats %}
+    <div class="stats-card-section stats-card-section--tight">
+      <span class="stats-card-label">// roles in numbers</span>
+      <div class="stats-card-hero-row">
+        <span class="stats-card-hero">{{ stats.total }}</span>
+        <span class="stats-card-hero-label">roles posted</span>
       </div>
-      {% endif %}
-      {% if "salary" in site.homepageStats %}
-      <div class="stat">
-        <span class="stat-value">{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</span>
-        <span class="stat-label">RON Net salary range</span>
-        <span class="stat-note">Typical midpoint {{ stats.medianMid | num }}</span>
+      <div class="stats-card-row stats-card-row--center stats-card-open-row">
+        <span class="stats-card-pill"><i></i>{{ stats.open }} open now</span>
+        <span class="stats-card-meta">since {{ stats.since }}</span>
       </div>
-      {% endif %}
-      {% if "working" in site.homepageStats %}
-      <div class="stat">
-        <span class="stat-value">{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} {{ w.label | lower }}{% endif %}{% endfor %}</span>
-        <span class="stat-label">working model</span>
-      </div>
-      {% endif %}
-      {% if "ai" in site.homepageStats %}
-      <div class="stat">
-        <span class="stat-value">{{ stats.aiCount }} <span class="stat-of">of {{ stats.total }}</span></span>
-        <span class="stat-label">work with AI or ML</span>
-      </div>
-      {% endif %}
-      {% if "seniority" in site.homepageStats %}
-      <div class="stat stat--rows">
-        <span class="stat-label">Average salary by seniority</span>
-        {% for g in stats.seniority %}{% if g.avgMin %}
-        <span class="stat-row"><span>{{ g.label }}</span><span>{{ g.avgMin | num }} – {{ g.avgMax | num }}</span></span>
-        {% endif %}{% endfor %}
-      </div>
-      {% endif %}
-      {% if "roleType" in site.homepageStats %}
-      <div class="stat stat--rows">
-        <span class="stat-label">Average salary by role type</span>
-        {% for g in stats.roleTypes %}{% if g.avgMin and g.count > 1 %}
-        <span class="stat-row"><span>{{ g.label }}</span><span>{{ g.avgMin | num }} – {{ g.avgMax | num }}</span></span>
-        {% endif %}{% endfor %}
-      </div>
-      {% endif %}
     </div>
+    {% endif %}
+    {% if "salary" in site.homepageStats %}
+    <div class="stats-card-section">
+      <div class="stats-card-row">
+        <span class="stats-card-label">Net salary</span>
+        <span class="stats-card-meta">RON / month</span>
+      </div>
+      <div class="stats-card-big">{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</div>
+      <div class="stats-card-track" role="img" aria-label="Salary range {{ stats.salaryMin | num }} to {{ stats.salaryMax | num }} RON, midpoint {{ stats.medianMid | num }}">
+        <div class="stats-card-fill" style="left: {{ stats.salaryBar.left }}%; width: {{ stats.salaryBar.width }}%"></div>
+        <div class="stats-card-mark" style="left: {{ stats.salaryBar.mid }}%"></div>
+      </div>
+      <div class="stats-card-help">Typical midpoint <strong>{{ stats.medianMid | num }}</strong></div>
+    </div>
+    {% endif %}
+    {% if "working" in site.homepageStats %}
+    <div class="stats-card-section">
+      <span class="stats-card-label">Working model</span>
+      <div class="stats-card-split" role="img" aria-label="{% set sep = joiner(", ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} {{ w.label | lower }}{% endif %}{% endfor %}">
+        {% for w in stats.working %}{% if w.count %}<div style="flex: {{ w.count }} 1 0"></div>{% endif %}{% endfor %}
+      </div>
+      <div class="stats-card-row stats-card-legend">
+        {% for w in stats.working %}{% if w.count %}<span><b>{{ w.count }}</b> <em>{{ w.label | lower }}</em></span>{% endif %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if "ai" in site.homepageStats %}
+    <div class="stats-card-section">
+      <span class="stats-card-label">AI &amp; ML</span>
+      <div class="stats-card-row stats-card-row--center stats-card-row--wide">
+        <div class="stats-card-count"><span class="stats-card-big">{{ stats.aiCount }}</span><span>of {{ stats.total }} roles</span></div>
+        <div class="stats-card-dots" aria-hidden="true">{% for i in range(0, stats.total) %}<span{% if i < stats.aiCount %} class="on"{% endif %}></span>{% endfor %}</div>
+      </div>
+      <div class="stats-card-help">work hands-on with LLMs or ML</div>
+    </div>
+    {% endif %}
+    {% if "traffic" in site.homepageStats and visits.ready and visits.allTime.visitors %}
+    <div class="stats-card-section">
+      <span class="stats-card-label">Visitors</span>
+      <div class="stats-card-count"><span class="stats-card-big">{{ visits.allTime.visitors | num }}</span><span>so far</span></div>
+      <div class="stats-card-help"><strong>{{ visits.month.visitors | num }}</strong> this month</div>
+    </div>
+    {% endif %}
+    {% if "seniority" in site.homepageStats %}
+    <div class="stats-card-section">
+      <span class="stats-card-label">Average salary by seniority</span>
+      <div class="stats-card-rows">
+        {% for g in stats.seniority %}{% if g.avgMin %}
+        <div class="stats-card-row"><span>{{ g.label }}</span><b>{{ g.avgMin | num }} – {{ g.avgMax | num }}</b></div>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if "roleType" in site.homepageStats %}
+    <div class="stats-card-section">
+      <span class="stats-card-label">Average salary by role type</span>
+      <div class="stats-card-rows">
+        {% for g in stats.roleTypes %}{% if g.avgMin and g.count > 1 %}
+        <div class="stats-card-row"><span>{{ g.label }}</span><b>{{ g.avgMin | num }} – {{ g.avgMax | num }}</b></div>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </aside>
   {% endif %}
   </div>
