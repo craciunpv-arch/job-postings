@@ -70,6 +70,57 @@
       }
     });
 
+    // "Unpublish" on a job would delete its file from the site. Instead, mark the role as Filled:
+    // it leaves the homepage list, its page stays live with a Filled badge, and it stays in the CMS.
+    var JOBS_REPO = 'craciunpv-arch/job-postings';
+    var JOBS_BRANCH = 'main';
+
+    function markJobFilled(slug) {
+      var user = {};
+      try { user = JSON.parse(localStorage.getItem('decap-cms-user') || localStorage.getItem('netlify-cms-user') || '{}'); } catch (e) {}
+      if (!user.token) return Promise.reject(new Error('You are not logged in to GitHub in this tab. Reload the page and log in again.'));
+      var url = 'https://api.github.com/repos/' + JOBS_REPO + '/contents/src/jobs/' + encodeURIComponent(slug) + '.md';
+      var headers = { Authorization: 'token ' + user.token, Accept: 'application/vnd.github+json' };
+      var check = function (r) {
+        if (r.ok) return r.json();
+        return r.json().catch(function () { return {}; }).then(function (body) {
+          throw new Error('GitHub answered ' + r.status + (body.message ? ': ' + body.message : ''));
+        });
+      };
+      return fetch(url + '?ref=' + JOBS_BRANCH, { headers: headers, cache: 'no-store' }).then(check).then(function (file) {
+        var bytes = Uint8Array.from(atob(file.content.replace(/\s/g, '')), function (c) { return c.charCodeAt(0); });
+        var text = new TextDecoder().decode(bytes);
+        if (!/^status: .*$/m.test(text)) throw new Error('This job has no Status field to update.');
+        // Filled roles are never hidden by link, so the hide switch is cleared too.
+        var updated = text.replace(/^status: .*$/m, 'status: Closed').replace(/^unlisted: .*\n/m, '');
+        var binary = '';
+        new TextEncoder().encode(updated).forEach(function (b) { binary += String.fromCharCode(b); });
+        return fetch(url, {
+          method: 'PUT',
+          headers: headers,
+          body: JSON.stringify({ message: 'Mark Job Postings “' + slug + '” as filled', content: btoa(binary), sha: file.sha, branch: JOBS_BRANCH })
+        }).then(check);
+      });
+    }
+
+    function interceptUnpublish(event) {
+      if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+      var item = event.target.closest && event.target.closest('[role="menuitem"]');
+      var match = location.hash.match(/\/collections\/jobs\/entries\/([^/?]+)/);
+      if (!item || !match || item.textContent.trim() !== 'Unpublish') return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (!confirm('Mark this role as Filled?\n\nIt leaves the homepage list. Its page stays live with a "Filled" badge, and the role stays here in the CMS.')) return;
+      markJobFilled(decodeURIComponent(match[1])).then(function () {
+        alert('Done. The role is now Filled. The site updates in about a minute.');
+        location.reload();
+      }).catch(function (error) {
+        alert('The role was NOT changed and nothing was deleted.\n\n' + error.message);
+      });
+    }
+    document.addEventListener('click', interceptUnpublish, true);
+    document.addEventListener('keydown', interceptUnpublish, true);
+
     // Show each job's public URL, with a copy button, and its client teaser under its title in the Job Postings list.
     var jobInfo = {};
     fetch('/admin/jobs.json').then(function (r) { return r.json(); }).then(function (data) {
