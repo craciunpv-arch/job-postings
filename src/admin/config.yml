@@ -21,21 +21,21 @@ collections:
     description: >-
       ⚠️ To post a new role, always click "New Job Postings" above — never edit an existing
       entry (open or closed) to turn it into a different role. That breaks its URL and its
-      analytics history. When a role gets filled, open that same entry and set Status to
-      Closed instead of reusing it for the next one.
+      analytics history. When a role gets filled, open that same entry and set Visibility to
+      Filled (or click Published, then Unpublish) instead of reusing it for the next one.
     view_filters:
-      - label: "Open"
-        field: status
+      - label: "Open, on homepage"
+        field: visibility
         pattern: "Open"
-      - label: "Closed"
-        field: status
-        pattern: "Closed"
-      - label: "Hidden from homepage"
-        field: unlisted
-        pattern: true
+      - label: "Open, link only"
+        field: visibility
+        pattern: "Link only"
+      - label: "Filled"
+        field: visibility
+        pattern: "Filled"
     view_groups:
-      - label: "Status"
-        field: status
+      - label: "Visibility"
+        field: visibility
       - label: "Client"
         field: client
     fields:
@@ -70,17 +70,15 @@ collections:
         options: ["Data & AI", "Software engineering", "Cloud, DevOps & security", "Enterprise platforms"]
         required: false
         hint: "Groups roles in the stats. Leave blank if none fits."
-      - label: Status
-        name: status
+      - label: Visibility
+        name: visibility
         widget: select
-        options: ["Open", "Closed"]
+        options:
+          - { label: "Open, on homepage", value: "Open" }
+          - { label: "Open, link only", value: "Link only" }
+          - { label: "Filled", value: "Filled" }
         default: "Open"
-      - label: "Hide from homepage (share by link only)"
-        name: unlisted
-        widget: boolean
-        default: false
-        required: false
-        hint: "Switch on to publish this role at its own link without listing it on the homepage. Saving also sets Status to Open, so the role shows as New instead of Filled and you can share the link one to one. Switch off to list it, or to mark it Closed."
+        hint: "Open, on homepage: listed for everyone. Open, link only: live at its own link and shown as New, but not listed on the homepage, so you can share it one to one. Filled: off the homepage list, its page stays up with a Filled badge."
       - label: "Posted By"
         name: recruiter
         widget: relation
@@ -186,8 +184,7 @@ collections:
           - { label: "Job: City", name: "jobs.city", widget: string }
           - { label: "Job: Working Type", name: "jobs.workingType", widget: string }
           - { label: "Job: Role Type", name: "jobs.roleType", widget: string }
-          - { label: "Job: Status", name: "jobs.status", widget: string }
-          - { label: "Job: Hide from homepage", name: "jobs.unlisted", widget: string }
+          - { label: "Job: Visibility", name: "jobs.visibility", widget: string }
           - { label: "Job: Posted By", name: "jobs.recruiter", widget: string }
           - { label: "Job: Publish Date", name: "jobs.date", widget: string }
           - { label: "Job: Client", name: "jobs.client", widget: string }

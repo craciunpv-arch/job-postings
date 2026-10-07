@@ -11,7 +11,7 @@ city:
   - Romania
 workingType: Hybrid
 roleType: "Enterprise platforms"
-status: Closed
+visibility: Filled
 recruiter: victor-cosman
 date: 2026-07-22T10:40:00.000+03:00
 client: tech-hub-300-engineers

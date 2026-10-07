@@ -10,7 +10,7 @@ city:
   - Bucharest
 workingType: Hybrid
 roleType: "Data & AI"
-status: Open
+visibility: Open
 recruiter: victor-cosman
 date: 2026-08-25T12:26:00.000+03:00
 client: one-billion-data-updates

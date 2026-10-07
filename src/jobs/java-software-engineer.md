@@ -10,7 +10,7 @@ city:
   - Iasi
 workingType: Hybrid
 roleType: "Software engineering"
-status: Closed
+visibility: Filled
 recruiter: vlad-craciun
 date: 2026-06-19T12:41:00.000+03:00
 client: stock-options-startup

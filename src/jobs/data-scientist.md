@@ -12,7 +12,7 @@ city:
   - Timisoara
 workingType: Hybrid
 roleType: "Data & AI"
-status: Closed
+visibility: Filled
 recruiter: victor-cosman
 date: 2026-08-06T10:36:00.000+03:00
 client: tech-hub-300-engineers

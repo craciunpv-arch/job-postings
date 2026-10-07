@@ -1,9 +1,0 @@
-{
-  "layout": "layouts/job.njk",
-  "tags": ["jobs"],
-  "permalink": "/{{ page.fileSlug }}/",
-  "eleventyComputed": {
-    "title": "{{ title }}",
-    "description": "{{ title }} — {{ city | join: ', ' }}, {{ workingType }} — {{ salary }}"
-  }
-}

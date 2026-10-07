@@ -8,7 +8,7 @@
   "jobs.city": "City",
   "jobs.responsibilities": "Responsibilities",
   "jobs.date": "Publish Date",
-  "jobs.status": "Status",
+  "jobs.visibility": "Visibility",
   "jobs.mustHaves": "Must-haves",
   "team.email": "Email",
   "team.photoPositionX": "Photo Position X (%)",
@@ -24,6 +24,5 @@
   "jobs.goodToKnow": "Good to Know",
   "team.name": "Full Name",
   "jobs.roleType": "Role Type",
-  "jobs.client": "Client",
-  "jobs.unlisted": "Hide from homepage (share by link only)"
+  "jobs.client": "Client"
 }

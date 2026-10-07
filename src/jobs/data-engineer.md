@@ -10,7 +10,7 @@ city:
   - Romania
 workingType: Remote
 roleType: "Data & AI"
-status: Closed
+visibility: Filled
 recruiter: victor-cosman
 date: 2026-06-23T11:08:00.000+03:00
 client: saas-ai-agents

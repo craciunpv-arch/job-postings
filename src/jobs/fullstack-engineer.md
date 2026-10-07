@@ -10,7 +10,7 @@ city:
   - Romania
 workingType: Remote
 roleType: "Software engineering"
-status: Open
+visibility: Open
 recruiter: victor-cosman
 date: 2026-08-18T14:36:00.000+03:00
 client: saas-ai-agents

@@ -9,7 +9,7 @@ city:
   - Romania
 workingType: Remote
 roleType: "Data & AI"
-status: Closed
+visibility: Filled
 recruiter: vlad-craciun
 date: 2026-06-23T10:33:00.000+03:00
 client: saas-ai-agents

@@ -11,7 +11,7 @@ city:
   - Iasi
 workingType: Hybrid
 roleType: "Cloud, DevOps & security"
-status: Closed
+visibility: Filled
 recruiter: victor-cosman
 date: 2026-09-07T15:54:00.000+03:00
 client: tech-hub-300-engineers

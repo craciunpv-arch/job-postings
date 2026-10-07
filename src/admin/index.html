@@ -60,16 +60,6 @@
 
     CMS.registerPreviewTemplate('team', TeamPreview);
 
-    // A role hidden from the homepage is being shared by link, so it is saved as Open rather than Filled.
-    CMS.registerEventListener({
-      name: 'preSave',
-      handler: function (ctx) {
-        var data = ctx.entry.get('data');
-        if (ctx.entry.get('collection') !== 'jobs' || !data.get('unlisted')) return data;
-        return data.set('status', 'Open');
-      }
-    });
-
     // "Unpublish" on a job would delete its file from the site. Instead, mark the role as Filled:
     // it leaves the homepage list, its page stays live with a Filled badge, and it stays in the CMS.
     var JOBS_REPO = 'craciunpv-arch/job-postings';
@@ -90,9 +80,8 @@
       return fetch(url + '?ref=' + JOBS_BRANCH, { headers: headers, cache: 'no-store' }).then(check).then(function (file) {
         var bytes = Uint8Array.from(atob(file.content.replace(/\s/g, '')), function (c) { return c.charCodeAt(0); });
         var text = new TextDecoder().decode(bytes);
-        if (!/^status: .*$/m.test(text)) throw new Error('This job has no Status field to update.');
-        // Filled roles are never hidden by link, so the hide switch is cleared too.
-        var updated = text.replace(/^status: .*$/m, 'status: Closed').replace(/^unlisted: .*\n/m, '');
+        if (!/^visibility: .*$/m.test(text)) throw new Error('This job has no Visibility field to update.');
+        var updated = text.replace(/^visibility: .*$/m, 'visibility: Filled');
         var binary = '';
         new TextEncoder().encode(updated).forEach(function (b) { binary += String.fromCharCode(b); });
         return fetch(url, {
@@ -120,6 +109,63 @@
     }
     document.addEventListener('click', interceptUnpublish, true);
     document.addEventListener('keydown', interceptUnpublish, true);
+
+    // The CMS only publishes entries whose workflow status is Ready. Choosing a Publish option on a
+    // Draft or In review entry sets it to Ready first, then publishes, so it takes one click.
+    var PUBLISH_ITEMS = ['Publish now', 'Publish and create new', 'Publish and duplicate'];
+    var publishing = false;
+
+    function toolbarButton(test) {
+      return Array.prototype.filter.call(document.querySelectorAll('[role="button"]'), function (b) {
+        return test(b.textContent.trim());
+      })[0];
+    }
+    function menuItem(label) {
+      return Array.prototype.filter.call(document.querySelectorAll('[role="menuitem"]'), function (i) {
+        return i.textContent.trim() === label;
+      })[0];
+    }
+    function waitFor(find, ms) {
+      return new Promise(function (resolve, reject) {
+        var started = Date.now();
+        (function poll() {
+          var found = find();
+          if (found) return resolve(found);
+          if (Date.now() - started > ms) return reject(new Error('timeout'));
+          setTimeout(poll, 100);
+        })();
+      });
+    }
+    function isStatus(text) { return text.indexOf('Status:') === 0; }
+
+    function publishInOneClick(event) {
+      if (publishing) return;
+      if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+      var item = event.target.closest && event.target.closest('[role="menuitem"]');
+      var label = item ? item.textContent.trim() : '';
+      var status = toolbarButton(isStatus);
+      if (PUBLISH_ITEMS.indexOf(label) === -1 || !status || status.textContent.trim() === 'Status: Ready') return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      publishing = true;
+      document.body.click();
+      status.click();
+      waitFor(function () { return menuItem('Ready'); }, 3000)
+        .then(function (ready) {
+          ready.click();
+          return waitFor(function () { return toolbarButton(function (t) { return t === 'Status: Ready'; }); }, 20000);
+        })
+        .then(function () {
+          toolbarButton(function (t) { return t === 'Publish'; }).click();
+          return waitFor(function () { return menuItem(label); }, 3000);
+        })
+        .then(function (again) { again.click(); })
+        // If the CMS refused the status change it has already said why, e.g. unsaved changes.
+        .catch(function () {})
+        .then(function () { publishing = false; });
+    }
+    document.addEventListener('click', publishInOneClick, true);
+    document.addEventListener('keydown', publishInOneClick, true);
 
     // Show each job's public URL, with a copy button, and its client teaser under its title in the Job Postings list.
     var jobInfo = {};
