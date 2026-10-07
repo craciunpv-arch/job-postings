@@ -10,7 +10,7 @@ city:
   - Iasi
 workingType: Hybrid
 roleType: Cloud, DevOps & security
-status: Closed
+status: Open
 unlisted: true
 recruiter: victor-cosman
 date: 2026-09-24T14:15:00.000+03:00

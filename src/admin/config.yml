@@ -80,7 +80,7 @@ collections:
         widget: boolean
         default: false
         required: false
-        hint: "Switch on to publish this role at its own link without listing it on the homepage. It still shows as New, so you can share the link one to one. Switch off to list it."
+        hint: "Switch on to publish this role at its own link without listing it on the homepage. Saving also sets Status to Open, so the role shows as New instead of Filled and you can share the link one to one. Switch off to list it, or to mark it Closed."
       - label: "Posted By"
         name: recruiter
         widget: relation

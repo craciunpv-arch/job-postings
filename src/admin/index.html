@@ -60,6 +60,16 @@
 
     CMS.registerPreviewTemplate('team', TeamPreview);
 
+    // A role hidden from the homepage is being shared by link, so it is saved as Open rather than Filled.
+    CMS.registerEventListener({
+      name: 'preSave',
+      handler: function (ctx) {
+        var data = ctx.entry.get('data');
+        if (ctx.entry.get('collection') !== 'jobs' || !data.get('unlisted')) return data;
+        return data.set('status', 'Open');
+      }
+    });
+
     // Show each job's public URL, with a copy button, and its client teaser under its title in the Job Postings list.
     var jobInfo = {};
     fetch('/admin/jobs.json').then(function (r) { return r.json(); }).then(function (data) {
