@@ -8,8 +8,9 @@ seniority:
 city:
   - Bucharest
 workingType: Hybrid
-roleType: "Software engineering"
-status: Closed
+roleType: Software engineering
+status: Open
+unlisted: true
 recruiter: victor-cosman
 date: 2026-08-25T12:10:00.000+03:00
 client: one-billion-data-updates
