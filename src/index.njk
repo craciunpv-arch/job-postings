@@ -19,6 +19,8 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 <div class="main">
   {% set openJobs = collections.jobs | listed | selectattr("status", "equalto", "Open") %}
   {% set stats = collections.jobs | listed | jobStats(site) %}
+  {# "Roles posted" counts every role ever opened, including the ones hidden from the homepage. #}
+  {% set allStats = collections.jobs | jobStats(site) %}
   {% set showStats = stats.total and site.homepageStats and site.homepageStats.length %}
   <div class="jobs-layout{% if showStats %} jobs-layout--stats{% endif %}">
   {% if openJobs.length %}
@@ -108,12 +110,12 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
     <div class="stats-card-section stats-card-section--tight">
       <span class="stats-card-label">// roles in numbers</span>
       <div class="stats-card-hero-row">
-        <span class="stats-card-hero">{{ stats.total }}</span>
+        <span class="stats-card-hero">{{ allStats.total }}</span>
         <span class="stats-card-hero-label">roles posted</span>
       </div>
       <div class="stats-card-row stats-card-row--center stats-card-open-row">
         <span class="stats-card-pill"><i></i>{{ stats.open }} open now</span>
-        <span class="stats-card-meta">since {{ stats.since }}</span>
+        <span class="stats-card-meta">since {{ allStats.since }}</span>
       </div>
     </div>
     {% endif %}
