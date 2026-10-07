@@ -21,29 +21,29 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 218,
-      "pageviews": 358
+      "visitors": 230,
+      "pageviews": 390
     }
   },
   "reportedAllTime": {
-    "visitors": 7603,
-    "pageviews": 12913
+    "visitors": 7615,
+    "pageviews": 12945
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 909,
-      "pageviews": 1198
+      "visitors": 913,
+      "pageviews": 1215
     },
     {
       "label": "/applied-ai-engineer",
-      "visitors": 708,
-      "pageviews": 813
+      "visitors": 709,
+      "pageviews": 814
     },
     {
       "label": "/backend-engineer",
-      "visitors": 152,
-      "pageviews": 245
+      "visitors": 149,
+      "pageviews": 242
     },
     {
       "label": "/fullstack-engineer",
@@ -52,7 +52,7 @@
     },
     {
       "label": "/data-scientist-1",
-      "visitors": 70,
+      "visitors": 71,
       "pageviews": 84
     },
     {
@@ -61,14 +61,14 @@
       "pageviews": 73
     },
     {
-      "label": "/cloud-security-platform-engineer",
-      "visitors": 52,
+      "label": "/cloud-security-sre",
+      "visitors": 54,
       "pageviews": 61
     },
     {
-      "label": "/cloud-security-sre",
+      "label": "/cloud-security-platform-engineer",
       "visitors": 52,
-      "pageviews": 58
+      "pageviews": 61
     },
     {
       "label": "/senior-devops-consultant",
@@ -84,13 +84,13 @@
   "topReferrers": [
     {
       "label": "linkedin.com",
-      "visitors": 1148,
-      "pageviews": 1366
+      "visitors": 1151,
+      "pageviews": 1369
     },
     {
       "label": "Direct",
-      "visitors": 651,
-      "pageviews": 1201
+      "visitors": 650,
+      "pageviews": 1212
     },
     {
       "label": "com.linkedin.android",
@@ -113,15 +113,15 @@
       "pageviews": 6
     },
     {
-      "label": "reddit.com",
-      "visitors": 6,
-      "pageviews": 6
-    },
-    {
       "label": "com.google.android.gm",
       "visitors": 5,
       "pageviews": 6
+    },
+    {
+      "label": "reddit.com",
+      "visitors": 5,
+      "pageviews": 5
     }
   ],
-  "updatedAt": "2026-10-06T11:54:54.586Z"
+  "updatedAt": "2026-10-07T01:47:15.803Z"
 }
