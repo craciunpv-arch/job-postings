@@ -1,14 +1,14 @@
 ---
 title: DevOps Engineer
-salaryMin: 18000
-salaryMax: 19000
+salaryMin: 17000
+salaryMax: 18000
 salaryCurrency: RON Net
 seniority:
   - Senior
 city:
   - Iasi
 workingType: Hybrid
-roleType: "Cloud, DevOps & security"
+roleType: Cloud, DevOps & security
 visibility: Link only
 recruiter: victor-cosman
 date: 2026-09-01T10:51:00.000+03:00
