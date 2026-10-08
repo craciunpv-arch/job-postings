@@ -9,8 +9,8 @@ seniority:
 city:
   - Romania
 workingType: Remote
-roleType: "Cloud, DevOps & security"
-visibility: Open
+roleType: Cloud, DevOps & security
+visibility: Link only
 recruiter: victor-cosman
 date: 2026-09-29T11:06:00.000+03:00
 client: digital-sovereignty-cloud
