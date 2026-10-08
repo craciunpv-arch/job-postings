@@ -18,10 +18,10 @@ eleventyExcludeFromCollections: true
 {%- macro share(g) -%}
 <div class="grp{% if not g.count %} grp--zero{% endif %}">
   <div class="grp-head"><span>{{ g.label }}</span><b>{{ (g.count / stats.total * 100) | round }}%</b></div>
-  <div class="sharebar" role="img" aria-label="{{ g.count }} of {{ stats.total }} roles, {{ g.open }} open">
-    <span style="width: {{ g.open / stats.total * 100 }}%"></span><span class="c" style="width: {{ (g.count - g.open) / stats.total * 100 }}%"></span>
+  <div class="sharebar" role="img" aria-label="{{ g.count }} of {{ stats.total }} roles: {{ g.open - g.linkOnly }} on homepage, {{ g.linkOnly }} link only, {{ g.count - g.open }} filled">
+    <span style="width: {{ (g.open - g.linkOnly) / stats.total * 100 }}%"></span><span class="l" style="width: {{ g.linkOnly / stats.total * 100 }}%"></span><span class="c" style="width: {{ (g.count - g.open) / stats.total * 100 }}%"></span>
   </div>
-  <small>{{ g.count }} {{ "role" if g.count == 1 else "roles" }}{% if g.count %} · {{ g.open }} open{% endif %}</small>
+  <small>{{ g.count }} {{ "role" if g.count == 1 else "roles" }}{% if g.count %} · {{ g.open - g.linkOnly }} on homepage · {{ g.linkOnly }} link only · {{ g.count - g.open }} filled{% endif %}</small>
 </div>
 {%- endmacro -%}
 {%- macro axis() -%}
@@ -99,6 +99,7 @@ eleventyExcludeFromCollections: true
     .grp small { font-size: 12px; color: var(--ink-soft); }
     .sharebar { display: flex; height: 10px; border-radius: 4px; overflow: hidden; background: var(--glow); }
     .sharebar span { background: var(--accent); }
+    .sharebar span.l { background: color-mix(in srgb, var(--accent) 40%, #fff); }
     .sharebar span.c { background: #aab0b5; }
     .sharebar span + span.c { border-left: 2px solid #fff; }
 
@@ -252,7 +253,7 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>What kind of roles these are</h2>
-        <p class="sub">Share of all {{ stats.total }} roles. The blue part of each bar is open, the grey part is filled.</p>
+        <p class="sub">Share of all {{ stats.total }} roles. Dark blue is open on the homepage, light blue is open by link only, grey is filled.</p>
       </div>
       <div class="mix">
         <div><h3>Role type</h3>{% for g in stats.roleTypes %}{{ share(g) }}{% endfor %}</div>
