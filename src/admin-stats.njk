@@ -199,7 +199,7 @@ eleventyExcludeFromCollections: true
           <h3 class="eyebrow">Most viewed pages, last 30 days {{ liveTag("topRoles") }}</h3>
           <table class="mini">
             <thead><tr><th>Page</th><th class="r">Visitors</th><th class="r">Page views</th></tr></thead>
-            <tbody>{% for row in visits.topPages %}<tr><td><a href="{{ row.label }}" target="_blank" rel="noopener">{{ row.label }}</a></td><td class="r">{{ row.visitors | num }}</td><td class="r">{{ row.pageviews | num }}</td></tr>{% endfor %}</tbody>
+            <tbody>{% for row in visits.topPages.slice(0, 10) %}<tr><td><a href="{{ row.label }}" target="_blank" rel="noopener">{{ row.label }}</a></td><td class="r">{{ row.visitors | num }}</td><td class="r">{{ row.pageviews | num }}</td></tr>{% endfor %}</tbody>
           </table>
         </div>
         <div>

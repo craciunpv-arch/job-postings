@@ -70,7 +70,10 @@ async function main() {
 
   // Rankings cover the last 30 days so they never start from zero on the 1st.
   const range = { since: windowStart, until };
-  const pages = await attempt("top pages", query("aggregate", { ...range, by: "requestPath", limit: 10 }));
+  // Enough pages to cover every role: the homepage ranks only open roles listed there, so when
+  // one is filled or set to link only the next most viewed needs to be in the saved list.
+  const topPages = (limit) => query("aggregate", { ...range, by: "requestPath", limit });
+  const pages = (await attempt("top 50 pages", topPages(50))) || (await attempt("top pages", topPages(10)));
   const referrers = await attempt("referrers", query("aggregate", { ...range, by: "referrerHostname", limit: 8 }));
   if (pages) traffic.topPages = topRows(pages, "requestPath");
   if (referrers) {
