@@ -10,7 +10,7 @@ city:
   - Iasi
 workingType: Hybrid
 roleType: Cloud, DevOps & security
-visibility: Link only
+visibility: Open
 recruiter: loredana-albei
 date: 2026-09-24T14:15:00.000+03:00
 client: tech-hub-300-engineers
