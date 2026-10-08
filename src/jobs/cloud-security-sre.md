@@ -1,7 +1,7 @@
 ---
 title: Cloud Security SRE
 salaryMin: 15000
-salaryMax: 18000
+salaryMax: 17974
 salaryCurrency: RON Net
 seniority:
   - Mid
@@ -9,8 +9,8 @@ seniority:
 city:
   - Romania
 workingType: Remote
-roleType: "Cloud, DevOps & security"
-visibility: Open
+roleType: Cloud, DevOps & security
+visibility: Link only
 recruiter: victor-cosman
 date: 2026-09-29T11:18:00.000+03:00
 client: digital-sovereignty-cloud
