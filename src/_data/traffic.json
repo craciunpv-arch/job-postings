@@ -21,81 +21,81 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 230,
-      "pageviews": 390
+      "visitors": 269,
+      "pageviews": 475
     }
   },
   "reportedAllTime": {
-    "visitors": 7615,
-    "pageviews": 12945
+    "visitors": 7654,
+    "pageviews": 13030
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 913,
-      "pageviews": 1215
+      "visitors": 907,
+      "pageviews": 1201
     },
     {
       "label": "/applied-ai-engineer",
-      "visitors": 709,
-      "pageviews": 814
+      "visitors": 713,
+      "pageviews": 818
     },
     {
       "label": "/backend-engineer",
       "visitors": 149,
-      "pageviews": 242
+      "pageviews": 249
     },
     {
       "label": "/fullstack-engineer",
-      "visitors": 139,
-      "pageviews": 166
+      "visitors": 135,
+      "pageviews": 162
     },
     {
       "label": "/data-scientist-1",
-      "visitors": 71,
-      "pageviews": 84
+      "visitors": 76,
+      "pageviews": 89
     },
     {
       "label": "/data-platform-engineer",
-      "visitors": 61,
-      "pageviews": 73
+      "visitors": 64,
+      "pageviews": 76
     },
     {
       "label": "/cloud-security-sre",
-      "visitors": 54,
-      "pageviews": 61
+      "visitors": 55,
+      "pageviews": 62
     },
     {
       "label": "/cloud-security-platform-engineer",
-      "visitors": 52,
-      "pageviews": 61
+      "visitors": 53,
+      "pageviews": 62
     },
     {
       "label": "/senior-devops-consultant",
-      "visitors": 44,
-      "pageviews": 49
+      "visitors": 43,
+      "pageviews": 48
     },
     {
       "label": "/devsecops-engineer",
-      "visitors": 33,
-      "pageviews": 40
+      "visitors": 36,
+      "pageviews": 45
     }
   ],
   "topReferrers": [
     {
       "label": "linkedin.com",
-      "visitors": 1151,
-      "pageviews": 1369
+      "visitors": 1159,
+      "pageviews": 1387
     },
     {
       "label": "Direct",
-      "visitors": 650,
-      "pageviews": 1212
+      "visitors": 649,
+      "pageviews": 1215
     },
     {
       "label": "com.linkedin.android",
-      "visitors": 230,
-      "pageviews": 259
+      "visitors": 227,
+      "pageviews": 254
     },
     {
       "label": "lnkd.in",
@@ -123,5 +123,5 @@
       "pageviews": 5
     }
   ],
-  "updatedAt": "2026-10-07T01:47:15.803Z"
+  "updatedAt": "2026-10-08T02:14:52.971Z"
 }
