@@ -169,11 +169,35 @@
 
     // Show each job's public URL, with a copy button, and its client teaser under its title in the Job Postings list.
     var jobInfo = {};
-    fetch('/admin/jobs.json').then(function (r) { return r.json(); }).then(function (data) {
-      jobInfo = data;
-      document.querySelectorAll('.job-public-link').forEach(function (row) { row.remove(); });
-      addJobLinks();
-    }).catch(function () {});
+    var clientList = [];
+
+    // The job and client data files are for logged-in contributors only, so they are loaded once
+    // the CMS login exists: the login is exchanged for a session, then both files are fetched.
+    var adminData = { loaded: false, loading: false, retryAt: 0 };
+    function loadAdminData() {
+      if (adminData.loaded || adminData.loading || Date.now() < adminData.retryAt) return;
+      var user = {};
+      try { user = JSON.parse(localStorage.getItem('decap-cms-user') || localStorage.getItem('netlify-cms-user') || '{}'); } catch (e) {}
+      adminData.loading = true;
+      var json = function (r) { if (!r.ok) throw new Error(r.status); return r.json(); };
+      var session = !user.token ? Promise.resolve() : fetch('/api/admin-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: user.token })
+      }).catch(function () {});
+      session.then(function () {
+        return Promise.all([fetch('/admin/jobs.json').then(json), fetch('/admin/clients.json').then(json)]);
+      }).then(function (data) {
+        jobInfo = data[0];
+        clientList = data[1];
+        adminData.loaded = true;
+        document.querySelectorAll('.job-public-link').forEach(function (row) { row.remove(); });
+        addJobLinks();
+        showClientInfo();
+      }).catch(function () {
+        adminData.retryAt = Date.now() + 15000;
+      }).then(function () { adminData.loading = false; });
+    }
 
     function addJobLinks() {
       document.querySelectorAll('a[href*="/collections/jobs/entries/"]').forEach(function (card) {
@@ -223,11 +247,6 @@
       });
     }
     // In the job editor, show the selected client's teaser and description under the Client dropdown.
-    var clientList = [];
-    fetch('/admin/clients.json').then(function (r) { return r.json(); }).then(function (data) {
-      clientList = data;
-      showClientInfo();
-    }).catch(function () {});
 
     function showClientInfo() {
       var label = document.querySelector('label[for^="client-field"]');
@@ -272,7 +291,8 @@
       }
     }
 
-    new MutationObserver(function () { addJobLinks(); showClientInfo(); }).observe(document.body, { childList: true, subtree: true });
+    loadAdminData();
+    new MutationObserver(function () { loadAdminData(); addJobLinks(); showClientInfo(); }).observe(document.body, { childList: true, subtree: true });
   </script>
 </body>
 </html>

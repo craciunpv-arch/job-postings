@@ -1,0 +1,68 @@
+---
+permalink: /admin/login/index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Team login</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f5f6; color: #26282a; font-family: system-ui, sans-serif; }
+    main { max-width: 420px; margin: 24px; padding: 28px; background: #fff; border: 1px solid #dcdfe1; border-radius: 10px; }
+    h1 { font-size: 18px; margin: 0 0 10px; }
+    p { font-size: 14px; line-height: 1.5; margin: 0 0 16px; color: #565b5e; }
+    a.btn, button { display: inline-block; font: inherit; font-size: 14px; padding: 8px 14px; border-radius: 6px; border: 1px solid #0d0f17; cursor: pointer; text-decoration: none; }
+    a.btn { background: #0d0f17; color: #fff; margin-right: 8px; }
+    button { background: #fff; color: #0d0f17; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="title">Checking your login…</h1>
+    <p id="text">One moment.</p>
+    <div id="actions" hidden>
+      <a class="btn" href="/admin/" target="_blank" rel="noopener">Open the Content Manager</a>
+      <button type="button" id="retry">Try again</button>
+    </div>
+  </main>
+  <script>
+    (function () {
+      // Only ever send people back to a page under /admin.
+      var next = new URLSearchParams(location.search).get('next') || '/admin/stats/';
+      if (!/^\/admin\/[\w\-.\/]*$/.test(next) || next.indexOf('/admin/login') === 0) next = '/admin/stats/';
+
+      function show(title, text) {
+        document.getElementById('title').textContent = title;
+        document.getElementById('text').textContent = text;
+        document.getElementById('actions').hidden = false;
+      }
+
+      function check() {
+        var user = {};
+        try { user = JSON.parse(localStorage.getItem('decap-cms-user') || localStorage.getItem('netlify-cms-user') || '{}'); } catch (e) {}
+        if (!user.token) {
+          show('Team members only', 'This page is for people who edit the site. Log in to the Content Manager with GitHub, then come back and press Try again.');
+          return;
+        }
+        fetch('/api/admin-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token: user.token })
+        }).then(function (r) {
+          if (r.ok) { location.replace(next); return; }
+          if (r.status === 403) show('No access', 'Your GitHub account is not a contributor to this site. Ask the site owner to add you.');
+          else show('Login expired', 'Log in to the Content Manager with GitHub again, then come back and press Try again.');
+        }).catch(function () {
+          show('Could not check your login', 'Check your connection and press Try again.');
+        });
+      }
+
+      document.getElementById('retry').addEventListener('click', check);
+      check();
+    })();
+  </script>
+</body>
+</html>
