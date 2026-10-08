@@ -3,6 +3,13 @@ permalink: /admin/stats/index.html
 eleventyExcludeFromCollections: true
 ---
 {%- set stats = collections.jobs | jobStats(site) -%}
+{#- The homepage card leaves link-only roles out of everything except the roles posted total. -#}
+{%- set home = collections.jobs | listed | jobStats(site) -%}
+{%- set linkOnly = stats.open - home.open -%}
+{%- set filled = stats.total - stats.open -%}
+{%- macro visibility(r) -%}
+{% if not r.open %}Filled{% elif r.unlisted %}Open, link only{% else %}Open, on homepage{% endif %}
+{%- endmacro -%}
 {%- set live = site.homepageStats or [] -%}
 {%- set visits = traffic | trafficStats(collections.jobs) -%}
 {%- macro liveTag(key) -%}
@@ -141,7 +148,7 @@ eleventyExcludeFromCollections: true
     <header class="intro">
       <h1>Job posting stats</h1>
       {% if stats.total %}
-      <p>Calculated from all {{ stats.total }} roles in the CMS since {{ stats.since }}, open and closed. Salaries are RON Net. Roles hidden from the homepage are included here but left out of the homepage card. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
+      <p>Calculated from all {{ stats.total }} roles ever posted in the CMS since {{ stats.since }}, open and filled. Salaries are RON Net. Link-only roles are included in everything here; on the homepage they count only in the roles posted total. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
       {% else %}
       <p>No roles have been published yet.</p>
       {% endif %}
@@ -150,19 +157,19 @@ eleventyExcludeFromCollections: true
     {% if stats.total %}
     <section class="panel">
       <div class="strip">
-        <div><b>{{ stats.total }} <small>· {{ stats.open }} open</small></b><span class="lbl">roles posted since {{ stats.since }}</span>{{ liveTag("roles") }}</div>
-        <div><b>{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</b><span class="lbl">salary range, typical midpoint {{ stats.medianMid | num }}</span>{{ liveTag("salary") }}</div>
+        <div><b>{{ stats.total }}</b><span class="lbl">roles posted since {{ stats.since }}: {{ home.open }} on homepage, {{ linkOnly }} link only, {{ filled }} filled</span>{{ liveTag("roles") }}</div>
+        <div><b>{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</b><span class="lbl">salary range, all {{ stats.total }} roles ever posted, typical midpoint {{ stats.medianMid | num }}</span>{{ liveTag("salary") }}</div>
         <div><b>{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} <small>{{ w.label | lower }}</small>{% endif %}{% endfor %}</b><span class="lbl">working model</span>{{ liveTag("working") }}</div>
         <div><b>{{ stats.aiCount }} <small>of {{ stats.total }}</small></b><span class="lbl">work with AI or ML</span>{{ liveTag("ai") }}</div>
       </div>
-      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if stats.current %} The homepage shows the range for open roles only, currently {{ stats.current.min | num }} – {{ stats.current.max | num }}.{% endif %}{% if site.midSalaryTo and site.seniorSalaryFrom %} It also shows "Mid typically up to {{ site.midSalaryTo | num }}" and "Senior typically from {{ site.seniorSalaryFrom | num }}" in place of the midpoint; both figures are set in Site Settings.{% endif %}</p>
+      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if home.current %} The homepage shows the range for open roles listed there only, currently {{ home.current.min | num }} – {{ home.current.max | num }}.{% endif %}{% if site.midSalaryTo and site.seniorSalaryFrom %} It also shows "Mid typically up to {{ site.midSalaryTo | num }}" and "Senior typically from {{ site.seniorSalaryFrom | num }}" in place of the midpoint; both figures are set in Site Settings.{% endif %}</p>
     </section>
 
     <section class="panel">
       <div>
         <h2>Site traffic</h2>
         {% if visits.ready %}
-        <p class="sub">From Vercel Web Analytics, production site only, saved daily. Vercel's free plan keeps one month of data, so each month is stored here. All time is the sum of the stored months, or Vercel's own lifetime count when that is higher. Last updated {{ visits.updatedAt | postDate }}. Visitor numbers are shown here only; the homepage shows just the three most viewed open roles.</p>
+        <p class="sub">From Vercel Web Analytics, production site only, saved daily. Vercel's free plan keeps one month of data, so each month is stored here. All time is the sum of the stored months, or Vercel's own lifetime count when that is higher. Last updated {{ visits.updatedAt | postDate }}. Visitor numbers are shown here only; the homepage shows just the three most viewed open roles listed there.</p>
         {% else %}
         <p class="sub">Not connected yet. Once the VERCEL_ANALYTICS_TOKEN secret is added to the GitHub repository, visitor numbers are saved here every day.</p>
         {% endif %}
@@ -210,14 +217,14 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>What our roles pay</h2>
-        <p class="sub">Salary range for every role. The dashed line is the typical midpoint.</p>
+        <p class="sub">Salary range for every role ever posted. The dashed line is the typical midpoint.</p>
       </div>
-      <p class="legend"><span><i></i>Open now</span><span><i class="c"></i>Closed</span></p>
+      <p class="legend"><span><i></i>Open</span><span><i class="c"></i>Filled</span></p>
       <div class="chart" style="--divs: {{ stats.scale.divisions }}">
         <div class="row axis axis--top"><span></span><div class="track"><span class="mlabel" style="left: {{ stats.scale.medianPct }}%">typical midpoint {{ stats.medianMid | num }}</span></div><span></span></div>
         {% for r in stats.roles %}
         <div class="row">
-          <span class="name">{{ r.title }}<small>{{ "Open" if r.open else "Closed" }}{% if r.unlisted %} (link only){% endif %} · {{ r.seniority }} · {{ r.workingType }}</small></span>
+          <span class="name">{{ r.title }}<small>{{ visibility(r) }} · {{ r.seniority }} · {{ r.workingType }}</small></span>
           <div class="track"><span class="median" style="left: {{ stats.scale.medianPct }}%"></span><span class="bar{% if not r.open %} bar--closed{% endif %}" style="left: {{ r.bar.left }}%; width: {{ r.bar.width }}%" title="{{ r.title }}: {{ r.min | num }} – {{ r.max | num }}"></span></div>
           <span class="val">{{ r.min | num }} – {{ r.max | num }}</span>
         </div>
@@ -245,7 +252,7 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>What kind of roles these are</h2>
-        <p class="sub">Share of all {{ stats.total }} roles. The blue part of each bar is open now, the grey part is closed.</p>
+        <p class="sub">Share of all {{ stats.total }} roles. The blue part of each bar is open, the grey part is filled.</p>
       </div>
       <div class="mix">
         <div><h3>Role type</h3>{% for g in stats.roleTypes %}{{ share(g) }}{% endfor %}</div>
@@ -261,12 +268,12 @@ eleventyExcludeFromCollections: true
       </div>
       <div class="tablewrap">
         <table>
-          <thead><tr><th>Role and URL</th><th>Status</th><th class="r">Min</th><th class="r">Max</th><th class="r">Midpoint</th><th>Seniority</th><th>Working</th><th>City</th><th>Role type</th><th>Tech stack</th><th>Posted</th></tr></thead>
+          <thead><tr><th>Role and URL</th><th>Visibility</th><th class="r">Min</th><th class="r">Max</th><th class="r">Midpoint</th><th>Seniority</th><th>Working</th><th>City</th><th>Role type</th><th>Tech stack</th><th>Posted</th></tr></thead>
           <tbody>
             {% for r in stats.rolesByDate %}
             <tr>
               <td class="t"><b>{{ r.title }}</b><a href="{{ r.url }}" target="_blank" rel="noopener">{{ site.siteUrl | replace("https://", "") }}{{ r.url }}</a> <button class="copy" type="button" data-url="{{ site.siteUrl }}{{ r.url }}">Copy</button></td>
-              <td class="n"><span class="st{% if not r.open %} st--closed{% endif %}"><i></i>{{ "Open" if r.open else "Closed" }}{% if r.unlisted %} · link only{% endif %}</span></td>
+              <td class="n"><span class="st{% if not r.open %} st--closed{% endif %}"><i></i>{{ visibility(r) }}</span></td>
               <td class="r">{{ r.min | num if r.min else "–" }}</td>
               <td class="r">{{ r.max | num if r.max else "–" }}</td>
               <td class="r">{{ r.mid | num if r.mid else "–" }}</td>
@@ -279,7 +286,7 @@ eleventyExcludeFromCollections: true
             </tr>
             {% endfor %}
           </tbody>
-          <tfoot><tr><td>{{ stats.total }} roles</td><td>{{ stats.open }} open</td><td class="r">{{ stats.salaryMin | num }}</td><td class="r">{{ stats.salaryMax | num }}</td><td class="r">{{ stats.medianMid | num }}</td><td colspan="6">lowest min, highest max, median midpoint</td></tr></tfoot>
+          <tfoot><tr><td>{{ stats.total }} roles</td><td>{{ home.open }} on homepage, {{ linkOnly }} link only, {{ filled }} filled</td><td class="r">{{ stats.salaryMin | num }}</td><td class="r">{{ stats.salaryMax | num }}</td><td class="r">{{ stats.medianMid | num }}</td><td colspan="6">lowest min, highest max, median midpoint</td></tr></tfoot>
         </table>
       </div>
     </section>
