@@ -21,49 +21,49 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 454,
-      "pageviews": 769
+      "visitors": 488,
+      "pageviews": 824
     }
   },
   "reportedAllTime": {
-    "visitors": 7839,
-    "pageviews": 13324
+    "visitors": 7873,
+    "pageviews": 13379
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 917,
-      "pageviews": 1215
+      "visitors": 916,
+      "pageviews": 1218
     },
     {
       "label": "/applied-ai-engineer",
-      "visitors": 723,
-      "pageviews": 828
+      "visitors": 725,
+      "pageviews": 830
     },
     {
       "label": "/devops-engineer",
-      "visitors": 154,
-      "pageviews": 209
+      "visitors": 172,
+      "pageviews": 228
     },
     {
       "label": "/backend-engineer",
       "visitors": 139,
-      "pageviews": 239
+      "pageviews": 236
     },
     {
       "label": "/fullstack-engineer",
-      "visitors": 130,
-      "pageviews": 156
+      "visitors": 133,
+      "pageviews": 161
     },
     {
       "label": "/data-scientist-1",
-      "visitors": 71,
-      "pageviews": 81
+      "visitors": 72,
+      "pageviews": 82
     },
     {
       "label": "/data-platform-engineer",
-      "visitors": 68,
-      "pageviews": 81
+      "visitors": 66,
+      "pageviews": 79
     },
     {
       "label": "/cloud-security-platform-engineer",
@@ -77,8 +77,8 @@
     },
     {
       "label": "/devsecops-engineer",
-      "visitors": 39,
-      "pageviews": 52
+      "visitors": 41,
+      "pageviews": 54
     },
     {
       "label": "/mlops-team-lead",
@@ -92,8 +92,8 @@
     },
     {
       "label": "/ai-engineer",
-      "visitors": 24,
-      "pageviews": 26
+      "visitors": 22,
+      "pageviews": 24
     },
     {
       "label": "/data-engineer",
@@ -124,18 +124,18 @@
   "topReferrers": [
     {
       "label": "linkedin.com",
-      "visitors": 1233,
-      "pageviews": 1466
+      "visitors": 1248,
+      "pageviews": 1479
     },
     {
       "label": "Direct",
-      "visitors": 665,
-      "pageviews": 1246
+      "visitors": 664,
+      "pageviews": 1255
     },
     {
       "label": "com.linkedin.android",
-      "visitors": 264,
-      "pageviews": 300
+      "visitors": 267,
+      "pageviews": 303
     },
     {
       "label": "lnkd.in",
@@ -144,8 +144,8 @@
     },
     {
       "label": "google.com",
-      "visitors": 19,
-      "pageviews": 26
+      "visitors": 18,
+      "pageviews": 25
     },
     {
       "label": "mail.google.com",
@@ -163,5 +163,5 @@
       "pageviews": 4
     }
   ],
-  "updatedAt": "2026-10-11T01:13:31.577Z"
+  "updatedAt": "2026-10-12T01:44:06.102Z"
 }
