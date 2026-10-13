@@ -131,10 +131,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 
   {% if reviews.length %}
   <aside class="reviews-card" aria-label="Working with our team">
-    <div class="reviews-card-head">
-      <span class="reviews-card-label">// working with our team</span>
-      {% if site.reviewsLinkedin %}<a class="reviews-card-link" href="{{ site.reviewsLinkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>{% endif %}
-    </div>
+    <span class="reviews-card-label">// working with our team</span>
     <div class="reviews-card-list">
       {% for review in reviews %}
       <figure class="review review--{{ review.data.type }}">
@@ -142,12 +139,11 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
         <figcaption class="review-person">
           {% if review.data.photo %}<img class="review-photo" src="{{ review.data.photo }}" alt="" width="28" height="28" loading="lazy" />{% endif %}
           <span class="review-info">
-            {% if review.data.linkedin %}
-            <a class="review-name" href="{{ review.data.linkedin }}" target="_blank" rel="noopener">{{ review.data.name }}</a>
-            {% else %}
             <span class="review-name">{{ review.data.name }}</span>
-            {% endif %}
-            <span class="review-type">{{ "Hiring partner" if review.data.type == "hiring_partner" else "Candidate" }}</span>
+            <span class="review-type">
+              {{ "Hiring partner" if review.data.type == "hiring_partner" else "Candidate" }}
+              {% if review.data.linkedin %}<span aria-hidden="true">·</span> <a class="review-link" href="{{ review.data.linkedin }}" target="_blank" rel="noopener" aria-label="Read {{ review.data.name }}'s review on LinkedIn">LinkedIn ↗</a>{% endif %}
+            </span>
           </span>
         </figcaption>
       </figure>

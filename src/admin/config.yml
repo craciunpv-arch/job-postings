@@ -157,7 +157,7 @@ collections:
           - { label: "Hiring partner", value: "hiring_partner" }
       - { label: "Quote", name: quote, widget: text, hint: "Keep it to about 160 characters, word for word from LinkedIn. Use … where you cut." }
       - { label: "Photo", name: photo, widget: image, hint: "Square, at least 160 × 160." }
-      - { label: "LinkedIn URL", name: linkedin, widget: string, required: false, hint: "Optional. Makes the person's name a link." }
+      - { label: "LinkedIn URL", name: linkedin, widget: string, required: false, hint: "Recommendations page of the colleague this review was written for, e.g. https://www.linkedin.com/in/vlad-craciun/details/recommendations/. Adds a LinkedIn link to the review so visitors can read it in full." }
       - { label: "Order", name: order, widget: number, value_type: int, default: 10, hint: "Lower numbers show first." }
       - { label: "Active", name: active, widget: boolean, default: true, hint: "Switch off to hide the review without deleting it." }
 
@@ -189,7 +189,6 @@ collections:
               - { label: "Salary range of open roles", value: "salary" }
               - { label: "Working model", value: "working" }
             hint: "Stats shown to candidates in the bar under Open Positions. Untick all to hide the bar. The full stats are at /admin/stats/."
-          - { label: "Reviews LinkedIn URL", name: reviewsLinkedin, widget: string, required: false, hint: "Where the LinkedIn link on the homepage reviews card goes, e.g. your LinkedIn recommendations. Leave empty to hide the link." }
 
       - file: src/_data/cmsFieldLabels.json
         name: cmsFieldLabels

@@ -5,7 +5,7 @@ type: hiring_partner
 quote: We chose EDUROM to help us move into region… a critical reason why we
   were able to grow our team there.
 photo: /images/uploads/review-robin-lim.jpg
-linkedin: ""
+linkedin: https://www.linkedin.com/in/vlad-craciun/details/recommendations/
 order: 1
 active: true
 ---
