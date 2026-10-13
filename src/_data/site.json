@@ -14,9 +14,7 @@
   "homepageStats": [
     "roles",
     "salary",
-    "working",
-    "topRoles"
+    "working"
   ],
-  "midSalaryTo": 17000,
-  "seniorSalaryFrom": 18000
+  "reviewsLinkedin": "https://www.linkedin.com/in/vlad-craciun/details/recommendations/"
 }

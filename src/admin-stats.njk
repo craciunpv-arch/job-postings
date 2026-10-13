@@ -3,7 +3,7 @@ permalink: /admin/stats/index.html
 eleventyExcludeFromCollections: true
 ---
 {%- set stats = collections.jobs | jobStats(site) -%}
-{#- The homepage card leaves link-only roles out of everything except the roles posted total. -#}
+{#- The homepage leaves link-only roles out of everything except the roles posted total. -#}
 {%- set home = collections.jobs | listed | jobStats(site) -%}
 {%- set linkOnly = stats.open - home.open -%}
 {%- set filled = stats.total - stats.open -%}
@@ -163,7 +163,7 @@ eleventyExcludeFromCollections: true
         <div><b>{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} <small>{{ w.label | lower }}</small>{% endif %}{% endfor %}</b><span class="lbl">working model</span>{{ liveTag("working") }}</div>
         <div><b>{{ stats.aiCount }} <small>of {{ stats.total }}</small></b><span class="lbl">work with AI or ML</span>{{ liveTag("ai") }}</div>
       </div>
-      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if home.current %} The homepage shows the range for open roles listed there only, currently {{ home.current.min | num }} – {{ home.current.max | num }}.{% endif %}{% if site.midSalaryTo and site.seniorSalaryFrom %} It also shows "Mid typically up to {{ site.midSalaryTo | num }}" and "Senior typically from {{ site.seniorSalaryFrom | num }}" in place of the midpoint; both figures are set in Site Settings.{% endif %}</p>
+      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if home.current %} The homepage shows the range for open roles listed there only, currently {{ home.current.min | num }} – {{ home.current.max | num }}.{% endif %}</p>
     </section>
 
     <section class="panel">
@@ -245,7 +245,7 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>Salary by role type {{ liveTag("roleType") }}</h2>
-        <p class="sub">Average min and max per Role Type set in the CMS. A type with a single role is drawn as an outline and is left out of the homepage.{% if stats.untypedCount %} {{ stats.untypedCount }} {{ "role has" if stats.untypedCount == 1 else "roles have" }} no Role Type yet.{% endif %}</p>
+        <p class="sub">Average min and max per Role Type set in the CMS. A type with a single role is drawn as an outline.{% if stats.untypedCount %} {{ stats.untypedCount }} {{ "role has" if stats.untypedCount == 1 else "roles have" }} no Role Type yet.{% endif %}</p>
       </div>
       {{ groupChart(stats.roleTypes) }}
     </section>

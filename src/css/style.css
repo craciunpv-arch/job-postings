@@ -1075,250 +1075,210 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* HOMEPAGE STATS CARD */
-.jobs-layout--stats {
+/* HOMEPAGE STATS BAR */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  background: #ffffff;
+  border: 1px solid #ececef;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  color: #1d1d1f;
+  line-height: 1.25;
+}
+
+.stats-bar-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #55555a;
+}
+
+.stats-bar-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #e6f5ec;
+  color: #1f8a5b;
+  font-size: 14px;
+}
+
+.stats-bar-pill i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.stats-bar-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 28px;
+  padding-left: 22px;
+  border-left: 1px solid #ececef;
+  font-size: 14px;
+  color: #55555a;
+}
+
+.stats-bar-stat:first-child { padding-left: 0; border-left: 0; }
+
+.stats-bar-stat b {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1f;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.stats-bar-meta {
+  margin-left: auto;
+  font-size: 13px;
+  color: #6e6e73;
+}
+
+/* HOMEPAGE REVIEWS CARD */
+.jobs-layout--side {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 28px;
   align-items: start;
 }
 
-.stats-card {
-  --stats-ink: #2b2420;
-  --stats-mid: #5c5048;
-  --stats-soft: #837567;
-  --stats-blue: #57c0e8;
-  --stats-green: #1f8a5b;
-  width: 100%;
-  max-width: 340px;
-  margin-top: 43px;
-  background: #ffffff;
-  border: 1px solid #ecebe8;
-  border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -12px rgba(0,0,0,0.10);
-  overflow: hidden;
-  color: var(--stats-ink);
-  line-height: 1.25;
-}
-
-.stats-card-section {
-  position: relative;
+.reviews-card {
   display: flex;
   flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px;
+  background: #ffffff;
+  border: 1px solid #ececef;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  color: #1d1d1f;
+}
+
+.reviews-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  padding: 20px 24px;
 }
 
-.stats-card-section:first-child { padding-top: 24px; }
-.stats-card-section:last-child { padding-bottom: 24px; }
-.stats-card-section--tight { gap: 6px; }
-
-.stats-card-section + .stats-card-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 24px;
-  right: 24px;
-  height: 1px;
-  background: #efeeeb;
-}
-
-.stats-card-label {
+.reviews-card-label {
   font-family: var(--mono);
   font-size: 11px;
-  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--stats-mid);
+  color: #55555a;
 }
 
-.stats-card-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+.reviews-card-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #2f92bd;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.stats-card-row--center { align-items: center; }
-.stats-card-open-row { margin-top: 6px; }
+.reviews-card-link:hover { color: #1f6f93; }
 
-.stats-card-hero-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding-top: 4px;
-}
-
-.stats-card-hero {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-}
-
-.stats-card-hero-label {
-  font-size: 17px;
-  color: var(--stats-mid);
-}
-
-.stats-card-big {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.stats-card-meta {
-  font-size: 13px;
-  color: var(--stats-soft);
-}
-
-.stats-card-help {
-  font-size: 14px;
-  color: var(--stats-mid);
-}
-
-.stats-card-help strong {
-  font-weight: 700;
-  color: var(--stats-ink);
-}
-
-.stats-card-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px 4px 8px;
-  border-radius: 999px;
-  background: rgba(31,138,91,0.14);
-  color: #166b46;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.stats-card-pill i {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--stats-green);
-}
-
-.stats-card-track {
-  position: relative;
-  height: 8px;
-  margin-top: 6px;
-  border-radius: 999px;
-  background: #f0efec;
-}
-
-.stats-card-fill {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-radius: 999px;
-  background: var(--stats-blue);
-}
-
-.stats-card-mark {
-  position: absolute;
-  top: -5px;
-  width: 3px;
-  height: 18px;
-  margin-left: -1.5px;
-  border-radius: 2px;
-  background: var(--stats-ink);
-}
-
-.stats-card-split {
-  display: flex;
-  gap: 4px;
-  height: 28px;
-}
-
-.stats-card-split div { border-radius: 6px; background: var(--stats-blue); }
-
-.stats-card-split div:nth-child(2) {
-  background: rgba(87,192,232,0.16);
-  border: 1px solid rgba(87,192,232,0.35);
-}
-
-.stats-card-split div:nth-child(3) { background: #f0efec; }
-
-.stats-card-split--share div:nth-child(2) { background: #f0efec; border: 0; }
-
-.stats-card-legend { gap: 12px; font-size: 15px; }
-.stats-card-legend b { font-size: 20px; font-weight: 700; }
-.stats-card-legend em { font-style: normal; color: var(--stats-mid); }
-
-.stats-card-count {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  font-size: 15px;
-  color: var(--stats-soft);
-}
-
-.stats-card-count .stats-card-big { color: var(--stats-ink); }
-
-.stats-card-rows {
+.reviews-card-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 14px;
-  font-variant-numeric: tabular-nums;
+  gap: 14px;
 }
 
-.stats-card-rows b { font-weight: 700; white-space: nowrap; }
-
-.stats-card-levels { font-size: 15px; color: var(--stats-mid); }
-.stats-card-levels b { font-size: 17px; color: var(--stats-ink); }
-
-.stats-card-ranking {
-  list-style: none;
-  counter-reset: rank;
+.review {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-size: 15px;
-}
-
-.stats-card-ranking li {
-  counter-increment: rank;
-  display: flex;
-  align-items: baseline;
   gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f7fbfd;
+  border: 1px solid #e3eff5;
 }
 
-.stats-card-ranking li::before {
-  content: counter(rank);
+.review-quote {
+  font-size: 14px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.review-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.review-photo {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.review-name {
   font-size: 13px;
   font-weight: 700;
-  color: var(--stats-soft);
+  color: inherit;
+  text-decoration: none;
 }
 
-.stats-card-ranking a { color: var(--stats-ink); font-weight: 500; text-decoration: none; }
-.stats-card-ranking a:hover { color: #2f92bd; }
+a.review-name:hover { color: #2f92bd; }
+
+.review-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2f92bd;
+}
+
+.review--hiring_partner .review-type { color: #6b4ee6; }
 
 @media (min-width: 1141px) and (min-height: 900px) {
-  .stats-card { position: sticky; top: 168px; }
+  .reviews-card { position: sticky; top: 168px; }
 }
 
+/* Below the sidebar breakpoint the reviews sit above the job list as one swipeable row. */
 @media (max-width: 1140px) {
-  .jobs-layout--stats { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .stats-card {
-    max-width: none;
-    margin-top: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .stats-bar-stat { min-height: 0; padding-left: 0; border-left: 0; }
+  .jobs-layout--side { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .reviews-card { order: -1; padding: 18px 20px; }
+  .reviews-card-list {
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
   }
-  .stats-card-section:first-child,
-  .stats-card-section:last-child { padding: 20px 24px; }
-  .stats-card-section:nth-child(2)::before { display: none; }
+  .reviews-card-list::-webkit-scrollbar { display: none; }
+  .review { flex: 1 0 250px; scroll-snap-align: start; }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .stats-card { grid-template-columns: 1fr; }
-  .stats-card-section:nth-child(2)::before { display: block; }
+  .stats-bar { gap: 10px 18px; padding: 14px 18px; }
+  .stats-bar-label { flex-basis: 100%; }
+  .stats-bar-stat { flex-wrap: wrap; }
+  .stats-bar-stat b { font-size: 20px; }
+  .stats-bar-meta { margin-left: 0; flex-basis: 100%; }
   .job-title { font-size: 22px; }
   .hero-inner { padding: 32px 24px 8px; }
   .job-list { grid-template-columns: 1fr; }

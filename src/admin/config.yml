@@ -136,6 +136,31 @@ collections:
       - { label: "LinkedIn URL", name: linkedin, widget: string }
       - { label: "Email", name: email, widget: string }
 
+  - name: reviews
+    label: "Reviews"
+    label_singular: "Review"
+    folder: src/reviews
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    description: >-
+      Reviews shown on the homepage under "Working with our team". Get the person's consent
+      before publishing their name and photo.
+    fields:
+      - { label: "Name", name: name, widget: string }
+      - { label: "Role Title", name: title, widget: string, required: false, hint: "e.g. Head of Engineering. Kept for reference; the homepage shows the name and the type." }
+      - label: Type
+        name: type
+        widget: select
+        options:
+          - { label: "Candidate", value: "candidate" }
+          - { label: "Hiring partner", value: "hiring_partner" }
+      - { label: "Quote", name: quote, widget: text, hint: "Keep it to about 160 characters, word for word from LinkedIn. Use … where you cut." }
+      - { label: "Photo", name: photo, widget: image, hint: "Square, at least 160 × 160." }
+      - { label: "LinkedIn URL", name: linkedin, widget: string, required: false, hint: "Optional. Makes the person's name a link." }
+      - { label: "Order", name: order, widget: number, value_type: int, default: 10, hint: "Lower numbers show first." }
+      - { label: "Active", name: active, widget: boolean, default: true, hint: "Switch off to hide the review without deleting it." }
+
   - name: settings
     label: "Site Settings"
     files:
@@ -154,8 +179,6 @@ collections:
           - { label: "Footer Bold", name: footerBold, widget: boolean, default: false }
           - { label: "Footer Italic", name: footerItalic, widget: boolean, default: false }
           - { label: "Footer Sub-text", name: footerSubtext, widget: text, required: false, hint: "A short company description shown below the footer text, in smaller italic type." }
-          - { label: "Mid salary typically up to", name: midSalaryTo, widget: number, value_type: int, required: false, hint: "Shown on the homepage stats card, e.g. 17000. Leave this or the next field empty to show the typical midpoint instead." }
-          - { label: "Senior salary typically from", name: seniorSalaryFrom, widget: number, value_type: int, required: false, hint: "Shown on the homepage stats card, e.g. 18000." }
           - label: "Homepage Stats"
             name: homepageStats
             widget: select
@@ -163,13 +186,10 @@ collections:
             required: false
             options:
               - { label: "Roles posted and open now", value: "roles" }
-              - { label: "Salary range and typical midpoint", value: "salary" }
+              - { label: "Salary range of open roles", value: "salary" }
               - { label: "Working model", value: "working" }
-              - { label: "Work with AI or ML", value: "ai" }
-              - { label: "Salary by seniority", value: "seniority" }
-              - { label: "Salary by role type", value: "roleType" }
-              - { label: "Most viewed roles, last 30 days", value: "topRoles" }
-            hint: "Stats shown to candidates next to the job cards. Untick all to hide the panel. The full stats are at /admin/stats/."
+            hint: "Stats shown to candidates in the bar under Open Positions. Untick all to hide the bar. The full stats are at /admin/stats/."
+          - { label: "Reviews LinkedIn URL", name: reviewsLinkedin, widget: string, required: false, hint: "Where the LinkedIn link on the homepage reviews card goes, e.g. your LinkedIn recommendations. Leave empty to hide the link." }
 
       - file: src/_data/cmsFieldLabels.json
         name: cmsFieldLabels

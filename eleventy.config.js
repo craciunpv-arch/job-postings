@@ -46,9 +46,15 @@ module.exports = function (eleventyConfig) {
     (arr || []).find((item) => item.fileSlug === slug)
   );
 
+  // Homepage reviews: only the ones switched on in the CMS, in their Order.
+  eleventyConfig.addFilter("activeReviews", (arr) =>
+    (arr || []).filter((item) => item.data.active !== false).sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  );
+
   eleventyConfig.addCollection("jobs", (api) => api.getFilteredByGlob("src/jobs/*.md"));
   eleventyConfig.addCollection("team", (api) => api.getFilteredByGlob("src/team/*.md"));
   eleventyConfig.addCollection("clients", (api) => api.getFilteredByGlob("src/clients/*.md"));
+  eleventyConfig.addCollection("reviews", (api) => api.getFilteredByGlob("src/reviews/*.md"));
 
   return {
     dir: {
