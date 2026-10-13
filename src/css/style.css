@@ -1212,6 +1212,8 @@ button:focus-visible {
   font-size: 14px;
   line-height: 1.45;
   text-wrap: pretty;
+  /* Gill Sans joins "fi" into one heavier-looking glyph at this size. */
+  font-variant-ligatures: no-common-ligatures;
 }
 
 .review-person {
