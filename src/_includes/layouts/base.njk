@@ -29,6 +29,10 @@
 
   {# Light unless the visitor picked dark with the header switch. Runs before the stylesheet so the page never flashes the wrong theme. #}
   <script>try { if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}</script>
+  {# JetBrains Mono for the // labels and other mono text; without it Windows falls back to a thin Courier. #}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>

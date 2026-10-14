@@ -41,7 +41,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
   {% if showStats %}
   <div class="stats-bar" role="group" aria-label="Roles in numbers">
     {% if "roles" in site.homepageStats %}
-    <span class="stats-bar-label">// roles in numbers</span>
+    <span class="stats-bar-label"><span class="label-slashes" aria-hidden="true">//</span> roles in numbers</span>
     <span class="stats-bar-pill"><i></i>{{ stats.open }} open now</span>
     {% endif %}
     {% if "salary" in site.homepageStats and stats.current %}
@@ -131,7 +131,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 
   {% if reviews.length %}
   <aside class="reviews-card" aria-label="Working with our team">
-    <span class="reviews-card-label">// working with our team</span>
+    <span class="reviews-card-label"><span class="label-slashes" aria-hidden="true">//</span> working with our team</span>
     <div class="reviews-card-list">
       {% for review in reviews %}
       <figure class="review review--{{ review.data.type }}">

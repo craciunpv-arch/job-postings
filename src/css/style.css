@@ -1180,10 +1180,11 @@ button:focus-visible {
 
 .stats-bar-label {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--panel-mid);
+  color: var(--panel-ink);
 }
 
 .stats-bar-pill {
@@ -1256,11 +1257,15 @@ button:focus-visible {
 
 .reviews-card-label {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--panel-mid);
+  color: var(--panel-ink);
 }
+
+/* The // marker in brand blue so the section labels catch the eye. */
+.label-slashes { color: var(--tag-blue-2-dark); }
 
 .reviews-card-list {
   display: flex;
