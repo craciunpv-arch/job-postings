@@ -549,9 +549,9 @@ body {
 
 .contact-cta-role {
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-mid);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0;
@@ -844,9 +844,9 @@ body {
 
 .job-card-recruiter-role {
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-mid);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -1232,9 +1232,9 @@ button:focus-visible {
 
 .stats-bar-meta {
   margin-left: auto;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  color: var(--panel-mid);
+  color: var(--panel-ink);
 }
 
 /* HOMEPAGE REVIEWS CARD */
