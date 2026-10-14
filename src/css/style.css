@@ -681,9 +681,9 @@ body {
 
 .job-card-teaser {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
-  color: var(--ink-mid);
+  color: var(--ink);
   line-height: 1.4;
   margin: 0 0 12px;
 }
@@ -1212,7 +1212,7 @@ button:focus-visible {
   min-height: 28px;
   padding-left: 22px;
   border-left: 1px solid var(--panel-border);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--panel-ink);
 }
