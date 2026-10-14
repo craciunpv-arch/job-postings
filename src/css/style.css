@@ -1212,8 +1212,9 @@ button:focus-visible {
   min-height: 28px;
   padding-left: 22px;
   border-left: 1px solid var(--panel-border);
-  font-size: 14px;
-  color: var(--panel-mid);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--panel-ink);
 }
 
 .stats-bar > .stats-bar-stat:first-child { padding-left: 0; border-left: 0; }
@@ -1231,8 +1232,9 @@ button:focus-visible {
 
 .stats-bar-meta {
   margin-left: auto;
-  font-size: 13px;
-  color: var(--panel-soft);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--panel-mid);
 }
 
 /* HOMEPAGE REVIEWS CARD */
