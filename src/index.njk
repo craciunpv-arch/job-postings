@@ -25,7 +25,12 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
   {% set reviews = collections.reviews | activeReviews %}
   {% if openJobs.length %}
   <div class="jobs-heading-row">
+    {# The stats bar's "open now" pill already shows the count, so the heading is only read out to screen readers then. #}
+    {% if showStats and "roles" in site.homepageStats %}
+    <h2 class="visually-hidden">Open positions</h2>
+    {% else %}
     <h2 class="jobs-heading">Open Positions <span class="jobs-count">({{ openJobs | length }})</span></h2>
+    {% endif %}
     <div class="filter-bar" id="filterBar">
       <button class="filter-btn active" data-filter="all">All</button>
       {% for job in openJobs %}
