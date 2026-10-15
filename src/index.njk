@@ -134,14 +134,14 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
   <aside class="reviews-card" aria-label="Working with our team">
     <div class="reviews-card-head">
       <span class="reviews-card-label"><span class="label-slashes" aria-hidden="true">//</span> working with our team</span>
-      {% if reviews.length > 4 %}
+      {% if reviews.length > 1 %}
       <span class="review-wheel-controls">
         <button type="button" class="review-wheel-btn" id="reviewPrev" aria-label="Previous review"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 10l4-4 4 4"/></svg></button>
         <button type="button" class="review-wheel-btn" id="reviewNext" aria-label="Next review"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></button>
       </span>
       {% endif %}
     </div>
-    <div class="reviews-card-list"{% if reviews.length > 4 %} id="reviewWheel"{% endif %}>
+    <div class="reviews-card-list" id="reviewWheel">
       {% for review in reviews %}
       <figure class="review review--{{ review.data.type }}"{% if loop.index0 >= 4 %} hidden{% endif %}>
         <blockquote class="review-quote">“{{ review.data.quote }}”</blockquote>
@@ -172,11 +172,12 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 </div>
 
 <script>
-  // With more than 4 active reviews, desktop shows them on a strip that glides up like a
-  // wheel, with the top of the next review peeking in at the bottom. It shows up to 4, fewer
-  // when the window is short, so the card always fits while it follows the scroll. The arrows
-  // turn it by hand; hovering the card or keyboard focus inside it pauses it. Below the
-  // sidebar breakpoint the reviews stay a swipeable row and the wheel is off.
+  // On desktop the reviews card follows the scroll, so it must fit the window. When all
+  // reviews fit, they simply show. When they don't, the card shows as many as fit (at most
+  // 4) on a strip that glides up like a wheel every few seconds, with the top of the next
+  // review peeking in at the bottom and arrows to turn it by hand. Hovering the card or
+  // keyboard focus inside it pauses it. Below the sidebar breakpoint the reviews are a
+  // swipeable row and none of this applies.
   (function() {
     var wheel = document.getElementById('reviewWheel');
     if (!wheel) return;
@@ -184,19 +185,19 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
     var desktop = window.matchMedia('(min-width: 1141px)');
     var MAX = 4, EVERY = 6000, ANIM = 700, PEEK = 44, STICKY_TOP = 168, BOTTOM_GAP = 24;
     var reviews = Array.prototype.slice.call(wheel.querySelectorAll('.review'));
-    var total = reviews.length, top = 0, busy = false, paused = false, timer;
+    var total = reviews.length, top = 0, busy = false, paused = false, turning = false, timer;
 
     // Move the reviews onto a strip, followed by copies of the first few so it can wrap round.
     var strip = document.createElement('div');
     strip.className = 'review-strip';
     reviews.forEach(function(r) { r.hidden = false; strip.appendChild(r); });
-    reviews.slice(0, MAX + 1).forEach(function(r) {
-      var copy = r.cloneNode(true);
+    for (var i = 0; i <= MAX; i++) {
+      var copy = reviews[i % total].cloneNode(true);
       copy.classList.add('review--copy');
       copy.setAttribute('aria-hidden', 'true');
       copy.inert = true;
       strip.appendChild(copy);
-    });
+    }
     wheel.appendChild(strip);
     wheel.classList.add('is-wheel');
     card.classList.add('has-wheel');
@@ -204,14 +205,26 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 
     function place(animate) {
       if (!desktop.matches) {
+        card.classList.remove('can-turn');
+        turning = false;
         strip.style.transform = wheel.style.height = '';
         reviews.forEach(function(r) { r.inert = false; });
         return;
       }
       wheel.classList.toggle('is-still', !animate);
-      var y = items[top].offsetTop;
       var room = window.innerHeight - STICKY_TOP - BOTTOM_GAP - (card.offsetHeight - wheel.offsetHeight);
-      var shown = MAX;
+      var all = items[total].offsetTop - 14;
+      turning = total > 1 && all > room;
+      card.classList.toggle('can-turn', turning);
+      if (!turning) {
+        top = 0;
+        strip.style.transform = '';
+        wheel.style.height = all + 'px';
+        reviews.forEach(function(r) { r.inert = false; });
+        return;
+      }
+      var y = items[top].offsetTop;
+      var shown = Math.min(MAX, total - 1);
       while (shown > 1 && items[top + shown].offsetTop - y + PEEK > room) shown--;
       strip.style.transform = 'translateY(' + -y + 'px)';
       wheel.style.height = (items[top + shown].offsetTop - y + PEEK) + 'px';
@@ -222,7 +235,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 
     // step 1 = forward (strip moves up), -1 = back.
     function turn(step) {
-      if (busy || !desktop.matches) return;
+      if (busy || !turning || !desktop.matches) return;
       busy = true;
       if (step < 0 && top === 0) { top = total; place(false); }
       top += step;
@@ -244,8 +257,9 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
       clearInterval(timer);
       timer = setInterval(function() { if (!paused && !document.hidden) turn(1); }, EVERY);
     }
-    document.getElementById('reviewNext').addEventListener('click', function() { turn(1); restart(); });
-    document.getElementById('reviewPrev').addEventListener('click', function() { turn(-1); restart(); });
+    var next = document.getElementById('reviewNext'), prev = document.getElementById('reviewPrev');
+    if (next) next.addEventListener('click', function() { turn(1); restart(); });
+    if (prev) prev.addEventListener('click', function() { turn(-1); restart(); });
     window.addEventListener('resize', function() { place(false); });
     place(false);
     if (document.fonts) document.fonts.ready.then(function() { place(false); });

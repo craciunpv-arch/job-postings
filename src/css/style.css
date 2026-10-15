@@ -1299,6 +1299,8 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
   transition: height 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.can-turn .reviews-card-list.is-wheel {
   -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 52px), transparent);
   mask-image: linear-gradient(to bottom, #000 calc(100% - 52px), transparent);
 }
@@ -1323,7 +1325,8 @@ button:focus-visible {
   gap: 12px;
 }
 
-.review-wheel-controls { display: inline-flex; gap: 6px; }
+.review-wheel-controls { display: none; gap: 6px; }
+.can-turn .review-wheel-controls { display: inline-flex; }
 
 .review-wheel-btn {
   width: 28px;
@@ -1409,13 +1412,9 @@ button:focus-visible {
 }
 .review-swipe-dots i.on { width: 18px; border-radius: 4px; background: var(--tag-blue-2-dark); opacity: 1; }
 
-/* The card follows the scroll once it fits the window: always with the wheel, which shows
-   fewer reviews on short windows; otherwise only on tall ones. */
+/* The card follows the scroll on desktop; the review script keeps it within the window. */
 @media (min-width: 1141px) {
   .reviews-card.has-wheel { position: sticky; top: 168px; }
-}
-@media (min-width: 1141px) and (min-height: 900px) {
-  .reviews-card { position: sticky; top: 168px; }
 }
 
 /* Below the sidebar breakpoint the reviews sit above the job list as one swipeable row. */
