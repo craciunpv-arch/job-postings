@@ -640,16 +640,6 @@ body {
 /* JOBS SECTION */
 .jobs-section { margin-bottom: 8px; }
 
-.jobs-heading {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-  margin-bottom: 16px;
-}
-
-.jobs-count { color: var(--ink-soft); font-weight: 500; }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -955,8 +945,6 @@ footer {
   flex-wrap: wrap;
   margin-bottom: 16px;
 }
-
-.jobs-heading { margin-bottom: 0; }
 
 .filter-bar {
   display: flex;
