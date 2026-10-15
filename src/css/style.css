@@ -49,6 +49,12 @@
 }
 
 :root {
+  /* Text floor: nothing smaller or lighter than these. Mono caps labels use --fs-label,
+     small body-font text uses --fs-small, secondary text uses --text-secondary.
+     --ink-soft is for decoration (dots, rules), not for text. */
+  --fs-label: 12px;
+  --fs-small: 14px;
+  --text-secondary: var(--ink-mid);
   --ink: #26282a;
   --ink-mid: #565b5e;
   --ink-soft: #83888b;
@@ -148,6 +154,8 @@ html { scroll-behavior: auto; }
     radial-gradient(760px 480px at 92% 520px, rgba(107,78,230,0.07) 0%, transparent 70%),
     radial-gradient(900px 550px at 50% 620px, var(--glow) 0%, var(--page-bg) 100%);
 }
+
+button, input, select, textarea { font: inherit; }
 
 body {
   background: radial-gradient(900px 550px at 50% 620px, var(--glow) 0%, var(--page-bg) 100%);
@@ -249,7 +257,7 @@ body {
 /* BACK LINK */
 .back-link {
   display: inline-block;
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
@@ -363,7 +371,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--tag-blue-2);
+  color: var(--tag-blue-2-dark);
   margin: 20px 0 8px;
 }
 
@@ -411,7 +419,7 @@ body {
   border-left: 3px solid var(--border);
   padding-left: 16px;
   margin: 0 0 20px;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   font-style: italic;
 }
 
@@ -451,7 +459,7 @@ body {
 }
 
 .job-benefit-pill {
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: var(--accent-dark);
   background: var(--accent-soft);
@@ -549,9 +557,9 @@ body {
 
 .contact-cta-role {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-label);
   font-weight: 600;
-  color: var(--ink-mid);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0;
@@ -559,9 +567,10 @@ body {
 
 .contact-cta-text {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--ink-mid);
   margin: 4px 0 0;
+  font-weight: 500;
 }
 
 .contact-cta-actions {
@@ -700,8 +709,8 @@ body {
   align-items: center;
   gap: 5px;
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
+  font-size: var(--fs-label);
+  font-weight: 600;
   color: var(--badge-new);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -722,9 +731,9 @@ body {
   align-items: center;
   gap: 5px;
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   flex-shrink: 0;
@@ -745,8 +754,8 @@ body {
 
 .job-card-seniority {
   font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
+  font-size: var(--fs-label);
+  font-weight: 600;
   color: var(--accent-indigo-dark);
   background: var(--accent-indigo-soft);
   padding: 3px 10px;
@@ -836,16 +845,16 @@ body {
 
 .job-card-recruiter-name {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: var(--ink);
   font-weight: 600;
 }
 
 .job-card-recruiter-role {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-label);
   font-weight: 600;
-  color: var(--ink-mid);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -872,7 +881,7 @@ footer {
 }
 
 .footer-subtext {
-  font-size: 12px;
+  font-size: var(--fs-small);
   font-style: italic;
   color: var(--ink);
   margin-top: 6px;
@@ -896,11 +905,11 @@ footer {
 }
 
 .explore-footer-heading {
-  font-size: 10px;
+  font-size: var(--fs-label);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 8px;
 }
 
@@ -911,7 +920,7 @@ footer {
 }
 
 .explore-footer-col h3 {
-  font-size: 11px;
+  font-size: var(--fs-small);
   font-weight: 700;
   color: #fff;
   margin-bottom: 5px;
@@ -926,8 +935,8 @@ footer {
 }
 
 .explore-footer-col a {
-  font-size: 11px;
-  color: rgba(255,255,255,0.65);
+  font-size: var(--fs-small);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   line-height: 1.25;
 }
@@ -953,13 +962,14 @@ footer {
 }
 
 .filter-btn {
-  font-size: 12px;
+  font-size: var(--fs-small);
   font-weight: 500;
-  color: var(--ink-soft);
+  line-height: 1.2;
+  color: var(--text-secondary);
   background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  padding: 3px 10px;
+  padding: 7px 14px;
   cursor: pointer;
   transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
@@ -967,9 +977,10 @@ footer {
 .filter-btn:hover { color: var(--ink); border-color: var(--tag-blue-2); }
 
 .filter-btn.active {
-  color: #fff;
-  background: var(--tag-blue-2);
+  color: var(--tag-blue-2-dark);
+  background: var(--tag-blue-2-soft);
   border-color: var(--tag-blue-2);
+  font-weight: 600;
 }
 
 /* POSTED DATE */
@@ -980,16 +991,12 @@ footer {
   margin-left: auto;
 }
 
-.job-card-date {
-  font-size: 11px;
-  color: var(--ink-soft);
-}
 
 /* MORE TAGS */
 .job-card-tag--more {
   font-size: 13px;
   font-weight: 500;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   background: transparent;
   border: 1px solid var(--border);
   padding: 3px 10px;
@@ -1014,8 +1021,9 @@ footer {
 
 .empty-state-text {
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
   margin-bottom: 24px;
+  font-weight: 500;
 }
 
 /* JOB DETAIL TOPBAR */
@@ -1049,7 +1057,7 @@ footer {
   align-items: center;
   gap: 8px;
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: #fff;
   background: var(--tag-blue-2);
@@ -1078,7 +1086,7 @@ footer {
   background: var(--tag-blue-2);
   color: #fff;
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   padding: 12px 18px;
   border: none;
@@ -1110,7 +1118,7 @@ footer {
 /* SHARE BUTTON */
 .share-btn {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: #fff;
   background: var(--tag-blue-2);
@@ -1177,7 +1185,7 @@ button:focus-visible {
 
 .stats-bar-label {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1193,6 +1201,7 @@ button:focus-visible {
   background: var(--pill-green-bg);
   color: var(--pill-green);
   font-size: 14px;
+  font-weight: 500;
 }
 
 .stats-bar-pill i {
@@ -1256,7 +1265,7 @@ button:focus-visible {
 
 .reviews-card-label {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1365,16 +1374,17 @@ button:focus-visible {
 }
 
 .review-name {
-  font-size: 13px;
+  font-size: var(--fs-small);
   font-weight: 700;
 }
 
 .review-type {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: var(--fs-label);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--link);
+  font-weight: 500;
 }
 
 .review--hiring_partner .review-type { color: var(--accent-indigo); }
