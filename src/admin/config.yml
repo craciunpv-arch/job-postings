@@ -145,7 +145,17 @@ collections:
     identifier_field: name
     description: >-
       Reviews shown on the homepage under "Working with our team". Get the person's consent
-      before publishing their name and photo.
+      before publishing their name and photo. Switch Active off to hide a review and back on
+      to show it again; Order sets which comes first.
+    summary: "{{order}}. {{name}}"
+    sortable_fields: ["order", "name"]
+    view_filters:
+      - label: "Shown on homepage"
+        field: active
+        pattern: true
+      - label: "Hidden"
+        field: active
+        pattern: false
     fields:
       - { label: "Name", name: name, widget: string }
       - { label: "Role Title", name: title, widget: string, required: false, hint: "e.g. Head of Engineering. Kept for reference; the homepage shows the name and the type." }
