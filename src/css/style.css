@@ -1282,6 +1282,58 @@ button:focus-visible {
   border: 1px solid var(--review-border);
 }
 
+/* Review wheel: a strip of reviews that glides up inside a window showing 4,
+   with the top of the next one fading in at the bottom. */
+.review[hidden] { display: none; }
+.reviews-card-list.is-wheel {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 52px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 52px), transparent);
+}
+.review-strip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.is-still,
+.is-still .review-strip { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reviews-card-list.is-wheel,
+  .review-strip { transition: none; }
+}
+
+.reviews-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-wheel-controls { display: inline-flex; gap: 6px; }
+
+.review-wheel-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--panel-border);
+  background: var(--review-bg);
+  color: var(--panel-ink);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.review-wheel-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.review-wheel-btn:hover { color: var(--tag-blue-2-dark); border-color: var(--tag-blue-2-border); background: var(--tag-blue-2-soft); }
+.review-wheel-btn:focus-visible { outline: 2px solid var(--tag-blue-2-dark); outline-offset: 2px; }
+
 .review-quote {
   font-size: 14px;
   line-height: 1.45;
@@ -1335,6 +1387,23 @@ button:focus-visible {
 
 .review-link:hover { color: var(--link-hover); }
 
+/* Swipe dots: phones and tablets only, one per review, the current one in brand blue. */
+.review-swipe-dots { display: none; }
+.review-swipe-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--panel-soft);
+  opacity: 0.5;
+  transition: background 0.2s ease, width 0.2s ease, opacity 0.2s ease;
+}
+.review-swipe-dots i.on { width: 18px; border-radius: 4px; background: var(--tag-blue-2-dark); opacity: 1; }
+
+/* The card follows the scroll once it fits the window: always with the wheel, which shows
+   fewer reviews on short windows; otherwise only on tall ones. */
+@media (min-width: 1141px) {
+  .reviews-card.has-wheel { position: sticky; top: 168px; }
+}
 @media (min-width: 1141px) and (min-height: 900px) {
   .reviews-card { position: sticky; top: 168px; }
 }
@@ -1353,6 +1422,12 @@ button:focus-visible {
   }
   .reviews-card-list::-webkit-scrollbar { display: none; }
   .review { flex: 1 0 250px; scroll-snap-align: start; }
+  /* The wheel is desktop only: here its strip dissolves back into the swipeable row. */
+  .reviews-card-list.is-wheel { display: flex; overflow: auto hidden; -webkit-mask-image: none; mask-image: none; }
+  .review-strip { display: contents; }
+  .review--copy,
+  .review-wheel-controls { display: none; }
+  .review-swipe-dots { display: flex; justify-content: center; gap: 7px; }
 }
 
 /* MOBILE */

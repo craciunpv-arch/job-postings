@@ -132,10 +132,18 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 
   {% if reviews.length %}
   <aside class="reviews-card" aria-label="Working with our team">
-    <span class="reviews-card-label"><span class="label-slashes" aria-hidden="true">//</span> working with our team</span>
-    <div class="reviews-card-list">
+    <div class="reviews-card-head">
+      <span class="reviews-card-label"><span class="label-slashes" aria-hidden="true">//</span> working with our team</span>
+      {% if reviews.length > 4 %}
+      <span class="review-wheel-controls">
+        <button type="button" class="review-wheel-btn" id="reviewPrev" aria-label="Previous review"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 10l4-4 4 4"/></svg></button>
+        <button type="button" class="review-wheel-btn" id="reviewNext" aria-label="Next review"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></button>
+      </span>
+      {% endif %}
+    </div>
+    <div class="reviews-card-list"{% if reviews.length > 4 %} id="reviewWheel"{% endif %}>
       {% for review in reviews %}
-      <figure class="review review--{{ review.data.type }}">
+      <figure class="review review--{{ review.data.type }}"{% if loop.index0 >= 4 %} hidden{% endif %}>
         <blockquote class="review-quote">“{{ review.data.quote }}”</blockquote>
         <figcaption class="review-person">
           {% if review.data.photo %}<img class="review-photo" src="{{ review.data.photo }}" alt="" width="28" height="28" loading="lazy" />{% endif %}
@@ -150,6 +158,9 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
       </figure>
       {% endfor %}
     </div>
+    {% if reviews.length > 1 %}
+    <span class="review-swipe-dots" aria-hidden="true">{% for review in reviews %}<i{% if loop.first %} class="on"{% endif %}></i>{% endfor %}</span>
+    {% endif %}
   </aside>
   {% endif %}
   </div>
@@ -161,6 +172,104 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
 </div>
 
 <script>
+  // With more than 4 active reviews, desktop shows them on a strip that glides up like a
+  // wheel, with the top of the next review peeking in at the bottom. It shows up to 4, fewer
+  // when the window is short, so the card always fits while it follows the scroll. The arrows
+  // turn it by hand; hovering the card or keyboard focus inside it pauses it. Below the
+  // sidebar breakpoint the reviews stay a swipeable row and the wheel is off.
+  (function() {
+    var wheel = document.getElementById('reviewWheel');
+    if (!wheel) return;
+    var card = wheel.closest('.reviews-card');
+    var desktop = window.matchMedia('(min-width: 1141px)');
+    var MAX = 4, EVERY = 6000, ANIM = 700, PEEK = 44, STICKY_TOP = 168, BOTTOM_GAP = 24;
+    var reviews = Array.prototype.slice.call(wheel.querySelectorAll('.review'));
+    var total = reviews.length, top = 0, busy = false, paused = false, timer;
+
+    // Move the reviews onto a strip, followed by copies of the first few so it can wrap round.
+    var strip = document.createElement('div');
+    strip.className = 'review-strip';
+    reviews.forEach(function(r) { r.hidden = false; strip.appendChild(r); });
+    reviews.slice(0, MAX + 1).forEach(function(r) {
+      var copy = r.cloneNode(true);
+      copy.classList.add('review--copy');
+      copy.setAttribute('aria-hidden', 'true');
+      copy.inert = true;
+      strip.appendChild(copy);
+    });
+    wheel.appendChild(strip);
+    wheel.classList.add('is-wheel');
+    card.classList.add('has-wheel');
+    var items = strip.children;
+
+    function place(animate) {
+      if (!desktop.matches) {
+        strip.style.transform = wheel.style.height = '';
+        reviews.forEach(function(r) { r.inert = false; });
+        return;
+      }
+      wheel.classList.toggle('is-still', !animate);
+      var y = items[top].offsetTop;
+      var room = window.innerHeight - STICKY_TOP - BOTTOM_GAP - (card.offsetHeight - wheel.offsetHeight);
+      var shown = MAX;
+      while (shown > 1 && items[top + shown].offsetTop - y + PEEK > room) shown--;
+      strip.style.transform = 'translateY(' + -y + 'px)';
+      wheel.style.height = (items[top + shown].offsetTop - y + PEEK) + 'px';
+      // Only the reviews in view are reachable by keyboard and screen readers.
+      reviews.forEach(function(r, i) { r.inert = (i - top + total) % total >= shown; });
+      if (!animate) wheel.offsetHeight;
+    }
+
+    // step 1 = forward (strip moves up), -1 = back.
+    function turn(step) {
+      if (busy || !desktop.matches) return;
+      busy = true;
+      if (step < 0 && top === 0) { top = total; place(false); }
+      top += step;
+      place(true);
+      setTimeout(function() {
+        if (top === total) { top = 0; place(false); }
+        busy = false;
+      }, ANIM);
+    }
+
+    // Keyboard focus pauses it too; focus left behind by a mouse click on an arrow does not.
+    function keyboardFocusInside() { var a = document.activeElement; return card.contains(a) && a.matches(':focus-visible'); }
+    card.addEventListener('mouseenter', function() { paused = true; });
+    card.addEventListener('mouseleave', function() { paused = keyboardFocusInside(); });
+    card.addEventListener('focusin', function(e) { if (e.target.matches(':focus-visible')) paused = true; });
+    card.addEventListener('focusout', function(e) { paused = card.matches(':hover') || (card.contains(e.relatedTarget) && e.relatedTarget.matches(':focus-visible')); });
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function() { if (!paused && !document.hidden) turn(1); }, EVERY);
+    }
+    document.getElementById('reviewNext').addEventListener('click', function() { turn(1); restart(); });
+    document.getElementById('reviewPrev').addEventListener('click', function() { turn(-1); restart(); });
+    window.addEventListener('resize', function() { place(false); });
+    place(false);
+    if (document.fonts) document.fonts.ready.then(function() { place(false); });
+    restart();
+  })();
+
+  // On phones and tablets the reviews are a swipeable row; the dots below it follow the swipe.
+  (function() {
+    var dots = document.querySelectorAll('.review-swipe-dots i');
+    if (!dots.length) return;
+    var list = document.querySelector('.reviews-card-list');
+    var reviews = list.querySelectorAll('.review:not(.review--copy)');
+    function update() {
+      var left = list.getBoundingClientRect().left, current = 0, best = Infinity;
+      if (list.scrollLeft + list.clientWidth >= list.scrollWidth - 2) current = reviews.length - 1;
+      else reviews.forEach(function(r, i) {
+        var d = Math.abs(r.getBoundingClientRect().left - left);
+        if (d < best) { best = d; current = i; }
+      });
+      dots.forEach(function(d, i) { d.classList.toggle('on', i === current); });
+    }
+    list.addEventListener('scroll', update, { passive: true });
+  })();
+
   (function() {
     var bar = document.getElementById('filterBar');
     if (!bar) return;
