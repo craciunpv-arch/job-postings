@@ -75,9 +75,9 @@ selectionProcess: >-
   Interview Process & How to Prepare
 
 
-  1. Screening Interview (with Hiring Manager) Focus: culture fit, background, and your motivation. Be ready to walk through your CV and ask questions about the company.
+  * Screening Interview (with Hiring Manager) Focus: culture fit, background, and your motivation. Be ready to walk through your CV and ask questions about the company.
 
-  2. Panel Interview: In-depth exploration of technical implementation approaches across different scenarios
+  * Panel Interview: In-depth exploration of technical implementation approaches across different scenarios
 goodToKnow: Come prepared with real examples from your experience rather than
   hypothetical scenarios. During discussions, focus on explaining your thought
   process, key decisions, challenges encountered, trade-offs considered, and the
