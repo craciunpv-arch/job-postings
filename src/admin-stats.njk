@@ -149,7 +149,7 @@ eleventyExcludeFromCollections: true
     <header class="intro">
       <h1>Job posting stats</h1>
       {% if stats.total %}
-      <p>Calculated from all {{ stats.total }} roles ever posted in the CMS since {{ stats.since }}, open and filled. Salaries are RON Net. Link-only roles are included in everything here; on the homepage they count only in the roles posted total. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
+      <p>Calculated from all {{ stats.total }} roles ever posted in the CMS since {{ stats.since }}, open and filled. Salaries are RON Net; B2B roles paid in EUR / hour are left out of the salary figures. Link-only roles are included in everything here; on the homepage they count only in the roles posted total. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
       {% else %}
       <p>No roles have been published yet.</p>
       {% endif %}

@@ -43,9 +43,9 @@ collections:
         name: title
         widget: string
         hint: "Editing an existing entry? Make sure you're updating THIS same role, not repurposing it for a different one — click \"New Job Postings\" for that instead."
-      - { label: "Salary — Min", name: salaryMin, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 16000 for 16.000." }
-      - { label: "Salary — Max", name: salaryMax, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 21000 for 21.000." }
-      - { label: "Currency", name: salaryCurrency, widget: string, default: "RON Net", hint: "Only change this for roles paid in a different currency." }
+      - { label: "Salary — Min", name: salaryMin, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 16000 for 16.000. For B2B roles, enter the hourly EUR rate, e.g. 45." }
+      - { label: "Salary — Max", name: salaryMax, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 21000 for 21.000. For B2B roles, enter the hourly EUR rate, e.g. 60." }
+      - { label: "Currency", name: salaryCurrency, widget: select, options: ["RON Net", "EUR / hour B2B"], default: "RON Net", hint: "RON Net for employees (monthly). EUR / hour B2B for contractors. B2B roles are left out of the salary stats." }
       - label: Seniority
         name: seniority
         widget: select
