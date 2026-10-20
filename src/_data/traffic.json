@@ -21,54 +21,54 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 2575,
-      "pageviews": 4707
+      "visitors": 2647,
+      "pageviews": 4819
     }
   },
   "reportedAllTime": {
-    "visitors": 9960,
-    "pageviews": 17262
+    "visitors": 10032,
+    "pageviews": 17374
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 2428,
-      "pageviews": 3257
+      "visitors": 2463,
+      "pageviews": 3301
     },
     {
       "label": "/applied-ai-engineer",
-      "visitors": 918,
-      "pageviews": 1034
+      "visitors": 921,
+      "pageviews": 1037
     },
     {
       "label": "/fullstack-engineer",
-      "visitors": 840,
-      "pageviews": 1006
+      "visitors": 864,
+      "pageviews": 1033
     },
     {
       "label": "/devops-engineer",
-      "visitors": 321,
-      "pageviews": 395
+      "visitors": 330,
+      "pageviews": 404
     },
     {
       "label": "/mlops-team-lead",
-      "visitors": 188,
-      "pageviews": 211
+      "visitors": 190,
+      "pageviews": 213
     },
     {
       "label": "/data-scientist-1",
-      "visitors": 160,
-      "pageviews": 179
+      "visitors": 167,
+      "pageviews": 188
     },
     {
       "label": "/devsecops-engineer",
-      "visitors": 147,
-      "pageviews": 181
+      "visitors": 149,
+      "pageviews": 183
     },
     {
       "label": "/backend-engineer",
-      "visitors": 138,
-      "pageviews": 233
+      "visitors": 136,
+      "pageviews": 228
     },
     {
       "label": "/cloud-security-platform-engineer",
@@ -77,23 +77,23 @@
     },
     {
       "label": "/cloud-security-sre",
-      "visitors": 69,
-      "pageviews": 79
+      "visitors": 70,
+      "pageviews": 80
     },
     {
       "label": "/data-platform-engineer",
-      "visitors": 69,
-      "pageviews": 83
+      "visitors": 70,
+      "pageviews": 84
     },
     {
       "label": "/ai-engineer",
-      "visitors": 19,
-      "pageviews": 23
+      "visitors": 20,
+      "pageviews": 24
     },
     {
       "label": "/senior-devops-consultant",
-      "visitors": 10,
-      "pageviews": 11
+      "visitors": 11,
+      "pageviews": 12
     },
     {
       "label": "/llmops-engineer",
@@ -102,8 +102,8 @@
     },
     {
       "label": "/servicenow-developer",
-      "visitors": 4,
-      "pageviews": 5
+      "visitors": 5,
+      "pageviews": 6
     },
     {
       "label": "/data-engineer",
@@ -124,18 +124,18 @@
   "topReferrers": [
     {
       "label": "Direct",
-      "visitors": 1950,
-      "pageviews": 3699
+      "visitors": 1981,
+      "pageviews": 3749
     },
     {
       "label": "linkedin.com",
-      "visitors": 1589,
-      "pageviews": 1896
+      "visitors": 1618,
+      "pageviews": 1928
     },
     {
       "label": "com.linkedin.android",
-      "visitors": 631,
-      "pageviews": 757
+      "visitors": 638,
+      "pageviews": 764
     },
     {
       "label": "com.reddit.frontpage",
@@ -144,8 +144,8 @@
     },
     {
       "label": "reddit.com",
-      "visitors": 84,
-      "pageviews": 87
+      "visitors": 86,
+      "pageviews": 89
     },
     {
       "label": "lnkd.in",
@@ -154,8 +154,8 @@
     },
     {
       "label": "google.com",
-      "visitors": 40,
-      "pageviews": 53
+      "visitors": 43,
+      "pageviews": 58
     },
     {
       "label": "com.google.android.gm",
@@ -163,5 +163,5 @@
       "pageviews": 8
     }
   ],
-  "updatedAt": "2026-10-19T00:26:51.383Z"
+  "updatedAt": "2026-10-20T01:14:11.605Z"
 }
