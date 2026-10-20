@@ -125,3 +125,21 @@ input, textarea, select, [class*="-ControlContainer"] [class*="-control"] { font
 [class*="-ListCard-card"].has-person .person { padding: 0; }
 [class*="-ListCard-card"].has-person [class*="-ListCardLink"] { padding-top: 14px !important; padding-bottom: 14px !important; }
 [class*="-GridCard-card"].has-person { overflow: hidden !important; }
+
+/* Job cards: the role's recruiter in the top-right corner, added by /admin/index.html.
+   Grid boxes are narrow, so there only the photo shows; hovering it shows the name. */
+.has-recruiter { position: relative; }
+.job-recruiter { position: absolute; top: 16px; right: 20px; display: inline-flex; align-items: center; gap: 8px; pointer-events: none; }
+.job-recruiter .person-photo { width: 34px; height: 34px; }
+.job-recruiter .person-info { gap: 1px; }
+.job-recruiter .person-info b { font-size: 14px; }
+.job-recruiter .person-info small { font-size: 12px; }
+[class*="-ListCard-card"].has-recruiter [class*="-ListCardTitle"] { padding-right: 230px; }
+[class*="-GridCard-card"] .job-recruiter { pointer-events: auto; top: 14px; right: 16px; }
+[class*="-GridCard-card"] .job-recruiter .person-info { display: none; }
+[class*="-GridCard-card"].has-recruiter [class*="-CardHeading"] { padding-right: 40px; }
+@media (max-width: 640px) {
+  .job-recruiter { pointer-events: auto; }
+  .job-recruiter .person-info { display: none; }
+  [class*="-ListCard-card"].has-recruiter [class*="-ListCardTitle"] { padding-right: 40px; }
+}

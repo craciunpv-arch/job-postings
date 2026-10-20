@@ -272,6 +272,40 @@
           teaser.className = 'teaser';
           row.appendChild(teaser);
         }
+        // The role's recruiter, in the card's top-right corner.
+        var person = (people.team || {})[info.recruiter];
+        if (person) {
+          var rec = document.createElement('span');
+          rec.className = 'job-recruiter';
+          rec.title = 'Recruiter: ' + person.name + (person.role ? ', ' + person.role : '');
+          var frame = document.createElement('span');
+          frame.className = 'person-photo';
+          if (person.photo) {
+            var img = document.createElement('img');
+            var extra = person.zoom - 100;
+            img.src = person.photo;
+            img.alt = '';
+            img.style.cssText = 'width:' + person.zoom + '%;height:' + person.zoom + '%;margin-left:' + (-extra * person.x / 100) + '%;margin-top:' + (-extra * person.y / 100) + '%;';
+            frame.appendChild(img);
+          }
+          var who = document.createElement('span');
+          who.className = 'person-info';
+          var name = document.createElement('b');
+          name.textContent = person.name;
+          who.appendChild(name);
+          if (person.role) {
+            var role = document.createElement('small');
+            role.textContent = person.role;
+            who.appendChild(role);
+          }
+          rec.appendChild(frame);
+          rec.appendChild(who);
+          var li = card.closest('li');
+          if (li && !li.querySelector('.job-recruiter')) {
+            li.appendChild(rec);
+            li.classList.add('has-recruiter');
+          }
+        }
         card.insertAdjacentElement('afterend', row);
       });
     }
