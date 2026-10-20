@@ -213,7 +213,7 @@
     }
 
     function addJobLinks() {
-      document.querySelectorAll('a[href*="/collections/jobs/entries/"]').forEach(function (card) {
+      document.querySelectorAll('a[href*="/collections/jobs/entries/"]:not(.job-edit)').forEach(function (card) {
         var slug = card.getAttribute('href').split('/entries/')[1].split('?')[0];
         var next = card.nextElementSibling;
         if (!slug || (next && next.className === 'job-public-link')) return;
@@ -222,10 +222,21 @@
         var row = document.createElement('div');
         row.className = 'job-public-link';
 
+        // An explicit Edit button, so the live page link below the title isn't mistaken for it.
+        var edit = document.createElement('a');
+        edit.className = 'job-edit';
+        edit.href = card.getAttribute('href');
+        edit.textContent = '✎ Edit';
+
+        var label = document.createElement('span');
+        label.className = 'live-label';
+        label.textContent = 'Live page:';
+
         var link = document.createElement('a');
         link.href = url;
         link.target = '_blank';
         link.rel = 'noopener';
+        link.title = 'Opens the public job page in a new tab';
         link.textContent = url.replace(/^https?:\/\//, '') + ' ↗';
 
         var copy = document.createElement('button');
@@ -238,7 +249,12 @@
           });
         });
 
-        row.appendChild(link);
+        var live = document.createElement('span');
+        live.className = 'live-group';
+        live.appendChild(label);
+        live.appendChild(link);
+        row.appendChild(edit);
+        row.appendChild(live);
         row.appendChild(copy);
         var info = jobInfo[slug] || {};
         if (info.unlisted) {

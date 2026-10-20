@@ -76,8 +76,13 @@ input, textarea, select, [class*="-ControlContainer"] [class*="-control"] { font
 
 /* Extras added by /admin/index.html under each job card */
 .job-public-link { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; padding: 0 20px 16px; margin-top: -6px; font-size: 14px; }
-.job-public-link a { color: var(--cms-accent-dark); text-decoration: none; border-bottom: 1px solid rgba(47,86,194,0.3); }
-.job-public-link a:hover { border-bottom-color: currentColor; }
+.job-public-link a:not(.job-edit) { color: var(--cms-accent-dark); text-decoration: none; border-bottom: 1px solid rgba(47,86,194,0.3); }
+.job-public-link a:not(.job-edit):hover { border-bottom-color: currentColor; }
+.job-public-link .job-edit { flex: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; padding: 4px 14px; margin-right: 6px; border-radius: 999px; background: var(--cms-accent); color: #fff; font-weight: 600; text-decoration: none; transition: background-color .15s ease; }
+.job-public-link .job-edit:hover { background: var(--cms-accent-dark); }
+.job-public-link .live-label { color: var(--cms-mid); }
+.job-public-link .live-group { display: inline-flex; align-items: baseline; gap: 6px; min-width: 0; flex-wrap: wrap; }
+[class*="-GridCard-card"] .job-public-link .live-group { flex-basis: 100%; }
 .job-public-link button { font: inherit; font-size: 13px; color: var(--cms-ink); background: #fff; border: 1px solid #d3d7db; border-radius: 999px; padding: 2px 11px; cursor: pointer; transition: background-color .15s ease; }
 .job-public-link button:hover { background: var(--cms-bg); }
 .job-public-link .pill-hidden { font-size: 13px; font-weight: 500; color: #523bbf; background: rgba(107,78,230,0.12); border-radius: 999px; padding: 2px 10px; }
