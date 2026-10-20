@@ -1,0 +1,17 @@
+---
+permalink: /admin/people.json
+eleventyExcludeFromCollections: true
+---
+{#- Photos and names for the Team Members and Reviews cards in the CMS. Hidden reviews are listed too, so this file is login-only (see middleware.js). -#}
+{
+  "team": {
+{%- for p in collections.team %}
+    {{ p.fileSlug | dump | safe }}: { "name": {{ p.data.name | dump | safe }}, "role": {{ (p.data.role or "") | dump | safe }}, "photo": {{ (p.data.photo or "") | dump | safe }}, "zoom": {{ p.data.photoZoom | default(100, true) }}, "x": {{ p.data.photoPositionX | default(50, true) }}, "y": {{ p.data.photoPositionY | default(50, true) }} }{% if not loop.last %},{% endif %}
+{%- endfor %}
+  },
+  "reviews": {
+{%- for r in collections.reviews %}
+    {{ r.fileSlug | dump | safe }}: { "name": {{ r.data.name | dump | safe }}, "type": {{ ("Hiring partner" if r.data.type == "hiring_partner" else "Candidate") | dump | safe }}, "partner": {{ "true" if r.data.type == "hiring_partner" else "false" }}, "photo": {{ (r.data.photo or "") | dump | safe }}, "active": {{ "false" if r.data.active === false else "true" }}, "order": {{ r.data.order | default(0, true) }} }{% if not loop.last %},{% endif %}
+{%- endfor %}
+  }
+}

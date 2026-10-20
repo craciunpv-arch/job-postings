@@ -2,7 +2,7 @@
 // api/admin-session.js sets the cookie checked here, after confirming the visitor's GitHub
 // account has write access to the repository.
 export const config = {
-  matcher: ["/admin/stats", "/admin/stats/:path*", "/admin/jobs.json", "/admin/clients.json"],
+  matcher: ["/admin/stats", "/admin/stats/:path*", "/admin/jobs.json", "/admin/clients.json", "/admin/people.json"],
 };
 
 const hex = (buffer) =>
