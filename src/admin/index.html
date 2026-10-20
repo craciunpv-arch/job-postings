@@ -218,8 +218,19 @@
     function addJobLinks() {
       document.querySelectorAll('a[href*="/collections/jobs/entries/"]:not(.job-edit)').forEach(function (card) {
         var slug = card.getAttribute('href').split('/entries/')[1].split('?')[0];
+        if (!slug) return;
+        var info = jobInfo[slug] || {};
+        // "Hidden from homepage" sits next to the role title. Checked on every pass, since Decap
+        // can redraw the title on its own.
+        var heading = card.querySelector('h2');
+        if (info.unlisted && heading && !heading.querySelector('.pill-hidden')) {
+          var hidden = document.createElement('span');
+          hidden.className = 'pill-hidden';
+          hidden.textContent = 'Hidden from homepage';
+          heading.appendChild(hidden);
+        }
         var next = card.nextElementSibling;
-        if (!slug || (next && next.className === 'job-public-link')) return;
+        if (next && next.className === 'job-public-link') return;
         var url = location.origin + '/' + slug + '/';
 
         var row = document.createElement('div');
@@ -259,13 +270,6 @@
         row.appendChild(edit);
         row.appendChild(live);
         row.appendChild(copy);
-        var info = jobInfo[slug] || {};
-        if (info.unlisted) {
-          var hidden = document.createElement('span');
-          hidden.textContent = 'Hidden from homepage';
-          hidden.className = 'pill-hidden';
-          row.appendChild(hidden);
-        }
         if (info.teaser) {
           var teaser = document.createElement('span');
           teaser.textContent = info.teaser;
