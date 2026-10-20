@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <link href="/api/cms-config" type="text/yaml" rel="cms-config-url" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/admin/admin-bar.css" />
+  <link rel="stylesheet" href="/admin/cms.css" />
 </head>
 <body>
-  <div style="background:#0d0f17;color:#fff;padding:10px 16px;font-family:system-ui,sans-serif;font-size:14px;display:flex;align-items:center;justify-content:space-between;">
-    <span>Content Manager</span>
-    <span style="display:flex;gap:20px;">
-      <a href="/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">View Site →</a>
-      <a href="/admin/stats/" style="color:#fff;text-decoration:underline;">View Stats →</a>
-      <a href="https://vercel.com/craciunpv-archs-projects/job-postings/analytics" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">View Analytics →</a>
-    </span>
-  </div>
+  <header class="admin-bar">
+    <a class="admin-brand" href="/admin/"><img src="/favicon.svg" alt="" /><span>Hand Picked Jobs</span><em>Admin</em></a>
+    <nav class="admin-nav" aria-label="Admin">
+      <a href="/admin/" aria-current="page">Content Manager</a>
+      <a href="/admin/stats/">View Stats</a>
+      <a href="/" target="_blank" rel="noopener">View Site <span class="ext" aria-hidden="true">↗</span></a>
+      <a href="https://vercel.com/craciunpv-archs-projects/job-postings/analytics" target="_blank" rel="noopener">View Analytics <span class="ext" aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     var TeamPreview = createClass({
@@ -60,6 +64,14 @@
     });
 
     CMS.registerPreviewTemplate('team', TeamPreview);
+    // The preview pane is an iframe without the site's CSS; give it readable type.
+    CMS.registerPreviewStyle(
+      'body{margin:0;padding:28px 32px;font-family:"Gill Sans MT Pro","Gill Sans MT","Gill Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;color:#26282a;background:#fff;max-width:760px}' +
+      'h1,h2,h3{line-height:1.25;letter-spacing:-0.015em;color:#1d1d1f}h1{font-size:30px;margin:0 0 16px}' +
+      'ul{padding-left:20px}li{margin:4px 0}a{color:#2f56c2}strong{color:#1d1d1f}' +
+      'img{max-width:100%;height:auto;border-radius:12px}hr{border:0;border-top:1px solid #e3e6e8;margin:20px 0}',
+      { raw: true }
+    );
 
     // "Unpublish" on a job would delete its file from the site. Instead, mark the role as Filled:
     // it leaves the homepage list, its page stays live with a Filled badge, and it stays in the CMS.
@@ -209,19 +221,16 @@
 
         var row = document.createElement('div');
         row.className = 'job-public-link';
-        row.style.cssText = 'display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 20px 12px;margin-top:-6px;font-size:13px;';
 
         var link = document.createElement('a');
         link.href = url;
         link.target = '_blank';
         link.rel = 'noopener';
         link.textContent = url.replace(/^https?:\/\//, '') + ' ↗';
-        link.style.cssText = 'color:#3266ff;text-decoration:underline;';
 
         var copy = document.createElement('button');
         copy.type = 'button';
         copy.textContent = 'Copy';
-        copy.style.cssText = 'font:inherit;font-size:12px;color:#26282a;background:#fff;border:1px solid #dcdfe1;border-radius:6px;padding:1px 9px;cursor:pointer;';
         copy.addEventListener('click', function () {
           navigator.clipboard.writeText(url).then(function () {
             copy.textContent = 'Copied ✓';
@@ -235,13 +244,13 @@
         if (info.unlisted) {
           var hidden = document.createElement('span');
           hidden.textContent = 'Hidden from homepage';
-          hidden.style.cssText = 'font-size:12px;color:#523bbf;background:rgba(107,78,230,0.14);border-radius:999px;padding:1px 9px;';
+          hidden.className = 'pill-hidden';
           row.appendChild(hidden);
         }
         if (info.teaser) {
           var teaser = document.createElement('span');
           teaser.textContent = info.teaser;
-          teaser.style.cssText = 'flex-basis:100%;color:#565b5e;';
+          teaser.className = 'teaser';
           row.appendChild(teaser);
         }
         card.insertAdjacentElement('afterend', row);
@@ -260,7 +269,6 @@
       if (!box) {
         box = document.createElement('div');
         box.className = 'client-info';
-        box.style.cssText = 'margin-top:10px;padding:12px 14px;border:1px solid #dcdfe1;border-radius:6px;background:#f7f8f9;font-size:13px;line-height:1.5;color:#26282a;';
         field.appendChild(box);
       }
       box.dataset.teaser = teaser;
@@ -269,9 +277,8 @@
       if (!teaser) return;
       var client = clientList.filter(function (c) { return c.teaser === teaser; })[0];
       var line = function (title, text) {
-        var heading = document.createElement('div');
+        var heading = document.createElement('h4');
         heading.textContent = title;
-        heading.style.cssText = 'font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#83888b;margin-top:8px;';
         var body = document.createElement('div');
         body.textContent = text;
         body.style.cssText = 'white-space:pre-wrap;';
@@ -279,13 +286,11 @@
         box.appendChild(body);
       };
       line('Teaser shown on this role', teaser);
-      box.firstChild.style.marginTop = '0';
       if (client) {
         line('Description shown on this role', client.description);
         var edit = document.createElement('a');
         edit.href = '#/collections/clients/entries/' + client.slug;
         edit.textContent = 'Edit this client →';
-        edit.style.cssText = 'display:inline-block;margin-top:10px;color:#3266ff;text-decoration:underline;';
         box.appendChild(edit);
       } else {
         line('Description', 'This client was added or renamed recently. Its description appears here once the site has rebuilt, about a minute after publishing.');
