@@ -83,9 +83,9 @@ selectionProcess: >-
   **Interview Process & How to Prepare**
 
 
-  1. Screening Interview (with Hiring Manager) Focus: culture fit, background, and your motivation. Be ready to walk through your CV and ask questions about the company.
+  * Screening Interview (with Hiring Manager) Focus: culture fit, background, and your motivation. Be ready to walk through your CV and ask questions about the company.
 
-  2. Panel Interview (mixed US/RO panel, evening slot 17:00-18:00 start, ~2 hours)
+  * Panel Interview (mixed US/RO panel, evening slot 17:00-18:00 start, ~2 hours)
 
      Hour 1: Behavioral round covering conflict resolution and ownership of responsibilities. Prepare concrete examples from your own experience (STAR format works well).
 
