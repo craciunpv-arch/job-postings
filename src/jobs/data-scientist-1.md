@@ -9,7 +9,7 @@ seniority:
 city:
   - Bucharest
 workingType: Hybrid
-roleType: "Data & AI"
+roleType: Data & AI
 visibility: Open
 recruiter: victor-cosman
 date: 2026-08-25T12:26:00.000+03:00
@@ -53,17 +53,17 @@ benefits: |-
   * Performance bonus of 10% to 15% of annual base salary
   * Flexible time-off policy with untracked vacation days
 selectionProcess: >-
-  **Interview Process & How to Prepare**
+  Interview Process & How to Prepare
 
 
-  1. **Screening Interview** (with Hiring Manager)
+  1. Screening Interview (with Hiring Manager)
      Focus: culture fit, background, and your motivation. Be ready to walk through your CV and ask questions about the company.
-  2. **Panel Interview** (mixed US/RO panel, evening slot 17:00-18:00 start, ~2 hours)
+  2. Panel Interview (mixed US/RO panel, evening slot 17:00-18:00 start, ~2 hours)
 
 
-  * **Hour 1**: Behavioral round covering conflict resolution and ownership of responsibilities. Prepare concrete examples from your own experience (STAR format works well).
+  * Hour 1: Behavioral round covering conflict resolution and ownership of responsibilities. Prepare concrete examples from your own experience (STAR format works well).
 
-  * **Hour 2**: Technical round. You'll receive a dataset 2 days before the interview and be asked to build a forecast from it. In the interview, you'll walk the panel through your approach and justify your modelling choices.
+  * Hour 2: Technical round. You'll receive a dataset 2 days before the interview and be asked to build a forecast from it. In the interview, you'll walk the panel through your approach and justify your modelling choices.
 goodToKnow: "Come with real examples, not hypotheticals. For the technical
   round, be ready to explain your reasoning, not just your results: why you
   chose that model, how you handled missing data or outliers, and what
