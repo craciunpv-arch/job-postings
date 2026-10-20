@@ -35,6 +35,8 @@ input, textarea, select, [class*="-ControlContainer"] [class*="-control"] { font
 
 [class*="-CollectionTopHeading"], [class*="-WorkflowTopHeading"], [class*="-SidebarHeading"] { font-weight: 700 !important; letter-spacing: -0.015em; color: var(--cms-ink) !important; }
 [class*="-CollectionTopDescription"], [class*="-WorkflowTopDescription"] { color: var(--cms-mid) !important; font-size: 15px !important; line-height: 1.55 !important; }
+/* Lets a collection description in config.yml put each instruction on its own line. */
+[class*="-CollectionTopDescription"] { white-space: pre-line; color: var(--cms-ink) !important; line-height: 1.75 !important; }
 
 /* Sidebar */
 [class*="-SidebarNavLink"] { font-size: 16px !important; color: var(--cms-mid) !important; background: transparent !important; border-left: 3px solid transparent !important; border-radius: 0 10px 10px 0; margin-right: 12px; }
@@ -92,3 +94,11 @@ input, textarea, select, [class*="-ControlContainer"] [class*="-control"] { font
 /* Editorial workflow */
 [class*="-ColumnHeader"] { border-radius: 10px !important; font-size: 17px !important; font-weight: 600 !important; padding: 8px 14px !important; }
 [class*="-ColumnCount"] { color: var(--cms-mid) !important; font-size: 13px !important; }
+
+/* Grid view: Decap gives each box a fixed height for an image and makes the title link fill it,
+   which pushed the public link and teaser out of view. Let the box grow to fit them instead. */
+[class*="-GridCard-card"] { height: auto !important; min-height: 150px; display: flex !important; flex-direction: column; overflow: visible !important; }
+[class*="-GridCardLink"] { height: auto !important; flex: none; }
+[class*="-GridCard-card"] [class*="-CardBody"] { height: auto !important; padding-bottom: 12px !important; }
+[class*="-GridCard-card"] [class*="-CardBody"]::before, [class*="-GridCard-card"] [class*="-CardBody"]::after { display: none !important; }
+[class*="-GridCard-card"] .job-public-link { margin-top: 0; }

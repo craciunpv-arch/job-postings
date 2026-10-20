@@ -18,11 +18,10 @@ collections:
     folder: src/jobs
     create: true
     slug: "{{slug}}"
-    description: >-
-      ⚠️ To post a new role, always click "New Job Postings" above — never edit an existing
-      entry (open or closed) to turn it into a different role. That breaks its URL and its
-      analytics history. When a role gets filled, open that same entry and set Visibility to
-      Filled (or click Published, then Unpublish) instead of reusing it for the next one.
+    description: |-
+      ➕ New role? Click "+ Job Postings" to create it from scratch.
+      ✅ Role filled? Open it and set Visibility to Filled. It leaves the homepage, and its page stays online with a "Filled" badge.
+      ⛔ Never reuse a role. Don't rewrite an existing role, open or filled, into a different one: it breaks the role's link and its visitor stats.
     view_filters:
       - label: "Open, on homepage"
         field: visibility
