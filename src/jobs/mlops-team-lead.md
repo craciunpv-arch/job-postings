@@ -8,8 +8,8 @@ seniority:
 city:
   - Romania
 workingType: Remote
-roleType: "Data & AI"
-visibility: Open
+roleType: Data & AI
+visibility: Link only
 recruiter: victor-cosman
 date: 2026-09-29T10:45:00.000+03:00
 client: one-billion-data-updates
