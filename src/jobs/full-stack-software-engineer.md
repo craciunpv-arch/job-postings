@@ -2,7 +2,7 @@
 title: Full-Stack Software Engineer
 salaryMin: 50
 salaryMax: 55
-salaryCurrency: RON Net
+salaryCurrency: EUR / hour B2B
 seniority:
   - Senior
 city:
