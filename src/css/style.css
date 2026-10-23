@@ -207,7 +207,7 @@ body {
 
 .site-name {
   font-family: var(--sans);
-  font-size: 34px;
+  font-size: 40px;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
@@ -1453,7 +1453,7 @@ button:focus-visible {
   .jobs-heading-row { flex-direction: column; align-items: flex-start; }
   .site-header { padding: 16px 20px; }
   .site-logo img { height: 64px; }
-  .site-name { font-size: 22px; letter-spacing: -0.01em; }
+  .site-name { font-size: 24px; letter-spacing: -0.01em; white-space: nowrap; }
   .theme-toggle { width: 36px; height: 36px; }
   .explore-footer-columns { grid-template-columns: 1fr; gap: 28px; }
   .job-card-header { flex-wrap: wrap; }
@@ -1465,4 +1465,9 @@ button:focus-visible {
   .job-title-row .job-card-seniority-row { display: block; order: 3; flex-basis: 100%; }
   .contact-cta-actions { width: 100%; }
   .contact-cta-link { flex: 1 1 auto; }
+}
+
+/* Below 340px the title cannot fit beside the logo and toggle, so let it wrap. */
+@media (max-width: 340px) {
+  .site-name { white-space: normal; }
 }
