@@ -154,7 +154,7 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
             <span class="review-name">{{ review.data.name }}</span>
             <span class="review-type">
               {{ "Hiring partner" if review.data.type == "hiring_partner" else "Candidate" }}
-              {% if review.data.linkedin %}<span aria-hidden="true">·</span> <a class="review-link" href="{{ review.data.linkedin }}" target="_blank" rel="noopener" aria-label="Read {{ review.data.name }}'s review on LinkedIn">LinkedIn ↗</a>{% endif %}
+              {% if review.data.linkedin %}<span class="review-link-group"><span aria-hidden="true">·</span> <a class="review-link" href="{{ review.data.linkedin }}" target="_blank" rel="noopener" aria-label="Read {{ review.data.name }}'s review on LinkedIn">LinkedIn ↗</a></span>{% endif %}
             </span>
           </span>
         </figcaption>

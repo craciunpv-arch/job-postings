@@ -140,8 +140,8 @@
   --panel-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 10px 28px rgba(0,0,0,0.50);
   --pill-green: #5fd39d;
   --pill-green-bg: rgba(31,138,91,0.22);
-  --review-bg: linear-gradient(170deg, #2a2f38 0%, #23272e 100%);
-  --review-border: rgba(255,255,255,0.08);
+  --review-bg: linear-gradient(170deg, #323843 0%, #292e36 100%);
+  --review-border: rgba(255,255,255,0.13);
   --link: #7fd0ef;
   --link-hover: #a9e0f5;
 }
@@ -1354,9 +1354,10 @@ button:focus-visible {
   font-variant-ligatures: no-common-ligatures;
 }
 
+/* The photo lines up with the name, so it stays put when the label below wraps. */
 .review-person {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin-top: auto;
 }
@@ -1367,6 +1368,7 @@ button:focus-visible {
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
+  margin-top: 2px;
 }
 
 .review-info {
@@ -1399,6 +1401,9 @@ button:focus-visible {
 }
 
 .review-link:hover { color: var(--link-hover); }
+
+/* "· LinkedIn" moves to the next line as one piece rather than leaving the dot behind. */
+.review-link-group { white-space: nowrap; }
 
 /* Swipe dots: phones and tablets only, one per review, the current one in brand blue. */
 .review-swipe-dots { display: none; }
@@ -1437,6 +1442,9 @@ button:focus-visible {
   .review--copy,
   .review-wheel-controls { display: none; }
   .review-swipe-dots { display: flex; justify-content: center; gap: 7px; }
+  /* Swipe cards are too narrow for one label line: LinkedIn gets its own line, without the dot. */
+  .review-link-group { display: block; }
+  .review-link-group > span { display: none; }
 }
 
 /* MOBILE */
