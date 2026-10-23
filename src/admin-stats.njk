@@ -155,7 +155,7 @@ eleventyExcludeFromCollections: true
     <header class="intro">
       <h1>Job posting stats</h1>
       {% if stats.total %}
-      <p>Calculated from all {{ stats.total }} roles ever posted in the CMS since {{ stats.since }}, open and filled. Salaries are RON Net; B2B roles paid in EUR / hour are left out of the salary figures. Link-only roles are included in everything here; on the homepage they count only in the roles posted total. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
+      <p>Calculated from all {{ stats.total }} roles ever posted in the CMS since {{ stats.since }}, open and filled. Salaries are RON Net per month. B2B roles are paid in EUR per hour, gross, so they have their own B2B rates section and are not mixed into the RON figures. Link-only roles are included in everything here; on the homepage they count only in the roles posted total. The page updates whenever a role is published or edited. To choose which stats candidates see next to the job cards, open <a href="/admin/#/collections/settings/entries/site">Site Settings → Homepage Stats</a>.</p>
       {% else %}
       <p>No roles have been published yet.</p>
       {% endif %}
@@ -165,11 +165,11 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div class="strip">
         <div><b>{{ stats.total }}</b><span class="lbl">roles posted since {{ stats.since }}: {{ home.open }} on homepage, {{ linkOnly }} link only, {{ filled }} filled</span>{{ liveTag("roles") }}</div>
-        <div><b>{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</b><span class="lbl">salary range, all {{ stats.total }} roles ever posted, typical midpoint {{ stats.medianMid | num }}</span>{{ liveTag("salary") }}</div>
+        <div><b>{{ stats.salaryMin | num }} – {{ stats.salaryMax | num }}</b><span class="lbl">RON net salary range, all roles ever posted, typical midpoint {{ stats.medianMid | num }}{% if stats.b2b %}. B2B: {{ stats.b2b.min }} – {{ stats.b2b.max }} EUR / hour gross{% endif %}</span>{{ liveTag("salary") }}</div>
         <div><b>{% set sep = joiner(" · ") %}{% for w in stats.working %}{% if w.count %}{{ sep() }}{{ w.count }} <small>{{ w.label | lower }}</small>{% endif %}{% endfor %}</b><span class="lbl">working model</span>{{ liveTag("working") }}</div>
         <div><b>{{ stats.aiCount }} <small>of {{ stats.total }}</small></b><span class="lbl">work with AI or ML</span>{{ liveTag("ai") }}</div>
       </div>
-      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if home.current %} The homepage shows the range for open roles listed there only, currently {{ home.current.min | num }} – {{ home.current.max | num }}.{% endif %}</p>
+      <p class="sub">The typical midpoint is the median of each role's midpoint (halfway between its min and max). A role counts as AI or ML when its Tech Stack tags include {{ stats.aiTags | join(", ") }}.{% if home.current %} The homepage shows the range for open roles listed there only, currently {{ home.current.min | num }} – {{ home.current.max | num }} RON net{% if home.b2b and home.b2b.current %} and {{ home.b2b.current.min }} – {{ home.b2b.current.max }} EUR / hour B2B{% endif %}.{% endif %}</p>
     </section>
 
     <section class="panel">
@@ -224,7 +224,7 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>What our roles pay</h2>
-        <p class="sub">Salary range for every role ever posted. The dashed line is the typical midpoint.</p>
+        <p class="sub">RON net monthly salary range for every employee role ever posted. The dashed line is the typical midpoint.{% if stats.b2b %} B2B roles are in the next section.{% endif %}</p>
       </div>
       <p class="legend"><span><i></i>Open</span><span><i class="c"></i>Filled</span></p>
       <div class="chart" style="--divs: {{ stats.scale.divisions }}">
@@ -240,10 +240,31 @@ eleventyExcludeFromCollections: true
       </div>
     </section>
 
+    {% if stats.b2b %}
+    <section class="panel">
+      <div>
+        <h2>B2B hourly rates {{ liveTag("salary") }}</h2>
+        <p class="sub">Gross EUR per hour for every B2B role ever posted, {{ stats.b2b.count }} {{ "role" if stats.b2b.count == 1 else "roles" }}. Range {{ stats.b2b.min }} – {{ stats.b2b.max }}, typical midpoint {{ stats.b2b.medianMid | num }}. The dashed line is the typical midpoint.</p>
+      </div>
+      <p class="legend"><span><i></i>Open</span><span><i class="c"></i>Filled</span></p>
+      <div class="chart" style="--divs: {{ stats.b2b.scale.divisions }}">
+        <div class="row axis axis--top"><span></span><div class="track"><span class="mlabel" style="left: {{ stats.b2b.scale.medianPct }}%">typical midpoint {{ stats.b2b.medianMid | num }}</span></div><span></span></div>
+        {% for r in stats.b2b.roles %}
+        <div class="row">
+          <span class="name">{{ r.title }}<small>{{ visibility(r) }} · {{ r.seniority }} · {{ r.workingType }}</small></span>
+          <div class="track"><span class="median" style="left: {{ stats.b2b.scale.medianPct }}%"></span><span class="bar{% if not r.open %} bar--closed{% endif %}" style="left: {{ r.bar.left }}%; width: {{ r.bar.width }}%" title="{{ r.title }}: {{ r.rateMin }} – {{ r.rateMax }} EUR / hour"></span></div>
+          <span class="val">{{ r.rateMin }} – {{ r.rateMax }} EUR/h</span>
+        </div>
+        {% endfor %}
+        <div class="row axis"><span></span><div class="track">{% for t in stats.b2b.scale.ticks %}<span class="tick" style="left: {{ t.pct }}%">{{ t.value }}</span>{% endfor %}</div><span></span></div>
+      </div>
+    </section>
+    {% endif %}
+
     <section class="panel">
       <div>
         <h2>Salary by seniority {{ liveTag("seniority") }}</h2>
-        <p class="sub">Average min and max per seniority level set in the CMS. A role open to several levels has one range covering all of them.</p>
+        <p class="sub">Average RON net min and max per seniority level set in the CMS; B2B roles are not included. A role open to several levels has one range covering all of them.</p>
       </div>
       {{ groupChart(stats.seniority) }}
     </section>
@@ -251,7 +272,7 @@ eleventyExcludeFromCollections: true
     <section class="panel">
       <div>
         <h2>Salary by role type {{ liveTag("roleType") }}</h2>
-        <p class="sub">Average min and max per Role Type set in the CMS. A type with a single role is drawn as an outline.{% if stats.untypedCount %} {{ stats.untypedCount }} {{ "role has" if stats.untypedCount == 1 else "roles have" }} no Role Type yet.{% endif %}</p>
+        <p class="sub">Average RON net min and max per Role Type set in the CMS; B2B roles are not included. A type with a single role is drawn as an outline.{% if stats.untypedCount %} {{ stats.untypedCount }} {{ "role has" if stats.untypedCount == 1 else "roles have" }} no Role Type yet.{% endif %}</p>
       </div>
       {{ groupChart(stats.roleTypes) }}
     </section>
@@ -281,9 +302,15 @@ eleventyExcludeFromCollections: true
             <tr>
               <td class="t"><b>{{ r.title }}</b><a href="{{ r.url }}" target="_blank" rel="noopener">{{ site.siteUrl | replace("https://", "") }}{{ r.url }}</a> <button class="copy" type="button" data-url="{{ site.siteUrl }}{{ r.url }}">Copy</button></td>
               <td class="n"><span class="st{% if not r.open %} st--closed{% endif %}"><i></i>{{ visibility(r) }}</span></td>
+              {% if r.rateMid %}
+              <td class="r n">{{ r.rateMin }} EUR/h</td>
+              <td class="r n">{{ r.rateMax }} EUR/h</td>
+              <td class="r n">{{ r.rateMid | num }} EUR/h</td>
+              {% else %}
               <td class="r">{{ r.min | num if r.min else "–" }}</td>
               <td class="r">{{ r.max | num if r.max else "–" }}</td>
               <td class="r">{{ r.mid | num if r.mid else "–" }}</td>
+              {% endif %}
               <td class="n">{{ r.seniority }}</td>
               <td>{{ r.workingType }}</td>
               <td>{{ r.city }}</td>
@@ -293,7 +320,7 @@ eleventyExcludeFromCollections: true
             </tr>
             {% endfor %}
           </tbody>
-          <tfoot><tr><td>{{ stats.total }} roles</td><td>{{ home.open }} on homepage, {{ linkOnly }} link only, {{ filled }} filled</td><td class="r">{{ stats.salaryMin | num }}</td><td class="r">{{ stats.salaryMax | num }}</td><td class="r">{{ stats.medianMid | num }}</td><td colspan="6">lowest min, highest max, median midpoint</td></tr></tfoot>
+          <tfoot><tr><td>{{ stats.total }} roles</td><td>{{ home.open }} on homepage, {{ linkOnly }} link only, {{ filled }} filled</td><td class="r">{{ stats.salaryMin | num }}</td><td class="r">{{ stats.salaryMax | num }}</td><td class="r">{{ stats.medianMid | num }}</td><td colspan="6">lowest min, highest max, median midpoint, RON net roles only</td></tr></tfoot>
         </table>
       </div>
     </section>

@@ -44,7 +44,7 @@ collections:
         hint: "Editing an existing entry? Make sure you're updating THIS same role, not repurposing it for a different one — click \"New Job Postings\" for that instead."
       - { label: "Salary — Min", name: salaryMin, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 16000 for 16.000. For B2B roles, enter the hourly EUR rate, e.g. 45." }
       - { label: "Salary — Max", name: salaryMax, widget: number, value_type: int, min: 0, hint: "Whole number, e.g. 21000 for 21.000. For B2B roles, enter the hourly EUR rate, e.g. 60." }
-      - { label: "Currency", name: salaryCurrency, widget: select, options: ["RON Net", "EUR / hour B2B"], default: "RON Net", hint: "RON Net for employees (monthly). EUR / hour B2B for contractors. B2B roles are left out of the salary stats." }
+      - { label: "Currency", name: salaryCurrency, widget: select, options: ["RON Net", "EUR / hour B2B"], default: "RON Net", hint: "RON Net for employees (monthly). EUR / hour B2B for contractors. B2B rates get their own stats, separate from RON." }
       - label: Seniority
         name: seniority
         widget: select
@@ -195,7 +195,7 @@ collections:
             required: false
             options:
               - { label: "Roles posted and open now", value: "roles" }
-              - { label: "Salary range of open roles", value: "salary" }
+              - { label: "Salary range of open roles (RON and B2B)", value: "salary" }
               - { label: "Working model", value: "working" }
             hint: "Stats shown to candidates in the bar under Open Positions. Untick all to hide the bar. The full stats are at /admin/stats/."
 

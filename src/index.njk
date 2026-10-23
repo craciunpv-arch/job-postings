@@ -48,6 +48,9 @@ description: Hand-picked job opportunities from the Edurom recruiting team, shar
     {% if "salary" in site.homepageStats and stats.current %}
     <span class="stats-bar-stat"><b>{{ stats.current.min | num }} – {{ stats.current.max | num }}</b> RON net / month</span>
     {% endif %}
+    {% if "salary" in site.homepageStats and stats.b2b and stats.b2b.current %}
+    <span class="stats-bar-stat"><b>{{ stats.b2b.current.min }} – {{ stats.b2b.current.max }}</b> EUR / hour B2B</span>
+    {% endif %}
     {% if "working" in site.homepageStats %}
     <span class="stats-bar-working">
       {% for w in stats.working %}{% if w.open %}
