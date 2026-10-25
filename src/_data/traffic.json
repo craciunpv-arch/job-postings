@@ -21,44 +21,44 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 3671,
-      "pageviews": 6402
+      "visitors": 3701,
+      "pageviews": 6445
     }
   },
   "reportedAllTime": {
-    "visitors": 11056,
-    "pageviews": 18957
+    "visitors": 11086,
+    "pageviews": 19000
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 2640,
-      "pageviews": 3507
+      "visitors": 2626,
+      "pageviews": 3471
     },
     {
       "label": "/fullstack-engineer",
-      "visitors": 945,
-      "pageviews": 1132
-    },
-    {
-      "label": "/applied-ai-engineer",
-      "visitors": 593,
-      "pageviews": 643
+      "visitors": 950,
+      "pageviews": 1137
     },
     {
       "label": "/solutions-implementation-consultant",
-      "visitors": 590,
-      "pageviews": 724
+      "visitors": 598,
+      "pageviews": 734
+    },
+    {
+      "label": "/applied-ai-engineer",
+      "visitors": 477,
+      "pageviews": 512
     },
     {
       "label": "/devops-engineer",
-      "visitors": 343,
-      "pageviews": 412
+      "visitors": 344,
+      "pageviews": 411
     },
     {
       "label": "/full-stack-software-engineer",
-      "visitors": 243,
-      "pageviews": 281
+      "visitors": 252,
+      "pageviews": 293
     },
     {
       "label": "/mlops-team-lead",
@@ -67,18 +67,18 @@
     },
     {
       "label": "/data-scientist-1",
-      "visitors": 175,
-      "pageviews": 192
+      "visitors": 173,
+      "pageviews": 190
     },
     {
       "label": "/devsecops-engineer",
-      "visitors": 153,
-      "pageviews": 187
+      "visitors": 151,
+      "pageviews": 183
     },
     {
       "label": "/backend-engineer",
-      "visitors": 112,
-      "pageviews": 200
+      "visitors": 102,
+      "pageviews": 191
     },
     {
       "label": "/cloud-security-platform-engineer",
@@ -87,18 +87,18 @@
     },
     {
       "label": "/cloud-security-sre",
-      "visitors": 76,
-      "pageviews": 89
+      "visitors": 77,
+      "pageviews": 90
     },
     {
       "label": "/data-platform-engineer",
-      "visitors": 57,
-      "pageviews": 66
+      "visitors": 52,
+      "pageviews": 59
     },
     {
       "label": "/ai-engineer",
-      "visitors": 23,
-      "pageviews": 27
+      "visitors": 22,
+      "pageviews": 26
     },
     {
       "label": "/llmops-engineer",
@@ -106,12 +106,12 @@
       "pageviews": 6
     },
     {
-      "label": "/servicenow-developer",
-      "visitors": 4,
-      "pageviews": 4
+      "label": "/data-engineer",
+      "visitors": 3,
+      "pageviews": 3
     },
     {
-      "label": "/data-engineer",
+      "label": "/servicenow-developer",
       "visitors": 3,
       "pageviews": 3
     },
@@ -121,12 +121,12 @@
       "pageviews": 2
     },
     {
-      "label": "/senior-devops-consultant",
-      "visitors": 2,
-      "pageviews": 2
+      "label": "/java-software-engineer",
+      "visitors": 1,
+      "pageviews": 1
     },
     {
-      "label": "/java-software-engineer",
+      "label": "/senior-devops-consultant",
       "visitors": 1,
       "pageviews": 1
     }
@@ -134,18 +134,18 @@
   "topReferrers": [
     {
       "label": "Direct",
-      "visitors": 2196,
-      "pageviews": 4100
+      "visitors": 2174,
+      "pageviews": 4042
     },
     {
       "label": "linkedin.com",
-      "visitors": 1937,
-      "pageviews": 2320
+      "visitors": 1867,
+      "pageviews": 2243
     },
     {
       "label": "com.linkedin.android",
-      "visitors": 759,
-      "pageviews": 903
+      "visitors": 733,
+      "pageviews": 874
     },
     {
       "label": "com.reddit.frontpage",
@@ -159,13 +159,13 @@
     },
     {
       "label": "lnkd.in",
-      "visitors": 59,
-      "pageviews": 76
+      "visitors": 56,
+      "pageviews": 73
     },
     {
       "label": "google.com",
-      "visitors": 48,
-      "pageviews": 63
+      "visitors": 50,
+      "pageviews": 65
     },
     {
       "label": "teams.public.onecdn.static.microsoft",
@@ -173,5 +173,5 @@
       "pageviews": 4
     }
   ],
-  "updatedAt": "2026-10-24T01:01:11.079Z"
+  "updatedAt": "2026-10-25T00:30:12.774Z"
 }
