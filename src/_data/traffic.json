@@ -21,44 +21,44 @@
       "note": "from 5 Sep"
     },
     "2026-10": {
-      "visitors": 3833,
-      "pageviews": 6657
+      "visitors": 3879,
+      "pageviews": 6726
     }
   },
   "reportedAllTime": {
-    "visitors": 11218,
-    "pageviews": 19212
+    "visitors": 11264,
+    "pageviews": 19281
   },
   "topPages": [
     {
       "label": "/",
-      "visitors": 2651,
-      "pageviews": 3511
+      "visitors": 2658,
+      "pageviews": 3519
     },
     {
       "label": "/fullstack-engineer",
-      "visitors": 970,
-      "pageviews": 1160
+      "visitors": 980,
+      "pageviews": 1171
     },
     {
       "label": "/solutions-implementation-consultant",
-      "visitors": 626,
-      "pageviews": 763
-    },
-    {
-      "label": "/applied-ai-engineer",
-      "visitors": 380,
-      "pageviews": 406
+      "visitors": 638,
+      "pageviews": 775
     },
     {
       "label": "/devops-engineer",
-      "visitors": 353,
-      "pageviews": 420
+      "visitors": 356,
+      "pageviews": 424
+    },
+    {
+      "label": "/applied-ai-engineer",
+      "visitors": 346,
+      "pageviews": 371
     },
     {
       "label": "/full-stack-software-engineer",
-      "visitors": 285,
-      "pageviews": 328
+      "visitors": 294,
+      "pageviews": 337
     },
     {
       "label": "/mlops-team-lead",
@@ -67,18 +67,18 @@
     },
     {
       "label": "/data-scientist-1",
-      "visitors": 181,
-      "pageviews": 202
+      "visitors": 183,
+      "pageviews": 204
     },
     {
       "label": "/devsecops-engineer",
-      "visitors": 150,
-      "pageviews": 180
+      "visitors": 144,
+      "pageviews": 173
     },
     {
       "label": "/backend-engineer",
-      "visitors": 82,
-      "pageviews": 162
+      "visitors": 83,
+      "pageviews": 165
     },
     {
       "label": "/cloud-security-platform-engineer",
@@ -92,13 +92,13 @@
     },
     {
       "label": "/data-platform-engineer",
-      "visitors": 50,
-      "pageviews": 57
+      "visitors": 49,
+      "pageviews": 55
     },
     {
       "label": "/ai-engineer",
-      "visitors": 19,
-      "pageviews": 24
+      "visitors": 17,
+      "pageviews": 22
     },
     {
       "label": "/llmops-engineer",
@@ -134,18 +134,18 @@
   "topReferrers": [
     {
       "label": "Direct",
-      "visitors": 2190,
-      "pageviews": 4083
+      "visitors": 2198,
+      "pageviews": 4095
     },
     {
       "label": "linkedin.com",
-      "visitors": 1852,
-      "pageviews": 2221
+      "visitors": 1841,
+      "pageviews": 2215
     },
     {
       "label": "com.linkedin.android",
-      "visitors": 717,
-      "pageviews": 859
+      "visitors": 713,
+      "pageviews": 855
     },
     {
       "label": "com.reddit.frontpage",
@@ -154,13 +154,13 @@
     },
     {
       "label": "reddit.com",
-      "visitors": 85,
-      "pageviews": 88
+      "visitors": 86,
+      "pageviews": 89
     },
     {
       "label": "lnkd.in",
-      "visitors": 58,
-      "pageviews": 76
+      "visitors": 57,
+      "pageviews": 75
     },
     {
       "label": "google.com",
@@ -173,5 +173,5 @@
       "pageviews": 7
     }
   ],
-  "updatedAt": "2026-10-28T01:39:17.421Z"
+  "updatedAt": "2026-10-29T01:55:51.218Z"
 }
